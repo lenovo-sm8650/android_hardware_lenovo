@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Stereo widening amount -->
+    <integer name="stereo_widening_min">4</integer>
+    <integer name="stereo_widening_max">64</integer>
+
+    <!-- Dialogue enhancer amount -->
+    <integer name="dialogue_enhancer_min">1</integer>
+    <!-- TB520FU: 0-16 like the stock Lenovo slider (stock defaults 4 and 8) -->
+    <integer name="dialogue_enhancer_max">16</integer>
+
+</resources>
