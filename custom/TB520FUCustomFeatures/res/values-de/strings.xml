@@ -25,6 +25,20 @@
     <string name="installer_spoof_title">Play Store als Installationsquelle melden</string>
     <string name="installer_spoof_footer">Nur die Apps in dieser Liste sehen den Play Store als ihre eigene Installationsquelle, damit Apps, die eine Play-Installation verlangen (zum Beispiel Notein), weiter funktionieren. Andere Apps und der Play Store sehen weiter die echte Installationsquelle. Gilt sofort.</string>
     <string name="installer_spoof_remove_message">Diese App sieht wieder ihre echte Installationsquelle.</string>
+    <string name="app_compat_category">App-Kompatibilität</string>
+    <string name="device_spoof_title">Geräteangaben für Apps</string>
+    <string name="device_spoof_main_switch">Ausgewählten Apps ein anderes Gerät zeigen</string>
+    <string name="device_spoof_device_category">Gerät</string>
+    <string name="device_spoof_brand">Marke</string>
+    <string name="device_spoof_manufacturer">Hersteller</string>
+    <string name="device_spoof_model">Modell</string>
+    <string name="device_spoof_unchanged">Nicht geändert</string>
+    <string name="device_spoof_not_installed" formatted="false">%1$s (nicht installiert)</string>
+    <string name="device_spoof_reset">Auf Standard zurücksetzen</string>
+    <string name="device_spoof_reset_summary">OnePlus Pad Go 2 für Netflix</string>
+    <string name="device_spoof_reset_message">Gerät, Apps und Schalter werden auf die Standardwerte zurückgesetzt.</string>
+    <string name="device_spoof_remove_message">Diese App sieht wieder das echte Gerät.</string>
+    <string name="device_spoof_footer">Nur die Apps in dieser Liste sehen diese Marke, diesen Hersteller und dieses Modell statt des echten Geräts, zum Beispiel damit Netflix HDR10, HDR10+ und Dolby Vision streamt. Google Play-Dienste und der Play Store sehen immer das echte Gerät. Starte die App neu, damit eine Änderung wirkt.</string>
     <string-array name="game_level_entries">
         <item>Energiesparen</item>
         <item>Ausgewogen</item>

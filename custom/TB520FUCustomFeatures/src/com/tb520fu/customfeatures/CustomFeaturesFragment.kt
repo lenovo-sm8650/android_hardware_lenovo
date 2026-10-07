@@ -10,8 +10,9 @@ import androidx.preference.Preference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
 /**
- * Main screen of the "Custom Tweaks" app: game performance and the apps that
- * see the Play Store as their installer. The features live here (not in TB520FUParts) because they are
+ * Main screen of the "Custom Tweaks" app: game performance, the device
+ * identity selected apps see and the apps that see the Play Store as their
+ * installer. The features live here (not in TB520FUParts) because they are
  * optional customizations; the device tree builds without them.
  *
  * The switches only switch their feature on and off; the management screens
@@ -22,6 +23,7 @@ class CustomFeaturesFragment : SettingsBasePreferenceFragment() {
 
     private lateinit var gamePerfPref: Preference
     private lateinit var installerSpoofPref: Preference
+    private lateinit var deviceSpoofPref: Preference
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.custom_features_settings, rootKey)
@@ -30,6 +32,7 @@ class CustomFeaturesFragment : SettingsBasePreferenceFragment() {
 
         gamePerfPref = findPreference(KEY_GAME_PERF)!!
         installerSpoofPref = findPreference(KEY_INSTALLER_SPOOF)!!
+        deviceSpoofPref = findPreference(KEY_DEVICE_SPOOF)!!
     }
 
     override fun onResume() {
@@ -43,6 +46,17 @@ class CustomFeaturesFragment : SettingsBasePreferenceFragment() {
             }
         )
         installerSpoofPref.summary = installerSpoofSummary()
+        deviceSpoofPref.summary = deviceSpoofSummary()
+    }
+
+    /** "Off", or the model and the names of the apps. */
+    private fun deviceSpoofSummary(): String {
+        val ctx = requireContext()
+        val apps = DeviceSpoof.load(ctx)
+        if (!DeviceSpoof.isEnabled(ctx) || apps.isEmpty()) return getString(R.string.game_perf_off)
+        return getString(R.string.device_spoof_summary,
+                DeviceSpoof.value(ctx, DeviceSpoof.MODEL).ifEmpty { "-" },
+                apps.joinToString(", ") { DeviceSpoof.label(ctx, it) })
     }
 
     /** "Off", or the names of the apps in the list. */
@@ -60,5 +74,6 @@ class CustomFeaturesFragment : SettingsBasePreferenceFragment() {
     private companion object {
         const val KEY_GAME_PERF = "game_perf"
         const val KEY_INSTALLER_SPOOF = "installer_spoof"
+        const val KEY_DEVICE_SPOOF = "device_spoof"
     }
 }

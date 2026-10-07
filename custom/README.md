@@ -9,11 +9,11 @@ Contents:
 
 | Path | What |
 |---|---|
-| `TB520FUCustomFeatures/` | "Custom Tweaks" app (Settings > System): game performance and the apps that see the Play Store as their installer (per app, only to the app itself) |
+| `TB520FUCustomFeatures/` | "Custom Tweaks" app (Settings > System): game performance, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2) and the apps that see the Play Store as their installer (per app, only to the app itself) |
 | `custom.mk` | the packages above |
 | `input/` | `tb520fu-input-custom.jar`, the game performance enforcement and the boot-time removal of what the dropped Play Integrity stack (keybox, TEE simulator, PIF) left on devices, loaded into system_server by `tb520fu-input` |
 | `FeathersLiveWallpaper/` | Pixel "Feathers" Porcelain live wallpaper, the default wallpaper |
-| `overlay/FrameworksResTB520FUCustom/` | the default wallpaper |
+| `overlay/FrameworksResTB520FUCustom/` | the default wallpaper and device identity defaults |
 | `overlay/UpdaterResTB520FU/` | the updater's SourceForge folder and hidden certified-props item |
 | `sepolicy/vendor/` | the cpufreq/kgsl rules of the game performance controller |
 | `tools/custom_strings.py` | generates the app's `res/values*/strings.xml` |

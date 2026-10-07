@@ -28,6 +28,20 @@
     <string name="installer_spoof_title">将安装来源显示为 Play 商店</string>
     <string name="installer_spoof_footer">只有此列表中的应用会将自己的安装来源识别为 Play 商店，因此需要 Play 安装的应用（例如 Notein）可以正常工作。其他应用和 Play 商店仍看到真实的安装来源。立即生效。</string>
     <string name="installer_spoof_remove_message">此应用将重新看到真实的安装来源。</string>
+    <string name="app_compat_category">应用兼容性</string>
+    <string name="device_spoof_title">应用的设备信息</string>
+    <string name="device_spoof_main_switch">向所选应用显示为其他设备</string>
+    <string name="device_spoof_device_category">设备</string>
+    <string name="device_spoof_brand">品牌</string>
+    <string name="device_spoof_manufacturer">制造商</string>
+    <string name="device_spoof_model">型号</string>
+    <string name="device_spoof_unchanged">不更改</string>
+    <string name="device_spoof_not_installed" formatted="false">%1$s（未安装）</string>
+    <string name="device_spoof_reset">恢复默认设置</string>
+    <string name="device_spoof_reset_summary">向 Netflix 显示为 OnePlus Pad Go 2</string>
+    <string name="device_spoof_reset_message">设备、应用列表和开关将恢复为默认设置。</string>
+    <string name="device_spoof_remove_message">此应用将重新看到实际设备。</string>
+    <string name="device_spoof_footer">只有此列表中的应用会看到上面的品牌、制造商和型号，而不是实际设备，例如 Netflix 会播放 HDR10、HDR10+ 和杜比视界。Google Play 服务和 Play 商店始终看到实际设备。更改在重新启动应用后生效。</string>
     <string-array name="game_level_entries">
         <item>省电</item>
         <item>均衡</item>

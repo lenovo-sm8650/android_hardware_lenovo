@@ -19,6 +19,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="app_compat"
+        android:title="@string/app_compat_category">
+
+        <Preference
+            android:key="device_spoof"
+            android:title="@string/device_spoof_title"
+            android:fragment="com.tb520fu.customfeatures.DeviceSpoofFragment" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="play_store"
         android:title="@string/play_store_category">
 
