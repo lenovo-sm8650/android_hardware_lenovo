@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: Apache-2.0
+//
+// From Lenovo-SM8850/android_hardware_lenovo packages/VideoMotion (acb67f9,
+// translations 01c30ee). Runs as system_app; the MediaCodec side is
+// patches/frameworks_av-0001-video-motion-smoothing.patch.
+android_app {
+    name: "VideoMotion",
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+    static_libs: [
+        "androidx.preference_preference",
+        "SettingsLib",
+        "SettingsLibSearchBoxPreference",
+    ],
+    optimize: { enabled: false },
+}
