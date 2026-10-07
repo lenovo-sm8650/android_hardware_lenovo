@@ -6,44 +6,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/device_spoof_title">
 
-    <com.android.settingslib.widget.MainSwitchPreference
-        android:key="device_spoof_enabled"
-        android:title="@string/device_spoof_main_switch"
-        android:persistent="false" />
-
-    <PreferenceCategory
-        android:key="device_spoof_device"
-        android:title="@string/device_spoof_device_category">
-
-        <EditTextPreference
-            android:key="device_spoof_brand"
-            android:title="@string/device_spoof_brand"
-            android:dialogTitle="@string/device_spoof_brand"
-            android:persistent="false" />
-
-        <EditTextPreference
-            android:key="device_spoof_manufacturer"
-            android:title="@string/device_spoof_manufacturer"
-            android:dialogTitle="@string/device_spoof_manufacturer"
-            android:persistent="false" />
-
-        <EditTextPreference
-            android:key="device_spoof_model"
-            android:title="@string/device_spoof_model"
-            android:dialogTitle="@string/device_spoof_model"
-            android:persistent="false" />
-
-    </PreferenceCategory>
-
     <!-- Filled in DeviceSpoofFragment -->
     <PreferenceCategory
         android:key="device_spoof_apps"
         android:title="@string/game_apps_category" />
-
-    <Preference
-        android:key="device_spoof_reset"
-        android:title="@string/device_spoof_reset"
-        android:summary="@string/device_spoof_reset_summary" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="device_spoof_footer"

@@ -33,19 +33,11 @@
     <string name="installer_spoof_remove_message">This app will see its real installer again.</string>
     <string name="app_compat_category">App compatibility</string>
     <string name="device_spoof_title">Device identity for apps</string>
-    <string name="device_spoof_main_switch">Show another device to selected apps</string>
-    <string name="device_spoof_device_category">Device</string>
     <string name="device_spoof_brand">Brand</string>
     <string name="device_spoof_manufacturer">Manufacturer</string>
     <string name="device_spoof_model">Model</string>
     <string name="device_spoof_unchanged">Not changed</string>
-    <string name="device_spoof_not_installed" formatted="false">%1$s (not installed)</string>
-    <string name="device_spoof_summary" formatted="false">%1$s · %2$s</string>
-    <string name="device_spoof_reset">Reset to default</string>
-    <string name="device_spoof_reset_summary">OnePlus Pad Go 2 for Netflix</string>
-    <string name="device_spoof_reset_message">The device, the apps and the switch go back to their defaults.</string>
-    <string name="device_spoof_remove_message">This app will see the real device again.</string>
-    <string name="device_spoof_footer">Only the apps in this list see this brand, manufacturer and model instead of the real device, for example so that Netflix streams HDR10, HDR10+ and Dolby Vision. Google Play services and the Play Store always see the real device. Restart the app to apply a change.</string>
+    <string name="device_spoof_footer">Only the apps in this list see the brand, manufacturer and model of another device, for example so that Netflix streams HDR10, HDR10+ and Dolby Vision. Tap an app to change its device; an empty field keeps the real value. Google Play services and the Play Store always see the real device. Restart the app to apply a change.</string>
     <string-array name="game_level_entries">
         <item>Power saving</item>
         <item>Balanced</item>

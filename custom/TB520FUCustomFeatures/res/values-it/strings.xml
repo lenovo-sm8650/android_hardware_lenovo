@@ -29,18 +29,11 @@
     <string name="installer_spoof_remove_message">Questa app vedrà di nuovo il suo installatore reale.</string>
     <string name="app_compat_category">Compatibilità app</string>
     <string name="device_spoof_title">Identità del dispositivo per le app</string>
-    <string name="device_spoof_main_switch">Mostra un altro dispositivo alle app selezionate</string>
-    <string name="device_spoof_device_category">Dispositivo</string>
     <string name="device_spoof_brand">Marca</string>
     <string name="device_spoof_manufacturer">Produttore</string>
     <string name="device_spoof_model">Modello</string>
     <string name="device_spoof_unchanged">Non modificato</string>
-    <string name="device_spoof_not_installed" formatted="false">%1$s (non installata)</string>
-    <string name="device_spoof_reset">Ripristina predefiniti</string>
-    <string name="device_spoof_reset_summary">OnePlus Pad Go 2 per Netflix</string>
-    <string name="device_spoof_reset_message">Dispositivo, app e interruttore tornano ai valori predefiniti.</string>
-    <string name="device_spoof_remove_message">Questa app vedrà di nuovo il dispositivo reale.</string>
-    <string name="device_spoof_footer">Solo le app di questo elenco vedono questa marca, questo produttore e questo modello al posto del dispositivo reale, ad esempio perché Netflix trasmetta in HDR10, HDR10+ e Dolby Vision. Google Play Services e il Play Store vedono sempre il dispositivo reale. Riavvia l\'app per applicare una modifica.</string>
+    <string name="device_spoof_footer">Solo le app di questo elenco vedono marca, produttore e modello di un altro dispositivo, ad esempio perché Netflix trasmetta in HDR10, HDR10+ e Dolby Vision. Tocca un\'app per cambiarne il dispositivo; un campo vuoto mantiene il valore reale. Google Play Services e il Play Store vedono sempre il dispositivo reale. Riavvia l\'app per applicare una modifica.</string>
     <string-array name="game_level_entries">
         <item>Risparmio energetico</item>
         <item>Bilanciato</item>

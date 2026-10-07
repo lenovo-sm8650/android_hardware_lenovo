@@ -30,18 +30,11 @@
     <string name="installer_spoof_remove_message">此應用程式將重新看到真實的安裝來源。</string>
     <string name="app_compat_category">應用程式相容性</string>
     <string name="device_spoof_title">應用程式的裝置資訊</string>
-    <string name="device_spoof_main_switch">向所選應用程式顯示為其他裝置</string>
-    <string name="device_spoof_device_category">裝置</string>
     <string name="device_spoof_brand">品牌</string>
     <string name="device_spoof_manufacturer">製造商</string>
     <string name="device_spoof_model">型號</string>
     <string name="device_spoof_unchanged">不變更</string>
-    <string name="device_spoof_not_installed" formatted="false">%1$s（未安裝）</string>
-    <string name="device_spoof_reset">還原預設值</string>
-    <string name="device_spoof_reset_summary">向 Netflix 顯示為 OnePlus Pad Go 2</string>
-    <string name="device_spoof_reset_message">裝置、應用程式清單和開關將還原為預設值。</string>
-    <string name="device_spoof_remove_message">此應用程式將重新看到實際裝置。</string>
-    <string name="device_spoof_footer">只有此清單中的應用程式會看到上方的品牌、製造商和型號，而不是實際裝置，例如 Netflix 會播放 HDR10、HDR10+ 和杜比視界。Google Play 服務和 Play 商店一律看到實際裝置。變更會在重新啟動應用程式後生效。</string>
+    <string name="device_spoof_footer">只有此清單中的應用程式會看到其他裝置的品牌、製造商和型號，例如 Netflix 會播放 HDR10、HDR10+ 和杜比視界。輕觸應用程式即可變更裝置資訊；留空的欄位保留實際值。Google Play 服務和 Play 商店一律看到實際裝置。變更會在重新啟動應用程式後生效。</string>
     <string-array name="game_level_entries">
         <item>省電</item>
         <item>平衡</item>

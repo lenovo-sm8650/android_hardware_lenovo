@@ -49,15 +49,10 @@ class CustomFeaturesFragment : SettingsBasePreferenceFragment() {
         deviceSpoofPref.summary = deviceSpoofSummary()
     }
 
-    /** "Off", or the model and the names of the apps. */
-    private fun deviceSpoofSummary(): String {
-        val ctx = requireContext()
-        val apps = DeviceSpoof.load(ctx)
-        if (!DeviceSpoof.isEnabled(ctx) || apps.isEmpty()) return getString(R.string.game_perf_off)
-        return getString(R.string.device_spoof_summary,
-                DeviceSpoof.value(ctx, DeviceSpoof.MODEL).ifEmpty { "-" },
-                apps.joinToString(", ") { DeviceSpoof.label(ctx, it) })
-    }
+    /** "On" while an app is in the list, otherwise "Off". */
+    private fun deviceSpoofSummary(): String = getString(
+        if (DeviceSpoof.load(requireContext()).isEmpty()) R.string.game_perf_off else R.string.game_perf_on
+    )
 
     /** "Off", or the names of the apps in the list. */
     private fun installerSpoofSummary(): String {

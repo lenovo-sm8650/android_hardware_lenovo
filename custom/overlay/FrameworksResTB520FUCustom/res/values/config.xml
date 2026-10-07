@@ -12,9 +12,8 @@
     <!-- Device identity for selected apps (Custom Tweaks): Netflix sees the
          OnePlus Pad Go 2 (global, OPD2504), which it streams HDR10, HDR10+
          and Dolby Vision to. -->
-    <bool name="config_tb520fuDeviceSpoofEnabled">true</bool>
     <string-array name="config_tb520fuDeviceSpoofApps" translatable="false">
-        <item>com.netflix.mediaclient</item>
+        <item>com.netflix.mediaclient=OnePlus|OnePlus|OPD2504</item>
     </string-array>
     <string name="config_tb520fuDeviceSpoofBrand" translatable="false">OnePlus</string>
     <string name="config_tb520fuDeviceSpoofManufacturer" translatable="false">OnePlus</string>

@@ -69,6 +69,7 @@ class CustomFeaturesActivity :
             GamePerfFragment::class.java.name,
             GameAppFragment::class.java.name,
             InstallerSpoofFragment::class.java.name,
+            DeviceSpoofFragment::class.java.name,
         )
 
         /** Opens [fragment] (one of [SUB_SCREENS]) as a sub page. */
