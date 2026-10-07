@@ -51,6 +51,13 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
             DolbyConstants.dlog(TAG, "Failed to create Dolby effect: ${e.message}")
             throw e
         }
+        // First start: save the defaults, which the boot service then applies.
+        if (!defaultPrefs.contains(DolbyConstants.PREF_ENABLE)) {
+            defaultPrefs.edit()
+                .putBoolean(DolbyConstants.PREF_ENABLE, DolbyConstants.DEFAULT_ENABLED)
+                .putString(DolbyConstants.PREF_PROFILE, DolbyConstants.DEFAULT_PROFILE.toString())
+                .apply()
+        }
     }
 
     /** True while the shared handle controls the effect and still answers. */
@@ -86,7 +93,7 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
     }
 
     private fun restoreSavedState(): Boolean {
-        dolbyEffect.dsOn = defaultPrefs.getBoolean(DolbyConstants.PREF_ENABLE, false)
+        dolbyEffect.dsOn = defaultPrefs.getBoolean(DolbyConstants.PREF_ENABLE, DolbyConstants.DEFAULT_ENABLED)
         return restoreSavedProfileIfNeeded()
     }
 
@@ -146,7 +153,7 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
     fun applySavedState(): Boolean {
         return try {
             if (!checkEffect()) return false
-            val enabled = defaultPrefs.getBoolean(DolbyConstants.PREF_ENABLE, false)
+            val enabled = defaultPrefs.getBoolean(DolbyConstants.PREF_ENABLE, DolbyConstants.DEFAULT_ENABLED)
             dolbyEffect.dsOn = enabled
             !enabled || restoreSavedProfileIfNeeded()
         } catch (e: Exception) {
@@ -242,7 +249,7 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
     }
 
     fun verifyProfileSaved(profile: Int): Boolean {
-        val prefs = defaultPrefs.getString(DolbyConstants.PREF_PROFILE, "0")?.toIntOrNull()
+        val prefs = defaultPrefs.getString(DolbyConstants.PREF_PROFILE, DolbyConstants.DEFAULT_PROFILE.toString())?.toIntOrNull()
         val saved = prefs == profile
         DolbyConstants.dlog(TAG, "Profile verification: requested=$profile, saved=$prefs, match=$saved")
         return saved

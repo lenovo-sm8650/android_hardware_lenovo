@@ -82,7 +82,7 @@ class AppProfileMonitorService : Service() {
             originalProfile = persisted
             DolbyConstants.dlog(TAG, "Recovered original profile from prefs: $originalProfile")
         } else {
-            originalProfile = prefs.getString(DolbyConstants.PREF_PROFILE, "0")?.toIntOrNull() ?: 0
+            originalProfile = prefs.getString(DolbyConstants.PREF_PROFILE, DolbyConstants.DEFAULT_PROFILE.toString())?.toIntOrNull() ?: 0
             prefs.edit().putInt(PREF_ORIGINAL_PROFILE, originalProfile).apply()
             DolbyConstants.dlog(TAG, "Captured original profile: $originalProfile")
         }
@@ -115,7 +115,7 @@ class AppProfileMonitorService : Service() {
                 dolbyRepository.setCurrentProfile(originalProfile)
                 
                 val prefs = getSharedPreferences("dolby_prefs", Context.MODE_PRIVATE)
-                val currentProfile = prefs.getString(DolbyConstants.PREF_PROFILE, "0")?.toIntOrNull() ?: 0
+                val currentProfile = prefs.getString(DolbyConstants.PREF_PROFILE, DolbyConstants.DEFAULT_PROFILE.toString())?.toIntOrNull() ?: 0
                 if (currentProfile != originalProfile) {
                     DolbyConstants.dlog(TAG, "WARNING: Profile restoration mismatch! Expected: $originalProfile, Got: $currentProfile")
                 } else {
@@ -196,7 +196,7 @@ class AppProfileMonitorService : Service() {
                                 }
                             } else {
                                 if (hasOriginalProfile && originalProfile >= 0) {
-                                    val currentProfile = prefs.getString(DolbyConstants.PREF_PROFILE, "0")?.toIntOrNull() ?: 0
+                                    val currentProfile = prefs.getString(DolbyConstants.PREF_PROFILE, DolbyConstants.DEFAULT_PROFILE.toString())?.toIntOrNull() ?: 0
                                     
                                     if (currentProfile != originalProfile) {
                                         DolbyConstants.dlog(TAG, "Restoring original profile $originalProfile for $packageName (current: $currentProfile)")
