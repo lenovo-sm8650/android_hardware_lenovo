@@ -55,6 +55,7 @@ public final class InputCore {
     final FolioCover mFolio;
     final StandbyController mStandby;
     final PalmController mPalm;
+    final CabcController mCabc;
     final KeyboardDesktopMode mDesktopMode;
     final WifiSarController mWifiSar;
     final WifiCountryFromLocale mWifiCountry;
@@ -89,6 +90,7 @@ public final class InputCore {
         mFolio = new FolioCover(context, mHandler);
         mStandby = new StandbyController(context, mHandler);
         mPalm = new PalmController(context, mHandler);
+        mCabc = new CabcController(context, mHandler);
         mDesktopMode = new KeyboardDesktopMode(context, mHandler);
         mWifiSar = new WifiSarController(context, mHandler);
         mWifiCountry = new WifiCountryFromLocale(context, mHandler);
@@ -146,6 +148,7 @@ public final class InputCore {
         Safe.run("folio cover", mFolio::start).run();
         Safe.run("standby saver", mStandby::start).run();
         Safe.run("palm rejection", mPalm::start).run();
+        Safe.run("cabc", mCabc::start).run();
         Safe.run("keyboard desktop mode", mDesktopMode::start).run();
         Safe.run("wifi sar", mWifiSar::start).run();
         Safe.run("wifi country", mWifiCountry::start).run();

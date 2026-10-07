@@ -24,6 +24,7 @@ final class LenovoHal {
     static final String BATTERY = "vendor.lenovo.hardware.battery.IBattery";
     static final String TOUCH = "vendor.lenovo.hardware.touchscreen.ITouchscreen";
     static final String KEYBOARD = "vendor.lenovo.hardware.keyboard.IKeyboard";
+    static final String DISPLAY = "vendor.lenovo.hardware.display.IDisplay";
 
     // IBattery
     private static final int BAT_IS_MAINTENANCE_ENABLED = 3;
@@ -55,6 +56,9 @@ final class LenovoHal {
     private static final int KB_SETFEATURE = 8;
     private static final int KB_GETRAWNAME = 9;
     private static final int KB_GETRAWINFO = 10;
+
+    // IDisplay
+    private static final int DISP_SET_CABC_MODE = 3;
 
     // ITouchscreen.ioctl commands
     static final int IOCTL_QUICK_NOTE = 1;
@@ -178,6 +182,13 @@ final class LenovoHal {
 
     static boolean setStylusQiCommand(int cmd) {
         return callBool(BATTERY, BAT_SET_STYLUS_QI_COMMAND, p -> p.writeInt(cmd));
+    }
+
+    // ---- display ----
+
+    /** Panel CABC: 0 off, 1 UI, 2 still image, 3 moving image. */
+    static boolean setCabcMode(int mode) {
+        return callBool(DISPLAY, DISP_SET_CABC_MODE, p -> p.writeInt(mode));
     }
 
     // ---- touchscreen ----
