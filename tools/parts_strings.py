@@ -5,7 +5,7 @@
 #
 # Generates packages/TB520FUParts/res/values*/strings.xml for TB520FUParts (Lenovo features).
 # The game performance and Play Store identity strings live with their app
-# (device/lenovo/lapis/custom/tools/custom_strings.py).
+# (custom/tools/custom_strings.py).
 # English is the default; strings equal to English are left out of the
 # translations so they fall back to it.
 import os, re

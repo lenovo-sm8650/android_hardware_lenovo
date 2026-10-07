@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Nothing keeps this process alive (unlike TB520FUParts and its Quick
+         Settings tile), so the first open after boot is a cold start: the
+         starting window made Settings show it with the app launch animation
+         (from the bottom) instead of the sub page slide. Without the starting
+         window the activity opens like any other Settings page. -->
+    <style name="Theme.CustomTweaks" parent="@style/Theme.SubSettingsBase.Expressive">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>
