@@ -59,6 +59,7 @@ final class LenovoHal {
 
     // IDisplay
     private static final int DISP_SET_CABC_MODE = 3;
+    private static final int DISP_SET_HBM_STATE = 4;
 
     // ITouchscreen.ioctl commands
     static final int IOCTL_QUICK_NOTE = 1;
@@ -189,6 +190,11 @@ final class LenovoHal {
     /** Panel CABC: 0 off, 1 UI, 2 still image, 3 moving image. */
     static boolean setCabcMode(int mode) {
         return callBool(DISPLAY, DISP_SET_CABC_MODE, p -> p.writeInt(mode));
+    }
+
+    /** High brightness mode of the panel: 0 off, 1 and 2 the two steps of the hbm node. */
+    static boolean setHbmState(int state) {
+        return callBool(DISPLAY, DISP_SET_HBM_STATE, p -> p.writeInt(state));
     }
 
     // ---- touchscreen ----
