@@ -27,11 +27,8 @@ object DeviceSpoof {
 
     const val APPS = "tb520fu_device_spoof_apps"
 
-    /**
-     * Never spoofed by the framework, so not offered either: Play services and its
-     * framework (the Play Store is offered, to see the apps of another device).
-     */
-    val EXCLUDED = setOf("com.google.android.gms", "com.google.android.gsf")
+    /** Never spoofed by the framework, so not offered either. */
+    val EXCLUDED = setOf("com.google.android.gms", "com.google.android.gsf", "com.android.vending")
 
     data class Identity(val brand: String, val manufacturer: String, val model: String) {
         override fun toString() = listOf(brand, manufacturer, model).joinToString("|") { clean(it) }
