@@ -34,7 +34,10 @@
     <string name="device_spoof_manufacturer">制造商</string>
     <string name="device_spoof_model">型号</string>
     <string name="device_spoof_unchanged">不更改</string>
-    <string name="device_spoof_footer">只有此列表中的应用会看到其他设备的品牌、制造商和型号，例如 Netflix 会播放 HDR10、HDR10+ 和杜比视界。点按应用可更改其设备信息；留空的字段保留实际值。Google Play 服务和 Play 商店始终看到实际设备。更改在重新启动应用后生效。</string>
+    <string name="device_spoof_footer">只有此列表中的应用会看到其他设备的品牌、制造商和型号，例如 Netflix 会播放 HDR10、HDR10+ 和杜比视界。点按应用可更改其设备信息；留空的字段保留实际值。Google Play 服务和 Play 商店始终看到实际设备。更改在重启设备后生效。</string>
+    <string name="device_spoof_reboot_message">您必须重新启动设备，才能应用各应用的设备信息。</string>
+    <string name="device_spoof_reboot_now">立即重新启动</string>
+    <string name="device_spoof_reboot_later">稍后重新启动</string>
     <string-array name="game_level_entries">
         <item>省电</item>
         <item>均衡</item>

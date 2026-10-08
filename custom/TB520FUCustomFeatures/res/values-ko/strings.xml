@@ -34,7 +34,10 @@
     <string name="device_spoof_manufacturer">제조사</string>
     <string name="device_spoof_model">모델</string>
     <string name="device_spoof_unchanged">변경 안 함</string>
-    <string name="device_spoof_footer">이 목록의 앱에만 다른 기기의 브랜드, 제조사, 모델이 보입니다. 예를 들어 넷플릭스에서 HDR10, HDR10+, Dolby Vision으로 재생됩니다. 앱을 누르면 기기 정보를 바꿀 수 있고, 비워 둔 칸은 실제 값이 그대로 보입니다. Google Play 서비스와 Play 스토어에는 항상 실제 기기가 보입니다. 바꾼 설정은 앱을 다시 시작하면 적용됩니다.</string>
+    <string name="device_spoof_footer">이 목록의 앱에만 다른 기기의 브랜드, 제조사, 모델이 보입니다. 예를 들어 넷플릭스에서 HDR10, HDR10+, Dolby Vision으로 재생됩니다. 앱을 누르면 기기 정보를 바꿀 수 있고, 비워 둔 칸은 실제 값이 그대로 보입니다. Google Play 서비스와 Play 스토어에는 항상 실제 기기가 보입니다. 바꾼 설정은 재부팅하면 적용됩니다.</string>
+    <string name="device_spoof_reboot_message">앱별 기기 정보를 적용하려면 재부팅해야 합니다.</string>
+    <string name="device_spoof_reboot_now">지금 재부팅</string>
+    <string name="device_spoof_reboot_later">나중에 재부팅</string>
     <string-array name="game_level_entries">
         <item>절전</item>
         <item>균형</item>

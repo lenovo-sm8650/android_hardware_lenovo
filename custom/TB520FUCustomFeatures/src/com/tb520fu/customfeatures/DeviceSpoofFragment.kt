@@ -7,6 +7,7 @@ package com.tb520fu.customfeatures
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.os.PowerManager
 import android.text.InputType
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -17,7 +18,8 @@ import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
 /**
  * The apps that see another device (see DeviceSpoof). Tapping an app edits
- * its brand, manufacturer and model or removes it from the list.
+ * its brand, manufacturer and model or removes it from the list. A new app
+ * opens its (empty) values first; after a change, a dialog asks to reboot.
  */
 class DeviceSpoofFragment : SettingsBasePreferenceFragment() {
 
@@ -64,13 +66,16 @@ class DeviceSpoofFragment : SettingsBasePreferenceFragment() {
         val ctx = requireContext().applicationContext
         AppPicker.pick(this, getString(R.string.game_app_add),
                 DeviceSpoof.load(ctx).keys + DeviceSpoof.EXCLUDED) { pkg ->
-            DeviceSpoof.add(ctx, pkg)
-            if (isAdded) refresh()
+            // the values of the app first, empty: the app is added when they are confirmed
+            if (isAdded) edit(pkg, DeviceSpoof.Identity("", "", ""), isNew = true)
         }
     }
 
-    /** Brand, manufacturer and model of one app; an empty field keeps the real value. */
-    private fun edit(pkg: String, identity: DeviceSpoof.Identity) {
+    /**
+     * Brand, manufacturer and model of one app; an empty field keeps the real value.
+     * A new app is added only when the values are confirmed.
+     */
+    private fun edit(pkg: String, identity: DeviceSpoof.Identity, isNew: Boolean = false) {
         val ctx = requireContext()
         val pad = (24 * resources.displayMetrics.density).toInt()
         val layout = LinearLayout(ctx).apply {
@@ -94,19 +99,35 @@ class DeviceSpoofFragment : SettingsBasePreferenceFragment() {
         val manufacturer = field(R.string.device_spoof_manufacturer, identity.manufacturer)
         val model = field(R.string.device_spoof_model, identity.model)
 
-        AlertDialog.Builder(ctx)
+        val dialog = AlertDialog.Builder(ctx)
             .setTitle(DeviceSpoof.label(ctx, pkg))
             .setView(layout)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 DeviceSpoof.put(requireContext(), pkg, DeviceSpoof.Identity(
                     brand.text.toString(), manufacturer.text.toString(), model.text.toString()))
                 refresh()
-            }
-            .setNeutralButton(R.string.game_app_remove) { _, _ ->
-                DeviceSpoof.remove(requireContext(), pkg)
-                refresh()
+                askReboot()
             }
             .setNegativeButton(android.R.string.cancel, null)
+        if (!isNew) {
+            dialog.setNeutralButton(R.string.game_app_remove) { _, _ ->
+                DeviceSpoof.remove(requireContext(), pkg)
+                refresh()
+                askReboot()
+            }
+        }
+        dialog.show()
+    }
+
+    /** The identity is set when an app starts, and the apps keep running: it needs a reboot. */
+    private fun askReboot() {
+        val ctx = requireContext()
+        AlertDialog.Builder(ctx)
+            .setMessage(R.string.device_spoof_reboot_message)
+            .setPositiveButton(R.string.device_spoof_reboot_now) { _, _ ->
+                ctx.getSystemService(PowerManager::class.java).reboot(null)
+            }
+            .setNegativeButton(R.string.device_spoof_reboot_later, null)
             .show()
     }
 

@@ -33,7 +33,10 @@
     <string name="device_spoof_manufacturer">Производитель</string>
     <string name="device_spoof_model">Модель</string>
     <string name="device_spoof_unchanged">Не изменяется</string>
-    <string name="device_spoof_footer">Только приложения из этого списка видят бренд, производителя и модель другого устройства, например чтобы Netflix показывал HDR10, HDR10+ и Dolby Vision. Нажмите на приложение, чтобы изменить его устройство; пустое поле сохраняет настоящее значение. Сервисы Google Play и Play Маркет всегда видят настоящее устройство. Чтобы применить изменение, перезапустите приложение.</string>
+    <string name="device_spoof_footer">Только приложения из этого списка видят бренд, производителя и модель другого устройства, например чтобы Netflix показывал HDR10, HDR10+ и Dolby Vision. Нажмите на приложение, чтобы изменить его устройство; пустое поле сохраняет настоящее значение. Сервисы Google Play и Play Маркет всегда видят настоящее устройство. Чтобы применить изменение, перезагрузите устройство.</string>
+    <string name="device_spoof_reboot_message">Чтобы применить данные об устройстве для приложений, необходимо перезагрузить устройство.</string>
+    <string name="device_spoof_reboot_now">Перезагрузить сейчас</string>
+    <string name="device_spoof_reboot_later">Перезагрузить позже</string>
     <string-array name="game_level_entries">
         <item>Энергосбережение</item>
         <item>Баланс</item>

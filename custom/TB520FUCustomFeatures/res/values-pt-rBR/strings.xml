@@ -32,7 +32,10 @@
     <string name="device_spoof_manufacturer">Fabricante</string>
     <string name="device_spoof_model">Modelo</string>
     <string name="device_spoof_unchanged">Sem alteração</string>
-    <string name="device_spoof_footer">Somente os apps desta lista veem a marca, o fabricante e o modelo de outro dispositivo, por exemplo para que a Netflix transmita em HDR10, HDR10+ e Dolby Vision. Toque em um app para mudar o dispositivo dele; um campo vazio mantém o valor real. O Google Play Services e a Play Store sempre veem o dispositivo real. Reinicie o app para aplicar uma alteração.</string>
+    <string name="device_spoof_footer">Somente os apps desta lista veem a marca, o fabricante e o modelo de outro dispositivo, por exemplo para que a Netflix transmita em HDR10, HDR10+ e Dolby Vision. Toque em um app para mudar o dispositivo dele; um campo vazio mantém o valor real. O Google Play Services e a Play Store sempre veem o dispositivo real. Reinicie o dispositivo para aplicar uma alteração.</string>
+    <string name="device_spoof_reboot_message">É necessário reiniciar o dispositivo para aplicar a identidade do dispositivo dos apps.</string>
+    <string name="device_spoof_reboot_now">Reiniciar agora</string>
+    <string name="device_spoof_reboot_later">Reiniciar mais tarde</string>
     <string-array name="game_level_entries">
         <item>Economia de energia</item>
         <item>Equilibrado</item>

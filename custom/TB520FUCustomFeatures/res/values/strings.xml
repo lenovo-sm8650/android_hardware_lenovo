@@ -37,7 +37,10 @@
     <string name="device_spoof_manufacturer">Manufacturer</string>
     <string name="device_spoof_model">Model</string>
     <string name="device_spoof_unchanged">Not changed</string>
-    <string name="device_spoof_footer">Only the apps in this list see the brand, manufacturer and model of another device, for example so that Netflix streams HDR10, HDR10+ and Dolby Vision. Tap an app to change its device; an empty field keeps the real value. Google Play services and the Play Store always see the real device. Restart the app to apply a change.</string>
+    <string name="device_spoof_footer">Only the apps in this list see the brand, manufacturer and model of another device, for example so that Netflix streams HDR10, HDR10+ and Dolby Vision. Tap an app to change its device; an empty field keeps the real value. Google Play services and the Play Store always see the real device. Reboot to apply a change.</string>
+    <string name="device_spoof_reboot_message">A reboot is required to apply the device identity of the apps.</string>
+    <string name="device_spoof_reboot_now">Reboot now</string>
+    <string name="device_spoof_reboot_later">Reboot later</string>
     <string-array name="game_level_entries">
         <item>Power saving</item>
         <item>Balanced</item>

@@ -31,7 +31,10 @@
     <string name="device_spoof_manufacturer">Hersteller</string>
     <string name="device_spoof_model">Modell</string>
     <string name="device_spoof_unchanged">Nicht geändert</string>
-    <string name="device_spoof_footer">Nur die Apps in dieser Liste sehen Marke, Hersteller und Modell eines anderen Geräts, zum Beispiel damit Netflix HDR10, HDR10+ und Dolby Vision streamt. Tippe auf eine App, um ihr Gerät zu ändern; ein leeres Feld behält den echten Wert. Google Play-Dienste und der Play Store sehen immer das echte Gerät. Starte die App neu, damit eine Änderung wirkt.</string>
+    <string name="device_spoof_footer">Nur die Apps in dieser Liste sehen Marke, Hersteller und Modell eines anderen Geräts, zum Beispiel damit Netflix HDR10, HDR10+ und Dolby Vision streamt. Tippe auf eine App, um ihr Gerät zu ändern; ein leeres Feld behält den echten Wert. Google Play-Dienste und der Play Store sehen immer das echte Gerät. Starte das Gerät neu, damit eine Änderung wirkt.</string>
+    <string name="device_spoof_reboot_message">Damit die Gerätekennung der Apps übernommen wird, musst du das Gerät neu starten.</string>
+    <string name="device_spoof_reboot_now">Jetzt neu starten</string>
+    <string name="device_spoof_reboot_later">Später neu starten</string>
     <string-array name="game_level_entries">
         <item>Energiesparen</item>
         <item>Ausgewogen</item>

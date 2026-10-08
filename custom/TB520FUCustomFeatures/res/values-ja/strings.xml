@@ -34,7 +34,10 @@
     <string name="device_spoof_manufacturer">メーカー</string>
     <string name="device_spoof_model">モデル</string>
     <string name="device_spoof_unchanged">変更しない</string>
-    <string name="device_spoof_footer">このリストのアプリにだけ、別のデバイスのブランド、メーカー、モデルが表示されます。たとえば Netflix で HDR10、HDR10+、Dolby Vision が再生されます。アプリをタップするとデバイス情報を変更できます。空欄の項目には実際の値が表示されます。Google Play 開発者サービスと Play ストアには常に実際のデバイスが表示されます。変更はアプリを再起動すると適用されます。</string>
+    <string name="device_spoof_footer">このリストのアプリにだけ、別のデバイスのブランド、メーカー、モデルが表示されます。たとえば Netflix で HDR10、HDR10+、Dolby Vision が再生されます。アプリをタップするとデバイス情報を変更できます。空欄の項目には実際の値が表示されます。Google Play 開発者サービスと Play ストアには常に実際のデバイスが表示されます。変更は端末を再起動すると適用されます。</string>
+    <string name="device_spoof_reboot_message">アプリごとの端末情報を適用するには、再起動が必要です。</string>
+    <string name="device_spoof_reboot_now">今すぐ再起動する</string>
+    <string name="device_spoof_reboot_later">後で再起動する</string>
     <string-array name="game_level_entries">
         <item>省電力</item>
         <item>バランス</item>

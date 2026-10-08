@@ -14,7 +14,8 @@ import android.provider.Settings
  * one, for example so that Netflix streams HDR and Dolby Vision. The
  * framework (PropImitationHooks in the frameworks/base fork) sets the identity
  * when one of the apps starts; Google Play services and the Play Store never
- * get it.
+ * get it. A field left empty keeps the real value, so an app with all three
+ * empty sees this device. A new app starts empty: nothing is pre-filled.
  *
  * Stored as Settings.Global tb520fu_device_spoof_apps =
  * "pkg=brand|manufacturer|model;...". While the key is unset, the framework
@@ -79,11 +80,12 @@ object DeviceSpoof {
     fun put(ctx: Context, pkg: String, identity: Identity) =
         save(ctx, load(ctx).apply { put(pkg, identity) })
 
-    fun add(ctx: Context, pkg: String) = put(ctx, pkg, defaultIdentity())
-
     fun remove(ctx: Context, pkg: String) = save(ctx, load(ctx).apply { remove(pkg) })
+
+    /** Apps of the default list that are shown by name before they are installed. */
+    private val KNOWN_NAMES = mapOf("com.netflix.mediaclient" to "Netflix")
 
     fun label(ctx: Context, pkg: String): CharSequence =
         runCatching { ctx.packageManager.getApplicationInfo(pkg, 0).loadLabel(ctx.packageManager) }
-            .getOrDefault(pkg)
+            .getOrDefault(KNOWN_NAMES[pkg] ?: pkg)
 }
