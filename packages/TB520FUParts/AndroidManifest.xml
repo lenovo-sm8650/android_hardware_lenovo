@@ -7,6 +7,11 @@
     package="com.tb520fu.parts"
     android:sharedUserId="android.uid.system">
 
+    <!-- Dolby Vision playback start / stop of the stock firmware, sent by the
+         Dolby Vision service app (device lenovo/DolbyVisionService) to the
+         system server (panel CABC). Only system apps may send it. -->
+    <protected-broadcast android:name="com.dolby.vision_play" />
+
     <uses-permission android:name="android.permission.REBOOT" />
 
     <application
