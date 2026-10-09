@@ -12,7 +12,10 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
+
+import com.android.internal.inputmethod.StylusHandwritingState;
 
 /**
  * Writing haptics of the Lenovo Tab Pen Pro, ported from the stock
@@ -22,7 +25,8 @@ import android.view.MotionEvent;
  * play while its tip is pressed ("continuous" haptic) or asks for a one shot
  * ("impact"). Stock arms the continuous waveform when the stylus hovers over
  * or touches an app listed in pen_haptic_packages, which PenService's
- * haptic settings maintain.
+ * haptic settings maintain. Gboard text-field handwriting additionally arms the waveform
+ * only while IMMS owns an active handwriting session on the tablet display.
  */
 final class PenHaptics {
     private static final String TAG = "TB520FUHaptics";
@@ -38,6 +42,7 @@ final class PenHaptics {
 
     static final String PKG_PENSERVICE = "com.lenovo.penservice";
     private static final String PKG_WPS = "cn.wps.moffice";
+    private static final String PKG_GBOARD = "com.google.android.inputmethod.latin";
 
     // Waveform ids
     static final int WAVE_STOP = 0;
@@ -70,6 +75,7 @@ final class PenHaptics {
     private int mCurrentLevel = -1;
     private int mToolType;
     private boolean mArmed;
+    private boolean mGboardHandwriting;
 
     PenHaptics(Context context, Handler handler) {
         mContext = context;
@@ -82,12 +88,37 @@ final class PenHaptics {
             boolean wasOn = mFeedbackOn;
             readSettings();
             if (wasOn != mFeedbackOn) applyToggle();
+            armHandwriting();
         });
         for (String key : new String[] {PEN_HAPTIC_FEEDBACK, PEN_HAPTIC_SOUND, PEN_HAPTIC_BRUSH,
                 PEN_HAPTIC_LEVEL, PEN_HAPTIC_PACKAGES, PEN_HOVER_HAPTIC}) {
             cr.registerContentObserver(Settings.Global.getUriFor(key), false, observer);
         }
         readSettings();
+        StylusHandwritingState.addListener(mHandler, this::onHandwritingStateChanged);
+    }
+
+    private void onHandwritingStateChanged() {
+        boolean active = PKG_GBOARD.equals(
+                StylusHandwritingState.getActiveImePackage(Display.DEFAULT_DISPLAY));
+        if (mGboardHandwriting == active) return;
+        mGboardHandwriting = active;
+        if (active) {
+            // The initial DOWN has already been pilfered by the IME. Arm now rather than
+            // waiting for another stroke. The pen plays this waveform only with its tip down.
+            mToolType = TOOL_TYPE_STYLUS;
+            armHandwriting();
+        } else {
+            stop(WAVE_STOP);
+            mArmed = false;
+        }
+        Log.d(TAG, "Gboard handwriting " + (active ? "started" : "finished"));
+    }
+
+    private void armHandwriting() {
+        if (mGboardHandwriting && isReady()) {
+            mArmed = setContinuous(mBrush, mLevel, 1);
+        }
     }
 
     private void readSettings() {
@@ -119,6 +150,7 @@ final class PenHaptics {
         gatt.setNotify(PenGatt.HAPTIC_SERVICE, PenGatt.HAPTIC_INFO_NOTIFY, true);
         gatt.write(PenGatt.HAPTIC_SERVICE, PenGatt.HAPTIC_REQ_INFO, new byte[] {1});
         applyToggle();
+        armHandwriting();
     }
 
     void onPenDisconnected() {
@@ -167,7 +199,7 @@ final class PenHaptics {
     void onStylusEvent(int action, int toolType, float distance, String pkg) {
         mToolType = toolType;
         if (!isReady()) return;
-        boolean match = isHapticPackage(pkg);
+        boolean match = mGboardHandwriting || isHapticPackage(pkg);
         if (mHoverMode) {
             if (action == MotionEvent.ACTION_HOVER_ENTER || action == MotionEvent.ACTION_DOWN) {
                 if (!match) {
