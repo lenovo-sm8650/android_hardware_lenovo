@@ -28,10 +28,11 @@ import android.view.Display;
  * display HAL (IDisplay.setHbmState):
  *
  * - only with automatic brightness and the brightness at or near its maximum (the
- *   top of the automatic curve, not lowered by the thermal throttling),
+ *   top of the automatic curve),
  * - step 1 from 5000 lux and step 2 from 10000 lux (config_zui_defaultBrightnessThreshold
  *   of the stock LapisRowFrameworksOverlay: 5000, 10000),
- * - off as soon as one of those stops, and with the screen.
+ * - off as soon as one of those stops, with the screen, or when the skin thermal
+ *   status reaches LIGHT. Normal brightness is not capped by this controller.
  *
  * The stock service follows the filtered lux of the automatic brightness; the light
  * sensor is filtered here with the debounce time of the stock service (3 s) both ways.
@@ -44,6 +45,7 @@ final class SunlightHbmController implements SensorEventListener,
     private static final float LUX_STEP_1 = 5000f;
     private static final float LUX_STEP_2 = 10000f;
     private static final long DEBOUNCE_MS = 3000;
+    private static final long THERMAL_RETRY_MS = 5000;
     /** The stock service wants the brightness at 1.0, see brightnessAtMax(). */
     private static final float BRIGHTNESS_NEAR_MAX = 0.95f;
 
@@ -52,11 +54,14 @@ final class SunlightHbmController implements SensorEventListener,
     private final DisplayManager mDisplayManager;
     private final SensorManager mSensorManager;
     private final Sensor mLightSensor;
+    private final PowerManager mPowerManager;
 
     private boolean mScreenOn;
     private boolean mAutoBrightness;
     private boolean mBrightnessAtMax;
     private boolean mListening;
+    /** HBM stays off until the thermal listener delivers its initial status. */
+    private int mThermalStatus = -1;
 
     /** The step the lux asks for, and since when. */
     private int mLuxStep;
@@ -64,19 +69,21 @@ final class SunlightHbmController implements SensorEventListener,
     private int mState = -1;
 
     private final Runnable mApplyPending = Safe.run("sunlight hbm debounce", this::applyPending);
+    private final Runnable mObserveThermal = Safe.run("sunlight hbm thermal", this::observeThermal);
 
     SunlightHbmController(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
         mDisplayManager = context.getSystemService(DisplayManager.class);
         mSensorManager = context.getSystemService(SensorManager.class);
+        mPowerManager = context.getSystemService(PowerManager.class);
         mLightSensor = mSensorManager != null
                 ? mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT) : null;
     }
 
     void start() {
         if (!LenovoHal.available(LenovoHal.DISPLAY) || mLightSensor == null
-                || mDisplayManager == null) {
+                || mDisplayManager == null || mPowerManager == null) {
             Log.w(TAG, "no Lenovo display HAL or light sensor");
             return;
         }
@@ -101,18 +108,35 @@ final class SunlightHbmController implements SensorEventListener,
         mContext.registerReceiver(Safe.receiver("sunlight hbm screen", (c, i) -> update()),
                 filter, null, mHandler);
 
+        observeThermal();
         update();
+    }
+
+    private void observeThermal() {
+        try {
+            // ThermalManagerService reports the highest SKIN status, including
+            // the current status immediately after registration. Serialize its
+            // callbacks with brightness, lux and the pending HBM transition.
+            mPowerManager.addThermalStatusListener(command -> mHandler.post(command), status -> {
+                mThermalStatus = status;
+                update();
+            });
+        } catch (RuntimeException e) {
+            Log.w(TAG, "thermal listener unavailable; keeping sunlight HBM off", e);
+            mHandler.postDelayed(mObserveThermal, THERMAL_RETRY_MS);
+        }
     }
 
     /** Listens to the light sensor only while the other conditions hold. */
     private void update() {
-        mScreenOn = mContext.getSystemService(PowerManager.class).isInteractive();
+        mScreenOn = mPowerManager.isInteractive();
         mAutoBrightness = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.SCREEN_BRIGHTNESS_MODE, 0)
                 == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
         mBrightnessAtMax = brightnessAtMax();
 
-        final boolean listen = mScreenOn && mAutoBrightness && mBrightnessAtMax;
+        final boolean listen = mScreenOn && mAutoBrightness && mBrightnessAtMax
+                && mThermalStatus == PowerManager.THERMAL_STATUS_NONE;
         if (listen != mListening) {
             mListening = listen;
             if (listen) {
@@ -137,8 +161,8 @@ final class SunlightHbmController implements SensorEventListener,
             return false;
         }
         // Near the top: the automatic curve with the adjustment of the user may end a little
-        // below the maximum (0.95: about 620 of the 650 nits). Throttled by the temperature,
-        // the maximum is lower than the one of the panel.
+        // below the maximum (0.95: about 620 of the 650 nits). Respect any other
+        // brightness cap without changing the normal brightness range ourselves.
         return info.brightnessMaximum >= 1f && info.brightness >= BRIGHTNESS_NEAR_MAX;
     }
 
@@ -174,7 +198,7 @@ final class SunlightHbmController implements SensorEventListener,
         }
         if (LenovoHal.setHbmState(state)) {
             Log.i(TAG, "hbm " + state + " (screen " + mScreenOn + ", auto " + mAutoBrightness
-                    + ", max " + mBrightnessAtMax + ")");
+                    + ", max " + mBrightnessAtMax + ", thermal " + mThermalStatus + ")");
             mState = state;
         }
     }
