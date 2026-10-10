@@ -12,6 +12,15 @@
 PRODUCT_PACKAGES += \
     TB520FUCustomFeatures
 
+# Report the Pixel fingerprint verified by the cold-boot module test, without
+# changing the Lenovo hardware identity. Set TARGET_ENABLE_FP_OVERRIDE=false
+# to keep the stock fingerprint from the device product.
+TARGET_ENABLE_FP_OVERRIDE ?= true
+ifeq ($(TARGET_ENABLE_FP_OVERRIDE),true)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildFingerprint=google/mustang/mustang:17/CP2A.260605.012/15430684:user/release-keys
+endif
+
 # Game performance enforcement inside system_server (input/ extension point).
 # tb520fu-input loads /system_ext/framework/tb520fu-input-custom.jar when it is
 # present and lets it register with InputExtension.

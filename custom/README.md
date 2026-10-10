@@ -10,7 +10,7 @@ Contents:
 | Path | What |
 |---|---|
 | `TB520FUCustomFeatures/` | "Custom Tweaks" app (Settings > System): game performance, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2) and the apps that see the Play Store as their installer (per app, only to the app itself) |
-| `custom.mk` | the packages above |
+| `custom.mk` | the packages above and the global Pixel build fingerprint (`TARGET_ENABLE_FP_OVERRIDE=false` keeps the stock device fingerprint) |
 | `input/` | `tb520fu-input-custom.jar`, the game performance enforcement and the boot-time removal of what the dropped Play Integrity stack (keybox, TEE simulator, PIF) left on devices, loaded into system_server by `tb520fu-input` |
 | `FeathersLiveWallpaper/` | Pixel "Feathers" Porcelain live wallpaper, the default wallpaper |
 | `overlay/FrameworksResTB520FUCustom/` | the default wallpaper and device identity defaults |
@@ -26,8 +26,11 @@ Contents:
 - `device/lenovo/lapis/BoardConfig.mk` includes `BoardConfigCustom.mk` with
   `-include` (the vendor sepolicy directory).
 
-The source changes they need (installer report for picked apps, the updater
-server) are commits in the `frameworks/base` and `packages/apps/Updater` forks.
+The source changes they need (installer report for picked apps, blocking Play
+Store installs/updates of `com.google.android.GoogleCamera`, the updater server)
+are commits in the `frameworks/base` and `packages/apps/Updater` forks. Google
+Camera can still be installed manually through adb or a file manager. The Play
+Store keeps the normal PixelOS certified-properties path.
 
 `tb520fu-input` (`hardware/lenovo/input`) calls into this code only through the
 `com.tb520fu.input.InputExtension` interface: `InputCore` loads
