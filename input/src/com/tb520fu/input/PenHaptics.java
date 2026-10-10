@@ -209,10 +209,10 @@ final class PenHaptics {
                     }
                     return;
                 }
-                if (!mArmed || distance > 30f) {
-                    setContinuous(mBrush, mLevel, 1);
-                    mArmed = true;
-                }
+                // Preview/SDK calls can replace the waveform while mArmed is
+                // still true. Reconcile it on each entry or stroke; setContinuous
+                // already suppresses duplicate writes for unchanged parameters.
+                mArmed = setContinuous(mBrush, mLevel, 1);
             } else if (action == MotionEvent.ACTION_HOVER_EXIT) {
                 if (match && distance > 65f) {
                     stop(WAVE_STOP);
@@ -257,6 +257,7 @@ final class PenHaptics {
     }
 
     synchronized boolean stop(int id) {
+        mArmed = false;
         mCurrentId = id;
         mCurrentLevel = 0;
         if (mGatt == null || !mGatt.isReady()) return false;
