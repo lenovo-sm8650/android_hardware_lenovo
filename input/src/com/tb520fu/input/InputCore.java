@@ -168,6 +168,10 @@ public final class InputCore {
         }).run();
     }
 
+    boolean handleUnhandledKey(KeyEvent event, int focusedUid) {
+        return mStarted && mPenKeys.handleUnhandled(event, focusedUid);
+    }
+
     /** Called on the input dispatcher's policy thread; must stay cheap. */
     boolean handleKey(KeyEvent event) {
         if (!mStarted) return false;
