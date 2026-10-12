@@ -28,6 +28,18 @@ public final class KeyHandler implements DeviceKeyHandler {
     }
 
     @Override
+    public boolean handleUnhandledKeyEvent(KeyEvent event, int focusedUid) {
+        InputCore core = InputCore.get();
+        if (core == null) return false;
+        try {
+            return core.handleUnhandledKey(event, focusedUid);
+        } catch (Throwable t) {
+            Log.e(TAG, "handleUnhandledKeyEvent " + event, t);
+            return false;
+        }
+    }
+
+    @Override
     public KeyEvent handleKeyEvent(KeyEvent event) {
         InputCore core = InputCore.get();
         if (core == null) return event;

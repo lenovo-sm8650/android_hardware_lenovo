@@ -13,6 +13,7 @@ import android.os.SystemClock;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -20,8 +21,9 @@ import android.view.KeyEvent;
 /**
  * Lenovo pen button / barrel gestures. The pen keylayouts
  * (Vendor_17ef_Product_*.kl) map the ZUI-only PEN_* usages onto F13..F23;
- * this turns them into the lenovo.intent.action.INPUT_DEVICE_CLICK_STATE_CHANGED
- * broadcast that PenService acts on (stock BluetoothPenInputPolicy).
+ * shortcuts are sent to PenService, while the barrel double tap is delivered
+ * to the focused app as ZUI keycode 601 before any unhandled-key fallback
+ * (stock BluetoothPenInputPolicy).
  */
 final class PenKeys {
     private static final String TAG = "TB520FUPenKeys";
@@ -56,6 +58,8 @@ final class PenKeys {
     private final Context mContext;
     private final Handler mHandler;
     private final PenController mPen;
+    // Pair DOWN/UP even if the setting changes while a gesture is in flight.
+    private final SparseBooleanArray mAppDoubleTaps = new SparseBooleanArray();
 
     PenKeys(Context context, Handler handler, PenController pen) {
         mContext = context;
@@ -80,11 +84,27 @@ final class PenKeys {
                 if (first) post(() -> sendClick(0, wake));
                 break;
             case KEY_TWO_CLICK: {
-                // Tab Pen Pro barrel double tap.
-                if (!first) break;
-                int mode = Settings.Global.getInt(mContext.getContentResolver(), SETTING_TAP_TWO, 1);
-                if (mode == 0) break;
-                post(() -> sendClick(mode == 2 ? 11 : 1, wake));
+                // Stock delivers 601 to the app first. Broadcasting click type 1
+                // directly only logs "double click" in PenService and loses the
+                // pen/eraser shortcut implemented by note apps.
+                int id = event.getDeviceId();
+                if (first) {
+                    int mode = Settings.Global.getInt(mContext.getContentResolver(),
+                            SETTING_TAP_TWO, 1);
+                    mAppDoubleTaps.put(id, mode == 1);
+                    if (mode == 2) post(() -> sendClick(11, wake));
+                }
+                boolean forward = mAppDoubleTaps.get(id);
+                if (!down) mAppDoubleTaps.delete(id);
+                if (forward) {
+                    KeyEvent appEvent = new KeyEvent(event.getDownTime(), event.getEventTime(),
+                            event.getAction(), KeyEvent.KEYCODE_PEN_TWO_CLICK,
+                            event.getRepeatCount(), event.getMetaState(), id,
+                            event.getScanCode(), event.getFlags(), event.getSource());
+                    appEvent.setDisplayId(event.getDisplayId());
+                    post(() -> mContext.getSystemService(InputManager.class).injectInputEvent(
+                            appEvent, InputManager.INJECT_INPUT_EVENT_MODE_ASYNC));
+                }
                 break;
             }
             case KEY_THREE_CLICK:
@@ -111,6 +131,35 @@ final class PenKeys {
                 // PEN_360_THREE_CLICK, PEN_D_LONG_PRESS, PEN_D_CLICK: other pen models only.
                 break;
         }
+        return true;
+    }
+
+    /** Stock fallback, reached only if the app did not consume the DOWN. */
+    boolean handleUnhandled(KeyEvent event, int focusedUid) {
+        if (event.getKeyCode() != KeyEvent.KEYCODE_PEN_TWO_CLICK
+                || !isLenovoDevice(event) || focusedUid < 0
+                || event.getAction() != KeyEvent.ACTION_UP || event.isCanceled()
+                || Settings.Global.getInt(mContext.getContentResolver(), SETTING_TAP_TWO, 1) != 1) {
+            return false;
+        }
+        post(() -> {
+            String[] packages = mContext.getPackageManager().getPackagesForUid(focusedUid);
+            if (packages != null) {
+                for (String pkg : packages) {
+                    // Stock config_stylus_pen_partner_packages (TB520FU ROW).
+                    if ("cn.wps.moffice_eng".equals(pkg) || "net.huanci.hsjpro".equals(pkg)) {
+                        Intent i = new Intent("lenovo.partner.intent.action.BT_PEN_KEY_EVENT");
+                        i.setPackage(pkg);
+                        i.addFlags(Intent.FLAG_RECEIVER_FOREGROUND
+                                | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
+                        i.putExtra("action", "01");
+                        mContext.sendBroadcastAsUser(i, UserHandle.getUserHandleForUid(focusedUid));
+                        return;
+                    }
+                }
+            }
+            sendClick(1, false);
+        });
         return true;
     }
 
