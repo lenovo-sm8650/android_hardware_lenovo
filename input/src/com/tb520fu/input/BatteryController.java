@@ -5,6 +5,7 @@
 
 package com.tb520fu.input;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.content.IntentFilter;
 import android.database.ContentObserver;
 import android.os.BatteryManager;
 import android.os.Handler;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -26,7 +28,14 @@ import android.util.Log;
  * Bypass charging (PRC game assistant "旁路充电"): the charger input stays on
  * and powers the tablet while battery charging is disabled, which keeps the
  * battery cool and unstressed during long plugged-in sessions. As a safeguard
- * charging resumes below BYPASS_RESUME_LEVEL until BYPASS_STOP_LEVEL.
+ * charging resumes below BYPASS_RESUME_LEVEL until BYPASS_STOP_LEVEL. Until the
+ * battery level is known, and between the two levels after boot, it charges.
+ *
+ * While one of them holds charging, PROP_CHARGE_HOLD is true: only then does the
+ * health HAL (device lapis health/main.cpp) report a plugged-in NOT_CHARGING
+ * battery as LONG_LIFE, the "charging on hold" state of SystemUI and Settings.
+ * "Charge to full" of that Settings tip sends ACTION_RESUME_CHARGING, which
+ * lifts them all until the charger is unplugged, like a Pixel.
  *
  * Settings.Global (written by TB520FUParts):
  *   tb520fu_battery_mode         0 normal, 1 stop at 80 %, 2 keep 40-60 %
@@ -39,6 +48,9 @@ final class BatteryController {
     static final String SETTING_MODE = "tb520fu_battery_mode";
     static final String SETTING_MAINTENANCE = "tb520fu_battery_maintenance";
     static final String SETTING_BYPASS = "tb520fu_bypass_charging";
+
+    static final String ACTION_RESUME_CHARGING = "com.tb520fu.action.RESUME_CHARGING";
+    private static final String PROP_CHARGE_HOLD = "sys.tb520fu.charge_hold";
 
     static final int MODE_NORMAL = 0;
     static final int MODE_LIMIT_80 = 1;
@@ -62,9 +74,13 @@ final class BatteryController {
     private int mRetries;
 
     private boolean mBypassEnabled;
-    private boolean mBypassSafeguard;
+    private boolean mBypassSafeguard = true;
+    private boolean mLimitsHold;
+    private boolean mResumed;
+    private boolean mPlugged;
     private int mLevel = -1;
     private Boolean mChargeDisabledApplied;
+    private Boolean mHoldReported;
 
     BatteryController(Context context, Handler handler) {
         mContext = context;
@@ -87,6 +103,9 @@ final class BatteryController {
         mContext.registerReceiver(Safe.receiver("battery level", (c, i) -> onBatteryChanged(i)),
                 new IntentFilter(Intent.ACTION_BATTERY_CHANGED), null, mHandler,
                 Context.RECEIVER_EXPORTED);
+        mContext.registerReceiver(Safe.receiver("resume charging", (c, i) -> onResumeCharging()),
+                new IntentFilter(ACTION_RESUME_CHARGING), Manifest.permission.DEVICE_POWER,
+                mHandler, Context.RECEIVER_EXPORTED);
         apply();
     }
 
@@ -101,8 +120,9 @@ final class BatteryController {
             }
             return;
         }
-        int max = mode == MODE_LIMIT_80 ? LEVEL_LIMIT_80 : LEVEL_OFF;
-        int protect = mode == MODE_PROTECT ? LEVEL_PROTECT : LEVEL_OFF;
+        mLimitsHold = mode != MODE_NORMAL && !mResumed;
+        int max = mLimitsHold && mode == MODE_LIMIT_80 ? LEVEL_LIMIT_80 : LEVEL_OFF;
+        int protect = mLimitsHold && mode == MODE_PROTECT ? LEVEL_PROTECT : LEVEL_OFF;
         boolean ok = LenovoHal.setMaxBatteryChargingLevel(max);
         ok &= LenovoHal.setBatteryProtectedLevel(protect);
         ok &= LenovoHal.setBatteryRechargingPercent(RECHARGE_NORMAL);
@@ -110,12 +130,30 @@ final class BatteryController {
             ok &= LenovoHal.setBatteryMaintenanceEnabled(maintenance);
         }
         Log.i(TAG, "mode " + mode + " (max " + max + ", protect " + protect + "), maintenance "
-                + maintenance + ", bypass " + mBypassEnabled + (ok ? "" : " - HAL reported failure"));
+                + maintenance + ", bypass " + mBypassEnabled
+                + (mResumed ? ", resumed until unplugged" : "")
+                + (ok ? "" : " - HAL reported failure"));
         mChargeDisabledApplied = null;
         applyBypass();
     }
 
+    private void onResumeCharging() {
+        if (!mPlugged || mResumed) return;
+        mResumed = true;
+        mRetries = 0;
+        apply();
+    }
+
     private void onBatteryChanged(Intent intent) {
+        boolean plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
+        if (plugged != mPlugged) {
+            mPlugged = plugged;
+            if (!plugged && mResumed) {
+                mResumed = false;
+                mRetries = 0;
+                apply();
+            }
+        }
         int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
         int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
         if (level < 0 || scale <= 0) return;
@@ -133,12 +171,19 @@ final class BatteryController {
                 mBypassSafeguard = false;
             }
         }
-        boolean disable = mBypassEnabled && !mBypassSafeguard;
+        boolean disable = mBypassEnabled && !mResumed && !mBypassSafeguard;
+        reportHold(mLimitsHold || disable);
         if (mChargeDisabledApplied != null && mChargeDisabledApplied == disable) return;
         if (LenovoHal.setBatteryChargeDisabled(disable)) {
             mChargeDisabledApplied = disable;
             Log.i(TAG, "battery charging " + (disable ? "paused (bypass)" : "enabled")
                     + ", level " + mLevel);
         }
+    }
+
+    private void reportHold(boolean hold) {
+        if (mHoldReported != null && mHoldReported == hold) return;
+        SystemProperties.set(PROP_CHARGE_HOLD, Boolean.toString(hold));
+        mHoldReported = hold;
     }
 }
