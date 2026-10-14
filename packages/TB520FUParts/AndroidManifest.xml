@@ -12,6 +12,10 @@
          system server (panel CABC). Only system apps may send it. -->
     <protected-broadcast android:name="com.dolby.vision_play" />
 
+    <!-- "Charge to full" of the Settings battery defender tip, to the system
+         server (tb520fu-input BatteryController). -->
+    <protected-broadcast android:name="com.tb520fu.action.RESUME_CHARGING" />
+
     <uses-permission android:name="android.permission.REBOOT" />
 
     <application
