@@ -50,7 +50,7 @@ final class BatteryController {
     static final String SETTING_BYPASS = "tb520fu_bypass_charging";
 
     static final String ACTION_RESUME_CHARGING = "com.tb520fu.action.RESUME_CHARGING";
-    private static final String PROP_CHARGE_HOLD = "sys.tb520fu.charge_hold";
+    private static final String PROP_CHARGE_HOLD = "vendor.tb520fu.charge_hold";
 
     static final int MODE_NORMAL = 0;
     static final int MODE_LIMIT_80 = 1;
