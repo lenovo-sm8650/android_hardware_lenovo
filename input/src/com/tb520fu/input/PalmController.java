@@ -47,6 +47,9 @@ final class PalmController {
     /** Settings written by the stock pen settings (PenService). */
     private static final String SETTING_DYNAMIC = "pen_dynamic_palm_rejection";
     private static final String SETTING_CUSTOM = "pen_palm_rejection_custom_packages";
+    /** Packages the user switched palm rejection off for (new in the A17 pen settings). */
+    private static final String SETTING_CUSTOM_DISABLE =
+            "pen_palm_rejection_custom_disable_packages";
     /** 1 while a writing app is in front; read by the Lenovo pen apps. */
     private static final String SETTING_WRITING = "lenovo_pen_writing";
 
@@ -108,9 +111,12 @@ final class PalmController {
 
     private boolean mDynamic;
     private String mCustom = "";
+    private String mCustomDisable = "";
     private String mForeground;
     /** Mode for the foreground app, before dynamic rejection. */
     private int mAppMode = MODE_NORMAL;
+    /** The foreground app is in the custom disable list: no dynamic rejection either. */
+    private boolean mRejectionDisabled;
     private int mMode = -1;
     private int mRotation = -1;
 
@@ -131,6 +137,8 @@ final class PalmController {
         });
         cr.registerContentObserver(Settings.System.getUriFor(SETTING_DYNAMIC), false, observer);
         cr.registerContentObserver(Settings.System.getUriFor(SETTING_CUSTOM), false, observer);
+        cr.registerContentObserver(Settings.System.getUriFor(SETTING_CUSTOM_DISABLE), false,
+                observer);
         readSettings();
 
         try {
@@ -175,7 +183,10 @@ final class PalmController {
 
     /** Called on our handler for every stylus ACTION_DOWN. */
     void onStylusDown() {
-        if (!mDynamic || mAppMode != MODE_NORMAL || mMode == MODE_WRITING) return;
+        if (!mDynamic || mRejectionDisabled || mAppMode != MODE_NORMAL
+                || mMode == MODE_WRITING) {
+            return;
+        }
         // Same 100 ms debounce as stock.
         mHandler.removeCallbacks(mDynamicOn);
         mHandler.postDelayed(mDynamicOn, 100);
@@ -186,6 +197,16 @@ final class PalmController {
         mDynamic = Settings.System.getInt(cr, SETTING_DYNAMIC, 0) == 1;
         String custom = Settings.System.getString(cr, SETTING_CUSTOM);
         mCustom = custom == null ? "" : custom;
+        String disable = Settings.System.getString(cr, SETTING_CUSTOM_DISABLE);
+        mCustomDisable = disable == null ? "" : disable;
+    }
+
+    /** Palm rejection is off for the package, whatever the built-in or custom lists say. */
+    private boolean isRejectionDisabled(String pkg) {
+        for (String entry : mCustomDisable.split("[,;:\\s]+")) {
+            if (entry.equals(pkg)) return true;
+        }
+        return false;
     }
 
     private boolean isWritingApp(String pkg) {
@@ -205,7 +226,10 @@ final class PalmController {
         if (pkg == null || pkg.equals(mForeground)) return;
         mForeground = pkg;
         mHandler.removeCallbacks(mDynamicOn);
-        if (isWritingApp(pkg)) {
+        mRejectionDisabled = isRejectionDisabled(pkg);
+        if (mRejectionDisabled) {
+            mAppMode = MODE_NORMAL;
+        } else if (isWritingApp(pkg)) {
             mAppMode = MODE_WRITING;
         } else if (GAME_APPS.contains(pkg)) {
             mAppMode = MODE_GAME;

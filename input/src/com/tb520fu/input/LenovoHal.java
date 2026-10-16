@@ -30,6 +30,7 @@ final class LenovoHal {
     private static final int BAT_IS_MAINTENANCE_ENABLED = 3;
     private static final int BAT_SET_CHARGE_DISABLED = 4;
     private static final int BAT_SET_MAINTENANCE_ENABLED = 5;
+    private static final int BAT_SET_USB_SUPPLY_DISABLED = 7;
     private static final int BAT_SET_PROTECTED_LEVEL = 12;
     private static final int BAT_SET_MAX_CHARGING_LEVEL = 14;
     private static final int BAT_SET_RECHARGING_PERCENT = 16;
@@ -171,6 +172,11 @@ final class LenovoHal {
     /** Stops charging the battery; the charger keeps powering the device (bypass). */
     static boolean setBatteryChargeDisabled(boolean disable) {
         return callBool(BATTERY, BAT_SET_CHARGE_DISABLED, p -> p.writeInt(disable ? 1 : 0));
+    }
+
+    /** Suspends the charger input; the battery powers the device (stock setUsbSupplyDisabled). */
+    static boolean setBatteryInputSuspended(boolean suspend) {
+        return callBool(BATTERY, BAT_SET_USB_SUPPLY_DISABLED, p -> p.writeInt(suspend ? 1 : 0));
     }
 
     static boolean setBatteryMaintenanceEnabled(boolean enable) {

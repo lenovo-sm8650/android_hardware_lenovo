@@ -84,7 +84,7 @@ final class PenScreenshot {
                 TOOLBOX_DISMISS_DELAY_MS);
     }
 
-    private void takeScreenshot() {
+    void takeScreenshot() {
         ScreenshotRequest request = new ScreenshotRequest.Builder(
                 WindowManager.TAKE_SCREENSHOT_SELECTED_REGION,
                 WindowManager.ScreenshotSource.SCREENSHOT_OTHER).build();

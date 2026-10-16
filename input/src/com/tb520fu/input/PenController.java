@@ -79,10 +79,16 @@ final class PenController implements PenGatt.Listener {
     private static final String ACTION_NEED_OPENBT = "lenovo.intent.action.PEN_NEED_OPENBT";
     private static final String ACTION_LINK_TOUCHED = "lenovo.intent.action.PEN_LINK_TOUCHED";
     private static final String ACTION_LINK_RECONNECT = "lenovo.intent.action.PEN_LINK_RECONNECT";
+    private static final String ACTION_LOST_INDICATION = "lenovo.intent.action.PEN_LOST_INDICATION";
     private static final int BROADCAST_FLAGS =
             Intent.FLAG_RECEIVER_FOREGROUND | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND;
 
     private static final String SETTING_PEN_STATUS = "lenovo_pen_status";
+    /** Anti-lost alert switch of the pen settings; stock treats an absent value as on. */
+    private static final String SETTING_LOST_ALERT = "pen_set_lost_alert_on";
+    /** Detach-from-tablet action (Settings.Secure); the action itself runs in PenService. */
+    private static final String SETTING_APP_SHOW = "pen_set_app_show";
+    private static final long LOST_CHECK_MS = 5000;
     private static final String SETTING_TAP_TWO = "pen_touch_film_tap_two";
     private static final String SETTING_COPY_PASTE = "pen_touch_film_copy_paste";
     private static final String SETTING_REMOTE_CONTROL = "pen_set_remote_control_on";
@@ -147,6 +153,12 @@ final class PenController implements PenGatt.Listener {
     private boolean mParkerSleeping;
     private boolean mScreenOn = true;
     private boolean mLost;
+    // stock mAttachedPenLostAgain: one lost alert per attach cycle
+    private boolean mLostAlertAgain = true;
+    private boolean mLocalDisconnect;
+    private String mLostWaitMac = "";
+    private PowerManager.WakeLock mLostWakeLock;
+    private final Runnable mLostCheck = Safe.run("pen lost check", this::onLostTimeout);
     private String mLastUevent;
     private long mLastConnectAttempt;
     private boolean mProxyRequested;
@@ -301,6 +313,15 @@ final class PenController implements PenGatt.Listener {
         if (mAttached.attached != attached) {
             mAttached.attached = attached;
             sendAttachChanged();
+            if (attached != 0) {
+                mLostAlertAgain = true;
+            } else if (Settings.Secure.getStringForUser(mContext.getContentResolver(),
+                    SETTING_APP_SHOW, UserHandle.USER_CURRENT) != null
+                    && !mPowerManager.isInteractive()) {
+                // stock onUeventReceived(): wake the screen for the take-off action
+                mPowerManager.wakeUp(SystemClock.uptimeMillis(), PowerManager.WAKE_REASON_UNKNOWN,
+                        "PENNOTATTACHED");
+            }
         }
         boolean same = mac.equals(mConnected.mac);
         if (same) mConnected.attached = attached;
@@ -493,7 +514,9 @@ final class PenController implements PenGatt.Listener {
                     mWaitForBtOn = false;
                     connectAttachedPen();
                 } else if (state == BluetoothAdapter.STATE_OFF) {
-                    onPenDisconnected(mConnected.mac);
+                    BluetoothDevice penDev = mAdapter != null && !mConnected.mac.isEmpty()
+                            ? mAdapter.getRemoteDevice(mConnected.mac) : null;
+                    if (penDev != null) onPenDisconnected(penDev);
                 }
                 break;
             }
@@ -561,8 +584,10 @@ final class PenController implements PenGatt.Listener {
         Log.d(TAG, "pen HID " + mac + " (" + name + ") state " + state);
         if (state == BluetoothProfile.STATE_CONNECTED) {
             onPenConnected(dev, name);
+        } else if (state == BluetoothProfile.STATE_DISCONNECTING) {
+            mLocalDisconnect = true;
         } else if (state == BluetoothProfile.STATE_DISCONNECTED) {
-            onPenDisconnected(mac);
+            onPenDisconnected(dev);
         }
     }
 
@@ -573,6 +598,7 @@ final class PenController implements PenGatt.Listener {
             return;
         }
         mLost = false;
+        if (mac.equals(mLostWaitMac)) cancelLostCheck();
         mConnected.mac = mac;
         mConnected.name = name != null ? name : "";
         mConnected.type = typeByName(name);
@@ -597,8 +623,75 @@ final class PenController implements PenGatt.Listener {
         mGatt.connect();
     }
 
-    private void onPenDisconnected(String mac) {
+    /**
+     * Stock handleLostIndicate(): a pen that dropped off by itself (out of range, powered
+     * off) while the anti-lost alert is on gets PEN_LOST_INDICATION unless it comes back
+     * within 5 s. Not for a disconnect by the user (HID disconnect or pen button), a removed
+     * bond, Bluetooth turning off, a pen still attached to the tablet, or a pen with an empty
+     * battery; once per attach cycle.
+     */
+    private void handleLostIndicate(BluetoothDevice dev) {
+        String mac = dev.getAddress();
+        boolean userLost = mLost;
+        mLost = false;
+        boolean alertOn = Settings.Global.getInt(mContext.getContentResolver(),
+                SETTING_LOST_ALERT, 1) == 1;
+        boolean btOff = mAdapter == null || !mAdapter.isEnabled()
+                || mAdapter.getState() == BluetoothAdapter.STATE_TURNING_OFF;
+        boolean removedBond = dev.getBondState() == BluetoothDevice.BOND_NONE;
+        boolean upgrading = Settings.Global.getInt(mContext.getContentResolver(),
+                "pen_firmware_dfu", 0) != 0;
+        boolean batteryEmpty = mConnected.level == 0;
+        boolean attachedPen = mac.equals(mPogoMac) && mConnected.type != TYPE_PICASSO;
+        boolean lost = alertOn && mLostAlertAgain && !mLocalDisconnect && !userLost && !btOff
+                && !removedBond && !upgrading && !batteryEmpty && !attachedPen;
+        Log.d(TAG, "pen lost? " + lost + " (alert " + alertOn + ", again " + mLostAlertAgain
+                + ", local " + mLocalDisconnect + ", penButton " + userLost + ", btOff " + btOff
+                + ", unbonded " + removedBond + ", dfu " + upgrading + ", empty " + batteryEmpty
+                + ", attached " + attachedPen + ")");
+        if (!lost) return;
+        if (mLostWakeLock == null) {
+            mLostWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                    "tb520fu:penlost");
+        }
+        mLostWakeLock.acquire(LOST_CHECK_MS * 2);
+        mLostWaitMac = mac;
+        mLostName = mConnected.name;
+        mLostType = mConnected.type;
+        mLostSn = mConnected.sn;
+        mHandler.removeCallbacks(mLostCheck);
+        mHandler.postDelayed(mLostCheck, LOST_CHECK_MS);
+    }
+
+    private String mLostName = "";
+    private String mLostSn = "";
+    private int mLostType;
+
+    private void onLostTimeout() {
+        if (mLostWaitMac.isEmpty()) return;
+        mLostWaitMac = "";
+        mLostAlertAgain = false;
+        Intent i = new Intent(ACTION_LOST_INDICATION);
+        i.addFlags(BROADCAST_FLAGS);
+        i.putExtra("sn", mLostSn);
+        i.putExtra("type", mLostType);
+        i.putExtra("name", mLostName);
+        Log.d(TAG, "pen lost: " + mLostName);
+        sendBroadcast(i);
+        if (mLostWakeLock != null && mLostWakeLock.isHeld()) mLostWakeLock.release();
+    }
+
+    private void cancelLostCheck() {
+        mLostWaitMac = "";
+        mHandler.removeCallbacks(mLostCheck);
+        if (mLostWakeLock != null && mLostWakeLock.isHeld()) mLostWakeLock.release();
+    }
+
+    private void onPenDisconnected(BluetoothDevice dev) {
+        String mac = dev.getAddress();
         if (TextUtils.isEmpty(mac) || !mac.equals(mConnected.mac)) return;
+        handleLostIndicate(dev);
+        mLocalDisconnect = false;
         mConnected.connectState = BluetoothProfile.STATE_DISCONNECTED;
         if (mGatt != null) {
             mGatt.close();

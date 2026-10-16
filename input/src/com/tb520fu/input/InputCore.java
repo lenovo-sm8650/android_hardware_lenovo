@@ -51,6 +51,7 @@ public final class InputCore {
     final PenKeys mPenKeys;
     final KeyboardController mKeyboard;
     final BatteryController mBattery;
+    final LandscapeController mLandscape;
     final DoubleTapWake mDoubleTapWake;
     final FolioCover mFolio;
     final StandbyController mStandby;
@@ -62,6 +63,8 @@ public final class InputCore {
     final WifiCountryFromLocale mWifiCountry;
     final PenScreenshot mPenScreenshot;
     final PenMagnifier mPenMagnifier;
+    final PenGestures mPenGestures;
+    final PenInkMode mPenInk;
     private InputExtension mExtension;
     private StylusMonitor mStylusMonitor;
     private boolean mStarted;
@@ -87,6 +90,7 @@ public final class InputCore {
         mPenKeys = new PenKeys(context, mHandler, mPen);
         mKeyboard = new KeyboardController(context, mHandler);
         mBattery = new BatteryController(context, mHandler);
+        mLandscape = new LandscapeController(context, mHandler);
         mDoubleTapWake = new DoubleTapWake(context, mHandler);
         mFolio = new FolioCover(context, mHandler);
         mStandby = new StandbyController(context, mHandler);
@@ -98,6 +102,8 @@ public final class InputCore {
         mWifiCountry = new WifiCountryFromLocale(context, mHandler);
         mPenScreenshot = new PenScreenshot(context, mHandler);
         mPenMagnifier = new PenMagnifier(context, mHandler);
+        mPenGestures = new PenGestures(context, mHandler, mPenScreenshot);
+        mPenInk = new PenInkMode(context, mHandler);
         mExtension = loadExtension(context, mHandler);
 
         // The binder can be published right away; it only answers "not ready"
@@ -145,6 +151,7 @@ public final class InputCore {
         mStarted = true;
         Log.i(TAG, "starting");
         Safe.run("battery", mBattery::start).run();
+        Safe.run("landscape view", mLandscape::start).run();
         Safe.run("keyboard", mKeyboard::start).run();
         Safe.run("double tap wake", mDoubleTapWake::start).run();
         Safe.run("folio cover", mFolio::start).run();
@@ -159,11 +166,12 @@ public final class InputCore {
         Safe.run("pen", mPen::start).run();
         Safe.run("stylus screenshot", mPenScreenshot::start).run();
         Safe.run("stylus magnifier", mPenMagnifier::start).run();
+        Safe.run("pen ink mode", mPenInk::start).run();
         if (mExtension != null) {
             Safe.run("custom", mExtension::start).run();
         }
         Safe.run("stylus monitor", () -> {
-            mStylusMonitor = new StylusMonitor(mContext, mHandler, mHaptics, mPalm);
+            mStylusMonitor = new StylusMonitor(mContext, mHandler, mHaptics, mPalm, mPenGestures, mPenInk);
             mStylusMonitor.start();
         }).run();
     }
