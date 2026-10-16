@@ -166,7 +166,7 @@ final class KeyboardDesktopMode {
         PendingIntent exit = PendingIntent.getBroadcast(mContext, 0,
                 new Intent(ACTION_EXIT).setPackage(mContext.getPackageName()),
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        Intent settings = new Intent().setClassName(PARTS, PARTS + ".PartsActivity")
+        Intent settings = new Intent().setClassName(PARTS, PARTS + ".PenKeyboardSettings")
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent open = PendingIntent.getActivityAsUser(mContext, 0, settings,
                 PendingIntent.FLAG_IMMUTABLE, null, UserHandle.CURRENT);

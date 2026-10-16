@@ -28,12 +28,13 @@ class PartsActivity :
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
             val name = intent.getStringExtra(EXTRA_FRAGMENT)?.takeIf { it in SUB_SCREENS }
-            val fragment = if (name != null) {
-                supportFragmentManager.fragmentFactory.instantiate(classLoader, name).apply {
-                    arguments = intent.getBundleExtra(EXTRA_ARGS)
-                }
-            } else {
-                PartsFragment()
+            val fragment = when {
+                name != null ->
+                    supportFragmentManager.fragmentFactory.instantiate(classLoader, name).apply {
+                        arguments = intent.getBundleExtra(EXTRA_ARGS)
+                    }
+                intent.component?.className == PEN_KEYBOARD_ENTRY -> PenKeyboardFragment()
+                else -> PartsFragment()
             }
             supportFragmentManager
                 .beginTransaction()
@@ -61,11 +62,16 @@ class PartsActivity :
         private const val EXTRA_FRAGMENT = "com.tb520fu.parts.FRAGMENT"
         private const val EXTRA_ARGS = "com.tb520fu.parts.ARGS"
 
+        /** The pen & keyboard homepage entry, an alias of this activity. */
+        private const val PEN_KEYBOARD_ENTRY = "com.tb520fu.parts.PenKeyboardSettings"
+
         /**
          * The screens [open] may show. The activity is exported (Settings
          * injection), so only these can be requested through the extra.
          */
         private val SUB_SCREENS = setOf(
+            BypassChargingFragment::class.java.name,
+            LandscapeViewFragment::class.java.name,
             KeyboardFragment::class.java.name,
             KeyboardShortcutsFragment::class.java.name,
             KeyboardAppKeyFragment::class.java.name,

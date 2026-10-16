@@ -6,7 +6,6 @@
 package com.tb520fu.parts
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.hardware.display.ColorDisplayManager
 import android.os.Bundle
 import android.os.PowerManager
@@ -14,7 +13,6 @@ import android.provider.Settings
 import android.text.format.Formatter
 import androidx.preference.ListPreference
 import androidx.preference.Preference
-import androidx.preference.PreferenceCategory
 import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreferenceCompat
 import com.android.settingslib.widget.SelectorWithWidgetPreference
@@ -25,7 +23,8 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
     private lateinit var vramPref: ListPreference
     private lateinit var statusPref: Preference
     private lateinit var chargingPrefs: List<SelectorWithWidgetPreference>
-    private lateinit var bypassPref: SwitchPreferenceCompat
+    private lateinit var bypassPref: Preference
+    private lateinit var landscapePref: Preference
     private lateinit var standbyPref: SwitchPreferenceCompat
     private lateinit var maintenancePref: SwitchPreferenceCompat
     private lateinit var batteryInfoPref: Preference
@@ -43,7 +42,8 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
             }
         }
 
-        bypassPref = switch(KEY_BYPASS, LenovoSettings.BYPASS_CHARGING, 0)
+        bypassPref = findPreference(KEY_BYPASS)!!
+        landscapePref = findPreference(KEY_LANDSCAPE)!!
         standbyPref = switch(KEY_STANDBY, LenovoSettings.STANDBY_SAVER, 1)
         maintenancePref = switch(KEY_MAINTENANCE, LenovoSettings.BATTERY_MAINTENANCE, 1)
         batteryInfoPref = findPreference(KEY_BATTERY_INFO)!!
@@ -86,19 +86,6 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
             }
         }
 
-        val penPref: Preference = findPreference(KEY_PEN_SETTINGS)!!
-        // No own task, so the stock pen page opens in the Settings two-pane
-        // right pane like the other sub pages. An overlay
-        // (PenServiceResTB520FU) shrinks its pen picture and battery row to
-        // fit the narrow pane.
-        val penIntent = Intent(LenovoSettings.ACTION_PEN_SETTINGS)
-            .setClassName(LenovoSettings.PEN_PACKAGE, LenovoSettings.PEN_SETTINGS_ACTIVITY)
-        if (ctx.packageManager.resolveActivity(penIntent, 0) != null) {
-            penPref.intent = penIntent
-        } else {
-            findPreference<PreferenceCategory>(KEY_PEN_CATEGORY)?.isVisible = false
-        }
-
         vramPref = findPreference(KEY_VRAM)!!
         vramPref.entries = MemoryExtension.SIZES_GB.map { sizeLabel(it) }.toTypedArray()
         vramPref.entryValues = MemoryExtension.SIZES_GB.map { it.toString() }.toTypedArray()
@@ -124,6 +111,14 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
         activity?.setTitle(R.string.app_name)
         val ctx = requireContext()
         updateChargingMode()
+        updateBypassSummary()
+        landscapePref.setSummary(
+            if (LenovoSettings.getInt(ctx, LenovoSettings.LANDSCAPE_VIEW, 1) != 0) {
+                R.string.state_on
+            } else {
+                R.string.state_off
+            }
+        )
         updateBatteryInfo()
         updateVramSummary()
         updateStatus()
@@ -147,6 +142,16 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
         val mode = LenovoSettings.getInt(requireContext(), LenovoSettings.BATTERY_MODE, 0)
             .coerceIn(0, chargingPrefs.size - 1)
         chargingPrefs.forEachIndexed { i, pref -> pref.isChecked = i == mode }
+    }
+
+    private fun updateBypassSummary() {
+        val ctx = requireContext()
+        bypassPref.summary = if (LenovoSettings.getInt(ctx, LenovoSettings.BYPASS_CHARGING, 0) != 0) {
+            val (min, max) = LenovoSettings.bypassRange(ctx)
+            getString(R.string.state_on) + " · " + getString(R.string.range_value, min, max)
+        } else {
+            getString(R.string.state_off)
+        }
     }
 
     private fun updateBatteryInfo() {
@@ -199,14 +204,13 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
     private companion object {
         val CHARGING_KEYS = listOf("charging_normal", "charging_limit", "charging_protect")
         const val KEY_BYPASS = "bypass_charging"
+        const val KEY_LANDSCAPE = "landscape_view"
         const val KEY_STANDBY = "standby_saver"
         const val KEY_MAINTENANCE = "battery_maintenance"
         const val KEY_BATTERY_INFO = "battery_info"
         const val KEY_FOLIO = "folio_case_mode"
         const val KEY_WHITE_BALANCE = "white_balance"
         const val KEY_WHITE_BALANCE_STRENGTH = "white_balance_strength"
-        const val KEY_PEN_CATEGORY = "pen"
-        const val KEY_PEN_SETTINGS = "pen_settings"
         const val KEY_VRAM = "vram_gb"
         const val KEY_STATUS = "memory_status"
     }

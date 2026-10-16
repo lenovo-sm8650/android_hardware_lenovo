@@ -35,11 +35,10 @@
         android:key="battery"
         android:title="@string/battery_category">
 
-        <SwitchPreferenceCompat
+        <Preference
             android:key="bypass_charging"
             android:title="@string/bypass_title"
-            android:summary="@string/bypass_summary"
-            android:persistent="false" />
+            android:fragment="com.tb520fu.parts.BypassChargingFragment" />
 
         <SwitchPreferenceCompat
             android:key="standby_saver"
@@ -64,6 +63,11 @@
         android:key="display"
         android:title="@string/display_category">
 
+        <Preference
+            android:key="landscape_view"
+            android:title="@string/landscape_title"
+            android:fragment="com.tb520fu.parts.LandscapeViewFragment" />
+
         <SwitchPreferenceCompat
             android:key="white_balance"
             android:title="@string/white_balance_title"
@@ -82,28 +86,6 @@
             app:showSeekBarValue="true"
             app:updatesContinuously="false"
             android:persistent="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="pen"
-        android:title="@string/pen_category">
-
-        <Preference
-            android:key="pen_settings"
-            android:title="@string/pen_settings_title"
-            android:summary="@string/pen_settings_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="keyboard"
-        android:title="@string/keyboard_category">
-
-        <Preference
-            android:key="physical_keyboard"
-            android:title="@string/lkb_physical_keyboard_title"
-            android:fragment="com.tb520fu.parts.KeyboardFragment" />
 
     </PreferenceCategory>
 

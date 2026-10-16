@@ -2,9 +2,9 @@
 // SPDX-FileCopyrightText: 2026 The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
-// Device settings for the Lenovo Yoga Tab Plus (TB520FU): memory extension
-// (zram writeback) and, later, battery protection. Injected into
-// Settings > System.
+// Device settings for the Lenovo Yoga Tab Plus (TB520FU): pen & keyboard and
+// advanced features (landscape view, charging, display, memory extension).
+// Injected into the Settings homepage.
 //
 
 android_app {

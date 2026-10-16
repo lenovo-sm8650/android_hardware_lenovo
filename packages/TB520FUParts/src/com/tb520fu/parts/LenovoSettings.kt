@@ -23,6 +23,24 @@ object LenovoSettings {
     const val BYPASS_CHARGING = "tb520fu_bypass_charging"
     const val STANDBY_SAVER = "tb520fu_standby_saver"
 
+    /** Bypass charging range in percent: charges again at min, holds from max. */
+    const val BYPASS_MIN = "tb520fu_bypass_min"
+    const val BYPASS_MAX = "tb520fu_bypass_max"
+    const val BYPASS_LIMIT_LOW = 20
+    const val BYPASS_LIMIT_HIGH = 80
+    const val BYPASS_STEP = 5
+    const val DEFAULT_BYPASS_MIN = 40
+    const val DEFAULT_BYPASS_MAX = 60
+
+    /** 1 always, 2 this time only (bypass charging turns off when unplugged). */
+    const val BYPASS_MODE = "tb520fu_bypass_mode"
+    const val BYPASS_MODE_ALWAYS = 1
+    const val BYPASS_MODE_ONCE = 2
+
+    /** Landscape view (default on) and the packages that keep their orientation. */
+    const val LANDSCAPE_VIEW = "tb520fu_landscape_view"
+    const val LANDSCAPE_EXCLUDED = "tb520fu_landscape_excluded"
+
     /** Settings.Secure, AOSP adaptive white balance (DisplayWhiteBalanceController). */
     const val DISPLAY_WHITE_BALANCE = "display_white_balance_enabled"
 
@@ -50,6 +68,22 @@ object LenovoSettings {
 
     fun putString(ctx: Context, key: String, value: String) =
         Settings.Global.putString(ctx.contentResolver, key, value)
+
+    /** The bypass charging range (min, max), normalized like BatteryController. */
+    fun bypassRange(ctx: Context): Pair<Int, Int> {
+        fun snap(value: Int) = Math.round(value / BYPASS_STEP.toFloat()) * BYPASS_STEP
+        val min = snap(getInt(ctx, BYPASS_MIN, DEFAULT_BYPASS_MIN))
+            .coerceIn(BYPASS_LIMIT_LOW, BYPASS_LIMIT_HIGH - BYPASS_STEP)
+        val max = snap(getInt(ctx, BYPASS_MAX, DEFAULT_BYPASS_MAX))
+            .coerceIn(min + BYPASS_STEP, BYPASS_LIMIT_HIGH)
+        return min to max
+    }
+
+    fun landscapeExcluded(ctx: Context): MutableSet<String> =
+        getString(ctx, LANDSCAPE_EXCLUDED, "").split(',').filter { it.isNotBlank() }.toMutableSet()
+
+    fun setLandscapeExcluded(ctx: Context, packages: Set<String>) =
+        putString(ctx, LANDSCAPE_EXCLUDED, packages.sorted().joinToString(","))
 
     data class BatteryInfo(val cycles: Int?, val healthPercent: Int?)
 

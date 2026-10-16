@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/landscape_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="landscape_intro"
+        android:title="@string/landscape_intro" />
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="landscape_main"
+        android:title="@string/landscape_main_title"
+        android:persistent="false" />
+
+    <!-- Filled by LandscapeViewFragment -->
+    <PreferenceCategory
+        android:key="landscape_apps"
+        android:title="@string/landscape_apps_category"
+        android:visible="false" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="landscape_apps_footer"
+        android:title="@string/landscape_apps_footer"
+        android:selectable="false"
+        android:visible="false" />
+</PreferenceScreen>

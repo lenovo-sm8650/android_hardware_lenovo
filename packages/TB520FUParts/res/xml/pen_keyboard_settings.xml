@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/pen_keyboard_title">
+
+    <PreferenceCategory android:key="devices">
+
+        <Preference
+            android:key="pen_settings"
+            android:title="@string/pen_settings_title"
+            android:summary="@string/pen_settings_summary" />
+
+        <Preference
+            android:key="physical_keyboard"
+            android:title="@string/lkb_physical_keyboard_title"
+            android:fragment="com.tb520fu.parts.KeyboardFragment" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
