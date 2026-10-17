@@ -31,7 +31,9 @@
    "lenovo_percent_value": "%1$d%%",
    "lenovo_range_value": "%1$d%% – %2$d%%",
    "lenovo_wb_strength_title": "Strength",
-   "lenovo_wb_strength_summary": "How strongly the screen follows the ambient light."
+   "lenovo_wb_strength_summary": "How strongly the screen follows the ambient light.",
+   "lenovo_highlight_mode_title": "Brightness enhancement",
+   "lenovo_highlight_mode_summary": "It only works in strong sunlight for a short period of time and may increase battery consumption or cause overheat."
   },
   "af": {
    "lenovo_charging_category": "Laai",
@@ -123,7 +125,9 @@
    "lenovo_state_on": "مفعّلة",
    "lenovo_state_off": "غير مفعّل",
    "lenovo_wb_strength_title": "الكثافة",
-   "lenovo_wb_strength_summary": "مدى تتبّع الشاشة للإضاءة المحيطة."
+   "lenovo_wb_strength_summary": "مدى تتبّع الشاشة للإضاءة المحيطة.",
+   "lenovo_highlight_mode_title": "تحسين السطوع",
+   "lenovo_highlight_mode_summary": "إنها تعمل فقط في ضوء الشمس القوي لفترة قصيرة وقد تزيد من استهلاك البطارية أو تتسبب في ارتفاع درجة الحرارة."
   },
   "as": {
    "lenovo_charging_category": "চাৰ্জ কৰি থকা হৈছে",
@@ -215,7 +219,9 @@
    "lenovo_state_on": "Uključeno",
    "lenovo_state_off": "Isključeno",
    "lenovo_wb_strength_title": "Intenzitet",
-   "lenovo_wb_strength_summary": "Koliko ekran prati svetlost okoline."
+   "lenovo_wb_strength_summary": "Koliko ekran prati svetlost okoline.",
+   "lenovo_highlight_mode_title": "Poboljšanje osvetljenosti",
+   "lenovo_highlight_mode_summary": "Radi samo na jakoj sunčevoj svetlosti, u kratkom vremenskom periodu, i može povećati potrošnju baterije ili izazvati pregrevanje."
   },
   "be": {
    "lenovo_charging_category": "Зарадка",
@@ -277,7 +283,9 @@
    "lenovo_state_on": "Вкл.",
    "lenovo_state_off": "Изкл.",
    "lenovo_wb_strength_title": "Интензивност",
-   "lenovo_wb_strength_summary": "Доколко екранът следва околната светлина."
+   "lenovo_wb_strength_summary": "Доколко екранът следва околната светлина.",
+   "lenovo_highlight_mode_title": "Подобряване на яркостта",
+   "lenovo_highlight_mode_summary": "Работи само при силна слънчева светлина за кратък период от време и може да увеличи консумацията на батерията или да причини прегряване."
   },
   "bn": {
    "lenovo_charging_category": "চার্জ হচ্ছে",
@@ -400,7 +408,9 @@
    "lenovo_state_on": "Zapnuto",
    "lenovo_state_off": "Vypnuto",
    "lenovo_wb_strength_title": "Intenzita",
-   "lenovo_wb_strength_summary": "Jak silně se obrazovka řídí okolním světlem."
+   "lenovo_wb_strength_summary": "Jak silně se obrazovka řídí okolním světlem.",
+   "lenovo_highlight_mode_title": "Vylepšení jasu",
+   "lenovo_highlight_mode_summary": "Na silném slunečním světle funguje pouze krátkou dobu a může se zvýšit spotřeba baterie nebo dojít k přehřívání."
   },
   "da": {
    "lenovo_charging_category": "Oplader",
@@ -430,7 +440,9 @@
    "lenovo_state_on": "Til",
    "lenovo_state_off": "Fra",
    "lenovo_wb_strength_title": "Intensitet",
-   "lenovo_wb_strength_summary": "Hvor kraftigt skærmen følger det omgivende lys."
+   "lenovo_wb_strength_summary": "Hvor kraftigt skærmen følger det omgivende lys.",
+   "lenovo_highlight_mode_title": "Forbedret lysstyrke",
+   "lenovo_highlight_mode_summary": "Det fungerer kun i stærkt sollys i en kort periode og kan øge batteriforbruget eller forårsage overophedning."
   },
   "de": {
    "lenovo_charging_category": "Laden",
@@ -460,7 +472,9 @@
    "lenovo_state_on": "An",
    "lenovo_state_off": "Aus",
    "lenovo_wb_strength_title": "Stärke",
-   "lenovo_wb_strength_summary": "Wie stark sich der Bildschirm an das Umgebungslicht anpasst."
+   "lenovo_wb_strength_summary": "Wie stark sich der Bildschirm an das Umgebungslicht anpasst.",
+   "lenovo_highlight_mode_title": "Helligkeitsoptimierung",
+   "lenovo_highlight_mode_summary": "Es funktioniert nur für kurze Zeit bei starker Sonneneinstrahlung und kann den Akkuverbrauch erhöhen oder zu Überhitzung führen."
   },
   "el": {
    "lenovo_charging_category": "Φόρτιση",
@@ -491,7 +505,9 @@
    "lenovo_state_on": "Ενεργό",
    "lenovo_state_off": "Ανενεργό",
    "lenovo_wb_strength_title": "Ένταση",
-   "lenovo_wb_strength_summary": "Πόσο έντονα ακολουθεί η οθόνη το φως του περιβάλλοντος."
+   "lenovo_wb_strength_summary": "Πόσο έντονα ακολουθεί η οθόνη το φως του περιβάλλοντος.",
+   "lenovo_highlight_mode_title": "Ενίσχυση φωτεινότητας",
+   "lenovo_highlight_mode_summary": "Λειτουργεί μόνο σε δυνατό ηλιακό φως για μικρό χρονικό διάστημα και μπορεί να αυξήσει την κατανάλωση της μπαταρίας ή να προκαλέσει υπερθέρμανση."
   },
   "es": {
    "lenovo_charging_category": "Carga",
@@ -541,7 +557,9 @@
    "lenovo_bypass_once_title": "Aplicar esta vez",
    "lenovo_bypass_once_summary": "Apagar automáticamente una vez que se desconecte la corriente",
    "lenovo_bypass_range_category": "Ajuste del nivel de batería",
-   "lenovo_bypass_footer": "Si el nivel actual de batería está por debajo del límite inferior, el dispositivo se cargará hasta el límite superior al activarse inicialmente para garantizar la duración de la batería."
+   "lenovo_bypass_footer": "Si el nivel actual de batería está por debajo del límite inferior, el dispositivo se cargará hasta el límite superior al activarse inicialmente para garantizar la duración de la batería.",
+   "lenovo_highlight_mode_title": "Mejora del brillo",
+   "lenovo_highlight_mode_summary": "Solo funciona bajo luz solar intensa durante un breve período y puede aumentar el consumo de la batería o provocar sobrecalentamiento."
   },
   "et": {
    "lenovo_charging_category": "Laadimine",
@@ -572,7 +590,9 @@
    "lenovo_state_on": "Sees",
    "lenovo_state_off": "Väljas",
    "lenovo_wb_strength_title": "Intensiivsus",
-   "lenovo_wb_strength_summary": "Kui tugevalt ekraan järgib ümbritsevat valgust."
+   "lenovo_wb_strength_summary": "Kui tugevalt ekraan järgib ümbritsevat valgust.",
+   "lenovo_highlight_mode_title": "Ereduse täiustamine",
+   "lenovo_highlight_mode_summary": "See töötab tugeva päikesevalguse käes ainult lühikese aja jooksul ja võib suurendada aku tarbimist või põhjustada ülekuumenemise."
   },
   "eu": {
    "lenovo_charging_category": "Kargatzen",
@@ -665,7 +685,9 @@
    "lenovo_state_on": "Päällä",
    "lenovo_state_off": "Ei päällä",
    "lenovo_wb_strength_title": "Voimakkuus",
-   "lenovo_wb_strength_summary": "Kuinka voimakkaasti näyttö seuraa ympäristön valoa."
+   "lenovo_wb_strength_summary": "Kuinka voimakkaasti näyttö seuraa ympäristön valoa.",
+   "lenovo_highlight_mode_title": "Kirkkauden parannus",
+   "lenovo_highlight_mode_summary": "Se toimii vain voimakkaassa auringonvalossa hetkisen ja saattaa lisätä virrankulutusta tai aiheuttaa ylikuumenemisen."
   },
   "fr": {
    "lenovo_charging_category": "Charge",
@@ -696,7 +718,9 @@
    "lenovo_state_on": "Activé",
    "lenovo_state_off": "Désactivé",
    "lenovo_wb_strength_title": "Intensité",
-   "lenovo_wb_strength_summary": "Degré d'adaptation de l'écran à la lumière ambiante."
+   "lenovo_wb_strength_summary": "Degré d'adaptation de l'écran à la lumière ambiante.",
+   "lenovo_highlight_mode_title": "Amélioration de la luminosité",
+   "lenovo_highlight_mode_summary": "Cela ne fonctionne qu’en plein soleil pendant une courte période et peut augmenter la consommation de la batterie ou provoquer une surchauffe."
   },
   "fr-rCA": {
    "lenovo_charging_category": "Charge en cours…",
@@ -808,7 +832,9 @@
    "lenovo_state_on": "चालू है",
    "lenovo_state_off": "बंद",
    "lenovo_wb_strength_title": "स्क्रीन की चमक",
-   "lenovo_wb_strength_summary": "स्क्रीन आसपास की रोशनी का कितना अनुसरण करती है."
+   "lenovo_wb_strength_summary": "स्क्रीन आसपास की रोशनी का कितना अनुसरण करती है.",
+   "lenovo_highlight_mode_title": "चमक वृद्धि",
+   "lenovo_highlight_mode_summary": "यह केवल तेज धूप में कम समय के लिए काम करता है और इससे ज़्यादा बैटरी खर्च हो सकती है या होवरहीट हो सकती है."
   },
   "hr": {
    "lenovo_charging_category": "Punjenje",
@@ -839,7 +865,9 @@
    "lenovo_state_on": "Uključeno",
    "lenovo_state_off": "Isključeno",
    "lenovo_wb_strength_title": "Intenzitet",
-   "lenovo_wb_strength_summary": "Koliko zaslon slijedi svjetlost okoline."
+   "lenovo_wb_strength_summary": "Koliko zaslon slijedi svjetlost okoline.",
+   "lenovo_highlight_mode_title": "Poboljšanje svjetline",
+   "lenovo_highlight_mode_summary": "Funkcionira samo kada se na kratko razdoblje izloži jakoj svjetlosti te može uzrokovati veću potrošnju baterije ili pregrijavanje uređaja."
   },
   "hu": {
    "lenovo_charging_category": "Töltés",
@@ -870,7 +898,9 @@
    "lenovo_state_on": "Be",
    "lenovo_state_off": "Ki",
    "lenovo_wb_strength_title": "Intenzitás",
-   "lenovo_wb_strength_summary": "Mennyire követi a képernyő a környezeti fényt."
+   "lenovo_wb_strength_summary": "Mennyire követi a képernyő a környezeti fényt.",
+   "lenovo_highlight_mode_title": "Fényerő fokozása",
+   "lenovo_highlight_mode_summary": "Erős napfény esetén csak rövid ideig működik, és az ilyen körülmények az akkumulátor megnövekedett fogyasztását, illetve túlmelegedést okozhatnak."
   },
   "hy": {
    "lenovo_charging_category": "Լիցքավորում",
@@ -931,7 +961,9 @@
    "lenovo_state_on": "Aktif",
    "lenovo_state_off": "Nonaktif",
    "lenovo_wb_strength_title": "Intensitas",
-   "lenovo_wb_strength_summary": "Seberapa kuat layar mengikuti cahaya sekitar."
+   "lenovo_wb_strength_summary": "Seberapa kuat layar mengikuti cahaya sekitar.",
+   "lenovo_highlight_mode_title": "Peningkatan kecerahan",
+   "lenovo_highlight_mode_summary": "Ini hanya akan berfungsi sebentar jika digunakan di bawah sinar matahari yang terik. Konsumsi baterai juga dapat meningkat atau menyebabkan panas berlebih."
   },
   "is": {
    "lenovo_charging_category": "Í hleðslu",
@@ -993,7 +1025,9 @@
    "lenovo_state_on": "Attivo",
    "lenovo_state_off": "Disattivato",
    "lenovo_wb_strength_title": "Intensità",
-   "lenovo_wb_strength_summary": "Quanto lo schermo si adatta alla luce ambientale."
+   "lenovo_wb_strength_summary": "Quanto lo schermo si adatta alla luce ambientale.",
+   "lenovo_highlight_mode_title": "Miglioramento luminosità",
+   "lenovo_highlight_mode_summary": "Funziona solo in condizioni di forte luce solare per un breve periodo di tempo e può aumentare il consumo della batteria o causare surriscaldamento."
   },
   "iw": {
    "lenovo_charging_category": "בטעינה",
@@ -1024,7 +1058,9 @@
    "lenovo_state_on": "פועל",
    "lenovo_state_off": "מושבת",
    "lenovo_wb_strength_title": "עוצמה",
-   "lenovo_wb_strength_summary": "עד כמה המסך עוקב אחר אור הסביבה."
+   "lenovo_wb_strength_summary": "עד כמה המסך עוקב אחר אור הסביבה.",
+   "lenovo_highlight_mode_title": "שיפור בהירות",
+   "lenovo_highlight_mode_summary": "הוא פועל רק באור שמש חזק לתקופת זמן קצרה ועלול להעלות את צריכת הסוללה או לגרום להתחממות יתר."
   },
   "ja": {
    "lenovo_charging_category": "充電",
@@ -1055,7 +1091,9 @@
    "lenovo_state_on": "オン",
    "lenovo_state_off": "オフ",
    "lenovo_wb_strength_title": "強さ",
-   "lenovo_wb_strength_summary": "周囲の光に合わせて画面の色を変える度合いです。100%は標準のLenovo設定と同じです。"
+   "lenovo_wb_strength_summary": "周囲の光に合わせて画面の色を変える度合いです。100%は標準のLenovo設定と同じです。",
+   "lenovo_highlight_mode_title": "明るさの改善",
+   "lenovo_highlight_mode_summary": "強い太陽光の下でのみ短時間動作しますが、バッテリーの消費量が増えたり過熱が発生したりします。"
   },
   "ka": {
    "lenovo_charging_category": "იტენება",
@@ -1210,7 +1248,9 @@
    "lenovo_state_on": "사용 중",
    "lenovo_state_off": "사용 안함",
    "lenovo_wb_strength_title": "강도",
-   "lenovo_wb_strength_summary": "주변 조명에 따라 화면 색을 바꾸는 정도입니다."
+   "lenovo_wb_strength_summary": "주변 조명에 따라 화면 색을 바꾸는 정도입니다.",
+   "lenovo_highlight_mode_title": "밝기 향상",
+   "lenovo_highlight_mode_summary": "짧은 시간 동안 강한 햇볕에서만 작동하며 배터리 소모가 증가하거나 과열이 발생할 수 있습니다."
   },
   "ky": {
    "lenovo_charging_category": "Кубатталууда",
@@ -1303,7 +1343,9 @@
    "lenovo_state_on": "Įjungta",
    "lenovo_state_off": "Išjungta",
    "lenovo_wb_strength_title": "Intensyvumas",
-   "lenovo_wb_strength_summary": "Kiek stipriai ekranas seka aplinkos šviesą."
+   "lenovo_wb_strength_summary": "Kiek stipriai ekranas seka aplinkos šviesą.",
+   "lenovo_highlight_mode_title": "Ryškumo didinimas",
+   "lenovo_highlight_mode_summary": "Veikia trumpai ir tik ryškiai šviečiant saulei, gali padidėti akumuliatoriaus energijos naudojimas arba perkaisti."
   },
   "lv": {
    "lenovo_charging_category": "Uzlāde",
@@ -1334,7 +1376,9 @@
    "lenovo_state_on": "Ieslēgts",
    "lenovo_state_off": "Izslēgta",
    "lenovo_wb_strength_title": "Intensitāte",
-   "lenovo_wb_strength_summary": "Cik spēcīgi ekrāns seko apkārtējam apgaismojumam."
+   "lenovo_wb_strength_summary": "Cik spēcīgi ekrāns seko apkārtējam apgaismojumam.",
+   "lenovo_highlight_mode_title": "Spilgtuma uzlabošana",
+   "lenovo_highlight_mode_summary": "Tas darbojas tikai īsu laiku spēcīgos saules staros un var palielināt akumulatora enerģijas patēriņu vai izraisīt pārkaršanu."
   },
   "mk": {
    "lenovo_charging_category": "Се полни",
@@ -1489,7 +1533,9 @@
    "lenovo_state_on": "Hidup",
    "lenovo_state_off": "Mati",
    "lenovo_wb_strength_title": "Keamatan",
-   "lenovo_wb_strength_summary": "Sejauh mana skrin mengikut cahaya persekitaran."
+   "lenovo_wb_strength_summary": "Sejauh mana skrin mengikut cahaya persekitaran.",
+   "lenovo_highlight_mode_title": "Peningkatan kecerahan",
+   "lenovo_highlight_mode_summary": "Hanya berfungsi di bawah cahaya matahari yang terik untuk tempoh masa yang pendek dan mungkin meningkatkan penggunaan bateri atau menyebabkan pemanasan melampau."
   },
   "my": {
    "lenovo_charging_category": "အားသွင်းနေပါသည်",
@@ -1550,7 +1596,9 @@
    "lenovo_state_on": "På",
    "lenovo_state_off": "Av",
    "lenovo_wb_strength_title": "Intensitet",
-   "lenovo_wb_strength_summary": "Hvor sterkt skjermen følger omgivelseslyset."
+   "lenovo_wb_strength_summary": "Hvor sterkt skjermen følger omgivelseslyset.",
+   "lenovo_highlight_mode_title": "Forbedring av lysstyrken",
+   "lenovo_highlight_mode_summary": "Det fungerer bare i sterkt sollys i en kort periode og kan øke batteriforbruket eller forårsake overopphetning."
   },
   "ne": {
    "lenovo_charging_category": "चार्ज हुँदै छ",
@@ -1612,7 +1660,9 @@
    "lenovo_state_on": "Aan",
    "lenovo_state_off": "Uit",
    "lenovo_wb_strength_title": "Intensiteit",
-   "lenovo_wb_strength_summary": "Hoe sterk het scherm het omgevingslicht volgt."
+   "lenovo_wb_strength_summary": "Hoe sterk het scherm het omgevingslicht volgt.",
+   "lenovo_highlight_mode_title": "Verbetering helderheid",
+   "lenovo_highlight_mode_summary": "Het werkt slechts korte tijd in fel zonlicht en kan het batterijverbruik verhogen of oververhitting veroorzaken."
   },
   "or": {
    "lenovo_charging_category": "ଚାର୍ଜ ହେଉଛି",
@@ -1705,7 +1755,9 @@
    "lenovo_state_on": "Wł.",
    "lenovo_state_off": "Wył.",
    "lenovo_wb_strength_title": "Intensywność",
-   "lenovo_wb_strength_summary": "Jak mocno ekran podąża za światłem otoczenia."
+   "lenovo_wb_strength_summary": "Jak mocno ekran podąża za światłem otoczenia.",
+   "lenovo_highlight_mode_title": "Zwiększenie jasności",
+   "lenovo_highlight_mode_summary": "Działa tylko w silnym świetle słonecznym i przez krótki czas oraz może zwiększyć zużycie baterii lub spowodować przegrzanie."
   },
   "pt": {
    "lenovo_charging_category": "Carregando",
@@ -1754,7 +1806,9 @@
    "lenovo_state_on": "Ativado",
    "lenovo_state_off": "Desativado",
    "lenovo_wb_strength_title": "Intensidade",
-   "lenovo_wb_strength_summary": "Quanto a tela se adapta à luz ambiente."
+   "lenovo_wb_strength_summary": "Quanto a tela se adapta à luz ambiente.",
+   "lenovo_highlight_mode_title": "Aprimoramento de brilho",
+   "lenovo_highlight_mode_summary": "Funciona apenas sob luz solar intensa por um curto período e pode aumentar o consumo da bateria ou causar superaquecimento."
   },
   "pt-rPT": {
    "lenovo_charging_category": "A carregar",
@@ -1774,7 +1828,9 @@
    "lenovo_bypass_once_title": "Aplicar desta vez",
    "lenovo_bypass_once_summary": "Desligar automaticamente depois de a alimentação ser desligada",
    "lenovo_bypass_range_category": "Definição do nível da bateria",
-   "lenovo_bypass_footer": "Se o nível atual da bateria estiver abaixo do limite inferior, o dispositivo será carregado até ao limite superior na ativação inicial para garantir a autonomia da bateria."
+   "lenovo_bypass_footer": "Se o nível atual da bateria estiver abaixo do limite inferior, o dispositivo será carregado até ao limite superior na ativação inicial para garantir a autonomia da bateria.",
+   "lenovo_highlight_mode_title": "Melhoria do brilho",
+   "lenovo_highlight_mode_summary": "Funciona apenas com luz solar forte durante um curto período de tempo e pode aumentar o consumo da bateria ou provocar sobreaquecimento."
   },
   "ro": {
    "lenovo_charging_category": "Se încarcă",
@@ -1804,7 +1860,9 @@
    "lenovo_state_on": "Activat(ă)",
    "lenovo_state_off": "Dezactivat(ă)",
    "lenovo_wb_strength_title": "Intensitate",
-   "lenovo_wb_strength_summary": "Cât de puternic urmărește ecranul lumina ambientală."
+   "lenovo_wb_strength_summary": "Cât de puternic urmărește ecranul lumina ambientală.",
+   "lenovo_highlight_mode_title": "Îmbunătăţire luminozitate",
+   "lenovo_highlight_mode_summary": "Funcţionează doar în lumină naturală puternică pentru o perioadă scurtă de timp şi poate să mărească consumul de baterie din cauza supraîncălzirii."
   },
   "ru": {
    "lenovo_charging_category": "Зарядка",
@@ -1835,7 +1893,9 @@
    "lenovo_state_on": "Вкл.",
    "lenovo_state_off": "Выкл.",
    "lenovo_wb_strength_title": "Интенсивность",
-   "lenovo_wb_strength_summary": "Насколько экран подстраивается под окружающее освещение."
+   "lenovo_wb_strength_summary": "Насколько экран подстраивается под окружающее освещение.",
+   "lenovo_highlight_mode_title": "Увеличение яркости",
+   "lenovo_highlight_mode_summary": "Работает только при сильном солнечном свете в течение короткого периода времени и может увеличить расход заряда аккумулятора или привести к перегреву."
   },
   "si": {
    "lenovo_charging_category": "ආරෝපණය වෙමින්",
@@ -1897,7 +1957,9 @@
    "lenovo_state_on": "Zapnuté",
    "lenovo_state_off": "Vypnuté",
    "lenovo_wb_strength_title": "Intenzita",
-   "lenovo_wb_strength_summary": "Ako silno obrazovka sleduje okolité svetlo."
+   "lenovo_wb_strength_summary": "Ako silno obrazovka sleduje okolité svetlo.",
+   "lenovo_highlight_mode_title": "Vylepšenie jasu",
+   "lenovo_highlight_mode_summary": "Funguje iba na krátky čas pri silnom slnečnom svetle a môže zvýšiť spotrebu energie batérie alebo spôsobiť prehriatie."
   },
   "sl": {
    "lenovo_charging_category": "Polnjenje",
@@ -1928,7 +1990,9 @@
    "lenovo_state_on": "Vklopljeno",
    "lenovo_state_off": "Izklopljeno",
    "lenovo_wb_strength_title": "Intenzivnost",
-   "lenovo_wb_strength_summary": "Kako močno zaslon sledi svetlobi okolice."
+   "lenovo_wb_strength_summary": "Kako močno zaslon sledi svetlobi okolice.",
+   "lenovo_highlight_mode_title": "Izboljšava svetlosti",
+   "lenovo_highlight_mode_summary": "Pri močni svetlobi deluje le kratek čas in lahko poveča porabo baterije ali povzroči pregrevanje."
   },
   "sq": {
    "lenovo_charging_category": "Po karikohet",
@@ -1989,7 +2053,9 @@
    "lenovo_state_on": "Укључено",
    "lenovo_state_off": "Искључено",
    "lenovo_wb_strength_title": "Интензитет",
-   "lenovo_wb_strength_summary": "Колико екран прати светлост околине."
+   "lenovo_wb_strength_summary": "Колико екран прати светлост околине.",
+   "lenovo_highlight_mode_title": "Poboljšanje osvetljenosti",
+   "lenovo_highlight_mode_summary": "Radi samo na jakoj sunčevoj svetlosti, u kratkom vremenskom periodu, i može povećati potrošnju baterije ili izazvati pregrevanje."
   },
   "sv": {
    "lenovo_charging_category": "Laddar",
@@ -2019,7 +2085,9 @@
    "lenovo_state_on": "På",
    "lenovo_state_off": "Av",
    "lenovo_wb_strength_title": "Intensitet",
-   "lenovo_wb_strength_summary": "Hur starkt skärmen följer omgivningsljuset."
+   "lenovo_wb_strength_summary": "Hur starkt skärmen följer omgivningsljuset.",
+   "lenovo_highlight_mode_title": "Förbättring av ljusstyrka",
+   "lenovo_highlight_mode_summary": "Det fungerar endast under en kort tid i starkt solljus och kan öka batteriförbrukningen eller orsaka överhettning."
   },
   "sw": {
    "lenovo_charging_category": "Inachaji",
@@ -2143,7 +2211,9 @@
    "lenovo_state_on": "เปิด",
    "lenovo_state_off": "ปิด",
    "lenovo_wb_strength_title": "ความเข้ม",
-   "lenovo_wb_strength_summary": "ระดับที่หน้าจอปรับตามแสงรอบข้าง"
+   "lenovo_wb_strength_summary": "ระดับที่หน้าจอปรับตามแสงรอบข้าง",
+   "lenovo_highlight_mode_title": "การเพิ่มประสิทธิภาพความสว่าง",
+   "lenovo_highlight_mode_summary": "ใช้งานได้เฉพาะในแสงแดดจัดในช่วงเวลาสั้นๆ และอาจเพิ่มการใช้แบตเตอรี่หรือทำให้เกิดความร้อนสูงเกินไป"
   },
   "tl": {
    "lenovo_charging_category": "Nagcha-charge",
@@ -2173,7 +2243,9 @@
    "lenovo_state_on": "Naka-on",
    "lenovo_state_off": "Naka-off",
    "lenovo_wb_strength_title": "Intensity",
-   "lenovo_wb_strength_summary": "Gaano kalakas sinusundan ng screen ang ambient light."
+   "lenovo_wb_strength_summary": "Gaano kalakas sinusundan ng screen ang ambient light.",
+   "lenovo_highlight_mode_title": "Pag-enhance sa liwanag",
+   "lenovo_highlight_mode_summary": "Gumagana lang ito kapag matindi ang sikat ng araw sa loob ng maikling panahon at puwedeng mapalakas ang pagkonsumo ng baterya o magdulot ng pag-overheat."
   },
   "tr": {
    "lenovo_charging_category": "Şarj oluyor",
@@ -2203,7 +2275,9 @@
    "lenovo_state_on": "Açık",
    "lenovo_state_off": "Kapalı",
    "lenovo_wb_strength_title": "Yoğunluk",
-   "lenovo_wb_strength_summary": "Ekranın ortam ışığını ne kadar güçlü takip ettiği."
+   "lenovo_wb_strength_summary": "Ekranın ortam ışığını ne kadar güçlü takip ettiği.",
+   "lenovo_highlight_mode_title": "Parlaklık artırma",
+   "lenovo_highlight_mode_summary": "Yalnızca güçlü güneş ışığı altında kısa bir süreyle çalışır ve pil tüketimini artırabilir veya aşırı ısınmaya neden olabilir."
   },
   "uk": {
    "lenovo_charging_category": "Заряджається",
@@ -2234,7 +2308,9 @@
    "lenovo_state_on": "Увімкнено",
    "lenovo_state_off": "Вимкнено",
    "lenovo_wb_strength_title": "Інтенсивність",
-   "lenovo_wb_strength_summary": "Наскільки сильно екран реагує на навколишнє освітлення."
+   "lenovo_wb_strength_summary": "Наскільки сильно екран реагує на навколишнє освітлення.",
+   "lenovo_highlight_mode_title": "Підвищення яскравості",
+   "lenovo_highlight_mode_summary": "Ця функція працює лише під інтенсивним сонячним випроміненням протягом короткого часу й може збільшити споживання заряду батареї або спричинити перегрівання."
   },
   "ur": {
    "lenovo_charging_category": "چارج ہو رہا ہے",
@@ -2265,7 +2341,9 @@
    "lenovo_state_on": "آن",
    "lenovo_state_off": "آف",
    "lenovo_wb_strength_title": "شدت",
-   "lenovo_wb_strength_summary": "اسکرین ماحول کی روشنی کی کتنی پیروی کرتی ہے۔"
+   "lenovo_wb_strength_summary": "اسکرین ماحول کی روشنی کی کتنی پیروی کرتی ہے۔",
+   "lenovo_highlight_mode_title": "چمک میں اضافہ",
+   "lenovo_highlight_mode_summary": "یہ صرف تھوڑی دیر کے لیے تیز سورج کی روشنی میں کام کرتا ہے اور بیٹری کی کھپت کو بڑھا سکتا ہے یا زیادہ گرمی کا باعث بن سکتا ہے۔"
   },
   "uz": {
    "lenovo_charging_category": "Quvvat olmoqda",
@@ -2327,7 +2405,9 @@
    "lenovo_state_on": "Đang bật",
    "lenovo_state_off": "Đang tắt",
    "lenovo_wb_strength_title": "Cường độ",
-   "lenovo_wb_strength_summary": "Mức độ màn hình bám theo ánh sáng xung quanh."
+   "lenovo_wb_strength_summary": "Mức độ màn hình bám theo ánh sáng xung quanh.",
+   "lenovo_highlight_mode_title": "Tăng cường độ sáng",
+   "lenovo_highlight_mode_summary": "Chỉ hoạt động dưới ánh mặt trời mạnh trong thời gian ngắn và có thể tăng tiêu thụ pin hoặc gây quá nhiệt."
   },
   "zh-rCN": {
    "lenovo_charging_category": "充电",
@@ -2358,7 +2438,9 @@
    "lenovo_state_on": "已开启",
    "lenovo_state_off": "已关闭",
    "lenovo_wb_strength_title": "强度",
-   "lenovo_wb_strength_summary": "屏幕随环境光改变颜色的程度。100% 与原厂 Lenovo 设置相同。"
+   "lenovo_wb_strength_summary": "屏幕随环境光改变颜色的程度。100% 与原厂 Lenovo 设置相同。",
+   "lenovo_highlight_mode_title": "高亮模式",
+   "lenovo_highlight_mode_summary": "极端强光下自动提高屏幕亮度，可提高阅读舒适度，但仅能持续较短时间，可能会导致增加电量消耗或发热。"
   },
   "zh-rHK": {
    "lenovo_charging_category": "充電中",
@@ -2420,7 +2502,9 @@
    "lenovo_state_on": "已開啟",
    "lenovo_state_off": "已關閉",
    "lenovo_wb_strength_title": "強度",
-   "lenovo_wb_strength_summary": "螢幕隨環境光改變色彩的程度。100% 與原廠 Lenovo 設定相同。"
+   "lenovo_wb_strength_summary": "螢幕隨環境光改變色彩的程度。100% 與原廠 Lenovo 設定相同。",
+   "lenovo_highlight_mode_title": "高亮模式",
+   "lenovo_highlight_mode_summary": "僅在極端強光下生效，持續時間較短，並可能增加耗電量，或導致發熱。"
   },
   "zu": {
    "lenovo_charging_category": "Iyashaja",
