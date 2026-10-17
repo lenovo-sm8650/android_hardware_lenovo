@@ -28,15 +28,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lenovo-input-custom
 
-# Report the Pixel fingerprint verified by the cold-boot module test, without
-# changing the Lenovo hardware identity. Set TARGET_ENABLE_FP_OVERRIDE=false
-# to keep the stock fingerprint from the device product.
-TARGET_ENABLE_FP_OVERRIDE ?= true
-ifeq ($(TARGET_ENABLE_FP_OVERRIDE),true)
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildFingerprint=google/mustang/mustang:17/CP2A.260605.012/15430684:user/release-keys
-endif
-
 # Default wallpaper (Pixel "Feathers" Porcelain live wallpaper)
 PRODUCT_PACKAGES += \
     FeathersLiveWallpaper
