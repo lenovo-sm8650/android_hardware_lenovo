@@ -793,10 +793,6 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
                 TextUtils.isEmpty(known) ? mac : known + ";" + mac);
     }
 
-    int connectedType() {
-        return mConnected.connectState == BluetoothProfile.STATE_CONNECTED ? mConnected.type : 0;
-    }
-
     void setLost(boolean lost) {
         mLost = lost;
     }

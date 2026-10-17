@@ -276,10 +276,6 @@ final class ZuiPenHapticPolicy {
         return true;
     }
 
-    boolean isFeedbackOn() {
-        return mFeedbackOn;
-    }
-
     /** Adds or removes a package from pen_haptic_packages (IZuiPenHapticManager.setUseHaptic). */
     void setUseHaptic(String pkg, boolean use) {
         if (TextUtils.isEmpty(pkg) || mPackages == null) return;
