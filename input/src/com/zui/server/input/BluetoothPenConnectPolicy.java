@@ -19,6 +19,8 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
@@ -77,6 +79,8 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private static final String ACTION_VERSION = "lenovo.intent.action.PEN_VERSION";
     private static final String ACTION_LOW_BATTERY = "lenovo.intent.action.PEN_LOW_BATTERY";
     private static final String ACTION_NEED_OPENBT = "lenovo.intent.action.PEN_NEED_OPENBT";
+    /** Sent by PenService (the pen popup) to turn Bluetooth on and connect the attached pen. */
+    private static final String ACTION_OPENBT_AND_CONNECT = "lenovo.intent.action.OPENBT_AND_CONNECT_PEN";
     private static final String ACTION_LINK_TOUCHED = "lenovo.intent.action.PEN_LINK_TOUCHED";
     private static final String ACTION_LINK_RECONNECT = "lenovo.intent.action.PEN_LINK_RECONNECT";
     private static final String ACTION_LOST_INDICATION = "lenovo.intent.action.PEN_LOST_INDICATION";
@@ -97,6 +101,10 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private static final String SETTING_TAP_TWO = "pen_touch_film_tap_two";
     private static final String SETTING_COPY_PASTE = "pen_touch_film_copy_paste";
     private static final String SETTING_REMOTE_CONTROL = "pen_set_remote_control_on";
+    /** Pen button mode of the touch film (System setting): 0 mode A, 1 mode B. */
+    private static final String SETTING_TOUCHFILM_MODE = "touchfilm_mode_config";
+    /** Parker quick note switch of the pen settings (Global setting). */
+    private static final String SETTING_QUICK_NOTE = "parker_quick_note";
     private static final String SETTING_PENLINK_NOT_ALLOW = "penlink_not_allow";
     /** Pens that were connected before, to tell the first pairing apart. */
     private static final String SETTING_KNOWN_PENS = "lenovo_known_pens";
@@ -113,6 +121,8 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private static final int COMMON_PEN_STILL = 10;
     private static final int COMMON_PEN_MOVE = 266;
     private static final int COMMON_QI_OPEN_REQUEST = 1029;
+    private static final int COMMON_QUICK_NOTE_OFF = 2816;
+    private static final int COMMON_QUICK_NOTE_ON = 2817;
 
     private static final long SCAN_TIMEOUT_MS = 30000;
 
@@ -156,6 +166,10 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private boolean mWaitForBtOn;
     private boolean mScanning;
     private boolean mParkerSleeping;
+    // stock mQuickNoteConfig / mPenCurrentState: the quick note switch, and whether the
+    // connected Parker is ready to start a note from the dark screen
+    private boolean mQuickNote;
+    private boolean mPenQuickNote;
     private boolean mScreenOn = true;
     private boolean mLost;
     // stock mAttachedPenLostAgain: one lost alert per attach cycle
@@ -173,6 +187,9 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         sendBroadcast(i);
     });
     private long mLastConnectAttempt;
+
+    /** Stock BluetoothPenConnectContentObserver / BluetoothPenInputManager content observer. */
+    private ContentObserver mSettingsObserver;
     private boolean mProxyRequested;
 
     private final UEventObserver mPenObserver = new UEventObserver() {
@@ -224,6 +241,7 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         filter.addAction(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
+        filter.addAction(ACTION_OPENBT_AND_CONNECT);
         mContext.registerReceiverAsUser(Safe.receiver("pen", (c, i) -> onBroadcast(i)),
                 UserHandle.ALL, filter, null, mHandler, Context.RECEIVER_EXPORTED);
 
@@ -249,8 +267,38 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
 
         requestHidProxy();
 
+        mSettingsObserver = Safe.observer(mHandler, "pen settings", this::onSettingChanged);
+        ContentResolver cr = mContext.getContentResolver();
+        cr.registerContentObserver(Settings.Global.getUriFor(SETTING_TAP_TWO), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+        cr.registerContentObserver(Settings.Global.getUriFor(SETTING_COPY_PASTE), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+        cr.registerContentObserver(Settings.Secure.getUriFor(SETTING_REMOTE_CONTROL), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+        cr.registerContentObserver(Settings.System.getUriFor(SETTING_TOUCHFILM_MODE), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+        cr.registerContentObserver(Settings.Global.getUriFor(SETTING_QUICK_NOTE), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+        updateQuickNote();
+
         mPenObserver.startObserving("UEVENT_TO=PEN_FRAMEWORK");
         readAttachedFromSysfs();
+    }
+
+    private void onSettingChanged(Uri uri) {
+        if (Settings.Global.getUriFor(SETTING_QUICK_NOTE).equals(uri)) {
+            updateQuickNote();
+        } else if (Settings.System.getUriFor(SETTING_TOUCHFILM_MODE).equals(uri)) {
+            // stock switchTouchfilmMode(): buildTouchfilmModeCmd
+            int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    SETTING_TOUCHFILM_MODE, 0, UserHandle.USER_CURRENT);
+            if (mode == 0 || mode == 1) {
+                writeCommon(new byte[] {8, (byte) (mode == 0 ? 5 : 4)});
+            }
+        } else {
+            // double tap, slide / copy-paste and remote control share one pen command
+            writeTouchfilmConfig();
+        }
     }
 
     /** The HID host proxy only connects while the profile is enabled; retried on BT on. */
@@ -565,6 +613,9 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
                     mWaitForBtOn = false;
                     connectAttachedPen();
                 } else if (state == BluetoothAdapter.STATE_OFF) {
+                    // stock checkResetQuickNoteBtOff()
+                    mPenQuickNote = false;
+                    writeQuickNoteToTp(false);
                     BluetoothDevice penDev = mAdapter != null && !mConnected.mac.isEmpty()
                             ? mAdapter.getRemoteDevice(mConnected.mac) : null;
                     if (penDev != null) onPenDisconnected(penDev);
@@ -588,10 +639,21 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
                 }
                 break;
             }
+            case ACTION_OPENBT_AND_CONNECT:
+                // stock BluetoothPenConnectBroadcastReceiver
+                if (mAdapter == null || !validMac(mPogoMac)) break;
+                if (!mAdapter.isEnabled()) {
+                    mWaitForBtOn = true;
+                    mAdapter.enable();
+                } else {
+                    connectAttachedPen();
+                }
+                break;
             case Intent.ACTION_SCREEN_ON:
             case Intent.ACTION_SCREEN_OFF:
                 mScreenOn = Intent.ACTION_SCREEN_ON.equals(action);
                 writePenGsensorFlag();
+                if (!mScreenOn && mQuickNote) writeParkerQuickNoteToTp();
                 break;
         }
     }
@@ -626,6 +688,11 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         if (name.contains(NAME_PARKER_2)) return TYPE_PARKER_2;
         if (name.contains(NAME_PARKER)) return TYPE_PARKER;
         return TYPE_NONE;
+    }
+
+    /** The connected pen is a Pen Pro / Pen Pro 2 (stock isParkerOrOmasByType). */
+    boolean isParkerConnected() {
+        return isParker(mConnected.type);
     }
 
     static boolean isParker(int type) {
@@ -669,6 +736,10 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
 
         LenovoHal.setPenMode(true);
         LenovoHal.setPenBle(false);
+        if (isParker(mConnected.type)) {
+            mPenQuickNote = true;
+            writeParkerQuickNoteToTp();
+        }
         updatePenStatusSetting();
 
         mFirstPair = !isKnownPen(mac);
@@ -761,6 +832,8 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         mConnected.mac = "";
         updatePenStatusSetting();
         mParkerSleeping = false;
+        mPenQuickNote = false;
+        writeParkerQuickNoteToTp();
     }
 
     private void disconnectOtherPens(String keep) {
@@ -812,6 +885,7 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         if (gatt.has(PenGatt.COMMON_SERVICE, PenGatt.COMMON_CHAR)) {
             gatt.setNotify(PenGatt.COMMON_SERVICE, PenGatt.COMMON_CHAR, true);
             writeTouchfilmConfig();
+            tellParkerQuickNote();
             writePenGsensorFlag();
             sendTpInfo();
         }
@@ -878,6 +952,10 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         Log.d(TAG, "common value " + v);
         if (v == COMMON_QI_OPEN_REQUEST) {
             LenovoHal.setStylusQiCommand(QI_SWITCH_OPEN);
+        } else if (v == COMMON_QUICK_NOTE_ON || v == COMMON_QUICK_NOTE_OFF) {
+            // stock processCommonCharacterChanged(): the Parker armed / disarmed its quick note
+            mPenQuickNote = v == COMMON_QUICK_NOTE_ON;
+            writeParkerQuickNoteToTp();
         } else if (v == COMMON_PEN_MOVE || v == COMMON_PEN_STILL) {
             if (v == COMMON_PEN_STILL) LenovoHal.ioctl(LenovoHal.IOCTL_ERASER, false);
             writeCommon(new byte[] {10, (byte) (v == COMMON_PEN_MOVE ? 1 : 0)});
@@ -899,6 +977,35 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
                 UserHandle.USER_CURRENT));
         int flags = (doubleTap ? 1 : 0) | (slide ? 12 : 0) | (remote ? 13 : 0);
         writeCommon(new byte[] {8, 6, (byte) flags});
+    }
+
+    /** Stock updateParkerQuickNoteConfig(). */
+    private void updateQuickNote() {
+        mQuickNote = Settings.Global.getInt(mContext.getContentResolver(), SETTING_QUICK_NOTE, 0) == 1;
+        Log.d(TAG, "quick note " + mQuickNote);
+        tellParkerQuickNote();
+        writeParkerQuickNoteToTp();
+        LenovoHal.ioctl(LenovoHal.IOCTL_QUICK_NOTE_SWITCH, mQuickNote);
+    }
+
+    /** Stock tellParkerQuickNoteConfig(): buildQuickNoteCmd. */
+    private void tellParkerQuickNote() {
+        if (!isParker(mConnected.type) || mGatt == null || !mGatt.isReady()) return;
+        writeCommon(new byte[] {5, 6, (byte) (mQuickNote ? 1 : 0)});
+        if (mQuickNote) mPenQuickNote = true;
+    }
+
+    /** Stock writeParkerQuickNoteCmdToTp(). */
+    private void writeParkerQuickNoteToTp() {
+        boolean on = mQuickNote && isParker(mConnected.type) && mPenQuickNote;
+        if (!on) mPenQuickNote = false;
+        writeQuickNoteToTp(on);
+    }
+
+    /** Stock writeQuickNoteCmdToTp(): only while the screen is off. */
+    private void writeQuickNoteToTp(boolean on) {
+        if (mScreenOn) return;
+        LenovoHal.ioctl(LenovoHal.IOCTL_QUICK_NOTE, on);
     }
 
     private void writePenGsensorFlag() {

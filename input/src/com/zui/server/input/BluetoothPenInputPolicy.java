@@ -23,7 +23,8 @@ import android.view.KeyEvent;
  * (Vendor_17ef_Product_*.kl) map the ZUI-only PEN_* usages onto F13..F23;
  * shortcuts are sent to PenService, while the barrel double tap is delivered
  * to the focused app as ZUI keycode 601 before any unhandled-key fallback
- * (stock BluetoothPenInputPolicy).
+ * (stock BluetoothPenInputPolicy). With the pen remote control switched on, the pen
+ * buttons drive the foreground app instead (stock processStylusPenRemoteControl).
  */
 final class BluetoothPenInputPolicy {
     private static final String TAG = "LenovoPenKeys";
@@ -61,10 +62,17 @@ final class BluetoothPenInputPolicy {
     // Pair DOWN/UP even if the setting changes while a gesture is in flight.
     private final SparseBooleanArray mAppDoubleTaps = new SparseBooleanArray();
 
+    private final PenRemoteControl mRemote;
+
     BluetoothPenInputPolicy(Context context, Handler handler, BluetoothPenConnectPolicy pen) {
         mContext = context;
         mHandler = handler;
         mPen = pen;
+        mRemote = new PenRemoteControl(context, handler, pen, this);
+    }
+
+    void start() {
+        mRemote.start();
     }
 
     static boolean isLenovoDevice(KeyEvent event) {
@@ -79,6 +87,13 @@ final class BluetoothPenInputPolicy {
         boolean down = event.getAction() == KeyEvent.ACTION_DOWN;
         boolean first = down && event.getRepeatCount() == 0;
         boolean wake = !mContext.getSystemService(android.os.PowerManager.class).isInteractive();
+        if (mRemote.isEnabled()) {
+            int type = PenRemoteControl.clickType(code);
+            if (type >= 0 && code != KEY_TWO_CLICK) {
+                if (first) mRemote.onKey(type, wake);
+                return true;
+            }
+        }
         switch (code) {
             case KEY_ONE_CLICK:
                 if (first) post(() -> sendClick(0, wake));
@@ -91,8 +106,13 @@ final class BluetoothPenInputPolicy {
                 if (first) {
                     int mode = Settings.Global.getInt(mContext.getContentResolver(),
                             SETTING_TAP_TWO, 1);
-                    mAppDoubleTaps.put(id, mode == 1);
-                    if (mode == 2) post(() -> sendClick(11, wake));
+                    if (mRemote.isEnabled()) {
+                        // stock: the app only sees the key when the remote control did not use it
+                        mAppDoubleTaps.put(id, !mRemote.onKey(1, wake));
+                    } else {
+                        mAppDoubleTaps.put(id, mode == 1);
+                        if (mode == 2) post(() -> sendClick(11, wake));
+                    }
                 }
                 boolean forward = mAppDoubleTaps.get(id);
                 if (!down) mAppDoubleTaps.delete(id);
@@ -136,7 +156,7 @@ final class BluetoothPenInputPolicy {
 
     /** Stock fallback, reached only if the app did not consume the DOWN. */
     boolean handleUnhandled(KeyEvent event, int focusedUid) {
-        if (event.getKeyCode() != KeyEvent.KEYCODE_PEN_TWO_CLICK
+        if (event.getKeyCode() != KeyEvent.KEYCODE_PEN_TWO_CLICK || mRemote.isEnabled()
                 || !isLenovoDevice(event) || focusedUid < 0
                 || event.getAction() != KeyEvent.ACTION_UP || event.isCanceled()
                 || Settings.Global.getInt(mContext.getContentResolver(), SETTING_TAP_TWO, 1) != 1) {
@@ -168,14 +188,14 @@ final class BluetoothPenInputPolicy {
     }
 
     /** keytimes: 0 one, 1 two, 2 three, 3 long (sent as 0 + long flag), 4 press, 11 double tap launch */
-    private void sendClick(int keytimes, boolean wake) {
+    void sendClick(int keytimes, boolean wake) {
         boolean longClick = keytimes == 3;
         if (longClick) keytimes = 0;
         Intent i = new Intent(ACTION_CLICK);
         i.addFlags(Intent.FLAG_RECEIVER_FOREGROUND | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
         i.putExtra(EXTRA_DEVICE_TYPE, 0);
         i.putExtra(EXTRA_LENOVO_DEVICE, true);
-        i.putExtra(EXTRA_REMOTE_STATE, 0);
+        i.putExtra(EXTRA_REMOTE_STATE, mRemote.isEnabled() ? 1 : 0);
         i.putExtra(EXTRA_KEYTIMES, keytimes);
         i.putExtra(EXTRA_LONG_CLICK, longClick);
         i.putExtra(EXTRA_CLICK_TYPE, 0);
@@ -184,7 +204,7 @@ final class BluetoothPenInputPolicy {
         mContext.sendBroadcastAsUser(i, UserHandle.CURRENT_OR_SELF);
     }
 
-    private void injectKey(int code) {
+    void injectKey(int code) {
         InputManager im = mContext.getSystemService(InputManager.class);
         long now = SystemClock.uptimeMillis();
         for (int action : new int[] {KeyEvent.ACTION_DOWN, KeyEvent.ACTION_UP}) {

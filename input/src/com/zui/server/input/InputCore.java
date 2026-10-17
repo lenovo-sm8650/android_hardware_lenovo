@@ -164,6 +164,7 @@ public final class InputCore {
         Safe.run("wifi country", mWifiCountry::start).run();
         Safe.run("haptics", mHaptics::start).run();
         Safe.run("pen", mPen::start).run();
+        Safe.run("pen keys", mPenKeys::start).run();
         Safe.run("stylus screenshot", mPenScreenshot::start).run();
         Safe.run("stylus magnifier", mPenMagnifier::start).run();
         Safe.run("pen ink mode", mPenInk::start).run();

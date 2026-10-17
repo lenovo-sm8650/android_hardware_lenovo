@@ -87,6 +87,14 @@ public class SparseBooleanArray {final Map<Integer,Boolean> map=new HashMap<>();
     'com/zui/server/input/Safe.java': '''package com.zui.server.input;
 import android.os.Handler; public class Safe {public static void post(Handler h,String s,Runnable r){h.post(r);}}''',
     'com/zui/server/input/BluetoothPenConnectPolicy.java': 'package com.zui.server.input; public class BluetoothPenConnectPolicy {public void setLost(boolean lost){}}',
+    # remote control needs the activity manager, audio and touch injection: not part of this test
+    'com/zui/server/input/PenRemoteControl.java': '''package com.zui.server.input;
+import android.content.Context; import android.os.Handler;
+class PenRemoteControl {
+ PenRemoteControl(Context c,Handler h,BluetoothPenConnectPolicy p,BluetoothPenInputPolicy k){}
+ void start(){} boolean isEnabled(){return false;} boolean onKey(int t,boolean w){return false;}
+ static int clickType(int code){return -1;}
+}''',
     'com/zui/server/input/PenKeysTest.java': '''package com.zui.server.input;
 import android.content.*; import android.os.*; import android.view.*; import android.provider.Settings;
 public class PenKeysTest {

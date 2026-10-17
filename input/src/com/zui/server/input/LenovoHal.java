@@ -65,6 +65,7 @@ final class LenovoHal {
     // ITouchscreen.ioctl commands
     static final int IOCTL_QUICK_NOTE = 1;
     static final int IOCTL_ERASER = 2;
+    static final int IOCTL_QUICK_NOTE_SWITCH = 4;
 
     private static final Map<String, IBinder> sBinders = new HashMap<>();
 

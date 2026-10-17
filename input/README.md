@@ -31,6 +31,28 @@ interceptUnhandledKey, and framework-res config_stylus_pen_partner_packages.
 The touchscreen HAL eraser mode and Lenovo SDK eraser rectangles are separate
 from the app-side double-tap shortcut and are not changed here.
 
+## Pen settings that reach the pen and the touch panel
+
+`BluetoothPenConnectPolicy` applies the pen settings of PenService when they change (stock
+BluetoothPenInputManager / BluetoothPenConnectContentObserver), not only when the pen connects:
+
+- `pen_touch_film_tap_two`, `pen_touch_film_copy_paste` and `pen_set_remote_control_on` are
+  written to the pen as one touch film command; `touchfilm_mode_config` selects mode A or B.
+- `parker_quick_note` arms the Pen Pro quick note: the pen command (5, 6, on), the touch panel
+  quick note switch (ioctl 4), and, with the screen off, the touch panel quick note state (ioctl 1)
+  that follows the pen's own armed / disarmed reports (common values 2817 / 2816).
+- `lenovo.intent.action.OPENBT_AND_CONNECT_PEN` (PenService pen popup) turns Bluetooth on and
+  connects the attached pen.
+
+## Pen remote control
+
+`PenRemoteControl` (stock processStylusPenRemoteControl): while `pen_set_remote_control_on` is 1
+the pen buttons drive the foreground app instead of PenService: camera apps get the click,
+slide show apps get F5 / ESC and page up / down, readers get left / right, everything else gets the
+media keys (or a swipe in the short video apps). The kind of the foreground app is published as
+`pen_remote_control_state`. The package lists are the stock framework-res
+`config_stylus_pen_remote_control_*_packages` (TB520FU ROW).
+
 ## Host regression checks
 
 From the Android source root:
