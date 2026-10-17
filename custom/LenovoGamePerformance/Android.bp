@@ -1,0 +1,30 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+// "Game performance management", the separate app of the optional TB520FU
+// customizations: per-app CPU/GPU profiles. The profiles are enforced by
+// lenovo-input-custom (custom/input); LenovoParts (Advanced features > Performance)
+// opens this app while it is installed. It has no Settings tile of its own and
+// exists only while hardware/lenovo/custom is included.
+//
+
+android_app {
+    name: "LenovoGamePerformance",
+
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+
+    static_libs: [
+        "SettingsLib",
+        "androidx.preference_preference",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+}
