@@ -23,10 +23,16 @@
 
     </PreferenceCategory>
 
-    <!-- Opens the separate Play Integrity Fix app; made visible in code only when it is installed -->
-    <Preference
-        android:key="play_integrity"
-        android:title="@string/play_integrity_fix_title"
-        app:isPreferenceVisible="false" />
+    <!-- Opens the separate Play Integrity Fix app; its own card group, made visible in code
+         only when that app is installed -->
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="play_integrity_category"
+        app:isPreferenceVisible="false">
+
+        <Preference
+            android:key="play_integrity"
+            android:title="@string/play_integrity_fix_title" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
 
 </PreferenceScreen>

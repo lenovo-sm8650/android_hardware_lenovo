@@ -37,7 +37,7 @@ class ExperimentalFeaturesFragment : SettingsBasePreferenceFragment() {
         deviceSpoofPref = findPreference(KEY_DEVICE_SPOOF)!!
 
         val pif = findPreference<Preference>(KEY_PLAY_INTEGRITY)!!
-        pif.isVisible = try {
+        findPreference<Preference>(KEY_PLAY_INTEGRITY_CATEGORY)!!.isVisible = try {
             requireContext().packageManager.getActivityInfo(PIF_ACTIVITY, 0)
             true
         } catch (e: PackageManager.NameNotFoundException) {
@@ -85,6 +85,7 @@ class ExperimentalFeaturesFragment : SettingsBasePreferenceFragment() {
         const val KEY_INSTALLER_SPOOF = "installer_spoof"
         const val KEY_DEVICE_SPOOF = "device_spoof"
         const val KEY_PLAY_INTEGRITY = "play_integrity"
+        const val KEY_PLAY_INTEGRITY_CATEGORY = "play_integrity_category"
         const val PIF_SWITCH_SETTING = "lenovo_pif_module"
         val PIF_ACTIVITY = ComponentName(
             "io.github.wnduddld0513.pif", "io.github.wnduddld0513.pif.PifActivity"
