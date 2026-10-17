@@ -70,7 +70,6 @@ class PartsActivity :
          * injection), so only these can be requested through the extra.
          */
         private val SUB_SCREENS = setOf(
-            BypassChargingFragment::class.java.name,
             LandscapeViewFragment::class.java.name,
             KeyboardFragment::class.java.name,
             KeyboardShortcutsFragment::class.java.name,
@@ -89,6 +88,19 @@ class PartsActivity :
         /** Opens [fragment] as a sub page. */
         fun open(context: Context, fragment: Fragment) {
             open(context, fragment.javaClass.name, fragment.arguments)
+        }
+
+        /**
+         * Leaves a sub page: pops it when it was stacked in the same activity,
+         * otherwise closes its activity.
+         */
+        fun close(fragment: Fragment) {
+            val fm = fragment.parentFragmentManager
+            if (fm.backStackEntryCount > 0) {
+                fm.popBackStack()
+            } else {
+                fragment.activity?.finish()
+            }
         }
     }
 }

@@ -3,9 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // Framework resources of the optional TB520FU customizations: the default
-// wallpaper and the device identity for selected apps. A separate overlay from
-// FrameworksResTarget so a plain build (no customizations repository) never
-// sees them.
+// wallpaper. A separate overlay from FrameworksResTarget so a plain build (no
+// customizations repository) never sees it. The device identity defaults belong
+// to the Experimental features app (ExperimentalFeatures/overlay).
 //
 
 runtime_resource_overlay {

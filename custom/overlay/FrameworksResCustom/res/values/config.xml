@@ -8,14 +8,4 @@
          (FeathersLiveWallpaper.apk). default_wallpaper in the device tree stays
          as the fallback. -->
     <string name="default_wallpaper_component" translatable="false">com.google.pixel.wallpapers23/.liveBirds.porcelain.PorcelainWallpaperService</string>
-
-    <!-- Device identity for selected apps (Custom Tweaks): Netflix sees the
-         OnePlus Pad Go 2 (global, OPD2504), which it streams HDR10, HDR10+
-         and Dolby Vision to. -->
-    <string-array name="config_deviceSpoofApps" translatable="false">
-        <item>com.netflix.mediaclient=OnePlus|OnePlus|OPD2504</item>
-    </string-array>
-    <string name="config_deviceSpoofBrand" translatable="false">OnePlus</string>
-    <string name="config_deviceSpoofManufacturer" translatable="false">OnePlus</string>
-    <string name="config_deviceSpoofModel" translatable="false">OPD2504</string>
 </resources>

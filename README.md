@@ -7,8 +7,8 @@ Lenovo Yoga Tab Plus (`device/lenovo/lapis`). One Soong namespace
 | Path | Contents |
 |---|---|
 | `input/` | `lenovo-input`, the Lenovo pen / keyboard / battery bridge in system_server |
-| `packages/LenovoParts/` | "Lenovo features" in Settings > System |
-| `tools/` | string generators for LenovoParts |
+| `packages/LenovoParts/` | "Advanced features" and "Pen & keyboard" on the Settings homepage |
+| `tools/` | string generators (JSON data) for LenovoParts and the Lenovo strings of the Settings fork |
 | `packages/LunarisDolby/` | Dolby Atmos settings (`seventeen`) |
 | `packages/VideoMotion/` | video motion smoothing settings (`seventeen`) |
 | `custom/` | the maintainer customizations (`seventeen`), see its README |

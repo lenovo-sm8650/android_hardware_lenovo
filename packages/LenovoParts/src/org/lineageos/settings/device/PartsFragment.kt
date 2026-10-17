@@ -6,47 +6,33 @@
 package org.lineageos.settings.device
 
 import android.app.AlertDialog
-import android.hardware.display.ColorDisplayManager
+import android.content.Intent
 import android.os.Bundle
 import android.os.PowerManager
-import android.provider.Settings
 import android.text.format.Formatter
 import androidx.preference.ListPreference
 import androidx.preference.Preference
-import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreferenceCompat
-import com.android.settingslib.widget.SelectorWithWidgetPreference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
+/**
+ * Advanced features: landscape view and the folio case mode (Display), game performance
+ * management, memory expansion and the current memory (Performance), and the Experimental
+ * features row. The game performance and Experimental features rows start the separate
+ * apps of the optional customizations and are hidden while those are not installed. The
+ * order is the one of parts_settings.xml.
+ */
 class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
 
+    private lateinit var landscapePref: Preference
     private lateinit var vramPref: ListPreference
     private lateinit var statusPref: Preference
-    private lateinit var chargingPrefs: List<SelectorWithWidgetPreference>
-    private lateinit var bypassPref: Preference
-    private lateinit var landscapePref: Preference
-    private lateinit var standbyPref: SwitchPreferenceCompat
-    private lateinit var maintenancePref: SwitchPreferenceCompat
-    private lateinit var batteryInfoPref: Preference
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.parts_settings, rootKey)
         val ctx = requireContext()
 
-        // Charging mode: lenovo_battery_charge_mode 0 normal, 1 stop at 80%, 2 protection 40-60%
-        chargingPrefs = CHARGING_KEYS.map { findPreference<SelectorWithWidgetPreference>(it)!! }
-        chargingPrefs.forEachIndexed { mode, pref ->
-            pref.setOnClickListener {
-                LenovoSettings.putInt(ctx, LenovoSettings.BATTERY_MODE, mode)
-                updateChargingMode()
-            }
-        }
-
-        bypassPref = findPreference(KEY_BYPASS)!!
         landscapePref = findPreference(KEY_LANDSCAPE)!!
-        standbyPref = switch(KEY_STANDBY, LenovoSettings.STANDBY_SAVER, 1)
-        maintenancePref = switch(KEY_MAINTENANCE, LenovoSettings.BATTERY_MAINTENANCE, 1)
-        batteryInfoPref = findPreference(KEY_BATTERY_INFO)!!
 
         // Folio case mode (stock Settings.System key, per user), applied by
         // lenovo-input (FolioCover) when the hall sensor reports the cover.
@@ -59,106 +45,48 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
             }
         }
 
-        // Adaptive white balance (the Settings > Display switch is hidden) and how
-        // strongly it follows the ambient light (patches/frameworks_base-0002)
-        findPreference<SwitchPreferenceCompat>(KEY_WHITE_BALANCE)!!.apply {
-            // Unset means the framework default (config_displayWhiteBalanceEnabledDefault)
-            isChecked = ctx.getSystemService(ColorDisplayManager::class.java)!!
-                .isDisplayWhiteBalanceEnabled
-            setOnPreferenceChangeListener { _, newValue ->
-                Settings.Secure.putInt(requireContext().contentResolver,
-                    LenovoSettings.DISPLAY_WHITE_BALANCE, if (newValue as Boolean) 1 else 0)
-                true
-            }
-        }
-        val strengthPref: SeekBarPreference = findPreference(KEY_WHITE_BALANCE_STRENGTH)!!
-        // The strength setting is only read by the patched ColorDisplayService
-        // (patches/frameworks_base-0002); on a ROM without it the slider would
-        // store a value nothing reads.
-        strengthPref.isVisible = FrameworkPatches.wbStrength
-        strengthPref.apply {
-            value = Settings.Secure.getInt(ctx.contentResolver,
-                LenovoSettings.WHITE_BALANCE_STRENGTH, LenovoSettings.DEFAULT_WHITE_BALANCE_STRENGTH)
-            setOnPreferenceChangeListener { _, newValue ->
-                Settings.Secure.putInt(requireContext().contentResolver,
-                    LenovoSettings.WHITE_BALANCE_STRENGTH, newValue as Int)
-                true
-            }
-        }
-
         vramPref = findPreference(KEY_VRAM)!!
         vramPref.entries = MemoryExtension.SIZES_GB.map { sizeLabel(it) }.toTypedArray()
         vramPref.entryValues = MemoryExtension.SIZES_GB.map { it.toString() }.toTypedArray()
         vramPref.value = MemoryExtension.selectedGb.toString()
         vramPref.onPreferenceChangeListener = this
-
         statusPref = findPreference(KEY_STATUS)!!
+
+        showIfInstalled(KEY_GAME_PERF, LenovoSettings.GAME_PERF_PACKAGE,
+            LenovoSettings.GAME_PERF_ACTIVITY)
+        showIfInstalled(KEY_EXPERIMENTAL, LenovoSettings.EXPERIMENTAL_PACKAGE, LenovoSettings.EXPERIMENTAL_ACTIVITY)
     }
 
-    /** A switch backed by a Settings.Global int of [LenovoSettings]. */
-    private fun switch(key: String, setting: String, def: Int): SwitchPreferenceCompat {
-        val pref: SwitchPreferenceCompat = findPreference(key)!!
-        pref.isChecked = LenovoSettings.getInt(requireContext(), setting, def) != 0
-        pref.setOnPreferenceChangeListener { _, value ->
-            LenovoSettings.putInt(requireContext(), setting, if (value as Boolean) 1 else 0)
-            true
-        }
-        return pref
+    /** Makes the row start the activity of another app, or hides it while that is missing. */
+    private fun showIfInstalled(key: String, pkg: String, cls: String) {
+        val pref: Preference = findPreference(key)!!
+        val intent = Intent().setClassName(pkg, cls)
+        pref.intent = intent
+        pref.isVisible = requireContext().packageManager.resolveActivity(intent, 0) != null
     }
 
     override fun onResume() {
         super.onResume()
         activity?.setTitle(R.string.app_name)
-        val ctx = requireContext()
-        updateChargingMode()
-        updateBypassSummary()
         landscapePref.setSummary(
-            if (LenovoSettings.getSystemInt(ctx, LenovoSettings.LANDSCAPE_VIEW, 1) != 0) {
+            if (LenovoSettings.getSystemInt(requireContext(), LenovoSettings.LANDSCAPE_VIEW, 1) != 0) {
                 R.string.state_on
             } else {
                 R.string.state_off
             }
         )
-        updateBatteryInfo()
         updateVramSummary()
         updateStatus()
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
-        when (preference) {
-            vramPref -> {
-                val gb = (newValue as String).toInt()
-                MemoryExtension.selectedGb = gb
-                vramPref.value = newValue
-                updateVramSummary()
-                if (gb != MemoryExtension.activeGb) askReboot(R.string.reboot_message)
-            }
-            else -> return false
-        }
+        if (preference != vramPref) return false
+        val gb = (newValue as String).toInt()
+        MemoryExtension.selectedGb = gb
+        vramPref.value = newValue
+        updateVramSummary()
+        if (gb != MemoryExtension.activeGb) askReboot()
         return true
-    }
-
-    private fun updateChargingMode() {
-        val mode = LenovoSettings.getInt(requireContext(), LenovoSettings.BATTERY_MODE, 0)
-            .coerceIn(0, chargingPrefs.size - 1)
-        chargingPrefs.forEachIndexed { i, pref -> pref.isChecked = i == mode }
-    }
-
-    private fun updateBypassSummary() {
-        val ctx = requireContext()
-        bypassPref.summary = if (LenovoSettings.getSystemInt(ctx, LenovoSettings.BYPASS_CHARGING, 0) != 0) {
-            val (min, max) = LenovoSettings.bypassRange(ctx)
-            getString(R.string.state_on) + " · " + getString(R.string.range_value, min, max)
-        } else {
-            getString(R.string.state_off)
-        }
-    }
-
-    private fun updateBatteryInfo() {
-        val info = LenovoSettings.readBatteryInfo(requireContext())
-        val cycles = info.cycles?.toString() ?: "-"
-        val health = info.healthPercent?.let { "$it%" } ?: "-"
-        batteryInfoPref.summary = getString(R.string.battery_info_summary, cycles, health)
     }
 
     private fun sizeLabel(gb: Int) =
@@ -190,10 +118,10 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
         }
     }
 
-    private fun askReboot(message: Int) {
+    private fun askReboot() {
         AlertDialog.Builder(requireContext())
             .setTitle(R.string.reboot_title)
-            .setMessage(message)
+            .setMessage(R.string.reboot_message)
             .setPositiveButton(R.string.reboot_now) { _, _ ->
                 requireContext().getSystemService(PowerManager::class.java).reboot(null)
             }
@@ -202,16 +130,11 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
     }
 
     private companion object {
-        val CHARGING_KEYS = listOf("charging_normal", "charging_limit", "charging_protect")
-        const val KEY_BYPASS = "bypass_charging"
         const val KEY_LANDSCAPE = "landscape_view"
-        const val KEY_STANDBY = "standby_saver"
-        const val KEY_MAINTENANCE = "battery_maintenance"
-        const val KEY_BATTERY_INFO = "battery_info"
-        const val KEY_FOLIO = "folio_case_mode"
-        const val KEY_WHITE_BALANCE = "white_balance"
-        const val KEY_WHITE_BALANCE_STRENGTH = "white_balance_strength"
         const val KEY_VRAM = "vram_gb"
         const val KEY_STATUS = "memory_status"
+        const val KEY_FOLIO = "folio_case_mode"
+        const val KEY_GAME_PERF = "game_perf"
+        const val KEY_EXPERIMENTAL = "experimental"
     }
 }

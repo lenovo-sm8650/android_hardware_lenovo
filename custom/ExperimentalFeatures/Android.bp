@@ -1,0 +1,39 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+// "Experimental features", the separate app of the optional TB520FU
+// customizations: app compatibility (device identity and Play Store installer
+// reporting per app) and the Play Integrity Fix switch and JSON. It has no
+// Settings tile; LenovoParts (Advanced features) opens it while it is installed.
+// This app exists only while hardware/lenovo/custom is included.
+//
+
+android_app {
+    name: "ExperimentalFeatures",
+
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+
+    static_libs: [
+        "SettingsLib",
+        "androidx.preference_preference",
+    ],
+
+    required: ["privapp-permissions-experimental.xml"],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-experimental.xml",
+    src: "privapp-permissions-experimental.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+}

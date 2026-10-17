@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/device_spoof_title">
+
+    <!-- Filled in DeviceSpoofFragment -->
+    <PreferenceCategory
+        android:key="device_spoof_apps"
+        android:title="@string/apps_category" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="device_spoof_footer"
+        android:title="@string/device_spoof_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>

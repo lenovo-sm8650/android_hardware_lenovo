@@ -15,9 +15,6 @@ import android.content.res.Resources
  * each patch are hidden behind these flags.
  */
 object FrameworkPatches {
-    /** frameworks_base-0002: Settings.Secure display_white_balance_strength. */
-    val wbStrength = has("config_lenovo_patch_wb_strength")
-
     /** frameworks_base-0003: LenovoKeyboardManager, read by the keyboard updater. */
     val keyboardManager = has("config_lenovo_patch_keyboard_manager")
 

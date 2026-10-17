@@ -8,9 +8,25 @@
 # device tree builds a plain PixelOS without this repository.
 #
 
-# Custom Tweaks app (Settings > System), LenovoParts stays the device port)
+# Experimental features and game performance apps (opened from Advanced features
+# in LenovoParts; no Settings tile of their own) and the framework defaults of the
+# first. LenovoParts stays the device port and builds without them.
 PRODUCT_PACKAGES += \
-    LenovoCustomFeatures
+    ExperimentalFeatures \
+    FrameworksResExperimental \
+    LenovoGamePerformance
+
+# Play Integrity Fix (fork of KOWX712/PlayIntegrityFix, packages/apps/PlayIntegrityFix):
+# the page opened from Experimental features, its jar and native part. The framework
+# loads the jar only while the page's main switch is on.
+PRODUCT_PACKAGES += \
+    PlayIntegrityFixSettings
+
+# Game performance enforcement inside system_server (input/ extension point).
+# lenovo-input loads /system_ext/framework/lenovo-input-custom.jar when it is
+# present and lets it register with InputExtension.
+PRODUCT_PACKAGES += \
+    lenovo-input-custom
 
 # Report the Pixel fingerprint verified by the cold-boot module test, without
 # changing the Lenovo hardware identity. Set TARGET_ENABLE_FP_OVERRIDE=false
@@ -20,12 +36,6 @@ ifeq ($(TARGET_ENABLE_FP_OVERRIDE),true)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=google/mustang/mustang:17/CP2A.260605.012/15430684:user/release-keys
 endif
-
-# Game performance enforcement inside system_server (input/ extension point).
-# lenovo-input loads /system_ext/framework/lenovo-input-custom.jar when it is
-# present and lets it register with InputExtension.
-PRODUCT_PACKAGES += \
-    lenovo-input-custom
 
 # Default wallpaper (Pixel "Feathers" Porcelain live wallpaper)
 PRODUCT_PACKAGES += \

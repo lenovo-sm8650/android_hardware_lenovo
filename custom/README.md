@@ -2,40 +2,39 @@
 
 Maintainer additions on top of PixelOS for the Lenovo Yoga Tab Plus
 (lapis, TB520FU), kept apart from the device support so a plain build stays
-clean. `device/lenovo/lapis` (`seventeen`) uses them through two hooks; without
+clean. `device/lenovo/lapis` (`seventeen`) uses them through one hook; without
 them it builds a plain PixelOS.
 
 Contents:
 
 | Path | What |
 |---|---|
-| `LenovoCustomFeatures/` | "Custom Tweaks" app (Settings > System): game performance, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2) and the apps that see the Play Store as their installer (per app, only to the app itself) |
+| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility (the device identity selected apps see, default: Netflix sees the OnePlus Pad Go 2, and the apps that see the Play Store as their installer, per app and only to the app itself) and a Play Integrity Fix row that opens the separate PIF app (`io.github.wnduddld0513.pif`) and is hidden while it is not installed |
+| `ExperimentalFeatures/overlay/FrameworksResExperimental/` | the device identity defaults of the app |
 | `custom.mk` | the packages above and the global Pixel build fingerprint (`TARGET_ENABLE_FP_OVERRIDE=false` keeps the stock device fingerprint) |
-| `input/` | `lenovo-input-custom.jar`, the game performance enforcement, loaded into system_server by `lenovo-input` |
 | `FeathersLiveWallpaper/` | Pixel "Feathers" Porcelain live wallpaper, the default wallpaper |
-| `overlay/FrameworksResCustom/` | the default wallpaper and device identity defaults |
+| `overlay/FrameworksResCustom/` | the default wallpaper |
 | `overlay/UpdaterResTarget/` | the updater's SourceForge folder and hidden certified-props item |
-| `sepolicy/vendor/` | the cpufreq/kgsl rules of the game performance controller |
-| `tools/custom_strings.py` | generates the app's `res/values*/strings.xml` |
+| `tools/custom_strings.py` | generates the Experimental features app's `res/values*/strings.xml` |
 | `tools/ota_json.py` | writes the updater description of a build |
 
 ## How it hooks into the device tree
 
 - `device/lenovo/lapis/custom_lapis.mk` inherits `custom.mk` with
   `inherit-product-if-exists`.
-- `device/lenovo/lapis/BoardConfig.mk` includes `BoardConfigCustom.mk` with
-  `-include` (the vendor sepolicy directory).
 
 The source changes they need (installer report for picked apps, blocking Play
 Store installs/updates of `com.google.android.GoogleCamera`, the updater server)
 are commits in the `frameworks/base` and `packages/apps/Updater` forks. Google
-Camera can still be installed manually through adb or a file manager. The Play
-Store keeps the normal PixelOS certified-properties path.
+Camera can still be installed manually through adb or a file manager.
 
-`lenovo-input` (`hardware/lenovo/input`) calls into this code only through the
-`com.zui.server.input.InputExtension` interface: `InputCore` loads
-`/system_ext/framework/lenovo-input-custom.jar` with a `PathClassLoader` when
-the file exists, so it keeps working on a build without it.
+The Experimental features app is reached only from the "Experimental features"
+row of LenovoParts (Advanced features), which starts
+`org.lineageos.settings.experimental/.ExperimentalFeaturesActivity` and hides itself while that app is
+not installed. Without this repository (for example a `lineage_lapis` build)
+LenovoParts and `lenovo-input` build and work unchanged and nothing refers to
+the app. The game performance page and `GamePerfController` are part of
+LenovoParts and `lenovo-input`, not of the customizations.
 
 ## OTA publishing
 
