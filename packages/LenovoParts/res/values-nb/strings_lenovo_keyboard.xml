@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Vi anbefaler at du bruker det opprinnelige tastaturet sammen med Lenovos nettbrett, siden noen hurtigtaster kan variere mellom tastaturer fra forskjellige produsenter.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Systemmodus når et tastatur er tilkoblet</string>
     <string name="lkb_screen_cast_phone_mode_title">Normalmodus</string>
-    <string name="lkb_pc_mode_settings_title_name">PC-modus</string>
+    <string name="lkb_pc_mode_settings_title_name">Datamaskin-vindusvisning</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Startside</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Varslingssenter</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Lås skjermen</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Lukk gjeldende applikasjon</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Nylige applikasjoner</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Gå inn i / ut av PC-modus</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Gå inn i / ut av Datamaskin-vindusvisning</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google Søk</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Oppgavelinje</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Filbehandling</string>

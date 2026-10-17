@@ -43,12 +43,12 @@
     <string name="lkb_keyboard_tips">ہمارا مشورہ ہے کہ آپ Lenovo کے ٹیبلیٹ کے ساتھ اصل کیی بورڈ استعمال کریں، کیوں کہ مختلف مینوفیکچررز کے کیی بورڈز کے درمیان کچھ شارٹ کٹس کلیدیں مختلف ہو سکتی ہیں۔</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">سسٹم موڈ جب کی بورڈ کو مربوط کیا جائے</string>
     <string name="lkb_screen_cast_phone_mode_title">عمومی موڈ</string>
-    <string name="lkb_pc_mode_settings_title_name">PC موڈ</string>
+    <string name="lkb_pc_mode_settings_title_name">ڈیسک ٹاپ ونڈوئنگ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">ہوم</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">مرکز اطلاع</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">اسکرین مقفل کرنا</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">موجودہ ایپلیکیشن بند کریں</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">PC موڈ میں داخل کریں/نکلیں</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">ڈیسک ٹاپ ونڈوئنگ میں داخل کریں/نکلیں</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google تلاش</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">ٹاسک بار</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">فائل منیجر</string>

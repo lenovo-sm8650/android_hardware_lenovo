@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Lenovo planšetėje rekomenduojama naudoti originalią klaviatūrą, nes įvairių gamintojų klaviatūrose kai kurie spartieji klavišai gali skirtis.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Sistemos režimas, kai prijungta klaviatūra</string>
     <string name="lkb_screen_cast_phone_mode_title">Normalus režimas</string>
-    <string name="lkb_pc_mode_settings_title_name">AK režimas</string>
+    <string name="lkb_pc_mode_settings_title_name">Versijos staliniams kompiuteriams rodinys</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Pagrindinis</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Pranešimų centras</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Užrakinti ekraną</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Išjungti esamą programą</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Naujausios programos</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Įjungti / išjungti AK režimą</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Įjungti darbalaukio pateikimo lange režimą</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Bendra ieška</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">„Google“ paieška</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Užduočių juosta</string>

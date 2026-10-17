@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Zalecamy korzystać z oryginalnej klawiatury tabletu Lenovo, ponieważ niektóre klawisze skrótów mogą różnić się między klawiaturami różnych producentów.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Tryb systemu po podłączeniu klawiatury</string>
     <string name="lkb_screen_cast_phone_mode_title">Tryb normalny</string>
-    <string name="lkb_pc_mode_settings_title_name">Tryb PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Tryb okien na pulpicie</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Ekran główny</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centrum powiadomień</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Zablokuj ekran</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Zamknij bieżącą aplikację</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Ostatnie aplikacje</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Włącz/wyłącz tryb PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Włącz/wyłącz Tryb okien na pulpicie</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Wyszukiwanie globalne</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Wyszukiwarka Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Pasek zadań</string>

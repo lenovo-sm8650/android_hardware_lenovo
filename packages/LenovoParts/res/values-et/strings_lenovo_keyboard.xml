@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Soovitame Lenovo tahvelarvutiga kasutada originaalklaviatuuri, sest mõned otseteed võivad erinevate tootjate klaviatuuride korral erineda.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Süsteemirežiim, kui klaviatuur on ühendatud</string>
     <string name="lkb_screen_cast_phone_mode_title">Tavarežiim</string>
-    <string name="lkb_pc_mode_settings_title_name">PC režiim</string>
+    <string name="lkb_pc_mode_settings_title_name">Töölaua aknad</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Kodu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Teavituskeskus</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Ekraani lukustamine</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Sulge praegune rakendus</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Hiljutised rakendused</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Sisene/välju arvutirežiimist</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Kasuta töölaua aknaid</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Globaalne otsing</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google\'i otsing</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Tegumiriba</string>

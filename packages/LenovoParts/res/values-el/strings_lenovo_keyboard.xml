@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Συνιστάται η χρήση του γνήσιου επίπεδου πληκτρολογίου Lenovo. Το αποτέλεσμα ορισμένων πλήκτρων συντόμευσης μπορεί να διαφέρει ανάλογα με τα πληκτρολόγια των διάφορων κατασκευαστών. Ανατρέξτε στο πραγματικό αποτέλεσμα.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Λειτουργία συστήματος όταν είναι συνδεδεμένο ένα πληκτρολόγιο</string>
     <string name="lkb_screen_cast_phone_mode_title">Κανονική λειτουργία</string>
-    <string name="lkb_pc_mode_settings_title_name">Λειτουργία PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Προσαρμογή σε παράθυρο στην επιφάνεια εργασίας</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Αρχική σελίδα</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Κέντρο ειδοποιήσεων</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Κλείδωμα οθόνης</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Κλείσιμο τρέχουσας εφαρμογής</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Πρόσφατες Εφαρμογές</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Είσοδος/έξοδος από τη λειτουργία PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Είσοδος/έξοδος από τη Προσαρμογή σε παράθυρο στην επιφάνεια εργασίας</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Καθολική αναζήτηση</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Αναζήτηση Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Γραμμή εργασιών</string>

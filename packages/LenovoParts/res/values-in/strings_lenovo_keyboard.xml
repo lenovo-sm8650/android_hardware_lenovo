@@ -44,13 +44,13 @@
     <string name="lkb_keyboard_tips">Kami menyarankan agar Anda menggunakan keyboard asli dengan tablet Lenovo, karena beberapa pintasan mungkin bervariasi di antara keyboard dari berbagai produsen.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Mode sistem ketika keyboard tersambung</string>
     <string name="lkb_screen_cast_phone_mode_title">Mode normal</string>
-    <string name="lkb_pc_mode_settings_title_name">Mode PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Mode jendela desktop</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Utama</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Pusat notifikasi</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Kunci layar</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Tutup aplikasi saat ini</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Aplikasi Terbaru</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Masuk/keluar dari mode PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Masuk/keluar dari Mode jendela desktop</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Pencarian Global</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">FileManager</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Setelan</string>

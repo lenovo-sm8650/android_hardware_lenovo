@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">Vélbúnaðarlyklaborð</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Stillingar</string>
+    <string name="lkb_pc_mode_settings_title_name">Gluggastilling í tölvu</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Nota gluggastillingu í tölvu</string>
 </resources>

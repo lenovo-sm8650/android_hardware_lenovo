@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">Tashqi klaviatura</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Sozlamalar</string>
+    <string name="lkb_pc_mode_settings_title_name">Desktop rejimidagi oynalar</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Oynalarni desktop rejimda chiqarish</string>
 </resources>

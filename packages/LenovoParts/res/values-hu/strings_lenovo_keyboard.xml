@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Azt javasoljuk, hogy az eredeti billentyűzetet használja a Lenovo táblagéppel, mert néhány billentyűparancs a különböző gyártmányú billentyűzeteknél eltérő lehet.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Rendszer mód bekapcsolása billentyűzet csatlakoztatásakor</string>
     <string name="lkb_screen_cast_phone_mode_title">Normál mód</string>
-    <string name="lkb_pc_mode_settings_title_name">PC mód</string>
+    <string name="lkb_pc_mode_settings_title_name">Asztali ablakkezelési mód</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Főoldal</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Értesítési központ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">A képernyő zárolása</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">A jelenleg futó alkalmazás bezárása</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">A legújabb alkalmazások</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Számítógép mód indítása/kikapcsolása</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Asztali ablakkezelési mód használata</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Globális keresés</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google Keresés</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Tálca</string>

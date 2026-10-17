@@ -44,13 +44,13 @@
     <string name="lkb_keyboard_tips">Chúng tôi khuyên bạn nên sử dụng bàn phím phẳng chính hãng của Lenovo. Hiệu ứng của một số phím tắt có thể khác nhau với bàn phím của các nhà sản xuất khác. Vui lòng tham khảo hiệu ứng thực tế.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Chế độ hệ thống khi bàn phím được kết nối</string>
     <string name="lkb_screen_cast_phone_mode_title">Chế độ bình thường</string>
-    <string name="lkb_pc_mode_settings_title_name">Chế độ PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Chế độ cửa sổ trên máy tính</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Trang chủ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Trung tâm thông báo</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Khóa màn hình</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Đóng ứng dụng hiện tại</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Ứng dụng gần đây</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Vào/thoát chế độ máy tính</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Sử dụng chế độ cửa sổ trên máy tính</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Tìm kiếm Toàn cầu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Tìm kiếm Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Thanh tác vụ</string>

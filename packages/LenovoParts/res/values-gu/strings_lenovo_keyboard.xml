@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">ભૌતિક કીબોર્ડ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">સેટિંગ</string>
+    <string name="lkb_pc_mode_settings_title_name">ડેસ્કટૉપ વિન્ડોઇંગ</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">ડેસ્કટૉપ વિન્ડોઇંગનો ઉપયોગ કરો</string>
 </resources>

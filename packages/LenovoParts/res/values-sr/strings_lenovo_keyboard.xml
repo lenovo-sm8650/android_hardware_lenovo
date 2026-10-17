@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Preporučujemo da koristite originalnu tastaturu uz Lenovo tablet jer neke prečice mogu da budu različite na tastaturama drugih proizvođača.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Režim sistema kada je tastatura povezana</string>
     <string name="lkb_screen_cast_phone_mode_title">Normalni režim</string>
-    <string name="lkb_pc_mode_settings_title_name">Režim računara</string>
+    <string name="lkb_pc_mode_settings_title_name">Приказ рачунарских прозора</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Почетна</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centar za obaveštenja</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Закључавање екрана</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Zatvori trenutnu aplikaciju</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Недавно коришћене апликације</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Ulaz/izlaz iz režima računara</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Користи приказ рачунарских прозора</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google претрага</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Traka zadataka</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Menadžer datoteka</string>

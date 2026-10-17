@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Ieteicams izmantot Lenovo oriģinālo plakano tastatūru. Dažu īsinājumtaustiņu efekts var atšķirties atkarībā no dažādu ražotāju tastatūras. Lūdzu, ņemiet vērā faktisko efektu.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Sistēmas režīms, kad ir pievienota tastatūra</string>
     <string name="lkb_screen_cast_phone_mode_title">Parastais režīms</string>
-    <string name="lkb_pc_mode_settings_title_name">Datora režīms</string>
+    <string name="lkb_pc_mode_settings_title_name">Darbvirsmas logošana</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Sākums</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Paziņojumu centrs</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Ekrāna bloķēšana</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Aizvērt esošo lietojumprogrammu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Nesen lietotās lietojumprogrammas</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Ieiet PC režīmā/iziet no PC režīma</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Izmantot darbvirsmas logu režīmu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Globālā meklēšana</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google meklēšana</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Uzdevumjosla</string>

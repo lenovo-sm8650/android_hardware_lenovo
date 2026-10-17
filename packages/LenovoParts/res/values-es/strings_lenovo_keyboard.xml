@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Le recomendamos que utilice el teclado original con la tableta de Lenovo, ya que es posible que algunas teclas de acceso directo varíen entre teclados de diferentes fabricantes.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Modo del sistema cuando se conecta un teclado</string>
     <string name="lkb_screen_cast_phone_mode_title">Modo normal</string>
-    <string name="lkb_pc_mode_settings_title_name">Modo de PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Modo Ventanas</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Página principal</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centro de notificaciones</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Bloquear la pantalla</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Cerrar la aplicación actual</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Aplicaciones recientes</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Entrar/salir del modo PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Usar el escritorio basado en ventanas</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Búsqueda de Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Barra de tareas</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Administrador de archivos</string>

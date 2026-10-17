@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Suosittelemme, että käytät Lenovo-tabletin alkuperäistä näppäimistöä, sillä jotkin pikanäppäimet saattavat vaihdella eri valmistajien välillä.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Järjestelmän tila, kun näppäimistö on liitettynä</string>
     <string name="lkb_screen_cast_phone_mode_title">Normaalitila</string>
-    <string name="lkb_pc_mode_settings_title_name">PC-tila</string>
+    <string name="lkb_pc_mode_settings_title_name">Työpöydän ikkunointi</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Aloituspainike</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Ilmoituskeskus</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Lukitse ruutu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Sulje nykyinen sovellus</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Viimeisimmät sovellukset</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Avaa/sulje tietokonetila</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Käytä työpöydän ikkunointia</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Yleinen haku</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google-haku</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Tehtäväpalkki</string>

@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">ਭੌਤਿਕ ਕੀ-ਬੋਰਡ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">ਸੈਟਿੰਗਾਂ</string>
+    <string name="lkb_pc_mode_settings_title_name">ਡੈਸਕਟਾਪ ਵਿੰਡੋ</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">ਡੈਸਕਟਾਪ \\'ਤੇ ਇੱਕ ਤੋਂ ਵੱਧ ਵਿੰਡੋਆਂ ਦਿਖਾਉਣ ਵਾਲੀ ਸੁਵਿਧਾ ਵਰਤੋ</string>
 </resources>

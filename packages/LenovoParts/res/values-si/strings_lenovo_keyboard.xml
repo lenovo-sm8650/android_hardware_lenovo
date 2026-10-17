@@ -20,4 +20,6 @@
     <string name="lkb_trackpad_reverse_scrolling_title">ආපස්සට අනුචලනය</string>
     <string name="lkb_pointer_speed">දර්ශක වේගය</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">සැකසීම්</string>
+    <string name="lkb_pc_mode_settings_title_name">ඩෙස්ක්ටොප් කවුළුකරණය</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">ඩෙස්ක්ටොප් කවුළුකරණය භාවිතා කරන්න</string>
 </resources>

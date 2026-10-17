@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">建議使用 Lenovo 原來的平面鍵盤。某些快速鍵的效果會因不同製造商的鍵盤而異。請參考實際效果。</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">連接鍵盤時的系統模式</string>
     <string name="lkb_screen_cast_phone_mode_title">普通模式</string>
-    <string name="lkb_pc_mode_settings_title_name">電腦模式</string>
+    <string name="lkb_pc_mode_settings_title_name">電腦分割視窗</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">主螢幕</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">通知中心</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">鎖定螢幕</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">關閉目前的應用程式</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">最近用過的應用程式</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">進入/離開 PC 模式</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">使用電腦視窗化模式</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">全域搜尋</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google 搜尋</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">工作列</string>

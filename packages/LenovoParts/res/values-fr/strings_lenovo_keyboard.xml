@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Il est recommandé d’utiliser le clavier plat d’origine Lenovo. L’effet de certaines touches de raccourci peut varier selon le fabricant du clavier. Veuillez vous référer à l’effet réel.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Mode système lorsqu’un clavier est connecté</string>
     <string name="lkb_screen_cast_phone_mode_title">Mode Normal</string>
-    <string name="lkb_pc_mode_settings_title_name">Mode PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Fenêtrage de bureau</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Accueil</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centre de notification</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Verrouiller l\'écran</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Fermer l\'application en cours</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Applications récentes</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Permet d\'activer/de désactiver le mode PC.</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Permet d\'activer/de désactiver le Fenêtrage de bureau.</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Recherche globale</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Recherche Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Barre de tâches</string>

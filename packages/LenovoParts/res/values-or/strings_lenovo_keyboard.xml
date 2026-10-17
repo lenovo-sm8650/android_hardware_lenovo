@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">ଫିଜିକଲ୍ କୀବୋର୍ଡ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">ସେଟିଂସ</string>
+    <string name="lkb_pc_mode_settings_title_name">ଡେସ୍କଟପ ୱିଣ୍ଡୋଇଂ</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">ଡେସ୍କଟପ ୱିଣ୍ଡୋଇଂ ବ୍ୟବହାର କରନ୍ତୁ</string>
 </resources>

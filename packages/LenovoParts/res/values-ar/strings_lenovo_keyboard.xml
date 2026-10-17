@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">يُوصى باستخدام لوحة المفاتيح المسطحة الأصلية من Lenovo. قد يختلف تأثير بعض مفاتيح الاختصار باختلاف لوحة مفاتيح الشركات المصنعة المختلفة. تُرجى مراجعة التأثير الفعلي.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">وضع النظام عند توصيل لوحة المفاتيح</string>
     <string name="lkb_screen_cast_phone_mode_title">الوضع العادي</string>
-    <string name="lkb_pc_mode_settings_title_name">وضع الكمبيوتر الشخصي</string>
+    <string name="lkb_pc_mode_settings_title_name">عرض المحتوى في النافذة الحالية على سطح المكتب</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">الرئيسية</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">مركز الإعلام</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">تأمين الشاشة</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">إغلاق التطبيق الحالي</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">التطبيقات الأخيرة</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">دخول/إنهاء وضع الكمبيوتر الشخصي</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">دخول/إنهاء عرض المحتوى في النافذة الحالية على سطح المكتب</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">بحث عام</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">محرك البحث Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">شريط المهام</string>

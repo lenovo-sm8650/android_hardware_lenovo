@@ -154,7 +154,7 @@ final class KeyboardDesktopMode {
     }
 
     private void showNotification() {
-        String pcMode = partsString("lkb_pc_mode_settings_title_name", "PC mode");
+        String pcMode = partsString("lkb_pc_mode_settings_title_name", "Desktop windowing");
         String tabletMode = partsString("lkb_screen_cast_phone_mode_title", "Tablet mode");
         String summary = partsString("lkb_pc_mode_keyboard_connect_system_mode",
                 "System mode when a keyboard is connected");

@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Odporúčame vám používať originálnu klávesnicu s tabletom spoločnosti Lenovo, pretože niektoré klávesové skratky sa môžu medzi klávesnicami rôznych výrobcov líšiť.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Režim systému po pripojení klávesnice</string>
     <string name="lkb_screen_cast_phone_mode_title">Normálny režim</string>
-    <string name="lkb_pc_mode_settings_title_name">Režim PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Windowing na pracovnej ploche</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Plocha</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centrum oznámení</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Uzamknúť obrazovku</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Zatvoriť aktuálnu aplikáciu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Nedávne aplikácie</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Vstup/výstup režimu PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Používať režim aplikácií v oknách</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Vyhľadávanie Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Panel úloh</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Správca súborov</string>

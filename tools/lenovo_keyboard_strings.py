@@ -5,7 +5,7 @@
 # packages/LenovoParts/res/values*/strings_lenovo_keyboard.xml, prefixed with "lkb_".
 #
 # Usage: lenovo_keyboard_strings.py [path/to/ZuiSettings.apk]
-import os, re, subprocess, sys
+import glob, os, re, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, '..', 'packages', 'LenovoParts', 'res')
@@ -48,6 +48,44 @@ LOCALE_DIR = {'es-rUS': 'es'}
 SOURCE = {'keyboard_shortcuts_switch_title_11': 'settings_label'}
 
 
+# "PC mode" is shown as "Desktop windowing", the AOSP name of the feature (WM Shell
+# desktop_text), reusing its translations instead of writing new ones. Korean uses
+# "데스크톱 창 모드", the mode name of SystemUI's "Use desktop windowing".
+# The shortcut string (enter/exit) is the stock translation with the stock mode name replaced;
+# where the stock text does not name the mode, it stays English.
+T, S = 'pc_mode_settings_title_name', 'keyboard_shortcuts_switch_title_6'
+DESKTOP_NAME_SOURCE = os.path.join(TOP, 'frameworks', 'base', 'libs', 'WindowManager', 'Shell', 'res')
+DESKTOP_NAME = 'Desktop windowing'
+DESKTOP_NAME_OVERRIDE = {'ko': '데스크톱 창 모드'}
+DESKTOP_SHORTCUT = 'Enter/exit desktop windowing'
+
+
+def desktop_mode_names():
+    """AOSP translations of the WM Shell desktop_text string, for the locales we ship."""
+    names = {'': DESKTOP_NAME}
+    for path in glob.glob(os.path.join(DESKTOP_NAME_SOURCE, 'values-*', 'strings.xml')):
+        loc = os.path.basename(os.path.dirname(path))[len('values-'):]
+        if not os.path.isdir(os.path.join(RES, 'values-' + LOCALE_DIR.get(loc, loc))):
+            continue
+        m = re.search(r'<string name="desktop_text"[^>]*>(.*?)</string>',
+                      open(path, encoding='utf-8').read(), re.S)
+        if m:
+            names[loc] = m.group(1).strip()
+    names.update(DESKTOP_NAME_OVERRIDE)
+    return names
+
+
+def apply_desktop_mode(data):
+    names = desktop_mode_names()
+    stock_t, stock_s = dict(data[T]), dict(data[S])
+    data[T].clear()
+    data[S].clear()
+    for loc in set(stock_t) | set(stock_s) | set(names):
+        name, text, old = names.get(loc, DESKTOP_NAME), stock_s.get(loc, ''), stock_t.get(loc, '')
+        data[T][loc] = name
+        data[S][loc] = text.replace(old, name) if old and old in text else DESKTOP_SHORTCUT
+
+
 def dump():
     out = subprocess.run([AAPT, 'dump', 'resources', APK], capture_output=True,
                          text=True, check=True).stdout.splitlines()
@@ -82,6 +120,7 @@ def xml_escape(s):
 
 def main():
     data = dump()
+    apply_desktop_mode(data)
     missing = [k for k in KEYS if k not in data or '' not in data[k]]
     if missing:
         sys.exit('missing default strings: %s' % missing)

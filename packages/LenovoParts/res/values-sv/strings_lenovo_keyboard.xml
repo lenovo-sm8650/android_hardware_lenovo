@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Vi rekommenderar att du använder originaltangentbordet med Lenovos surfplatta, eftersom vissa kortkommandon kan variera mellan tangentbord från olika tillverkare.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Systemläge när det finns ett anslutet tangentbord</string>
     <string name="lkb_screen_cast_phone_mode_title">Normalt läge</string>
-    <string name="lkb_pc_mode_settings_title_name">Datorläge</string>
+    <string name="lkb_pc_mode_settings_title_name">Fönsterstapling</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Startsida</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Meddelandecenter</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Lås skärmen</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Avsluta aktuellt program</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Nya appar</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Gå in i/avsluta datorläge</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Gå in i/avsluta Fönsterstapling</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Sök på Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Aktivitetsfält</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Filhanteraren</string>

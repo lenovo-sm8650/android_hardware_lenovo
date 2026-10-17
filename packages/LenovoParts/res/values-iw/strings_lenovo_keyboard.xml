@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">בטאבלט של Lenovo, מומלץ להשתמש במקלדת המקורית של המכשיר, כיוון שחלק ממקשי הקיצור עלולים להשתנות בין מקלדות של יצרנים שונים.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">מצב מערכת כאשר המקלדת מחוברת</string>
     <string name="lkb_screen_cast_phone_mode_title">מצב רגיל</string>
-    <string name="lkb_pc_mode_settings_title_name">מצב מחשב</string>
+    <string name="lkb_pc_mode_settings_title_name">שינוי דינמי של חלונות במחשב</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">בית</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">מרכז התראות</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">נעל את המסך</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">סגור את היישום הנוכחי</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">יישומים אחרונים</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">פתח/סגור מצב מחשב</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">פתח/סגור שינוי דינמי של חלונות במחשב</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">חיפוש גלובלי</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">חיפוש Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">סרגל המשימות</string>

@@ -41,7 +41,8 @@
     <string name="lkb_keyboard_shortcuts_switch_title_3">I-lock ang screen</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Isara ang kasalukuyang application</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Mga Kamakailang Application</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Pumasok/lumabas sa PC mode</string>
+    <string name="lkb_pc_mode_settings_title_name">Desktop windowing</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Pumasok/lumabas sa Desktop windowing</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Paghahanap sa Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Tagapamahala ng File</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Mga Setting</string>

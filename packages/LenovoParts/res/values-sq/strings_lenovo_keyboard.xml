@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">Tastiera fizike</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Cilësimet</string>
+    <string name="lkb_pc_mode_settings_title_name">Modaliteti me dritare si në desktop</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Përdor modalitetin me dritare si në desktop</string>
 </resources>

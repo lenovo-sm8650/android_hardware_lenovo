@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Препоръчваме да използвате оригиналната клавиатура с таблета на Lenovo, тъй като някои клавишни комбинации може да се различават между клавиатурите от различни производители.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Системен режим, когато е свързана клавиатура</string>
     <string name="lkb_screen_cast_phone_mode_title">Нормален режим</string>
-    <string name="lkb_pc_mode_settings_title_name">PC режим</string>
+    <string name="lkb_pc_mode_settings_title_name">Режим за настолни компютри</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Начало</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Център за известия</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Заключване на екрана</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Затваряне на текущото приложение</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Скорошни приложения</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Влизане/излизане от компютърен режим</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Използване на режима за настолни компютри</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Глобално търсене</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google Търсене</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Лента на задачите</string>

@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Preporučuje se da upotrebljavate originalnu plosnatu tipkovnicu Lenovo. Učinak nekih tipkovnih prečaca može se razlikovati na tipkovnicama različitih proizvođača. Pogledajte stvaran učinak.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Sistemski način rada ako je tipkovnica povezana</string>
     <string name="lkb_screen_cast_phone_mode_title">Normalni način</string>
-    <string name="lkb_pc_mode_settings_title_name">Način rada za računalo</string>
+    <string name="lkb_pc_mode_settings_title_name">Prikaz u prozorima na računalu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Doma</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centar za obavijesti</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Zaključaj zaslon</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Zatvori trenutačnu aplikaciju</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Nedavne aplikacije</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Uđite/izađite iz načina rada računala</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Upotreba prikaza u prozorima na računalu</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google Pretraživanje</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Programska traka</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Upravitelj datoteka</string>

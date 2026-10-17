@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">हम सुझाव देते हैं कि आप Lenovo के टैबलेट के साथ मूल कीबोर्ड का इस्तेमाल करें, क्योंकि दूसरे निर्माताओं के कीबोर्ड की कुछ शॉर्टकट कुंजियां भिन्न हो सकती हैं.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">कीबोर्ड के कनेक्ट होने पर सिस्टम मोड</string>
     <string name="lkb_screen_cast_phone_mode_title">सामान्य मोड</string>
-    <string name="lkb_pc_mode_settings_title_name">PC मोड</string>
+    <string name="lkb_pc_mode_settings_title_name">डेस्कटॉप विंडोविंग</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">मुखपृष्ठ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">सूचना केंद्र</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">स्‍क्रीन लॉक करें</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">मौजूदा ऐप्लिकेशन बंद करें</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">हाल ही के एप्‍लि‍केशन</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">PC मोड में जाएं/उससे बाहर निकलें</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">डेस्कटॉप विंडोविंग में जाएं/उससे बाहर निकलें</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">वैश्विक खोज</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google खोज</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">टास्कबार</string>

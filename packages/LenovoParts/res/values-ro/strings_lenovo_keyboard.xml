@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Vă recomandăm să utilizaţi tastatura originală cu tableta Lenovo, deoarece anumite taste pentru comenzi rapide ar putea fi diferite pe tastaturile de la alţi producători.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Mod sistem la conectarea tastaturii</string>
     <string name="lkb_screen_cast_phone_mode_title">Mod normal</string>
-    <string name="lkb_pc_mode_settings_title_name">Mod PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Ferestre pe desktop</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Ecranul de pornire</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centru de notificări</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Blocaţi ecranul</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Închidere aplicaţie curentă</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Aplicaţii recente</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Intraţi/Ieşiţi din modul PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Folosește funcția de windowing pe desktop</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Căutare globală</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Căutare Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Bara de activităţi</string>

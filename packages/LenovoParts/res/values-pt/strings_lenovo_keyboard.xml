@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">Teclado físico</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Configurações</string>
+    <string name="lkb_pc_mode_settings_title_name">Modo janela para computador</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Usar modo de janela para computador</string>
 </resources>

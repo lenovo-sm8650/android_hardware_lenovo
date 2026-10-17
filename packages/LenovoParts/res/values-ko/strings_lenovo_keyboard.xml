@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">일부 단축키는 여러 제조업체의 키보드마다 다를 수 있으므로 정품 키보드를 Lenovo 태블릿과 함께 사용하는 것이 좋습니다.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">키보드가 연결된 상태의 시스템 모드</string>
     <string name="lkb_screen_cast_phone_mode_title">일반 모드</string>
-    <string name="lkb_pc_mode_settings_title_name">PC 모드</string>
+    <string name="lkb_pc_mode_settings_title_name">데스크톱 창 모드</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">홈</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">알림 센터</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">화면 잠금</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">현재 애플리케이션 닫기</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">최신 애플리케이션</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">PC 모드 시작/종료</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">데스크톱 창 모드 시작/종료</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">전체 검색</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google 검색</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">작업 표시줄</string>

@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">Kibodi halisi</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">Mipangilio</string>
+    <string name="lkb_pc_mode_settings_title_name">Kupanga madirisha ya kompyuta ya mezani</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Tumia hali ya madirisha ya kompyuta ya mezani</string>
 </resources>

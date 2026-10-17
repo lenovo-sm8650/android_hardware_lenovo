@@ -46,13 +46,13 @@
     <string name="lkb_keyboard_tips">It is recommended to use Lenovo original flat keyboard. The effect of some shortcut keys may vary with the keyboard of different manufacturers. Please refer to the actual effect.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">System mode when a keyboard is connected</string>
     <string name="lkb_screen_cast_phone_mode_title">Tablet mode</string>
-    <string name="lkb_pc_mode_settings_title_name">PC mode</string>
+    <string name="lkb_pc_mode_settings_title_name">Desktop windowing</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Home</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Notification center</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Lock the screen</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Close the current application</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Recent Applications</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Enter/exit PC mode</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Enter/exit desktop windowing</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Global Search</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google Search</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Taskbar</string>

@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">แนะนำให้ใช้แป้นพิมพ์แบนแบบดั้งเดิมของ Lenovo การทำงานของบางคีย์ลัดอาจแตกต่างกันขึ้นอยู่กับผู้ผลิตแป้นพิมพ์ โปรดอ้างถึงผลที่แท้จริง</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">โหมดระบบเมื่อเชื่อมต่อแป้นพิมพ์</string>
     <string name="lkb_screen_cast_phone_mode_title">โหมดปกติ</string>
-    <string name="lkb_pc_mode_settings_title_name">โหมดพีซี</string>
+    <string name="lkb_pc_mode_settings_title_name">หน้าต่างเดสก์ท็อป</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">หน้าหลัก</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">ศูนย์การแจ้งเตือน</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">ล็อกหน้าจอ</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">ปิดแอปพลิเคชันปัจจุบัน</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">แอปพลิเคชันล่าสุด</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">เข้า/ออกจากโหมดพีซี</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">เข้า/ออกจากหน้าต่างเดสก์ท็อป</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">ค้นหาทั้งหมด</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">ค้นหาโดย Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">ทาสก์บาร์</string>

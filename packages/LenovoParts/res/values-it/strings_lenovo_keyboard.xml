@@ -42,12 +42,12 @@
     <string name="lkb_keyboard_tips">Si consiglia di utilizzare la tastiera originale con il tablet Lenovo, poiché alcuni tasti di scelta rapida potrebbero essere diversi nelle tastiere di produttori terzi.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Modalità del sistema con tastiera collegata</string>
     <string name="lkb_screen_cast_phone_mode_title">Modalità normale</string>
-    <string name="lkb_pc_mode_settings_title_name">Modalità PC</string>
+    <string name="lkb_pc_mode_settings_title_name">App in finestre</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Centro notifiche</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Blocca lo schermo</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Chiudi applicazione corrente</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Applicazioni recenti</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Attiva/Disattiva modalità PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Attiva/Disattiva App in finestre</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Ricerca globale</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Ricerca Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Barra applicazioni</string>

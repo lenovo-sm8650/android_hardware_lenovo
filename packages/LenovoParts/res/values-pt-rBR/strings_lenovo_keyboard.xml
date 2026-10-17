@@ -42,13 +42,13 @@
     <string name="lkb_keyboard_tips">Recomenda-se usar o teclado plano original Lenovo. O efeito de algumas teclas de atalho pode variar de acordo com o teclado de diferentes fabricantes. Consulte o efeito real.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Modo de sistema quando um teclado está conectado</string>
     <string name="lkb_screen_cast_phone_mode_title">Modo normal</string>
-    <string name="lkb_pc_mode_settings_title_name">Modo PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Modo janela para computador</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Início</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Central de Notificações</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Bloqueie a tela</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Fechar app atual</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Aplicativos recentes</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Entrar/sair do modo PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Entrar/sair do Modo janela para computador</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Pesquisa Global</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Barra de tarefas</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Gerenciador de arquivo</string>

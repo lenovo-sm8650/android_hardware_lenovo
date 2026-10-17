@@ -20,4 +20,6 @@
     <string name="lkb_trackpad_reverse_scrolling_title">स्क्रोलिंग उलट करा</string>
     <string name="lkb_pointer_speed">पॉइंटर स्पीड</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">सेटिंग्ज</string>
+    <string name="lkb_pc_mode_settings_title_name">डेस्कटॉप विंडोइंग</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">डेस्कटॉप विंडोइंग वापरा</string>
 </resources>

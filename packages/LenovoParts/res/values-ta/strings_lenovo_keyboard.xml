@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">கீபோர்டு</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">அமைப்புகள்</string>
+    <string name="lkb_pc_mode_settings_title_name">டெஸ்க்டாப் சாளரமாக்குதல்</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">டெஸ்க்டாப் சாளரமாக்குதலைப் பயன்படுத்துதல்</string>
 </resources>

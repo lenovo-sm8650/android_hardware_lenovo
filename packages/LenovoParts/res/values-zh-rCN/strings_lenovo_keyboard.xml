@@ -44,13 +44,13 @@
     <string name="lkb_keyboard_tips">建议使用Lenovo原装平板键盘，部分快捷键的效果可能因不同厂商键盘的差异而有所不同，请以实际效果为准。</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">连接键盘时的系统模式</string>
     <string name="lkb_screen_cast_phone_mode_title">普通模式</string>
-    <string name="lkb_pc_mode_settings_title_name">电脑模式</string>
+    <string name="lkb_pc_mode_settings_title_name">窗口化模式</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">主屏幕</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">通知中心</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">锁定屏幕</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">关闭当前应用</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">最近使用</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">进入/退出电脑模式</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">使用窗口化模式</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">全局搜索</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">任务栏</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">文件管理</string>

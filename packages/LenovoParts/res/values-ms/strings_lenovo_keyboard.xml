@@ -43,13 +43,13 @@
     <string name="lkb_keyboard_tips">Disyorkan untuk menggunakan papan kekunci rata asal Lenovo. Kesan sesetengah kekunci pintasan mungkin berbeza mengikut pengeluar papan kekunci yang berbeza. Sila rujuk kesan sebenar.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Mod sistem apabila papan kekunci disambungkan</string>
     <string name="lkb_screen_cast_phone_mode_title">Mod normal</string>
-    <string name="lkb_pc_mode_settings_title_name">Mod PC</string>
+    <string name="lkb_pc_mode_settings_title_name">Tetingkap desktop</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Rumah</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Pusat pemberitahuan</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Kunci skrin</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Tutup aplikasi semasa</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Aplikasi Terbaru</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Masuk/keluar daripada mod PC</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Masuk/keluar daripada Tetingkap desktop</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Carian Global</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Carian Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Bar tugas</string>

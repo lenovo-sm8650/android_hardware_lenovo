@@ -42,13 +42,13 @@
     <string name="lkb_keyboard_tips">Vi anbefaler, at du bruger det originale Lenovo-tastatur, da nogle genvejstaster kan variere mellem tastaturer fra forskellige producenter. Vurder den reelle effekt.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Systemtilstand, når et tastatur er tilsluttet</string>
     <string name="lkb_screen_cast_phone_mode_title">Normal funktion</string>
-    <string name="lkb_pc_mode_settings_title_name">Pc-tilstand</string>
+    <string name="lkb_pc_mode_settings_title_name">Vinduer på skrivebordet</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Startside</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Meddelelsescenter</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Lås skærmen</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Luk det aktuelle program</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Seneste applikationer</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Start/afslut pc-tilstand</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Start/afslut Vinduer på skrivebordet</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google-søgning</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Proceslinje</string>
     <string name="lkb_keyboard_shortcuts_switch_title_10">Filhåndtering</string>

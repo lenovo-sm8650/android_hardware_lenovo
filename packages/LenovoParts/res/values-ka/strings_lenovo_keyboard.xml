@@ -3,4 +3,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="lkb_physical_keyboard_title">ფიზიკური კლავიატურა</string>
     <string name="lkb_keyboard_shortcuts_switch_title_11">პარამეტრები</string>
+    <string name="lkb_pc_mode_settings_title_name">დესკტოპის ფანჯრის რეჟიმი</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">დესკტოპის ფანჯრის რეჟიმის გამოყენება</string>
 </resources>

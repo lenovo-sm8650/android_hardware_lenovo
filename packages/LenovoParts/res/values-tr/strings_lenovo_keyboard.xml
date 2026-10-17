@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Orijinal Lenovo düz klavye kullanımı önerilir. Bazı kısayol tuşlarının etkisi, farklı üreticilerin klavyesinde değişkenlik gösterebilir. Lütfen asıl sonucu dikkate alın.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Klavye bağlı olduğunda sistem modu</string>
     <string name="lkb_screen_cast_phone_mode_title">Normal mod</string>
-    <string name="lkb_pc_mode_settings_title_name">PC modu</string>
+    <string name="lkb_pc_mode_settings_title_name">Masaüstü pencereleme</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Ana sayfa</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Bildirim merkezi</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Ekranı kilitle</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Geçerli uygulamayı kapat</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Son Uygulamalar</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">PC moduna girin/modundan çıkın</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Masaüstü pencerelemena girin/modundan çıkın</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Genel arama</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Google Arama</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Görev çubuğu</string>

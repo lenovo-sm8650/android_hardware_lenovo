@@ -45,13 +45,13 @@
     <string name="lkb_keyboard_tips">Рекомендуємо використовувати з планшетом Lenovo оригінальну клавіатуру, оскільки певні сполучення клавіш можуть різнитися на клавіатурах різних виробників.</string>
     <string name="lkb_pc_mode_keyboard_connect_system_mode">Системний режим за підключеної клавіатури</string>
     <string name="lkb_screen_cast_phone_mode_title">Звичайний режим</string>
-    <string name="lkb_pc_mode_settings_title_name">Режим ПК</string>
+    <string name="lkb_pc_mode_settings_title_name">Режим вікон робочого стола</string>
     <string name="lkb_keyboard_shortcuts_switch_title_1">Головна</string>
     <string name="lkb_keyboard_shortcuts_switch_title_2">Центр сповіщень</string>
     <string name="lkb_keyboard_shortcuts_switch_title_3">Блокувати екран</string>
     <string name="lkb_keyboard_shortcuts_switch_title_4">Закрити поточну програму</string>
     <string name="lkb_keyboard_shortcuts_switch_title_5">Останні програми</string>
-    <string name="lkb_keyboard_shortcuts_switch_title_6">Вхід у режим ПК і вихід із нього</string>
+    <string name="lkb_keyboard_shortcuts_switch_title_6">Вхід у Режим вікон робочого стола і вихід із нього</string>
     <string name="lkb_keyboard_shortcuts_switch_title_7">Глобальний пошук</string>
     <string name="lkb_keyboard_shortcuts_switch_title_8">Пошук Google</string>
     <string name="lkb_keyboard_shortcuts_switch_title_9">Панель завдань</string>
