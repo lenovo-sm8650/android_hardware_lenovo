@@ -8,24 +8,27 @@ package com.zui.server.input;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.hardware.input.KeyGestureEvent;
 import android.os.Handler;
 import android.util.Log;
-import android.view.WindowManager;
-
-import com.android.internal.util.ScreenshotRequest;
+import android.view.Display;
+import android.view.KeyCharacterMap;
 
 /**
  * Handles the "screenshot" entry of the stock Lenovo stylus toolbox.
  *
- * <p>The toolbox (com.lenovo.penservice, kept as a prebuilt) broadcasts
- * {@code lenovo.styluspen.action.PEN_OPERATION} with {@code type=0} and
- * {@code source="styluspen"}. Stock ZUI picked that up inside services.jar and
- * forwarded it to ScreenshotHelper; here the same happens from system_server.
+ * <p>The toolbox (com.lenovo.penservice, kept as a prebuilt, uid system)
+ * broadcasts {@code lenovo.styluspen.action.PEN_OPERATION} with {@code type=0}
+ * and {@code source="styluspen"}. Stock ZUI picked that up inside services.jar
+ * and forwarded it to ScreenshotHelper; here the same happens from
+ * system_server. The receiver requires {@link #SENDER_PERMISSION}, which the
+ * system-uid PenService holds and ordinary apps do not.
  *
- * <p>On Android 17 the framework helper talks to SystemUI's
- * TakeScreenshotService itself, so no zui-specific Messenger plumbing is
- * needed. {@link WindowManager#TAKE_SCREENSHOT_SELECTED_REGION} makes SystemUI
- * start the region selection UI, which is what the toolbox item offers.
+ * <p>The toolbox item, and the pen corner swipe set to screenshot, offer a
+ * region selection: the Android 17 large-screen screen capture toolbar of
+ * SystemUI (config_enableLargeScreenScreencapture, on in SystemUIResTarget),
+ * opened through KEY_GESTURE_TYPE_TAKE_PARTIAL_SCREENSHOT like the keyboard
+ * shortcut.
  */
 final class ScreenshotHelper {
     private static final String TAG = "LenovoPenScreenshot";
@@ -34,6 +37,7 @@ final class ScreenshotHelper {
     private static final String EXTRA_SOURCE = "source";
     private static final String EXTRA_TYPE = "type";
     private static final String SOURCE_STYLUSPEN = "styluspen";
+    private static final String SENDER_PERMISSION = "android.permission.STATUS_BAR_SERVICE";
 
     /** type 0 == screenshot; other values belong to toolbox items we do not handle. */
     private static final int TYPE_SCREENSHOT = 0;
@@ -47,18 +51,16 @@ final class ScreenshotHelper {
 
     private final Context mContext;
     private final Handler mHandler;
-    private final com.android.internal.util.ScreenshotHelper mScreenshotHelper;
 
     ScreenshotHelper(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
-        mScreenshotHelper = new com.android.internal.util.ScreenshotHelper(context);
     }
 
     void start() {
         IntentFilter filter = new IntentFilter(ACTION_PEN_OPERATION);
         mContext.registerReceiver(Safe.receiver("pen operation", (c, i) -> onOperation(i)),
-                filter, null, mHandler, Context.RECEIVER_EXPORTED);
+                filter, SENDER_PERMISSION, mHandler, Context.RECEIVER_EXPORTED);
         Log.i(TAG, "listening for " + ACTION_PEN_OPERATION);
     }
 
@@ -83,11 +85,29 @@ final class ScreenshotHelper {
                 TOOLBOX_DISMISS_DELAY_MS);
     }
 
+    /**
+     * Opens the screen capture toolbar in region mode: dispatches
+     * KEY_GESTURE_TYPE_TAKE_PARTIAL_SCREENSHOT to the key gesture handler
+     * SystemUI registers for it (services.jar is not on this jar's compile
+     * path, hence the reflection; at run time it shares system_server's class
+     * loader).
+     */
     void takeScreenshot() {
-        ScreenshotRequest request = new ScreenshotRequest.Builder(
-                WindowManager.TAKE_SCREENSHOT_SELECTED_REGION,
-                WindowManager.ScreenshotSource.SCREENSHOT_OTHER).build();
-        mScreenshotHelper.takeScreenshot(request, mHandler, null);
-        Log.i(TAG, "screenshot request handed to " + "TakeScreenshotService");
+        try {
+            Class<?> internal = Class.forName("com.android.server.input.InputManagerInternal");
+            Object service = Class.forName("com.android.server.LocalServices")
+                    .getMethod("getService", Class.class).invoke(null, internal);
+            KeyGestureEvent event = new KeyGestureEvent.Builder()
+                    .setDeviceId(KeyCharacterMap.VIRTUAL_KEYBOARD)
+                    .setKeyGestureType(KeyGestureEvent.KEY_GESTURE_TYPE_TAKE_PARTIAL_SCREENSHOT)
+                    .setAction(KeyGestureEvent.ACTION_GESTURE_COMPLETE)
+                    .setDisplayId(Display.DEFAULT_DISPLAY)
+                    .build();
+            internal.getMethod("handleKeyGestureInKeyGestureController", KeyGestureEvent.class)
+                    .invoke(service, event);
+            Log.i(TAG, "partial screenshot gesture dispatched to SystemUI");
+        } catch (ReflectiveOperationException e) {
+            Log.e(TAG, "cannot open the partial screenshot toolbar", e);
+        }
     }
 }

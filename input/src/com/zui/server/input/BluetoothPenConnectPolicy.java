@@ -80,6 +80,11 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private static final String ACTION_LINK_TOUCHED = "lenovo.intent.action.PEN_LINK_TOUCHED";
     private static final String ACTION_LINK_RECONNECT = "lenovo.intent.action.PEN_LINK_RECONNECT";
     private static final String ACTION_LOST_INDICATION = "lenovo.intent.action.PEN_LOST_INDICATION";
+    private static final String ACTION_CONNECTING = "lenovo.intent.action.PEN_CONNECTING";
+    private static final String ACTION_CANCEL_CONNECTING = "lenovo.intent.action.PEN_CANCEL_CONNECTING";
+    private static final String ACTION_MISALIGNED = "lenovo.intent.action.PEN_ATTACHED_MISALIGNED";
+    /** Stock checkMisaligned delay before PEN_ATTACHED_MISALIGNED is sent. */
+    private static final long MISALIGNED_DELAY_MS = 500;
     private static final int BROADCAST_FLAGS =
             Intent.FLAG_RECEIVER_FOREGROUND | Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND;
 
@@ -160,6 +165,13 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private PowerManager.WakeLock mLostWakeLock;
     private final Runnable mLostCheck = Safe.run("pen lost check", this::onLostTimeout);
     private String mLastUevent;
+    private int mAlignedStatus;
+    private final Runnable mSendMisaligned = Safe.run("pen misaligned", () -> {
+        Intent i = new Intent(ACTION_MISALIGNED);
+        i.addFlags(BROADCAST_FLAGS);
+        i.putExtra("aligned_status", mAlignedStatus);
+        sendBroadcast(i);
+    });
     private long mLastConnectAttempt;
     private boolean mProxyRequested;
 
@@ -174,8 +186,10 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
             final String charge = event.get("CHARGING_STATE");
             final String penType = event.get("PEN_TYPE");
             final String tpInfo = event.get("TOUCH_INFORMATION");
+            final String wrongLocation = event.get("WRONGLOCATION");
             Safe.post(mHandler, "pen uevent", () ->
-                    onPenUevent(type, mac, attached, level, charge, penType, tpInfo));
+                    onPenUevent(type, mac, attached, level, charge, penType, tpInfo,
+                            wrongLocation));
         }
     };
 
@@ -189,6 +203,7 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
     private final Runnable mScanTimeout = Safe.run("scan timeout", () -> {
         Log.d(TAG, "scan timeout for " + mPogoMac);
         stopScan();
+        sendCancelConnecting();
         if (isParker(mAttached.type)) LenovoHal.setStylusQiCommand(QI_DISCONNECT_PAD);
     });
 
@@ -272,17 +287,23 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         if (attached == null || mac == null) return;
         Log.d(TAG, "initial attach state " + attached + " " + mac);
         onPenUevent("QI", mac, attached, readFile(WLS_TX + "level"),
-                readFile(WLS_TX + "charge_state"), null, null);
+                readFile(WLS_TX + "charge_state"), null, null, null);
     }
 
     private void onPenUevent(String type, String mac, String attachedStr, String level,
-            String charge, String penType, String tpInfo) {
+            String charge, String penType, String tpInfo, String wrongLocation) {
         String key = type + "/" + mac + "/" + attachedStr + "/" + level + "/" + charge + "/"
-                + penType + "/" + tpInfo;
+                + penType + "/" + tpInfo + "/" + wrongLocation;
         if (key.equals(mLastUevent)) return;
         mLastUevent = key;
         Log.d(TAG, "uevent type=" + type + " mac=" + mac + " attached=" + attachedStr
-                + " level=" + level + " charge=" + charge + " penType=" + penType);
+                + " level=" + level + " charge=" + charge + " penType=" + penType
+                + " misaligned=" + wrongLocation);
+        if (wrongLocation != null) {
+            // stock checkMisaligned(): a uevent carrying WRONGLOCATION is only that
+            checkMisaligned(wrongLocation);
+            return;
+        }
         if ("TP".equals(type)) {
             if (tpInfo != null) {
                 mTpInfo = tpInfo;
@@ -375,10 +396,37 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         }
     }
 
+    /** Replaces any pending message; PEN_ATTACHED_MISALIGNED follows after 500 ms. */
+    private void checkMisaligned(String status) {
+        mHandler.removeCallbacks(mSendMisaligned);
+        if ("ENTER".equals(status)) {
+            mAlignedStatus = 1;
+        } else if ("EXIT".equals(status)) {
+            mAlignedStatus = 0;
+        } else {
+            return;
+        }
+        mHandler.postDelayed(mSendMisaligned, MISALIGNED_DELAY_MS);
+    }
+
+    private void sendConnecting() {
+        Intent i = new Intent(ACTION_CONNECTING);
+        i.addFlags(BROADCAST_FLAGS);
+        i.putExtra("type", mAttached.type);
+        sendBroadcast(i);
+    }
+
+    private void sendCancelConnecting() {
+        Intent i = new Intent(ACTION_CANCEL_CONNECTING);
+        i.addFlags(BROADCAST_FLAGS);
+        sendBroadcast(i);
+    }
+
     private void onAttachChanged(String mac, int attached) {
         if (attached == 0) {
             mPogoMac = null;
             stopScan();
+            sendCancelConnecting();
             return;
         }
         if (!mPowerManager.isInteractive()) {
@@ -426,7 +474,8 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
                 mHidHost.setConnectionPolicy(dev, BluetoothProfile.CONNECTION_POLICY_ALLOWED);
             }
         } else if (bond == BluetoothDevice.BOND_NONE) {
-            startScan(mac);
+            // stock BluetoothPenConnectPolicy$2.run: PEN_CONNECTING when the scan/bond starts
+            if (startScan(mac)) sendConnecting();
             sendAttachChanged();
         }
     }
@@ -461,10 +510,11 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
 
     // ---- scan + bond an attached, unknown pen ----
 
-    private void startScan(String mac) {
-        if (mScanning || mAdapter == null) return;
+    /** Returns true when a new scan was started. */
+    private boolean startScan(String mac) {
+        if (mScanning || mAdapter == null) return false;
         BluetoothLeScanner scanner = mAdapter.getBluetoothLeScanner();
-        if (scanner == null) return;
+        if (scanner == null) return false;
         ScanFilter filter = new ScanFilter.Builder().setDeviceAddress(mac).build();
         ScanSettings settings = new ScanSettings.Builder()
                 .setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES)
@@ -476,6 +526,7 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         scanner.startScan(Collections.singletonList(filter), settings, mScanCallback);
         mHandler.removeCallbacks(mScanTimeout);
         mHandler.postDelayed(mScanTimeout, SCAN_TIMEOUT_MS);
+        return true;
     }
 
     private void stopScan() {
@@ -490,7 +541,7 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
         if (!mScanning || dev == null || !dev.getAddress().equals(mPogoMac)) return;
         stopScan();
         Log.d(TAG, "found attached pen, bonding " + dev.getAddress());
-        dev.createBond(BluetoothDevice.TRANSPORT_LE);
+        if (!dev.createBond(BluetoothDevice.TRANSPORT_LE)) sendCancelConnecting();
     }
 
     // ---- broadcasts from the system ----
@@ -524,9 +575,16 @@ final class BluetoothPenConnectPolicy implements PenGatt.Listener {
                 BluetoothDevice dev = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE,
                         BluetoothDevice.class);
                 int bond = intent.getIntExtra(BluetoothDevice.EXTRA_BOND_STATE, BluetoothDevice.BOND_NONE);
+                int previous = intent.getIntExtra(BluetoothDevice.EXTRA_PREVIOUS_BOND_STATE,
+                        BluetoothDevice.BOND_NONE);
                 if (dev != null && dev.getAddress().equals(mPogoMac)
                         && bond == BluetoothDevice.BOND_BONDED) {
                     Safe.postDelayed(mHandler, "connect after bond", this::connectAttachedPen, 1000);
+                } else if (dev != null && dev.getAddress().equals(mPogoMac)
+                        && bond == BluetoothDevice.BOND_NONE
+                        && previous == BluetoothDevice.BOND_BONDING) {
+                    // bonding of the attached pen failed
+                    sendCancelConnecting();
                 }
                 break;
             }
