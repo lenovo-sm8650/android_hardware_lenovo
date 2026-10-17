@@ -50,7 +50,7 @@ import java.util.StringJoiner;
  * the requested share of the cluster maximum from scaling_available_frequencies
  * at runtime.
  *
- * Settings.Global (written by the game performance app, GamePerformance):
+ * Settings.Global (written by the game performance app, LenovoGamePerformance):
  *   lenovo_game_perf         1 enable profiles
  *   lenovo_game_perf_apps    "pkg:cpu:gpu;pkg:cpu:gpu"
  *   lenovo_game_perf_custom  "pkg:single:multi:gpu;pkg:..." custom percentages
@@ -74,7 +74,7 @@ public final class GamePerfController {
 
     /** Balanced keeps the prime core, the other cores and the GPU at this share. */
     private static final int BALANCED_PERCENT = 80;
-    /** Custom profile bounds, mirrored by GamePerformance (GameApps.kt). */
+    /** Custom profile bounds, mirrored by LenovoGamePerformance (GameApps.kt). */
     private static final int CUSTOM_MIN_PERCENT = 30;
     private static final int CUSTOM_DEFAULT_PERCENT = 80;
     private static final int CUSTOM_SINGLE = 0;

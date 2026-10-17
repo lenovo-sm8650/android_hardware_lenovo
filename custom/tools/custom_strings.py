@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Generates res/values*/strings.xml of the Experimental features app (ExperimentalFeatures)
-# and the game performance app (GamePerformance) of the optional customizations.
+# and the game performance app (LenovoGamePerformance) of the optional customizations.
 # The text of every locale is in custom_strings.json ("en" is the default; a locale only lists the
 # strings that differ from English, the others fall back to it). Locales are the
 # values-* set of the AOSP Settings app. Translations come from the stock ZUI Settings
@@ -14,7 +14,7 @@ import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = json.load(open(os.path.join(HERE, 'custom_strings.json')))
-TARGETS = [('experimental', '../ExperimentalFeatures/res', 'strings.xml'), ('game', '../GamePerformance/res', 'strings.xml')]
+TARGETS = [('experimental', '../ExperimentalFeatures/res', 'strings.xml'), ('game', '../LenovoGamePerformance/res', 'strings.xml')]
 
 
 def esc(s):

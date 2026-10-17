@@ -32,7 +32,7 @@ object LenovoSettings {
 
     /**
      * The separate apps of the optional customizations (hardware/lenovo/custom): game
-     * performance management (GamePerformance) and Experimental features
+     * performance management (LenovoGamePerformance) and Experimental features
      * (ExperimentalFeatures). They are not part of this build unless that repository is
      * synced; the Advanced features rows are hidden while their activity cannot be
      * resolved.
