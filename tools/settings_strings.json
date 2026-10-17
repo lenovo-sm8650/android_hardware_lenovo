@@ -1,8 +1,6 @@
 {
  "settings": {
   "en": {
-   "lenovo_charging_optimization_title": "Charge optimization",
-   "lenovo_battery_more_title": "More battery settings",
    "lenovo_charging_category": "Charging",
    "lenovo_charging_normal_title": "Normal",
    "lenovo_charging_normal_summary": "Charges to 100%",
@@ -36,8 +34,6 @@
    "lenovo_wb_strength_summary": "How strongly the screen follows the ambient light."
   },
   "af": {
-   "lenovo_charging_optimization_title": "Laaioptimering",
-   "lenovo_battery_more_title": "Meer batteryinstellings",
    "lenovo_charging_category": "Laai",
    "lenovo_charging_normal_title": "Normaal",
    "lenovo_charging_normal_summary": "Laai tot 100%",
@@ -68,8 +64,6 @@
    "lenovo_wb_strength_summary": "Hoe sterk die skerm die omgewingslig volg."
   },
   "am": {
-   "lenovo_charging_optimization_title": "የኃይል መሙላት ማመቻቸት",
-   "lenovo_battery_more_title": "ተጨማሪ የባትሪ ቅንብሮች",
    "lenovo_charging_category": "ኃይል በመሙላት ላይ",
    "lenovo_charging_normal_title": "መደበኛ",
    "lenovo_charging_normal_summary": "እስከ 100% ይሞላል",
@@ -101,8 +95,6 @@
    "lenovo_wb_strength_summary": "ማያ ገጹ የአካባቢ ብርሃንን ምን ያህል እንደሚከተል።"
   },
   "ar": {
-   "lenovo_charging_optimization_title": "تحسين الشحن",
-   "lenovo_battery_more_title": "إعدادات بطارية إضافية",
    "lenovo_charging_category": "جارٍ الشحن",
    "lenovo_charging_normal_title": "عادي",
    "lenovo_charging_normal_summary": "يشحن حتى 100%",
@@ -134,8 +126,6 @@
    "lenovo_wb_strength_summary": "مدى تتبّع الشاشة للإضاءة المحيطة."
   },
   "as": {
-   "lenovo_charging_optimization_title": "চাৰ্জ অপ্টিমাইজেচন",
-   "lenovo_battery_more_title": "অধিক বেটাৰী ছেটিং",
    "lenovo_charging_category": "চাৰ্জ কৰি থকা হৈছে",
    "lenovo_charging_normal_title": "সাধাৰণ",
    "lenovo_charging_normal_summary": "100% লৈকে চাৰ্জ কৰে",
@@ -167,8 +157,6 @@
    "lenovo_wb_strength_summary": "স্ক্ৰীনে আশে-পাশে থকা পোহৰক কিমান অনুসৰণ কৰে।"
   },
   "az": {
-   "lenovo_charging_optimization_title": "Doldurma optimallaşdırması",
-   "lenovo_battery_more_title": "Digər batareya ayarları",
    "lenovo_charging_category": "Enerji doldurma",
    "lenovo_charging_normal_summary": "100%-ə qədər doldurur",
    "lenovo_charging_limit_title": "80%-də dayandır",
@@ -199,8 +187,6 @@
    "lenovo_wb_strength_summary": "Ekranın ətraf işığı nə qədər izlədiyi."
   },
   "b+sr+Latn": {
-   "lenovo_charging_optimization_title": "Optimizacija punjenja",
-   "lenovo_battery_more_title": "Još podešavanja baterije",
    "lenovo_charging_category": "Puni se",
    "lenovo_charging_normal_title": "Normalno",
    "lenovo_charging_normal_summary": "Puni do 100%",
@@ -232,8 +218,6 @@
    "lenovo_wb_strength_summary": "Koliko ekran prati svetlost okoline."
   },
   "be": {
-   "lenovo_charging_optimization_title": "Аптымізацыя зарадкі",
-   "lenovo_battery_more_title": "Іншыя налады акумулятара",
    "lenovo_charging_category": "Зарадка",
    "lenovo_charging_normal_title": "Звычайны",
    "lenovo_charging_normal_summary": "Зараджае да 100%",
@@ -265,8 +249,6 @@
    "lenovo_wb_strength_summary": "Наколькі моцна экран рэагуе на навакольнае асвятленне."
   },
   "bg": {
-   "lenovo_charging_optimization_title": "Оптимизиране на зареждането",
-   "lenovo_battery_more_title": "Още настройки на батерията",
    "lenovo_charging_category": "Зарежда се",
    "lenovo_charging_normal_title": "Нормално",
    "lenovo_charging_normal_summary": "Зарежда до 100%",
@@ -298,8 +280,6 @@
    "lenovo_wb_strength_summary": "Доколко екранът следва околната светлина."
   },
   "bn": {
-   "lenovo_charging_optimization_title": "চার্জ অপ্টিমাইজেশন",
-   "lenovo_battery_more_title": "আরও ব্যাটারি সেটিংস",
    "lenovo_charging_category": "চার্জ হচ্ছে",
    "lenovo_charging_normal_title": "স্বাভাবিক",
    "lenovo_charging_normal_summary": "১০০% পর্যন্ত চার্জ করে",
@@ -331,8 +311,6 @@
    "lenovo_wb_strength_summary": "স্ক্রিন কতটা আশপাশের আলো অনুসরণ করে।"
   },
   "bs": {
-   "lenovo_charging_optimization_title": "Optimizacija punjenja",
-   "lenovo_battery_more_title": "Više postavki baterije",
    "lenovo_charging_category": "Punjenje",
    "lenovo_charging_normal_title": "Normalno",
    "lenovo_charging_normal_summary": "Puni do 100%",
@@ -364,8 +342,6 @@
    "lenovo_wb_strength_summary": "Koliko ekran prati ambijentalno svjetlo."
   },
   "ca": {
-   "lenovo_charging_optimization_title": "Optimització de la càrrega",
-   "lenovo_battery_more_title": "Més configuració de la bateria",
    "lenovo_charging_category": "S'està carregant",
    "lenovo_charging_normal_summary": "Carrega fins al 100%",
    "lenovo_charging_limit_title": "Atura al 80%",
@@ -396,8 +372,6 @@
    "lenovo_wb_strength_summary": "Fins a quin punt la pantalla segueix la llum ambient."
   },
   "cs": {
-   "lenovo_charging_optimization_title": "Optimalizace nabíjení",
-   "lenovo_battery_more_title": "Další nastavení baterie",
    "lenovo_charging_category": "Nabíjí se",
    "lenovo_charging_normal_title": "Normální",
    "lenovo_charging_normal_summary": "Nabíjí na 100 %",
@@ -429,8 +403,6 @@
    "lenovo_wb_strength_summary": "Jak silně se obrazovka řídí okolním světlem."
   },
   "da": {
-   "lenovo_charging_optimization_title": "Opladningsoptimering",
-   "lenovo_battery_more_title": "Flere batteriindstillinger",
    "lenovo_charging_category": "Oplader",
    "lenovo_charging_normal_summary": "Oplader til 100 %",
    "lenovo_charging_limit_title": "Stop ved 80 %",
@@ -461,8 +433,6 @@
    "lenovo_wb_strength_summary": "Hvor kraftigt skærmen følger det omgivende lys."
   },
   "de": {
-   "lenovo_charging_optimization_title": "Ladungsoptimierung",
-   "lenovo_battery_more_title": "Weitere Akkueinstellungen",
    "lenovo_charging_category": "Laden",
    "lenovo_charging_normal_summary": "Lädt bis 100 %",
    "lenovo_charging_limit_title": "Bei 80 % stoppen",
@@ -493,8 +463,6 @@
    "lenovo_wb_strength_summary": "Wie stark sich der Bildschirm an das Umgebungslicht anpasst."
   },
   "el": {
-   "lenovo_charging_optimization_title": "Βελτιστοποίηση φόρτισης",
-   "lenovo_battery_more_title": "Περισσότερες ρυθμίσεις μπαταρίας",
    "lenovo_charging_category": "Φόρτιση",
    "lenovo_charging_normal_title": "Κανονική",
    "lenovo_charging_normal_summary": "Φορτίζει έως 100%",
@@ -526,8 +494,6 @@
    "lenovo_wb_strength_summary": "Πόσο έντονα ακολουθεί η οθόνη το φως του περιβάλλοντος."
   },
   "es": {
-   "lenovo_charging_optimization_title": "Optimización de carga",
-   "lenovo_battery_more_title": "Más ajustes de la batería",
    "lenovo_charging_category": "Carga",
    "lenovo_charging_normal_summary": "Carga hasta el 100 %",
    "lenovo_charging_limit_title": "Detener al 80 %",
@@ -578,8 +544,6 @@
    "lenovo_bypass_footer": "Si el nivel actual de batería está por debajo del límite inferior, el dispositivo se cargará hasta el límite superior al activarse inicialmente para garantizar la duración de la batería."
   },
   "et": {
-   "lenovo_charging_optimization_title": "Laadimise optimeerimine",
-   "lenovo_battery_more_title": "Veel akuseadeid",
    "lenovo_charging_category": "Laadimine",
    "lenovo_charging_normal_title": "Tavaline",
    "lenovo_charging_normal_summary": "Laeb 100%-ni",
@@ -611,8 +575,6 @@
    "lenovo_wb_strength_summary": "Kui tugevalt ekraan järgib ümbritsevat valgust."
   },
   "eu": {
-   "lenovo_charging_optimization_title": "Karga optimizatzea",
-   "lenovo_battery_more_title": "Bateria-ezarpen gehiago",
    "lenovo_charging_category": "Kargatzen",
    "lenovo_charging_normal_title": "Normala",
    "lenovo_charging_normal_summary": "% 100era kargatzen du",
@@ -644,8 +606,6 @@
    "lenovo_wb_strength_summary": "Pantailak zenbateraino jarraitzen duen ingurunearen argia."
   },
   "fa": {
-   "lenovo_charging_optimization_title": "بهینه‌سازی شارژ",
-   "lenovo_battery_more_title": "تنظیمات بیشتر باتری",
    "lenovo_charging_category": "در حال شارژ شدن",
    "lenovo_charging_normal_title": "عادی",
    "lenovo_charging_normal_summary": "تا ۱۰۰٪ شارژ می‌کند",
@@ -677,8 +637,6 @@
    "lenovo_wb_strength_summary": "میزان پیروی صفحه از نور محیط."
   },
   "fi": {
-   "lenovo_charging_optimization_title": "Lataamisen optimointi",
-   "lenovo_battery_more_title": "Lisää akkuasetuksia",
    "lenovo_charging_category": "Ladataan",
    "lenovo_charging_normal_title": "Normaali",
    "lenovo_charging_normal_summary": "Lataa 100 %:iin",
@@ -710,8 +668,6 @@
    "lenovo_wb_strength_summary": "Kuinka voimakkaasti näyttö seuraa ympäristön valoa."
   },
   "fr": {
-   "lenovo_charging_optimization_title": "Optimisation de la charge",
-   "lenovo_battery_more_title": "Autres paramètres de la batterie",
    "lenovo_charging_category": "Charge",
    "lenovo_charging_normal_title": "Normale",
    "lenovo_charging_normal_summary": "Charge jusqu'à 100 %",
@@ -763,8 +719,6 @@
    "lenovo_bypass_footer": "Si le niveau actuel de la batterie est inférieur à la limite inférieure, l'appareil sera chargé jusqu'à la limite supérieure lors de sa première activation afin de garantir l'autonomie de la batterie."
   },
   "gl": {
-   "lenovo_charging_optimization_title": "Optimización da carga",
-   "lenovo_battery_more_title": "Máis axustes da batería",
    "lenovo_charging_category": "Cargando",
    "lenovo_charging_normal_summary": "Carga ata o 100%",
    "lenovo_charging_limit_title": "Parar ao 80%",
@@ -795,8 +749,6 @@
    "lenovo_wb_strength_summary": "Canto segue a pantalla a luz ambiente."
   },
   "gu": {
-   "lenovo_charging_optimization_title": "ચાર્જ ઑપ્ટિમાઇઝેશન",
-   "lenovo_battery_more_title": "વધુ બૅટરી સેટિંગ",
    "lenovo_charging_category": "ચાર્જ થઈ રહ્યું છે",
    "lenovo_charging_normal_title": "સામાન્ય",
    "lenovo_charging_normal_summary": "100% સુધી ચાર્જ કરે છે",
@@ -828,8 +780,6 @@
    "lenovo_wb_strength_summary": "સ્ક્રીન આસપાસના પ્રકાશને કેટલું અનુસરે છે."
   },
   "hi": {
-   "lenovo_charging_optimization_title": "चार्ज अनुकूलन",
-   "lenovo_battery_more_title": "बैटरी की और सेटिंग",
    "lenovo_charging_category": "चार्ज हो रही है",
    "lenovo_charging_normal_title": "सामान्य",
    "lenovo_charging_normal_summary": "100% तक चार्ज करता है",
@@ -861,8 +811,6 @@
    "lenovo_wb_strength_summary": "स्क्रीन आसपास की रोशनी का कितना अनुसरण करती है."
   },
   "hr": {
-   "lenovo_charging_optimization_title": "Optimizacija punjenja",
-   "lenovo_battery_more_title": "Više postavki baterije",
    "lenovo_charging_category": "Punjenje",
    "lenovo_charging_normal_title": "Normalno",
    "lenovo_charging_normal_summary": "Puni do 100%",
@@ -894,8 +842,6 @@
    "lenovo_wb_strength_summary": "Koliko zaslon slijedi svjetlost okoline."
   },
   "hu": {
-   "lenovo_charging_optimization_title": "Töltésoptimalizálás",
-   "lenovo_battery_more_title": "További akkumulátorbeállítások",
    "lenovo_charging_category": "Töltés",
    "lenovo_charging_normal_title": "Normál",
    "lenovo_charging_normal_summary": "100%-ig tölt",
@@ -927,8 +873,6 @@
    "lenovo_wb_strength_summary": "Mennyire követi a képernyő a környezeti fényt."
   },
   "hy": {
-   "lenovo_charging_optimization_title": "Լիցքավորման օպտիմալացում",
-   "lenovo_battery_more_title": "Մարտկոցի այլ կարգավորումներ",
    "lenovo_charging_category": "Լիցքավորում",
    "lenovo_charging_normal_title": "Սովորական",
    "lenovo_charging_normal_summary": "Լիցքավորում է մինչև 100%",
@@ -960,8 +904,6 @@
    "lenovo_wb_strength_summary": "Որքանով է էկրանը հետևում շրջակա լույսին:"
   },
   "in": {
-   "lenovo_charging_optimization_title": "Pengoptimalan pengisian daya",
-   "lenovo_battery_more_title": "Setelan baterai lainnya",
    "lenovo_charging_category": "Mengisi daya",
    "lenovo_charging_normal_summary": "Mengisi daya hingga 100%",
    "lenovo_charging_limit_title": "Berhenti di 80%",
@@ -992,8 +934,6 @@
    "lenovo_wb_strength_summary": "Seberapa kuat layar mengikuti cahaya sekitar."
   },
   "is": {
-   "lenovo_charging_optimization_title": "Hleðslubestun",
-   "lenovo_battery_more_title": "Fleiri rafhlöðustillingar",
    "lenovo_charging_category": "Í hleðslu",
    "lenovo_charging_normal_title": "Venjuleg",
    "lenovo_charging_normal_summary": "Hleður upp í 100%",
@@ -1025,8 +965,6 @@
    "lenovo_wb_strength_summary": "Hversu mikið skjárinn fylgir umhverfisbirtu."
   },
   "it": {
-   "lenovo_charging_optimization_title": "Ottimizzazione carica",
-   "lenovo_battery_more_title": "Altre impostazioni della batteria",
    "lenovo_charging_category": "Ricarica",
    "lenovo_charging_normal_title": "Normale",
    "lenovo_charging_normal_summary": "Ricarica fino al 100%",
@@ -1058,8 +996,6 @@
    "lenovo_wb_strength_summary": "Quanto lo schermo si adatta alla luce ambientale."
   },
   "iw": {
-   "lenovo_charging_optimization_title": "מיטוב טעינה",
-   "lenovo_battery_more_title": "הגדרות סוללה נוספות",
    "lenovo_charging_category": "בטעינה",
    "lenovo_charging_normal_title": "רגיל",
    "lenovo_charging_normal_summary": "טוען עד 100%",
@@ -1091,8 +1027,6 @@
    "lenovo_wb_strength_summary": "עד כמה המסך עוקב אחר אור הסביבה."
   },
   "ja": {
-   "lenovo_charging_optimization_title": "充電の最適化",
-   "lenovo_battery_more_title": "その他のバッテリー設定",
    "lenovo_charging_category": "充電",
    "lenovo_charging_normal_title": "標準",
    "lenovo_charging_normal_summary": "100%まで充電します",
@@ -1124,8 +1058,6 @@
    "lenovo_wb_strength_summary": "周囲の光に合わせて画面の色を変える度合いです。100%は標準のLenovo設定と同じです。"
   },
   "ka": {
-   "lenovo_charging_optimization_title": "დატენვის ოპტიმიზაცია",
-   "lenovo_battery_more_title": "ბატარეის დამატებითი პარამეტრები",
    "lenovo_charging_category": "იტენება",
    "lenovo_charging_normal_title": "ჩვეულებრივი",
    "lenovo_charging_normal_summary": "იტენება 100%-მდე",
@@ -1157,8 +1089,6 @@
    "lenovo_wb_strength_summary": "რამდენად მიჰყვება ეკრანი გარემოს განათებას."
   },
   "kk": {
-   "lenovo_charging_optimization_title": "Зарядтауды оңтайландыру",
-   "lenovo_battery_more_title": "Басқа батарея параметрлері",
    "lenovo_charging_category": "Зарядталуда",
    "lenovo_charging_normal_title": "Қалыпты",
    "lenovo_charging_normal_summary": "100% дейін зарядтайды",
@@ -1190,8 +1120,6 @@
    "lenovo_wb_strength_summary": "Экранның қоршаған ортаның жарығын қаншалықты қадағалайтыны."
   },
   "km": {
-   "lenovo_charging_optimization_title": "ការបង្កើនប្រសិទ្ធភាពសាក",
-   "lenovo_battery_more_title": "ការកំណត់ថ្មបន្ថែម",
    "lenovo_charging_category": "កំពុងសាក​ថ្ម",
    "lenovo_charging_normal_title": "ធម្មតា",
    "lenovo_charging_normal_summary": "សាកដល់ 100%",
@@ -1223,8 +1151,6 @@
    "lenovo_wb_strength_summary": "កម្រិតដែលអេក្រង់តាមដានពន្លឺជុំវិញ។"
   },
   "kn": {
-   "lenovo_charging_optimization_title": "ಚಾರ್ಜ್ ಆಪ್ಟಿಮೈಸೇಶನ್",
-   "lenovo_battery_more_title": "ಇನ್ನಷ್ಟು ಬ್ಯಾಟರಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
    "lenovo_charging_category": "ಚಾರ್ಜ್ ಆಗುತ್ತಿದೆ",
    "lenovo_charging_normal_title": "ಸಾಮಾನ್ಯ",
    "lenovo_charging_normal_summary": "100% ವರೆಗೆ ಚಾರ್ಜ್ ಮಾಡುತ್ತದೆ",
@@ -1256,8 +1182,6 @@
    "lenovo_wb_strength_summary": "ಪರದೆಯು ಸುತ್ತಲಿನ ಬೆಳಕನ್ನು ಎಷ್ಟು ಅನುಸರಿಸುತ್ತದೆ."
   },
   "ko": {
-   "lenovo_charging_optimization_title": "충전 최적화",
-   "lenovo_battery_more_title": "추가 배터리 설정",
    "lenovo_charging_category": "충전",
    "lenovo_charging_normal_title": "일반",
    "lenovo_charging_normal_summary": "100%까지 충전합니다",
@@ -1289,8 +1213,6 @@
    "lenovo_wb_strength_summary": "주변 조명에 따라 화면 색을 바꾸는 정도입니다."
   },
   "ky": {
-   "lenovo_charging_optimization_title": "Кубаттоону оптималдаштыруу",
-   "lenovo_battery_more_title": "Батареянын башка параметрлери",
    "lenovo_charging_category": "Кубатталууда",
    "lenovo_charging_normal_title": "Кадимки",
    "lenovo_charging_normal_summary": "100% чейин кубаттайт",
@@ -1322,8 +1244,6 @@
    "lenovo_wb_strength_summary": "Экрандын тегеректеги жарыкты канчалык ээрчиши."
   },
   "lo": {
-   "lenovo_charging_optimization_title": "ການເພີ່ມປະສິດທິພາບການສາກ",
-   "lenovo_battery_more_title": "ການຕັ້ງຄ່າແບັດເຕີຣີເພີ່ມເຕີມ",
    "lenovo_charging_category": "ກຳລັງສາກໄຟ",
    "lenovo_charging_normal_title": "ປົກກະຕິ",
    "lenovo_charging_normal_summary": "ສາກເຖິງ 100%",
@@ -1355,8 +1275,6 @@
    "lenovo_wb_strength_summary": "ໜ້າຈໍຕິດຕາມແສງອ້ອມຂ້າງຫຼາຍປານໃດ."
   },
   "lt": {
-   "lenovo_charging_optimization_title": "Įkrovimo optimizavimas",
-   "lenovo_battery_more_title": "Daugiau akumuliatoriaus nustatymų",
    "lenovo_charging_category": "Kraunasi...",
    "lenovo_charging_normal_title": "Įprastas",
    "lenovo_charging_normal_summary": "Įkrauna iki 100 %",
@@ -1388,8 +1306,6 @@
    "lenovo_wb_strength_summary": "Kiek stipriai ekranas seka aplinkos šviesą."
   },
   "lv": {
-   "lenovo_charging_optimization_title": "Uzlādes optimizācija",
-   "lenovo_battery_more_title": "Citi akumulatora iestatījumi",
    "lenovo_charging_category": "Uzlāde",
    "lenovo_charging_normal_title": "Parasts",
    "lenovo_charging_normal_summary": "Uzlādē līdz 100%",
@@ -1421,8 +1337,6 @@
    "lenovo_wb_strength_summary": "Cik spēcīgi ekrāns seko apkārtējam apgaismojumam."
   },
   "mk": {
-   "lenovo_charging_optimization_title": "Оптимизација на полнењето",
-   "lenovo_battery_more_title": "Повеќе поставки за батеријата",
    "lenovo_charging_category": "Се полни",
    "lenovo_charging_normal_title": "Нормално",
    "lenovo_charging_normal_summary": "Полни до 100%",
@@ -1454,8 +1368,6 @@
    "lenovo_wb_strength_summary": "Колку екранот ја следи амбиентната светлина."
   },
   "ml": {
-   "lenovo_charging_optimization_title": "ചാർജ് ഒപ്റ്റിമൈസേഷൻ",
-   "lenovo_battery_more_title": "കൂടുതൽ ബാറ്ററി ക്രമീകരണങ്ങൾ",
    "lenovo_charging_category": "ചാർജ് ചെയ്യുന്നു",
    "lenovo_charging_normal_title": "സാധാരണ",
    "lenovo_charging_normal_summary": "100% വരെ ചാർജ് ചെയ്യുന്നു",
@@ -1487,8 +1399,6 @@
    "lenovo_wb_strength_summary": "സ്ക്രീൻ ചുറ്റുമുള്ള പ്രകാശത്തെ എത്രത്തോളം പിന്തുടരുന്നു."
   },
   "mn": {
-   "lenovo_charging_optimization_title": "Цэнэглэлтийн оновчлол",
-   "lenovo_battery_more_title": "Батерейн бусад тохиргоо",
    "lenovo_charging_category": "Цэнэглэж байна",
    "lenovo_charging_normal_title": "Хэвийн",
    "lenovo_charging_normal_summary": "100% хүртэл цэнэглэнэ",
@@ -1520,8 +1430,6 @@
    "lenovo_wb_strength_summary": "Дэлгэц орчны гэрлийг хэр хүчтэй дагах вэ."
   },
   "mr": {
-   "lenovo_charging_optimization_title": "चार्ज ऑप्टिमायझेशन",
-   "lenovo_battery_more_title": "आणखी बॅटरी सेटिंग्ज",
    "lenovo_charging_category": "चार्ज होत आहे",
    "lenovo_charging_normal_title": "सामान्य",
    "lenovo_charging_normal_summary": "१००% पर्यंत चार्ज करते",
@@ -1553,8 +1461,6 @@
    "lenovo_wb_strength_summary": "स्क्रीन सभोवतालच्या प्रकाशाचे किती अनुसरण करते."
   },
   "ms": {
-   "lenovo_charging_optimization_title": "Pengoptimuman cas",
-   "lenovo_battery_more_title": "Lagi tetapan bateri",
    "lenovo_charging_category": "Mengecas",
    "lenovo_charging_normal_title": "Biasa",
    "lenovo_charging_normal_summary": "Mengecas sehingga 100%",
@@ -1586,8 +1492,6 @@
    "lenovo_wb_strength_summary": "Sejauh mana skrin mengikut cahaya persekitaran."
   },
   "my": {
-   "lenovo_charging_optimization_title": "အားသွင်းမှု အကောင်းဆုံးပြုခြင်း",
-   "lenovo_battery_more_title": "ဘက်ထရီ ဆက်တင်များ ထပ်မံ",
    "lenovo_charging_category": "အားသွင်းနေပါသည်",
    "lenovo_charging_normal_title": "ပုံမှန်",
    "lenovo_charging_normal_summary": "၁၀၀% အထိ အားသွင်းသည်",
@@ -1619,8 +1523,6 @@
    "lenovo_wb_strength_summary": "မျက်နှာပြင်က ပတ်ဝန်းကျင်အလင်းကို မည်မျှ လိုက်နာသည်။"
   },
   "nb": {
-   "lenovo_charging_optimization_title": "Ladeoptimalisering",
-   "lenovo_battery_more_title": "Flere batteriinnstillinger",
    "lenovo_charging_category": "Lader",
    "lenovo_charging_normal_summary": "Lader til 100 %",
    "lenovo_charging_limit_title": "Stopp ved 80 %",
@@ -1651,8 +1553,6 @@
    "lenovo_wb_strength_summary": "Hvor sterkt skjermen følger omgivelseslyset."
   },
   "ne": {
-   "lenovo_charging_optimization_title": "चार्ज अप्टिमाइजेसन",
-   "lenovo_battery_more_title": "थप ब्याट्री सेटिङ",
    "lenovo_charging_category": "चार्ज हुँदै छ",
    "lenovo_charging_normal_title": "सामान्य",
    "lenovo_charging_normal_summary": "१००% सम्म चार्ज गर्छ",
@@ -1684,8 +1584,6 @@
    "lenovo_wb_strength_summary": "स्क्रिनले वरपरको उज्यालोलाई कति पछ्याउँछ।"
   },
   "nl": {
-   "lenovo_charging_optimization_title": "Oplaadoptimalisatie",
-   "lenovo_battery_more_title": "Meer batterij-instellingen",
    "lenovo_charging_category": "Opladen",
    "lenovo_charging_normal_title": "Normaal",
    "lenovo_charging_normal_summary": "Laadt op tot 100%",
@@ -1717,8 +1615,6 @@
    "lenovo_wb_strength_summary": "Hoe sterk het scherm het omgevingslicht volgt."
   },
   "or": {
-   "lenovo_charging_optimization_title": "ଚାର୍ଜ ଅପ୍ଟିମାଇଜେସନ୍",
-   "lenovo_battery_more_title": "ଅଧିକ ବ୍ୟାଟେରୀ ସେଟିଂସ୍",
    "lenovo_charging_category": "ଚାର୍ଜ ହେଉଛି",
    "lenovo_charging_normal_title": "ସାଧାରଣ",
    "lenovo_charging_normal_summary": "100% ପର୍ଯ୍ୟନ୍ତ ଚାର୍ଜ କରେ",
@@ -1750,8 +1646,6 @@
    "lenovo_wb_strength_summary": "ସ୍କ୍ରିନ୍ ଆଖପାଖ ଆଲୋକକୁ କେତେ ଅନୁସରଣ କରେ।"
   },
   "pa": {
-   "lenovo_charging_optimization_title": "ਚਾਰਜ ਅਨੁਕੂਲਨ",
-   "lenovo_battery_more_title": "ਹੋਰ ਬੈਟਰੀ ਸੈਟਿੰਗਾਂ",
    "lenovo_charging_category": "ਚਾਰਜ ਹੋ ਰਹੀ ਹੈ",
    "lenovo_charging_normal_title": "ਆਮ",
    "lenovo_charging_normal_summary": "100% ਤੱਕ ਚਾਰਜ ਕਰਦਾ ਹੈ",
@@ -1783,8 +1677,6 @@
    "lenovo_wb_strength_summary": "ਸਕ੍ਰੀਨ ਆਲੇ-ਦੁਆਲੇ ਦੀ ਰੌਸ਼ਨੀ ਨੂੰ ਕਿੰਨਾ ਫਾਲੋ ਕਰਦੀ ਹੈ।"
   },
   "pl": {
-   "lenovo_charging_optimization_title": "Optymalizacja ładowania",
-   "lenovo_battery_more_title": "Więcej ustawień baterii",
    "lenovo_charging_category": "Ładowanie",
    "lenovo_charging_normal_title": "Normalne",
    "lenovo_charging_normal_summary": "Ładuje do 100%",
@@ -1835,8 +1727,6 @@
    "lenovo_bypass_footer": "Se o nível de bateria atual estiver abaixo do limite inferior, o dispositivo será carregado até o limite superior na ativação inicial para garantir duração da bateria."
   },
   "pt-rBR": {
-   "lenovo_charging_optimization_title": "Otimização de carga",
-   "lenovo_battery_more_title": "Mais configurações da bateria",
    "lenovo_charging_category": "Carregamento",
    "lenovo_charging_normal_summary": "Carrega até 100%",
    "lenovo_charging_limit_title": "Parar em 80%",
@@ -1867,7 +1757,6 @@
    "lenovo_wb_strength_summary": "Quanto a tela se adapta à luz ambiente."
   },
   "pt-rPT": {
-   "lenovo_charging_optimization_title": "Otimização da carga",
    "lenovo_charging_category": "A carregar",
    "lenovo_charging_protect_title": "Protecção de carga",
    "lenovo_charging_protect_summary": "Depois de ativada a proteção de carregamento, a energia do dispositivo permanecerá entre 40% e 60% para prolongar a vida útil da bateria e evitar danos na bateria causados por tempos de carregamento prolongados.",
@@ -1888,8 +1777,6 @@
    "lenovo_bypass_footer": "Se o nível atual da bateria estiver abaixo do limite inferior, o dispositivo será carregado até ao limite superior na ativação inicial para garantir a autonomia da bateria."
   },
   "ro": {
-   "lenovo_charging_optimization_title": "Optimizare încărcare",
-   "lenovo_battery_more_title": "Mai multe setări pentru baterie",
    "lenovo_charging_category": "Se încarcă",
    "lenovo_charging_normal_summary": "Încarcă până la 100%",
    "lenovo_charging_limit_title": "Oprire la 80%",
@@ -1920,8 +1807,6 @@
    "lenovo_wb_strength_summary": "Cât de puternic urmărește ecranul lumina ambientală."
   },
   "ru": {
-   "lenovo_charging_optimization_title": "Оптимизация зарядки",
-   "lenovo_battery_more_title": "Дополнительные настройки батареи",
    "lenovo_charging_category": "Зарядка",
    "lenovo_charging_normal_title": "Обычная",
    "lenovo_charging_normal_summary": "Заряжает до 100 %",
@@ -1953,8 +1838,6 @@
    "lenovo_wb_strength_summary": "Насколько экран подстраивается под окружающее освещение."
   },
   "si": {
-   "lenovo_charging_optimization_title": "ආරෝපණ ප්‍රශස්තකරණය",
-   "lenovo_battery_more_title": "තවත් බැටරි සැකසුම්",
    "lenovo_charging_category": "ආරෝපණය වෙමින්",
    "lenovo_charging_normal_title": "සාමාන්‍ය",
    "lenovo_charging_normal_summary": "100% දක්වා ආරෝපණය කරයි",
@@ -1986,8 +1869,6 @@
    "lenovo_wb_strength_summary": "තිරය අවට ආලෝකය කොතරම් අනුගමනය කරයිද."
   },
   "sk": {
-   "lenovo_charging_optimization_title": "Optimalizácia nabíjania",
-   "lenovo_battery_more_title": "Ďalšie nastavenia batérie",
    "lenovo_charging_category": "Nabíja sa",
    "lenovo_charging_normal_title": "Normálne",
    "lenovo_charging_normal_summary": "Nabíja na 100 %",
@@ -2019,8 +1900,6 @@
    "lenovo_wb_strength_summary": "Ako silno obrazovka sleduje okolité svetlo."
   },
   "sl": {
-   "lenovo_charging_optimization_title": "Optimizacija polnjenja",
-   "lenovo_battery_more_title": "Več nastavitev baterije",
    "lenovo_charging_category": "Polnjenje",
    "lenovo_charging_normal_title": "Običajno",
    "lenovo_charging_normal_summary": "Polni do 100 %",
@@ -2052,8 +1931,6 @@
    "lenovo_wb_strength_summary": "Kako močno zaslon sledi svetlobi okolice."
   },
   "sq": {
-   "lenovo_charging_optimization_title": "Optimizimi i karikimit",
-   "lenovo_battery_more_title": "Më shumë cilësime të baterisë",
    "lenovo_charging_category": "Po karikohet",
    "lenovo_charging_normal_summary": "Karikon deri në 100%",
    "lenovo_charging_limit_title": "Ndalo në 80%",
@@ -2084,8 +1961,6 @@
    "lenovo_wb_strength_summary": "Sa fort e ndjek ekrani dritën e ambientit."
   },
   "sr": {
-   "lenovo_charging_optimization_title": "Optimizacija punjenja",
-   "lenovo_battery_more_title": "Још подешавања батерије",
    "lenovo_charging_category": "Пуни се",
    "lenovo_charging_normal_title": "Нормално",
    "lenovo_charging_normal_summary": "Пуни до 100%",
@@ -2117,8 +1992,6 @@
    "lenovo_wb_strength_summary": "Колико екран прати светлост околине."
   },
   "sv": {
-   "lenovo_charging_optimization_title": "Laddningsoptimering",
-   "lenovo_battery_more_title": "Fler batteriinställningar",
    "lenovo_charging_category": "Laddar",
    "lenovo_charging_normal_summary": "Laddar till 100 %",
    "lenovo_charging_limit_title": "Stoppa vid 80 %",
@@ -2149,8 +2022,6 @@
    "lenovo_wb_strength_summary": "Hur starkt skärmen följer omgivningsljuset."
   },
   "sw": {
-   "lenovo_charging_optimization_title": "Uboreshaji wa kuchaji",
-   "lenovo_battery_more_title": "Mipangilio zaidi ya betri",
    "lenovo_charging_category": "Inachaji",
    "lenovo_charging_normal_title": "Kawaida",
    "lenovo_charging_normal_summary": "Huchaji hadi 100%",
@@ -2182,8 +2053,6 @@
    "lenovo_wb_strength_summary": "Kiwango ambacho skrini hufuata mwanga wa mazingira."
   },
   "ta": {
-   "lenovo_charging_optimization_title": "சார்ஜ் மேம்படுத்தல்",
-   "lenovo_battery_more_title": "மேலும் பேட்டரி அமைப்புகள்",
    "lenovo_charging_category": "சார்ஜ் ஆகிறது",
    "lenovo_charging_normal_title": "இயல்பு",
    "lenovo_charging_normal_summary": "100% வரை சார்ஜ் செய்யும்",
@@ -2215,8 +2084,6 @@
    "lenovo_wb_strength_summary": "சுற்றுப்புற ஒளியை திரை எவ்வளவு வலுவாகப் பின்பற்றுகிறது."
   },
   "te": {
-   "lenovo_charging_optimization_title": "ఛార్జ్ ఆప్టిమైజేషన్",
-   "lenovo_battery_more_title": "మరిన్ని బ్యాటరీ సెట్టింగ్‌లు",
    "lenovo_charging_category": "ఛార్జ్ అవుతోంది",
    "lenovo_charging_normal_title": "సాధారణం",
    "lenovo_charging_normal_summary": "100% వరకు ఛార్జ్ చేస్తుంది",
@@ -2248,8 +2115,6 @@
    "lenovo_wb_strength_summary": "స్క్రీన్ పరిసర కాంతిని ఎంతవరకు అనుసరిస్తుంది."
   },
   "th": {
-   "lenovo_charging_optimization_title": "การปรับประสิทธิภาพการชาร์จ",
-   "lenovo_battery_more_title": "การตั้งค่าแบตเตอรี่เพิ่มเติม",
    "lenovo_charging_category": "กำลังชาร์จ",
    "lenovo_charging_normal_title": "ปกติ",
    "lenovo_charging_normal_summary": "ชาร์จถึง 100%",
@@ -2281,8 +2146,6 @@
    "lenovo_wb_strength_summary": "ระดับที่หน้าจอปรับตามแสงรอบข้าง"
   },
   "tl": {
-   "lenovo_charging_optimization_title": "Pag-optimize ng pag-charge",
-   "lenovo_battery_more_title": "Higit pang setting ng baterya",
    "lenovo_charging_category": "Nagcha-charge",
    "lenovo_charging_normal_summary": "Nagcha-charge hanggang 100%",
    "lenovo_charging_limit_title": "Huminto sa 80%",
@@ -2313,8 +2176,6 @@
    "lenovo_wb_strength_summary": "Gaano kalakas sinusundan ng screen ang ambient light."
   },
   "tr": {
-   "lenovo_charging_optimization_title": "Şarj optimizasyonu",
-   "lenovo_battery_more_title": "Diğer pil ayarları",
    "lenovo_charging_category": "Şarj oluyor",
    "lenovo_charging_normal_summary": "%100'e kadar şarj eder",
    "lenovo_charging_limit_title": "%80'de durdur",
@@ -2345,8 +2206,6 @@
    "lenovo_wb_strength_summary": "Ekranın ortam ışığını ne kadar güçlü takip ettiği."
   },
   "uk": {
-   "lenovo_charging_optimization_title": "Оптимізування заряджання",
-   "lenovo_battery_more_title": "Більше налаштувань акумулятора",
    "lenovo_charging_category": "Заряджається",
    "lenovo_charging_normal_title": "Звичайний",
    "lenovo_charging_normal_summary": "Заряджає до 100%",
@@ -2378,8 +2237,6 @@
    "lenovo_wb_strength_summary": "Наскільки сильно екран реагує на навколишнє освітлення."
   },
   "ur": {
-   "lenovo_charging_optimization_title": "چارج کی اصلاح",
-   "lenovo_battery_more_title": "بیٹری کی مزید ترتیبات",
    "lenovo_charging_category": "چارج ہو رہا ہے",
    "lenovo_charging_normal_title": "عام",
    "lenovo_charging_normal_summary": "100% تک چارج کرتا ہے",
@@ -2411,8 +2268,6 @@
    "lenovo_wb_strength_summary": "اسکرین ماحول کی روشنی کی کتنی پیروی کرتی ہے۔"
   },
   "uz": {
-   "lenovo_charging_optimization_title": "Zaryadlashni optimallashtirish",
-   "lenovo_battery_more_title": "Batareyaning boshqa sozlamalari",
    "lenovo_charging_category": "Quvvat olmoqda",
    "lenovo_charging_normal_title": "Oddiy",
    "lenovo_charging_normal_summary": "100% gacha zaryadlaydi",
@@ -2444,8 +2299,6 @@
    "lenovo_wb_strength_summary": "Ekran atrof-muhit yorug‘ligini qanchalik kuzatishi."
   },
   "vi": {
-   "lenovo_charging_optimization_title": "Tối ưu hóa sạc",
-   "lenovo_battery_more_title": "Cài đặt pin khác",
    "lenovo_charging_category": "Đang sạc",
    "lenovo_charging_normal_title": "Bình thường",
    "lenovo_charging_normal_summary": "Sạc đến 100%",
@@ -2477,8 +2330,6 @@
    "lenovo_wb_strength_summary": "Mức độ màn hình bám theo ánh sáng xung quanh."
   },
   "zh-rCN": {
-   "lenovo_charging_optimization_title": "充电优化",
-   "lenovo_battery_more_title": "更多电池设置",
    "lenovo_charging_category": "充电",
    "lenovo_charging_normal_title": "标准",
    "lenovo_charging_normal_summary": "充电至 100%",
@@ -2510,8 +2361,6 @@
    "lenovo_wb_strength_summary": "屏幕随环境光改变颜色的程度。100% 与原厂 Lenovo 设置相同。"
   },
   "zh-rHK": {
-   "lenovo_charging_optimization_title": "充電優化",
-   "lenovo_battery_more_title": "更多電池設定",
    "lenovo_charging_category": "充電中",
    "lenovo_charging_normal_title": "標準",
    "lenovo_charging_normal_summary": "充電至 100%",
@@ -2543,8 +2392,6 @@
    "lenovo_wb_strength_summary": "螢幕隨環境光改變色彩的程度。100% 與原廠 Lenovo 設定相同。"
   },
   "zh-rTW": {
-   "lenovo_charging_optimization_title": "充電優化",
-   "lenovo_battery_more_title": "更多電池設定",
    "lenovo_charging_category": "充電",
    "lenovo_charging_normal_title": "標準",
    "lenovo_charging_normal_summary": "充電至 100%",
@@ -2576,8 +2423,6 @@
    "lenovo_wb_strength_summary": "螢幕隨環境光改變色彩的程度。100% 與原廠 Lenovo 設定相同。"
   },
   "zu": {
-   "lenovo_charging_optimization_title": "Ukulungiselela ukushaja",
-   "lenovo_battery_more_title": "Amasethingi ebhethri amaningi",
    "lenovo_charging_category": "Iyashaja",
    "lenovo_charging_normal_title": "Okujwayelekile",
    "lenovo_charging_normal_summary": "Kushaja kuze kube ngu-100%",
