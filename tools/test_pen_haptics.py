@@ -1,4 +1,4 @@
-"""Exercise production PenHaptics and StylusHandwritingState against a recording GATT."""
+"""Exercise production ZuiPenHapticPolicy and StylusHandwritingState against a recording GATT."""
 from pathlib import Path
 import subprocess
 import tempfile
@@ -35,15 +35,15 @@ public class Settings { public static class Global {
  public static boolean putInt(ContentResolver c,String k,int v){values.put(k,""+v);return true;}
  public static boolean putString(ContentResolver c,String k,String v){values.put(k,v);return true;}
 }}''',
-    'com/tb520fu/input/Safe.java': '''package com.tb520fu.input;
+    'com/zui/server/input/Safe.java': '''package com.zui.server.input;
 import android.database.ContentObserver; import android.os.Handler;
 public class Safe { public static java.util.function.Consumer<Object> changed;
  public static ContentObserver observer(Handler h,String n,java.util.function.Consumer<Object> c){changed=c;return new ContentObserver();}
 }''',
-    'com/tb520fu/input/LenovoHal.java': '''package com.tb520fu.input;
+    'com/zui/server/input/LenovoHal.java': '''package com.zui.server.input;
 public class LenovoHal { static int value; static int getHaptics(){return value;} static void setHaptics(int v){value=v;} }''',
-    'com/tb520fu/input/PenController.java': 'package com.tb520fu.input; public class PenController { static final int TYPE_PARKER_2=2; }',
-    'com/tb520fu/input/PenGatt.java': '''package com.tb520fu.input;
+    'com/zui/server/input/BluetoothPenConnectPolicy.java': 'package com.zui.server.input; public class BluetoothPenConnectPolicy { static final int TYPE_PARKER_2=2; }',
+    'com/zui/server/input/PenGatt.java': '''package com.zui.server.input;
 import java.util.*;
 public class PenGatt {
  static final int HAPTIC_SERVICE=1,HAPTIC_SWITCH=2,HAPTIC_INFO_NOTIFY=3,HAPTIC_REQ_INFO=4,HAPTIC_CONTINUOUS=5,HAPTIC_IMPACT=6;
@@ -53,14 +53,14 @@ public class PenGatt {
  void write(int s,int c,byte[] v){if(c==HAPTIC_CONTINUOUS)continuous.add(v.clone());}
  void write(int s,int c,byte[] v,String tag){write(s,c,v);}
 }''',
-    'com/tb520fu/input/HapticsTest.java': '''package com.tb520fu.input;
+    'com/zui/server/input/HapticsTest.java': '''package com.zui.server.input;
 import android.os.Handler; import android.content.Context; import android.provider.Settings;
 import com.android.internal.inputmethod.StylusHandwritingState;
 public class HapticsTest {
  static final String GBOARD="com.google.android.inputmethod.latin";
  static void check(boolean yes,String msg){if(!yes)throw new AssertionError(msg);}
  public static void main(String[] args) {
-  PenHaptics h=new PenHaptics(new Context(),new Handler()); PenGatt g=new PenGatt();
+  ZuiPenHapticPolicy h=new ZuiPenHapticPolicy(new Context(),new Handler()); PenGatt g=new PenGatt();
   h.start();Handler.drain();h.onGattReady(g,2);
   h.onStylusEvent(0,2,0,"com.android.settings");
   check(g.continuous.isEmpty(),"ordinary text-field tapping must not arm Gboard");
@@ -129,8 +129,8 @@ with tempfile.TemporaryDirectory(prefix='pen-haptics-test-') as directory:
         path.write_text(source)
     production = [
         top / 'frameworks/base/core/java/com/android/internal/inputmethod/StylusHandwritingState.java',
-        top / 'hardware/lenovo/input/src/com/tb520fu/input/PenHaptics.java',
+        top / 'hardware/lenovo/input/src/com/zui/server/input/ZuiPenHapticPolicy.java',
     ]
     jdk = top / 'prebuilts/jdk/jdk21/linux-x86/bin'
     subprocess.run([str(jdk / 'javac'), '-d', str(work), *map(str, work.rglob('*.java')), *map(str, production)], check=True)
-    subprocess.run([str(jdk / 'java'), '-cp', str(work), 'com.tb520fu.input.HapticsTest'], check=True)
+    subprocess.run([str(jdk / 'java'), '-cp', str(work), 'com.zui.server.input.HapticsTest'], check=True)

@@ -3,14 +3,14 @@
 # SPDX-FileCopyrightText: 2026 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
-# Generates packages/TB520FUParts/res/values*/strings.xml for TB520FUParts (Lenovo features).
+# Generates packages/LenovoParts/res/values*/strings.xml for LenovoParts (Lenovo features).
 # The game performance and Play Store identity strings live with their app
 # (custom/tools/custom_strings.py).
 # English is the default; strings equal to English are left out of the
 # translations so they fall back to it.
 import os, re
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'packages', 'TB520FUParts', 'res')
+RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'packages', 'LenovoParts', 'res')
 
 KEYS = [
  ('app_name', None), ('app_summary', None),

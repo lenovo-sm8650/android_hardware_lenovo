@@ -2,13 +2,13 @@
 #
 # Lenovo-derived: copies the physical keyboard strings of the stock Lenovo
 # settings app (ZuiSettings.apk, ZUI 17.5) into
-# packages/TB520FUParts/res/values*/strings_lenovo_keyboard.xml, prefixed with "lkb_".
+# packages/LenovoParts/res/values*/strings_lenovo_keyboard.xml, prefixed with "lkb_".
 #
 # Usage: lenovo_keyboard_strings.py [path/to/ZuiSettings.apk]
 import os, re, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-RES = os.path.join(HERE, '..', 'packages', 'TB520FUParts', 'res')
+RES = os.path.join(HERE, '..', 'packages', 'LenovoParts', 'res')
 TOP = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 AAPT = os.path.join(TOP, 'out', 'host', 'linux-x86', 'bin', 'aapt2')
 APK = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser(

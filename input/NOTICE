@@ -1,4 +1,4 @@
-tb520fu-input contains logic ported from the Lenovo ZUI system services of the
+lenovo-input contains logic ported from the Lenovo ZUI system services of the
 stock TB520FU firmware (services.jar: com.zui.server.input.*,
 com.lenovo.lgsi.server.battery.*), including GATT UUIDs, command encodings,
 broadcast contracts and settings keys used by the Lenovo PenService and

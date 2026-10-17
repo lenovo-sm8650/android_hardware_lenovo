@@ -1,6 +1,6 @@
-"""Run production PenKeys against recording Android services (no device needed).
+"""Run production BluetoothPenInputPolicy against recording Android services (no device needed).
 
---before compiles HEAD's PenKeys to reproduce the swallowed double-tap regression.
+--before compiles HEAD's BluetoothPenInputPolicy to reproduce the swallowed double-tap regression.
 """
 from pathlib import Path
 import subprocess
@@ -84,19 +84,19 @@ public class SparseBooleanArray {final Map<Integer,Boolean> map=new HashMap<>();
  public void setDisplayId(int d){display=d;} public int getDisplayId(){return display;} public boolean isCanceled(){return (flags&FLAG_CANCELED)!=0;}
  public InputDevice getDevice(){return device<0?null:new InputDevice(device==8?0x1234:0x17ef);}
 }''',
-    'com/tb520fu/input/Safe.java': '''package com.tb520fu.input;
+    'com/zui/server/input/Safe.java': '''package com.zui.server.input;
 import android.os.Handler; public class Safe {public static void post(Handler h,String s,Runnable r){h.post(r);}}''',
-    'com/tb520fu/input/PenController.java': 'package com.tb520fu.input; public class PenController {public void setLost(boolean lost){}}',
-    'com/tb520fu/input/PenKeysTest.java': '''package com.tb520fu.input;
+    'com/zui/server/input/BluetoothPenConnectPolicy.java': 'package com.zui.server.input; public class BluetoothPenConnectPolicy {public void setLost(boolean lost){}}',
+    'com/zui/server/input/PenKeysTest.java': '''package com.zui.server.input;
 import android.content.*; import android.os.*; import android.view.*; import android.provider.Settings;
 public class PenKeysTest {
- static int checks; static Context c; static Handler h; static PenKeys keys;
+ static int checks; static Context c; static Handler h; static BluetoothPenInputPolicy keys;
  static void check(boolean v,String s){checks++;if(!v)throw new AssertionError(s);}
- static void reset(int mode){c=new Context();h=new Handler();keys=new PenKeys(c,h,new PenController());Settings.Global.mode=mode;}
+ static void reset(int mode){c=new Context();h=new Handler();keys=new BluetoothPenInputPolicy(c,h,new BluetoothPenConnectPolicy());Settings.Global.mode=mode;}
  static KeyEvent event(int action,int code,int device,int repeat,int flags){KeyEvent e=new KeyEvent(50,60+action,action,code,repeat,3,device,123,flags,0x101);e.setDisplayId(2);return e;}
  static void key(int action){check(keys.handle(event(action,327,7,0,0)),"physical double tap consumed");h.drain();}
  static boolean fallback(KeyEvent e,int uid) throws Exception {
-  return (boolean)PenKeys.class.getDeclaredMethod("handleUnhandled",KeyEvent.class,int.class).invoke(keys,e,uid);
+  return (boolean)BluetoothPenInputPolicy.class.getDeclaredMethod("handleUnhandled",KeyEvent.class,int.class).invoke(keys,e,uid);
  }
  static KeyEvent app(int action){return event(action,601,7,0,0);}
  public static void main(String[] args) throws Exception {
@@ -150,14 +150,14 @@ with tempfile.TemporaryDirectory(prefix='pen-keys-test-') as directory:
         path = work / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(source)
-    production = top / 'hardware/lenovo/input/src/com/tb520fu/input/PenKeys.java'
+    production = top / 'hardware/lenovo/input/src/com/zui/server/input/BluetoothPenInputPolicy.java'
     if '--before' in sys.argv:
         original = subprocess.check_output(['git', '-C', str(top / 'hardware/lenovo'),
-            'show', 'HEAD:input/src/com/tb520fu/input/PenKeys.java'], text=True)
-        production = work / 'com/tb520fu/input/PenKeys.java'
+            'show', 'HEAD:input/src/com/zui/server/input/BluetoothPenInputPolicy.java'], text=True)
+        production = work / 'com/zui/server/input/BluetoothPenInputPolicy.java'
         production.write_text(original)
     else:
-        (work / 'com/tb520fu/input/PenKeys.java').write_text(production.read_text())
+        (work / 'com/zui/server/input/BluetoothPenInputPolicy.java').write_text(production.read_text())
     # Exercise the real framework conversion methods, isolating their native
     # AOSP-name lookup so this can run on a host JVM without libandroid_runtime.
     framework = (top / 'frameworks/base/core/java/android/view/KeyEvent.java').read_text()
@@ -202,5 +202,5 @@ with tempfile.TemporaryDirectory(prefix='pen-keys-test-') as directory:
     (work / 'VendorKeyNamesTest.java').write_text(framework_test)
     jdk = top / 'prebuilts/jdk/jdk21/linux-x86/bin'
     subprocess.run([str(jdk / 'javac'), '-d', str(work), *map(str, work.rglob('*.java'))], check=True)
-    subprocess.run([str(jdk / 'java'), '-cp', str(work), 'com.tb520fu.input.PenKeysTest'], check=True)
+    subprocess.run([str(jdk / 'java'), '-cp', str(work), 'com.zui.server.input.PenKeysTest'], check=True)
     subprocess.run([str(jdk / 'java'), '-cp', str(work), 'VendorKeyNamesTest'], check=True)

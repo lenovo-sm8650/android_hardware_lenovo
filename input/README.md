@@ -3,7 +3,7 @@
 ## Pen barrel double tap
 
 The Tab Pen Pro reports HID usage `0x0c0601`. The device keylayout maps it
-to F14 so AOSP can read the event. `PenKeys` consumes that physical key and,
+to F14 so AOSP can read the event. `BluetoothPenInputPolicy` consumes that physical key and,
 in `pen_touch_film_tap_two=1` mode, injects the corresponding DOWN/UP as
 ZUI `KEYCODE_PEN_TWO_CLICK` (601). The focused application gets the first
 opportunity to switch its pen/eraser tool. Device, timing, repeat, source,
@@ -40,11 +40,11 @@ python3 hardware/lenovo/tools/test_pen_keys.py
 python3 hardware/lenovo/tools/test_pen_haptics.py
 ```
 
-The pen-key test compiles production PenKeys against recording Android service
+The pen-key test compiles production BluetoothPenInputPolicy against recording Android service
 fakes. It covers event delivery, modes, pairing, independent devices, repeats,
 partner and generic fallbacks, users, cancellation and existing shortcuts. It
 also executes the production KeyEvent name-conversion methods with native AOSP
 lookup isolated for the host JVM. Before committing the fix, `--before` can
-reproduce the regression using HEAD's PenKeys.
+reproduce the regression using HEAD's BluetoothPenInputPolicy.
 
 Host checks and compilation do not replace a physical pen test in a note app.

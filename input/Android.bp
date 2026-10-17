@@ -10,7 +10,7 @@
 //
 
 java_library {
-    name: "tb520fu-input",
+    name: "lenovo-input",
 
     srcs: ["src/**/*.java"],
     platform_apis: true,

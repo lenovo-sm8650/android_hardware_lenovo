@@ -3,14 +3,14 @@
 # SPDX-FileCopyrightText: 2026 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
-# Generates TB520FUCustomFeatures/res/values*/strings.xml for the "Custom
+# Generates LenovoCustomFeatures/res/values*/strings.xml for the "Custom
 # Tweaks" app of the optional TB520FU customizations (game performance and
 # the apps that see the Play Store as their installer). English is the default; strings equal to English
 # are left out of the translations so they fall back to it.
 import os, re
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..',
-                   'TB520FUCustomFeatures', 'res')
+                   'LenovoCustomFeatures', 'res')
 
 KEYS = [
  ('app_name', None), ('app_summary', None),

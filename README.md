@@ -6,9 +6,9 @@ Lenovo Yoga Tab Plus (`device/lenovo/lapis`). One Soong namespace
 
 | Path | Contents |
 |---|---|
-| `input/` | `tb520fu-input`, the Lenovo pen / keyboard / battery bridge in system_server |
-| `packages/TB520FUParts/` | "Lenovo features" in Settings > System |
-| `tools/` | string generators for TB520FUParts |
+| `input/` | `lenovo-input`, the Lenovo pen / keyboard / battery bridge in system_server |
+| `packages/LenovoParts/` | "Lenovo features" in Settings > System |
+| `tools/` | string generators for LenovoParts |
 | `packages/LunarisDolby/` | Dolby Atmos settings (`seventeen`) |
 | `packages/VideoMotion/` | video motion smoothing settings (`seventeen`) |
 | `custom/` | the maintainer customizations (`seventeen`), see its README |

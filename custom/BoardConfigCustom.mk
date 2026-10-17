@@ -9,5 +9,5 @@
 #
 
 # SEPolicy
-# tb520fu-input GamePerfController: per-app CPU caps/floors and GPU power levels.
+# lenovo-input GamePerfController: per-app CPU caps/floors and GPU power levels.
 BOARD_VENDOR_SEPOLICY_DIRS += hardware/lenovo/custom/sepolicy/vendor

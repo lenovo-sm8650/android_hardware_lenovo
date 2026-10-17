@@ -1,0 +1,189 @@
+/*
+ * SPDX-FileCopyrightText: 2026 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package com.zui.server.input;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Process;
+import android.os.ServiceManager;
+import android.util.Log;
+import android.view.KeyEvent;
+
+import dalvik.system.PathClassLoader;
+
+import java.io.File;
+
+/**
+ * Owns the worker thread and the feature controllers. Constructed from
+ * PhoneWindowManager.init(); the controllers are started once the system has
+ * finished booting (LOCKED_BOOT_COMPLETED), so nothing here can slow down or
+ * break early boot.
+ *
+ * The optional customizations repository (hardware/lenovo/custom, seventeen) installs
+ * /system_ext/framework/lenovo-input-custom.jar with
+ * com.zui.server.input.custom.CustomInput. When that jar is present it is loaded
+ * into a PathClassLoader and driven through [InputExtension] (game performance
+ * enforcement); a plain build has no jar and loads nothing.
+ */
+public final class InputCore {
+    private static final String TAG = "LenovoInput";
+
+    /** Optional customizations jar, from hardware/lenovo/custom (seventeen). */
+    private static final String CUSTOM_JAR = "/system_ext/framework/lenovo-input-custom.jar";
+    private static final String CUSTOM_CLASS = "com.zui.server.input.custom.CustomInput";
+
+    /** Name the Lenovo apps use with getSystemService() for the pen haptic manager. */
+    public static final String HAPTIC_SERVICE = "zui_pen_haptic";
+
+    private static volatile InputCore sInstance;
+
+    final Context mContext;
+    final Handler mHandler;
+
+    final ZuiPenHapticPolicy mHaptics;
+    final BluetoothPenConnectPolicy mPen;
+    final BluetoothPenInputPolicy mPenKeys;
+    final KeyboardZuiKeyInputPolicy mKeyboard;
+    final BatteryController mBattery;
+    final LandscapeController mLandscape;
+    final ZuiDoubleWakeUpScreenInputPolicy mDoubleTapWake;
+    final FolioCover mFolio;
+    final StandbyController mStandby;
+    final BigPalmInputManager mPalm;
+    final CabcController mCabc;
+    final SunlightHbmController mSunlightHbm;
+    final KeyboardDesktopMode mDesktopMode;
+    final SarManager mWifiSar;
+    final WifiCountryFromLocale mWifiCountry;
+    final ScreenshotHelper mPenScreenshot;
+    final MagnifierInputPolicy mPenMagnifier;
+    final CapacitorPenInputPolicy mPenGestures;
+    final ZuiHandWritingService mPenInk;
+    private InputExtension mExtension;
+    private StylusMonitor mStylusMonitor;
+    private boolean mStarted;
+
+    static void start(Context context) {
+        if (sInstance == null) {
+            sInstance = new InputCore(context);
+        }
+    }
+
+    static InputCore get() {
+        return sInstance;
+    }
+
+    private InputCore(Context context) {
+        mContext = context;
+        HandlerThread thread = new HandlerThread("lenovo-input", Process.THREAD_PRIORITY_FOREGROUND);
+        thread.start();
+        mHandler = new Handler(thread.getLooper());
+
+        mHaptics = new ZuiPenHapticPolicy(context, mHandler);
+        mPen = new BluetoothPenConnectPolicy(context, mHandler, mHaptics);
+        mPenKeys = new BluetoothPenInputPolicy(context, mHandler, mPen);
+        mKeyboard = new KeyboardZuiKeyInputPolicy(context, mHandler);
+        mBattery = new BatteryController(context, mHandler);
+        mLandscape = new LandscapeController(context, mHandler);
+        mDoubleTapWake = new ZuiDoubleWakeUpScreenInputPolicy(context, mHandler);
+        mFolio = new FolioCover(context, mHandler);
+        mStandby = new StandbyController(context, mHandler);
+        mPalm = new BigPalmInputManager(context, mHandler);
+        mCabc = new CabcController(context, mHandler);
+        mSunlightHbm = new SunlightHbmController(context, mHandler);
+        mDesktopMode = new KeyboardDesktopMode(context, mHandler);
+        mWifiSar = new SarManager(context, mHandler);
+        mWifiCountry = new WifiCountryFromLocale(context, mHandler);
+        mPenScreenshot = new ScreenshotHelper(context, mHandler);
+        mPenMagnifier = new MagnifierInputPolicy(context, mHandler);
+        mPenGestures = new CapacitorPenInputPolicy(context, mHandler, mPenScreenshot);
+        mPenInk = new ZuiHandWritingService(context, mHandler);
+        mExtension = loadExtension(context, mHandler);
+
+        // The binder can be published right away; it only answers "not ready"
+        // until a pen is connected.
+        Safe.post(mHandler, "publish " + HAPTIC_SERVICE, () ->
+                ServiceManager.addService(HAPTIC_SERVICE, new ZuiPenHapticService(context, mHandler, mHaptics)));
+        Safe.post(mHandler, "publish " + LenovoKeyboardManagerService.SERVICE, () ->
+                ServiceManager.addService(LenovoKeyboardManagerService.SERVICE,
+                        new LenovoKeyboardManagerService(context)));
+        Safe.post(mHandler, "publish " + ZuiNotificationBinder.SERVICE, () ->
+                ServiceManager.addService(ZuiNotificationBinder.SERVICE,
+                        new ZuiNotificationBinder(context, mHandler)));
+
+        IntentFilter filter = new IntentFilter(Intent.ACTION_LOCKED_BOOT_COMPLETED);
+        filter.addAction(Intent.ACTION_BOOT_COMPLETED);
+        context.registerReceiver(Safe.receiver("boot", (c, i) -> onBoot()), filter, null, mHandler,
+                Context.RECEIVER_EXPORTED);
+    }
+
+    /**
+     * Loads the optional customizations jar. Nothing here may throw: a broken
+     * jar must not take system_server down at boot.
+     */
+    private static InputExtension loadExtension(Context context, Handler handler) {
+        if (!new File(CUSTOM_JAR).isFile()) {
+            Log.i(TAG, "no " + CUSTOM_JAR + ", running without customizations");
+            return null;
+        }
+        try {
+            PathClassLoader loader = new PathClassLoader(CUSTOM_JAR,
+                    InputCore.class.getClassLoader());
+            InputExtension extension = (InputExtension) loader.loadClass(CUSTOM_CLASS)
+                    .getDeclaredConstructor().newInstance();
+            extension.init(context, handler);
+            Log.i(TAG, "loaded " + CUSTOM_CLASS + " from " + CUSTOM_JAR);
+            return extension;
+        } catch (Throwable t) {
+            Log.e(TAG, "failed to load " + CUSTOM_JAR, t);
+            return null;
+        }
+    }
+
+    private void onBoot() {
+        if (mStarted) return;
+        mStarted = true;
+        Log.i(TAG, "starting");
+        Safe.run("battery", mBattery::start).run();
+        Safe.run("landscape view", mLandscape::start).run();
+        Safe.run("keyboard", mKeyboard::start).run();
+        Safe.run("double tap wake", mDoubleTapWake::start).run();
+        Safe.run("folio cover", mFolio::start).run();
+        Safe.run("standby saver", mStandby::start).run();
+        Safe.run("palm rejection", mPalm::start).run();
+        Safe.run("cabc", mCabc::start).run();
+        Safe.run("sunlight hbm", mSunlightHbm::start).run();
+        Safe.run("keyboard desktop mode", mDesktopMode::start).run();
+        Safe.run("wifi sar", mWifiSar::start).run();
+        Safe.run("wifi country", mWifiCountry::start).run();
+        Safe.run("haptics", mHaptics::start).run();
+        Safe.run("pen", mPen::start).run();
+        Safe.run("stylus screenshot", mPenScreenshot::start).run();
+        Safe.run("stylus magnifier", mPenMagnifier::start).run();
+        Safe.run("pen ink mode", mPenInk::start).run();
+        if (mExtension != null) {
+            Safe.run("custom", mExtension::start).run();
+        }
+        Safe.run("stylus monitor", () -> {
+            mStylusMonitor = new StylusMonitor(mContext, mHandler, mHaptics, mPalm, mPenGestures, mPenInk);
+            mStylusMonitor.start();
+        }).run();
+    }
+
+    boolean handleUnhandledKey(KeyEvent event, int focusedUid) {
+        return mStarted && mPenKeys.handleUnhandled(event, focusedUid);
+    }
+
+    /** Called on the input dispatcher's policy thread; must stay cheap. */
+    boolean handleKey(KeyEvent event) {
+        if (!mStarted) return false;
+        if (mPenKeys.handle(event) || mKeyboard.handle(event)) return true;
+        return mExtension != null && mExtension.handleKey(event);
+    }
+}
