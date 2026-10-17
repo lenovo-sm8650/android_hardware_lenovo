@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.SystemProperties;
 import android.util.Log;
 import android.view.SurfaceControlHdrLayerInfoListener;
 
@@ -23,28 +24,42 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Content adaptive backlight control (CABC) of the panel, through the Lenovo
- * display HAL, the way the stock ZUI display service (ZuiDisplayService) does
- * it:
+ * Content adaptive backlight control (CABC) of the panel, through the Lenovo display HAL,
+ * ported from the stock ZUI display service (services.jar ZuiDisplayService:
+ * judgeCabcMode, requestCabcMode, writeCabcData, onOrResetCabcValue, the Dolby Vision
+ * receiver and the HDR check):
  *
- * - UI mode for most apps, the moving image mode for the stock list of video
- *   apps, games and office apps, and off for the stock gallery list.
- * - Off while HDR or Dolby Vision video is on the screen: CABC dims the
- *   backlight behind the tone mapping, which assumes the panel brightness.
- *   Stock read sys.zui.hdr_state, set by its own SurfaceFlinger; this uses the
- *   SurfaceFlinger HDR layer listener instead.
+ * - 50 ms after a change of the tasks (MSG_JUDGE_CABC_MODE), the visible tasks pick the mode:
+ *   UI (1) by default, moving image (3) for the stock list of video apps, games and office
+ *   apps, off (0) for the stock gallery list; a visible task that is not full screen keeps
+ *   UI. The mode is written when it differs from the last one (the first request always
+ *   writes it).
+ * - Off while HDR or Dolby Vision video is on the screen: the mode of the apps is only
+ *   remembered meanwhile. HDR: written at once, back at once. Dolby Vision (the
+ *   com.dolby.vision_play broadcast): off 1500 ms after the start, back at once at the stop.
+ *   Stock read sys.zui.hdr_state, set by its own SurfaceFlinger; this uses the SurfaceFlinger
+ *   HDR layer listener instead.
+ * - All of it only with persist.debug.cabc_debug (true by default), as in stock.
  *
- * The panel turns CABC to UI mode every time it powers on (its on commands),
- * so the mode is set again when the screen comes on.
+ * Not in stock: the panel turns CABC to UI mode every time it powers on (its on commands),
+ * so the effective mode is written again when the screen comes on.
  */
 final class CabcController {
     private static final String TAG = "LenovoCabc";
+
+    /** Stock ZuiDisplayService.SYSPROP_CABC_DEBUG. */
+    private static final String SYSPROP_CABC_DEBUG = "persist.debug.cabc_debug";
 
     private static final int MODE_OFF = 0;
     private static final int MODE_UI = 1;
     private static final int MODE_MOVIE = 3;
 
-    /** Stock ZuiDisplayService: "start" / "stop" in the "action" extra. */
+    /** Stock MSG_CABC_DELAY. */
+    private static final long JUDGE_DELAY_MS = 50;
+    /** Stock MyBroadcastReceiver: NetworkConstants.ETHER_MTU. */
+    private static final long DOLBY_VISION_START_DELAY_MS = 1500;
+
+    /** Stock ZuiDisplayService.DOLBY_VISION_ACTION: "start" / "stop" in the "action" extra. */
     private static final String ACTION_DOLBY_VISION = "com.dolby.vision_play";
 
     /** Stock ZuiDisplayService mMovModePackageList. */
@@ -72,13 +87,13 @@ final class CabcController {
     private final Context mContext;
     private final Handler mHandler;
 
-    /** Mode for the visible apps, before HDR. */
-    private int mAppMode = MODE_UI;
+    /** Stock mCurrentCabcMode: the mode of the visible apps. */
+    private int mCurrentMode = -1;
     private boolean mHdr;
     private boolean mDolbyVision;
-    private int mMode = -1;
+    private boolean mCabcDebug;
 
-    private final Runnable mCheckApps = Safe.run("cabc apps", this::checkApps);
+    private final Runnable mRequestMode = Safe.run("cabc request", this::requestCabcMode);
 
     CabcController(Context context, Handler handler) {
         mContext = context;
@@ -90,14 +105,19 @@ final class CabcController {
             Log.w(TAG, "no Lenovo display HAL, leaving CABC to the panel");
             return;
         }
+        mCabcDebug = SystemProperties.getBoolean(SYSPROP_CABC_DEBUG, true);
+        if (!mCabcDebug) {
+            Log.w(TAG, SYSPROP_CABC_DEBUG + " is off, leaving CABC to the panel");
+            return;
+        }
 
         try {
             ActivityTaskManager.getService().registerTaskStackListener(new TaskStackListener() {
                 @Override
                 public void onTaskStackChanged() {
-                    // binder thread: debounce onto our handler (stock waits 50 ms)
-                    mHandler.removeCallbacks(mCheckApps);
-                    mHandler.postDelayed(mCheckApps, 50);
+                    // binder thread: stock judgeCabcMode()
+                    mHandler.removeCallbacks(mRequestMode);
+                    mHandler.postDelayed(mRequestMode, JUDGE_DELAY_MS);
                 }
             });
         } catch (Exception e) {
@@ -111,31 +131,29 @@ final class CabcController {
                 public void onHdrInfoChanged(IBinder displayToken, int numberOfHdrLayers,
                         int maxW, int maxH, int flags, float maxDesiredHdrSdrRatio) {
                     final boolean hdr = numberOfHdrLayers > 0;
-                    Safe.post(mHandler, "cabc hdr", () -> {
-                        if (hdr == mHdr) return;
-                        mHdr = hdr;
-                        update(false);
-                    });
+                    Safe.post(mHandler, "cabc hdr", () -> onHdr(hdr));
                 }
             }.register(display);
         }
 
         mContext.registerReceiver(Safe.receiver("cabc dolby vision", (c, i) -> {
             String action = i.getStringExtra("action");
-            if ("start".equals(action)) {
+            if (!mDolbyVision && "start".equals(action)) {
                 mDolbyVision = true;
-            } else if ("stop".equals(action)) {
+                onOrResetCabcValue(MODE_OFF, DOLBY_VISION_START_DELAY_MS);
+            } else if (mDolbyVision && "stop".equals(action)) {
                 mDolbyVision = false;
-            } else {
-                return;
+                onOrResetCabcValue(mCurrentMode, 0);
             }
-            update(false);
         }), new IntentFilter(ACTION_DOLBY_VISION), null, mHandler, Context.RECEIVER_EXPORTED);
 
-        mContext.registerReceiver(Safe.receiver("cabc screen on", (c, i) -> update(true)),
-                new IntentFilter(Intent.ACTION_SCREEN_ON), null, mHandler);
+        mContext.registerReceiver(Safe.receiver("cabc screen on", (c, i) -> {
+            if (mCurrentMode >= 0) {
+                writeCabcData(mHdr || mDolbyVision ? MODE_OFF : mCurrentMode);
+            }
+        }), new IntentFilter(Intent.ACTION_SCREEN_ON), null, mHandler);
 
-        checkApps();
+        mHandler.postDelayed(mRequestMode, JUDGE_DELAY_MS);
     }
 
     /** The token of the built-in display, from DisplayControl in services.jar. */
@@ -152,46 +170,69 @@ final class CabcController {
         }
     }
 
+    /** Stock HDR check (sys.zui.hdr_state 1 / 0). */
+    private void onHdr(boolean hdr) {
+        if (!mHdr && hdr) {
+            mHdr = true;
+            onOrResetCabcValue(MODE_OFF, 0);
+        } else if (mHdr && !hdr) {
+            mHdr = false;
+            onOrResetCabcValue(mCurrentMode, 0);
+        }
+    }
+
     /**
-     * Stock requestCabcMode(): the visible tasks pick the mode; any visible task
-     * that is not full screen (split screen, freeform) keeps UI mode.
+     * Stock requestCabcMode(): the visible tasks pick the mode; any visible task that is not
+     * full screen (split screen, freeform) keeps UI mode.
      */
-    private void checkApps() {
+    private void requestCabcMode() {
         int mode = MODE_UI;
         try {
             List<ActivityManager.RunningTaskInfo> tasks =
                     mContext.getSystemService(ActivityManager.class).getRunningTasks(10);
+            int found = MODE_UI;
+            boolean fullScreen = true;
             for (ActivityManager.RunningTaskInfo task : tasks) {
                 if (!task.isVisible || task.topActivity == null) continue;
                 if (task.getWindowingMode() != WindowConfiguration.WINDOWING_MODE_FULLSCREEN) {
-                    mode = MODE_UI;
+                    fullScreen = false;
                     break;
                 }
                 String pkg = task.topActivity.getPackageName();
                 if (OFF_APPS.contains(pkg)) {
-                    mode = MODE_OFF;
+                    found = MODE_OFF;
                 } else if (MOVIE_APPS.contains(pkg)) {
-                    mode = MODE_MOVIE;
+                    found = MODE_MOVIE;
                 }
             }
+            mode = fullScreen ? found : MODE_UI;
         } catch (Exception e) {
             Log.w(TAG, "running tasks", e);
             return;
         }
-        if (mode == mAppMode) return;
-        mAppMode = mode;
-        update(false);
+        if (mCurrentMode != mode) {
+            mCurrentMode = mode;
+            if (mDolbyVision || mHdr) {
+                Log.i(TAG, "cabc stays off while dolby vision " + mDolbyVision + " or hdr "
+                        + mHdr);
+                return;
+            }
+            writeCabcData(mode);
+        }
     }
 
-    private void update(boolean force) {
-        int mode = mHdr || mDolbyVision ? MODE_OFF : mAppMode;
-        if (mode == mMode && !force) return;
+    /** Stock onOrResetCabcValue(): MSG_WRITE_CABC_VALUE after the delay. */
+    private void onOrResetCabcValue(int mode, long delayMs) {
+        if (mCabcDebug) {
+            mHandler.postDelayed(Safe.run("cabc write", () -> writeCabcData(mode)), delayMs);
+        }
+    }
+
+    /** Stock writeCabcData() (the SLR check is of a disabled feature). */
+    private void writeCabcData(int mode) {
         if (LenovoHal.setCabcMode(mode)) {
-            if (mode != mMode) {
-                Log.i(TAG, "cabc mode " + mode + " (app " + mAppMode + ", hdr " + mHdr
-                        + ", dolby vision " + mDolbyVision + ")");
-            }
-            mMode = mode;
+            Log.i(TAG, "cabc mode " + mode + " (apps " + mCurrentMode + ", hdr " + mHdr
+                    + ", dolby vision " + mDolbyVision + ")");
         }
     }
 }

@@ -8,214 +8,209 @@ package com.zui.server.input;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.database.ContentObserver;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.hardware.display.BrightnessInfo;
-import android.hardware.display.DisplayManager;
 import android.net.Uri;
 import android.os.Handler;
-import android.os.PowerManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.Display;
+
+import java.lang.reflect.Field;
+import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
 
 /**
- * The high brightness mode of the panel in sunlight, the way the stock ZUI display
- * service (ZuiDisplayService, setHbmLux / setHbmBrightness) does it, through the Lenovo
- * display HAL (IDisplay.setHbmState):
+ * The high brightness mode of the panel in sunlight, ported from the stock ZUI display
+ * service (services.jar ZuiDisplayService: setHbmLux, setHbmBrightness, sendHbmStatusMsg,
+ * ScreenStatusReceiver, the zui_screen_enhance_enabled observer), through the Lenovo
+ * display HAL (IDisplay.setHbmState).
  *
- * - only with automatic brightness and the brightness at or near its maximum (the
- *   top of the automatic curve),
- * - step 1 from 5000 lux and step 2 from 10000 lux (config_zui_defaultBrightnessThreshold
- *   of the stock LapisRowFrameworksOverlay: 5000, 10000),
- * - off as soon as one of those stops, with the screen, or when the skin thermal
- *   status reaches LIGHT. Normal brightness is not capped by this controller.
+ * The stock display power controller reports to it (ZuiDisplayServiceInternal): the filtered
+ * ambient lux of the automatic brightness, the brightness it applies and whether the automatic
+ * brightness is on. Here that is com.android.server.display.ZuiDisplayHooks of frameworks/base,
+ * set by reflection (this library cannot link to services.jar).
  *
- * The stock service follows the filtered lux of the automatic brightness; the light
- * sensor is filtered here with the debounce time of the stock service (3 s) both ways.
- * The stock firmware has no temperature limit for it (config_zui_enterHbmTemperature 0).
+ * Stock logic:
+ * - only with the "High brightness mode" switch of Settings > Display on
+ *   (Settings.System zui_screen_enhance_enabled, 0 by default) and the automatic brightness on,
+ * - level 1 from the first lux of config_zui_defaultBrightnessThreshold (5000) and level 2 from
+ *   its second one (10000), with the brightness at its maximum (1.0),
+ * - a level is set 3 s after the last report, each report restarting the wait; off is immediate,
+ * - off with the screen, or when the switch or the automatic brightness goes off.
+ *
+ * Not ported, because they are inactive on this device: the temperature limits
+ * (config_zui_enterHbmTemperature and config_zui_exitHbmTemperature are 0), SVI, SLR and the
+ * transition point (persist.sys.zui.gamma.space.transition, not set). The toast,
+ * the persist.vendor.overlay.zui.hdr property (nothing reads it) and the big data event are not.
  */
-final class SunlightHbmController implements SensorEventListener,
-        DisplayManager.DisplayListener {
+final class SunlightHbmController {
     private static final String TAG = "LenovoSunlightHbm";
 
-    private static final float LUX_STEP_1 = 5000f;
-    private static final float LUX_STEP_2 = 10000f;
-    private static final long DEBOUNCE_MS = 3000;
-    private static final long THERMAL_RETRY_MS = 5000;
-    /** The stock service wants the brightness at 1.0, see brightnessAtMax(). */
-    private static final float BRIGHTNESS_NEAR_MAX = 0.95f;
+    private static final String HOOKS = "com.android.server.display.ZuiDisplayHooks";
+    /** Stock ZuiDisplayService.ZUI_SETTINGS_SCREEN_BOOST. */
+    private static final String SETTING_HIGH_BRIGHTNESS = "zui_screen_enhance_enabled";
+
+    /** Stock AutomaticBrightnessController.BRIGHTNESS_MAX_HBM (ZuiHighBrightnessApl is off). */
+    private static final float BRIGHTNESS_MAX_HBM = 1.0f;
+    /** Stock sendHbmStatusMsg: delay of a level. */
+    private static final long LEVEL_DELAY_MS = 3000;
 
     private final Context mContext;
     private final Handler mHandler;
-    private final DisplayManager mDisplayManager;
-    private final SensorManager mSensorManager;
-    private final Sensor mLightSensor;
-    private final PowerManager mPowerManager;
 
-    private boolean mScreenOn;
+    private int mLuxConfig;
+    private int mLuxSecondConfig;
+
+    private float mLux;
+    private float mBrightness;
     private boolean mAutoBrightness;
-    private boolean mBrightnessAtMax;
-    private boolean mListening;
-    /** HBM stays off until the thermal listener delivers its initial status. */
-    private int mThermalStatus = -1;
+    /** Stock mHbmStatusEnable. */
+    private boolean mHbmEnabled;
+    private int mPendingLevel;
 
-    /** The step the lux asks for, and since when. */
-    private int mLuxStep;
-    private int mPendingStep = -1;
-    private int mState = -1;
-
-    private final Runnable mApplyPending = Safe.run("sunlight hbm debounce", this::applyPending);
-    private final Runnable mObserveThermal = Safe.run("sunlight hbm thermal", this::observeThermal);
+    private final Runnable mApplyLevel = Safe.run("sunlight hbm level", this::applyLevel);
 
     SunlightHbmController(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
-        mDisplayManager = context.getSystemService(DisplayManager.class);
-        mSensorManager = context.getSystemService(SensorManager.class);
-        mPowerManager = context.getSystemService(PowerManager.class);
-        mLightSensor = mSensorManager != null
-                ? mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT) : null;
     }
 
     void start() {
-        if (!LenovoHal.available(LenovoHal.DISPLAY) || mLightSensor == null
-                || mDisplayManager == null || mPowerManager == null) {
-            Log.w(TAG, "no Lenovo display HAL or light sensor");
+        if (!LenovoHal.available(LenovoHal.DISPLAY)) {
+            Log.w(TAG, "no Lenovo display HAL");
             return;
         }
-        // The panel keeps the mode over a restart of system_server
-        setState(0);
 
-        final Uri mode = Settings.System.getUriFor(Settings.System.SCREEN_BRIGHTNESS_MODE);
-        mContext.getContentResolver().registerContentObserver(mode, false,
+        final int[] lux = Resources.getSystem().getIntArray(
+                com.android.internal.R.array.config_zui_defaultBrightnessThreshold);
+        if (lux == null || lux.length == 0) {
+            Log.w(TAG, "no config_zui_defaultBrightnessThreshold");
+            return;
+        }
+        mLuxConfig = lux[0];
+        mLuxSecondConfig = lux.length > 1 ? lux[1] : 0;
+
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(SETTING_HIGH_BRIGHTNESS), false,
                 new ContentObserver(mHandler) {
                     @Override
-                    public void onChange(boolean selfChange) {
-                        Safe.run("sunlight hbm mode", SunlightHbmController.this::update).run();
+                    public void onChange(boolean selfChange, Uri uri) {
+                        Safe.run("sunlight hbm switch", SunlightHbmController.this::onSwitchChanged)
+                                .run();
                     }
-                });
+                }, UserHandle.USER_ALL);
 
-        mDisplayManager.registerDisplayListener(this, mHandler,
-                DisplayManager.EVENT_TYPE_DISPLAY_BRIGHTNESS
-                        | DisplayManager.EVENT_TYPE_DISPLAY_CHANGED);
+        mContext.registerReceiverForAllUsers(
+                Safe.receiver("sunlight hbm screen off", (c, i) -> onScreenOff()),
+                new IntentFilter(Intent.ACTION_SCREEN_OFF), null, mHandler);
 
-        IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-        filter.addAction(Intent.ACTION_SCREEN_OFF);
-        mContext.registerReceiver(Safe.receiver("sunlight hbm screen", (c, i) -> update()),
-                filter, null, mHandler);
-
-        observeThermal();
-        update();
-    }
-
-    private void observeThermal() {
         try {
-            // ThermalManagerService reports the highest SKIN status, including
-            // the current status immediately after registration. Serialize its
-            // callbacks with brightness, lux and the pending HBM transition.
-            mPowerManager.addThermalStatusListener(command -> mHandler.post(command), status -> {
-                mThermalStatus = status;
-                update();
-            });
-        } catch (RuntimeException e) {
-            Log.w(TAG, "thermal listener unavailable; keeping sunlight HBM off", e);
-            mHandler.postDelayed(mObserveThermal, THERMAL_RETRY_MS);
+            final Class<?> hooks = Class.forName(HOOKS);
+            set(hooks, "sLux", (DoubleConsumer) value -> Safe.post(mHandler, "sunlight hbm lux",
+                    () -> setLux((float) value)));
+            set(hooks, "sBrightness", (DoubleConsumer) value -> Safe.post(mHandler,
+                    "sunlight hbm brightness", () -> setBrightness((float) value)));
+            set(hooks, "sAutoBrightness", (IntConsumer) value -> Safe.post(mHandler,
+                    "sunlight hbm auto", () -> setAutoBrightnessEnable(value != 0)));
+        } catch (ReflectiveOperationException e) {
+            Log.e(TAG, "ZuiDisplayHooks of the display service not found", e);
         }
     }
 
-    /** Listens to the light sensor only while the other conditions hold. */
-    private void update() {
-        mScreenOn = mPowerManager.isInteractive();
-        mAutoBrightness = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE, 0)
-                == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
-        mBrightnessAtMax = brightnessAtMax();
+    private static void set(Class<?> cls, String field, Object value)
+            throws ReflectiveOperationException {
+        final Field f = cls.getField(field);
+        f.set(null, value);
+    }
 
-        final boolean listen = mScreenOn && mAutoBrightness && mBrightnessAtMax
-                && mThermalStatus == PowerManager.THERMAL_STATUS_NONE;
-        if (listen != mListening) {
-            mListening = listen;
-            if (listen) {
-                mSensorManager.registerListener(this, mLightSensor,
-                        SensorManager.SENSOR_DELAY_NORMAL, mHandler);
-            } else {
-                mSensorManager.unregisterListener(this);
-                mLuxStep = 0;
-                mPendingStep = -1;
-                mHandler.removeCallbacks(mApplyPending);
+    /** Stock isZuiLenovoHbmSwitchOn (ZuiHighBrightness is on): the switch must be on. */
+    private boolean isSwitchOn() {
+        return Settings.System.getInt(mContext.getContentResolver(), SETTING_HIGH_BRIGHTNESS, 0)
+                == 1;
+    }
+
+    /** Stock ZuiDisplayServiceInternalImpl.setAutoBrightnessEnable. */
+    private void setAutoBrightnessEnable(boolean enable) {
+        if (!enable) {
+            mLux = 0;
+            mHandler.removeCallbacks(mApplyLevel);
+        }
+        mAutoBrightness = enable;
+    }
+
+    /** Stock setHbmLux. */
+    private void setLux(float lux) {
+        mLux = lux;
+        evaluate();
+    }
+
+    /** Stock setHbmBrightness. */
+    private void setBrightness(float brightness) {
+        mBrightness = brightness;
+        evaluate();
+    }
+
+    private void evaluate() {
+        if (!mAutoBrightness || !isSwitchOn()) {
+            if (mHbmEnabled) {
+                sendLevel(0);
             }
-        }
-        if (!listen) {
-            setState(0);
-        }
-    }
-
-    private boolean brightnessAtMax() {
-        final Display display = mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY);
-        final BrightnessInfo info = display != null ? display.getBrightnessInfo() : null;
-        if (info == null) {
-            return false;
-        }
-        // Near the top: the automatic curve with the adjustment of the user may end a little
-        // below the maximum (0.95: about 620 of the 650 nits). Respect any other
-        // brightness cap without changing the normal brightness range ourselves.
-        return info.brightnessMaximum >= 1f && info.brightness >= BRIGHTNESS_NEAR_MAX;
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        final float lux = event.values[0];
-        final int step = lux >= LUX_STEP_2 ? 2 : lux >= LUX_STEP_1 ? 1 : 0;
-        if (step == mLuxStep) {
             return;
         }
-        mLuxStep = step;
-        if (step == mState) {
-            // back to the applied step before the debounce ended
-            mPendingStep = -1;
-            mHandler.removeCallbacks(mApplyPending);
+        if (mLux < mLuxConfig || mBrightness < BRIGHTNESS_MAX_HBM) {
+            if (mHbmEnabled) {
+                sendLevel(0);
+            }
             return;
         }
-        mPendingStep = step;
-        mHandler.removeCallbacks(mApplyPending);
-        mHandler.postDelayed(mApplyPending, DEBOUNCE_MS);
-    }
-
-    private void applyPending() {
-        if (mPendingStep >= 0 && mListening) {
-            setState(mPendingStep);
+        if (mLuxSecondConfig == 0 || mLux < mLuxSecondConfig) {
+            sendLevel(1);
+        } else {
+            sendLevel(2);
         }
-        mPendingStep = -1;
     }
 
-    private void setState(int state) {
-        if (state == mState) {
+    /** Stock SettingsObserver for zui_screen_enhance_enabled. */
+    private void onSwitchChanged() {
+        if (!mAutoBrightness || !isSwitchOn()) {
+            if (mHbmEnabled) {
+                sendLevel(0);
+            }
             return;
         }
-        if (LenovoHal.setHbmState(state)) {
-            Log.i(TAG, "hbm " + state + " (screen " + mScreenOn + ", auto " + mAutoBrightness
-                    + ", max " + mBrightnessAtMax + ", thermal " + mThermalStatus + ")");
-            mState = state;
+        if (mHbmEnabled || mLux < mLuxConfig) {
+            return;
+        }
+        sendLevel(1);
+    }
+
+    /** Stock ScreenStatusReceiver. */
+    private void onScreenOff() {
+        if (isSwitchOn()) {
+            mBrightness = 0;
+            mLux = 0;
+            sendLevel(-2);
         }
     }
 
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
-
-    @Override
-    public void onDisplayAdded(int displayId) {}
-
-    @Override
-    public void onDisplayRemoved(int displayId) {}
-
-    @Override
-    public void onDisplayChanged(int displayId) {
-        if (displayId == Display.DEFAULT_DISPLAY) {
-            Safe.run("sunlight hbm brightness", this::update).run();
+    /** Stock sendHbmStatusMsg: -2 is off at once, 0 is off, 1 and 2 are the levels. */
+    private void sendLevel(int level) {
+        mHandler.removeCallbacks(mApplyLevel);
+        if (level == -2) {
+            mPendingLevel = 0;
+            mHandler.post(mApplyLevel);
+            return;
         }
+        mPendingLevel = level;
+        mHandler.postDelayed(mApplyLevel, level != 0 ? LEVEL_DELAY_MS : 0);
+    }
+
+    private void applyLevel() {
+        final int level = mPendingLevel;
+        if (LenovoHal.setHbmState(level)) {
+            Log.i(TAG, "hbm " + level + " (lux " + mLux + ", brightness " + mBrightness + ")");
+        }
+        mHbmEnabled = level != 0;
     }
 }
