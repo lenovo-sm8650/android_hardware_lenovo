@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- Advanced features: categories and rows are shown in this order. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/app_name">
+
+    <!-- Stock ZUI places Landscape view under One Vision -->
+    <PreferenceCategory
+        android:key="one_vision"
+        android:title="@string/one_vision_category">
+
+        <Preference
+            android:key="landscape_view"
+            android:title="@string/landscape_title"
+            android:fragment="org.lineageos.settings.device.LandscapeViewFragment" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="accessories"
+        android:title="@string/accessories_category">
+
+        <SwitchPreferenceCompat
+            android:key="folio_case_mode"
+            android:title="@string/lkb_folio_case_mode"
+            android:summary="@string/lkb_folio_case_mode_summary"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="performance"
+        android:title="@string/performance_category">
+
+        <!-- Opens the separate game performance app; hidden while it is not installed -->
+        <Preference
+            android:key="game_perf"
+            android:title="@string/game_perf_title"
+            android:summary="@string/game_perf_summary" />
+
+        <ListPreference
+            android:key="vram_gb"
+            android:title="@string/vram_title"
+            android:dialogTitle="@string/vram_title"
+            android:persistent="false" />
+
+        <Preference
+            android:key="memory_status"
+            android:title="@string/memory_status_title"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
+    <!-- Opens the separate Experimental features app; hidden while it is not installed -->
+    <PreferenceCategory
+        android:key="experimental_category"
+        android:title="@string/experiments_category">
+
+        <Preference
+            android:key="experimental"
+            android:title="@string/experimental_title"
+            android:summary="@string/experimental_summary" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
