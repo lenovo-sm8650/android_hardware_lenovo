@@ -1,0 +1,13 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+// Framework resources of the Experimental features app: the default device
+// identity for selected apps. Installed with ExperimentalFeatures (custom.mk), so a
+// build without the app does not carry them.
+//
+
+runtime_resource_overlay {
+    name: "FrameworksResExperimental",
+    product_specific: true,
+}

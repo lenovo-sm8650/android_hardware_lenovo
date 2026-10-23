@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/app_name">
+
+    <PreferenceCategory
+        android:key="spoofing"
+        android:title="@string/spoofing_category">
+
+        <Preference
+            android:key="device_spoof"
+            android:title="@string/device_spoof_title"
+            android:fragment="org.lineageos.settings.experimental.DeviceSpoofFragment" />
+
+        <Preference
+            android:key="installer_spoof"
+            android:title="@string/installer_spoof_title"
+            android:fragment="org.lineageos.settings.experimental.InstallerSpoofFragment" />
+
+    </PreferenceCategory>
+
+    <!-- Each row opens a page of the separate Play Integrity Fix app; the category is made
+         visible in code only when that app is installed -->
+    <PreferenceCategory
+        android:key="play_integrity_category"
+        android:title="@string/integrity_category"
+        app:isPreferenceVisible="false">
+
+        <Preference
+            android:key="specter"
+            android:title="@string/specter_title" />
+
+        <Preference
+            android:key="tee_simulator"
+            android:title="@string/tee_simulator_title" />
+
+        <Preference
+            android:key="play_integrity"
+            android:title="@string/play_integrity_fix_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
