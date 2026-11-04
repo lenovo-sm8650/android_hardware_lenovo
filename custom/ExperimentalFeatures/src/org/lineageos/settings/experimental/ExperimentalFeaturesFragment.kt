@@ -91,9 +91,9 @@ class ExperimentalFeaturesFragment : SettingsBasePreferenceFragment() {
         const val KEY_PLAY_INTEGRITY_CATEGORY = "play_integrity_category"
         const val KEY_TEE_SIMULATOR = "tee_simulator"
         const val KEY_SPECTER = "specter"
-        const val PIF_SWITCH_SETTING = "lenovo_pif_module"
-        const val TEE_SWITCH_SETTING = "lenovo_tee_simulator"
-        const val SPECTER_SWITCH_SETTING = "lenovo_specter"
+        const val PIF_SWITCH_SETTING = "pif_module"
+        const val TEE_SWITCH_SETTING = "tee_simulator"
+        const val SPECTER_SWITCH_SETTING = "specter"
         val TEE_ACTIVITY = ComponentName(
             "io.github.wnduddld0513.pif", "io.github.wnduddld0513.pif.TeeSimulatorActivity"
         )

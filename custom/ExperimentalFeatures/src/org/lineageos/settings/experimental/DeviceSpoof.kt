@@ -17,7 +17,7 @@ import android.provider.Settings
  * get it. A field left empty keeps the real value, so an app with all three
  * empty sees this device. A new app starts empty: nothing is pre-filled.
  *
- * Stored as Settings.Global lenovo_device_spoof_apps =
+ * Stored as Settings.Global device_spoof_apps =
  * "pkg=brand|manufacturer|model;...". While the key is unset, the framework
  * default applies (config_deviceSpoofApps, set by the
  * FrameworksResCustom overlay: Netflix as the OnePlus Pad Go 2).
@@ -25,10 +25,10 @@ import android.provider.Settings
  */
 object DeviceSpoof {
 
-    const val APPS = "lenovo_device_spoof_apps"
+    const val APPS = "device_spoof_apps"
 
     /** Main switch of the feature: on unless 0. */
-    const val ENABLED = "lenovo_device_spoof"
+    const val ENABLED = "device_spoof"
 
     fun isEnabled(ctx: Context) = Settings.Global.getInt(ctx.contentResolver, ENABLED, 1) != 0
 
