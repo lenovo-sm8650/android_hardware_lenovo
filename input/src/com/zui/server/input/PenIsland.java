@@ -8,6 +8,7 @@ package com.zui.server.input;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Matrix;
 import android.graphics.PixelFormat;
@@ -100,6 +101,23 @@ final class PenIsland {
     private static final int TIP_WIDTH_DP = 120;
     private static final int BLUR_DP = 24;
     private static final String PEN_PACKAGE = "com.lenovo.penservice";
+    /**
+     * PenService's permanent "connecting" pill (PenEventReceiver id 0x186a9).
+     * It is only cancelled from the pen battery-changed broadcast, so a missed
+     * event leaves the pill on screen forever.
+     */
+    private static final int PEN_CONNECTING_ID = 100009;
+    private static final long PEN_CONNECTING_TIMEOUT_MS = 5_000;
+    /**
+     * "Turn on Bluetooth and connect the stylus" prompt (PenEventReceiver
+     * 0x186a1). Cancelled only by PEN_BT_CHANGED/attach; on a reconnect the
+     * prompt can be posted after those events and stay forever.
+     */
+    private static final int PEN_OPEN_BLUETOOTH_ID = 100001;
+    private static final long PEN_OPEN_BLUETOOTH_TIMEOUT_MS = 5_000;
+    /** Asks PenService to clear its own mPenConnectingShowing flag. */
+    private static final String ACTION_PEN_CANCEL_CONNECTING =
+            "lenovo.intent.action.PEN_CANCEL_CONNECTING";
 
     private static final class Record {
         final String key;
@@ -114,6 +132,7 @@ final class PenIsland {
         float dp;
         boolean added;
         Runnable expire;
+        Runnable connectingExpire;
 
         Record(String key, String pkg) {
             this.key = key;
@@ -179,8 +198,45 @@ final class PenIsland {
             return;
         }
         mHandler.removeCallbacks(r.expire);
-        if (!permanent) mHandler.postDelayed(r.expire, SHOW_MS);
+        if (r.connectingExpire != null) {
+            mHandler.removeCallbacks(r.connectingExpire);
+            r.connectingExpire = null;
+        }
+        if (!permanent) {
+            mHandler.postDelayed(r.expire, SHOW_MS);
+        } else {
+            long fallbackMs = permanentFallbackMs(pkg, id);
+            if (fallbackMs > 0) {
+                final Record record = r;
+                final boolean resetPenService = PEN_PACKAGE.equals(pkg)
+                        && id == PEN_CONNECTING_ID;
+                r.connectingExpire = Safe.run("pen island fallback expire", () -> {
+                    remove(record);
+                    if (resetPenService) {
+                        try {
+                            mContext.sendBroadcast(new Intent(ACTION_PEN_CANCEL_CONNECTING)
+                                    .setPackage(PEN_PACKAGE));
+                        } catch (RuntimeException e) {
+                            Log.w(TAG, "connecting cancel broadcast", e);
+                        }
+                    }
+                });
+                mHandler.postDelayed(r.connectingExpire, fallbackMs);
+            }
+        }
         Log.i(TAG, (created ? "shown " : "updated ") + key);
+    }
+
+    /**
+     * Permanent PenService pills that can be left behind when their cancel
+     * event is missed. Everything else keeps the stock "stay until cancelled"
+     * behaviour.
+     */
+    private static long permanentFallbackMs(String pkg, int id) {
+        if (!PEN_PACKAGE.equals(pkg)) return -1;
+        if (id == PEN_CONNECTING_ID) return PEN_CONNECTING_TIMEOUT_MS;
+        if (id == PEN_OPEN_BLUETOOTH_ID) return PEN_OPEN_BLUETOOTH_TIMEOUT_MS;
+        return -1;
     }
 
     /** Creates the window context and the empty pill of a record. */
@@ -240,6 +296,10 @@ final class PenIsland {
     /** Removes the pill with a fade; safe to call twice. */
     private void remove(Record r) {
         mHandler.removeCallbacks(r.expire);
+        if (r.connectingExpire != null) {
+            mHandler.removeCallbacks(r.connectingExpire);
+            r.connectingExpire = null;
+        }
         if (mRecords.get(r.key) == r) mRecords.remove(r.key);
         if (!r.added) return;
         r.added = false;
