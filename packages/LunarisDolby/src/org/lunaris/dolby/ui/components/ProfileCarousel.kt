@@ -56,10 +56,7 @@ fun ProfileCarousel(
         2 to Icons.Default.MusicNote,
         // TB520FU DAX profiles: 3 is Voice, 8 is Game (dolby_profile_values)
         3 to Icons.Default.RecordVoiceOver,
-        8 to Icons.Default.SportsEsports,
-        4 to Icons.Default.Work,
-        5 to Icons.Default.Coffee,
-        6 to Icons.Default.Favorite
+        8 to Icons.Default.SportsEsports
     )
     
     val profilePalettes = rememberProfilePalettes()
@@ -117,7 +114,7 @@ fun ProfileCarousel(
                 ProfileCard(
                     profile = profiles[page],
                     icon = profileIcons[profileValue] ?: Icons.Default.Tune,
-                    palette = profilePalettes.getOrElse(profileValue) { profilePalettes[0] },
+                    palette = profilePalettes.getOrElse(page) { profilePalettes[0] },
                     isSelected = page == pagerState.currentPage,
                     pageOffset = pageOffset,
                     onClick = {

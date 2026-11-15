@@ -40,6 +40,11 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
     val volumeLevelerSupported = context.resources.getBoolean(R.bool.dolby_volume_leveler_supported)
     
     private var isReleased = false
+
+    /** DAX profiles the app offers (dolby_profile_values). */
+    private val knownProfiles = context.resources.getStringArray(R.array.dolby_profile_values)
+        .mapNotNull { it.toIntOrNull() }
+        .toSet()
     
     private var cachedPresets: List<EqualizerPreset>? = null
     private val presetCacheLock = Any()
@@ -98,8 +103,11 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
     }
 
     private fun readSavedProfile(): Int? {
+        // Older builds offered profiles 4-6 (SpatialAudio and Mobility) as
+        // Work, Casual and Mood: fall back to the default profile.
         return defaultPrefs.getString(DolbyConstants.PREF_PROFILE, null)
             ?.toIntOrNull()
+            ?.let { if (it in knownProfiles) it else DolbyConstants.DEFAULT_PROFILE }
     }
 
     private fun restoreSavedProfileIfNeeded(): Boolean {
@@ -211,9 +219,11 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
         }
     }
 
-    fun setCurrentProfile(profile: Int) {
+    fun setCurrentProfile(requested: Int) {
         if (isReleased) return
-        
+        // Per-app profiles of older builds may name a profile the app no longer offers.
+        val profile = if (requested in knownProfiles) requested else DolbyConstants.DEFAULT_PROFILE
+
         try {
             if (!checkEffect()) return
             dolbyEffect.profile = profile

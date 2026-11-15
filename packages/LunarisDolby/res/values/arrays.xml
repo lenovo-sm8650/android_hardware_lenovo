@@ -6,24 +6,26 @@
 <resources>
 
     <!-- Dolby Atmos -->
+    <!--
+        Profiles of the stock dax-default.xml: 0 Dynamic, 1 Movie, 2 Music,
+        3 Voice and 8 Game. 4-7 are the SpatialAudio and Mobility profiles,
+        which the stock UI does not offer. Keep the order of the translated
+        entries (values-*/arrays.xml).
+    -->
     <string-array name="dolby_profile_entries">
         <item>@string/dolby_profile_dynamic</item>
         <item>@string/dolby_profile_video</item>
         <item>@string/dolby_profile_music</item>
         <item>@string/dolby_profile_game</item>
-        <item>@string/dolby_profile_work</item>
-        <item>@string/dolby_profile_casual</item>
-        <item>@string/dolby_profile_mood</item>
+        <item>@string/dolby_profile_voice</item>
     </string-array>
 
     <string-array name="dolby_profile_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>8</item>
         <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
     </string-array>
 
     <string-array name="dolby_preset_entries" translatable="false">
