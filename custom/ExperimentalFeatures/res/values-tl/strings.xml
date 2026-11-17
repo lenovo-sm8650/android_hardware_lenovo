@@ -11,8 +11,6 @@
     <string name="app_remove">Alisin</string>
     <string name="state_on">Naka-on</string>
     <string name="state_off">Naka-off</string>
-    <string name="installer_spoof_footer">Ang mga app lang sa listahang ito ang nakakakita sa Play Store bilang sarili nilang installer, kaya patuloy na gumagana ang mga app na nangangailangan ng pag-install sa Play (halimbawa, Notein). Nakikita pa rin ng ibang app at ng Play Store ang totoong installer. Nalalapat agad.</string>
-    <string name="installer_spoof_remove_message">Makikita muli ng app na ito ang totoong installer nito.</string>
     <string name="device_spoof_model">Modelo</string>
     <string name="device_spoof_unchanged">Hindi binago</string>
     <string name="device_spoof_footer">Ang mga app lang sa listahang ito ang nakakakita ng brand, manufacturer, at model ng ibang device, halimbawa para mag-stream ang Netflix sa HDR10, HDR10+, at Dolby Vision. I-tap ang isang app para baguhin ang device nito; pinapanatili ng walang laman na field ang totoong value. Palaging nakikita ng mga serbisyo ng Google Play at ng Play Store ang totoong device. I-restart para mailapat ang pagbabago.</string>

@@ -16,12 +16,6 @@ PRODUCT_PACKAGES += \
     FrameworksResExperimental \
     LenovoGamePerformance
 
-# Play Integrity Fix (fork of KOWX712/PlayIntegrityFix, packages/apps/PlayIntegrityFix):
-# the page opened from Experimental features, its jar and native part. The framework
-# loads the jar only while the page's main switch is on.
-PRODUCT_PACKAGES += \
-    PlayIntegrityFixSettings
-
 # Game performance enforcement inside system_server (input/ extension point).
 # lenovo-input loads /system_ext/framework/lenovo-input-custom.jar when it is
 # present and lets it register with InputExtension.

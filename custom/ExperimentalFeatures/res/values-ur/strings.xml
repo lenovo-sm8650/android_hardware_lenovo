@@ -11,8 +11,6 @@
     <string name="app_remove">ہٹائیں</string>
     <string name="state_on">آن</string>
     <string name="state_off">آف</string>
-    <string name="installer_spoof_footer">صرف اس فہرست کی ایپس Play اسٹور کو اپنا انسٹالر دیکھتی ہیں، اس لیے Play سے انسٹال کی ضرورت والی ایپس (مثلاً Notein) کام کرتی رہتی ہیں۔ دیگر ایپس اور Play اسٹور حقیقی انسٹالر دیکھتے ہیں۔ فوری طور پر لاگو ہوتا ہے۔</string>
-    <string name="installer_spoof_remove_message">یہ ایپ دوبارہ اپنا حقیقی انسٹالر دیکھے گی۔</string>
     <string name="device_spoof_brand">برانڈ</string>
     <string name="device_spoof_manufacturer">مینوفیکچرر</string>
     <string name="device_spoof_model">ماڈل</string>

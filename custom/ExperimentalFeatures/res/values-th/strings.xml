@@ -11,9 +11,6 @@
     <string name="app_remove">นำออก</string>
     <string name="state_on">เปิด</string>
     <string name="state_off">ปิด</string>
-    <string name="installer_spoof_title">การปลอมแปลงตัวติดตั้งแอป</string>
-    <string name="installer_spoof_footer">เฉพาะแอปในรายการนี้เท่านั้นที่เห็น Play Store เป็นตัวติดตั้งของตัวเอง แอปที่ต้องติดตั้งจาก Play (เช่น Notein) จึงทำงานต่อไปได้ แอปอื่นและ Play Store ยังเห็นตัวติดตั้งจริง มีผลทันที</string>
-    <string name="installer_spoof_remove_message">แอปนี้จะเห็นตัวติดตั้งจริงอีกครั้ง</string>
     <string name="device_spoof_title">การปลอมแปลงอุปกรณ์</string>
     <string name="device_spoof_brand">ยี่ห้อ</string>
     <string name="device_spoof_manufacturer">ผู้ผลิต</string>
@@ -23,8 +20,6 @@
     <string name="device_spoof_reboot_message">ต้องรีสตาร์ทเพื่อใช้ข้อมูลระบุอุปกรณ์ของแอป</string>
     <string name="device_spoof_reboot_now">รีบูตเลย</string>
     <string name="device_spoof_reboot_later">รีบูตภายหลัง</string>
-    <string name="integrity_category">ความสมบูรณ์</string>
     <string name="spoofing_category">การปลอมแปลง</string>
     <string name="device_spoof_main_title">ใช้การปลอมแปลงอุปกรณ์</string>
-    <string name="installer_spoof_main_title">ใช้การปลอมแปลงตัวติดตั้งแอป</string>
 </resources>

@@ -11,8 +11,6 @@
     <string name="app_remove">ඉවත් කරන්න</string>
     <string name="state_on">ක්‍රියාත්මකයි</string>
     <string name="state_off">අක්‍රියයි</string>
-    <string name="installer_spoof_footer">මෙම ලැයිස්තුවේ යෙදුම් පමණක් Play Store තමන්ගේ ස්ථාපකය ලෙස දකී, එබැවින් Play හරහා ස්ථාපනය අවශ්‍ය යෙදුම් (උදා. Notein) දිගටම ක්‍රියා කරයි. අනෙක් යෙදුම් සහ Play Store සැබෑ ස්ථාපකය දකී. වහාම යෙදේ.</string>
-    <string name="installer_spoof_remove_message">මෙම යෙදුම නැවතත් එහි සැබෑ ස්ථාපකය දකිනු ඇත.</string>
     <string name="device_spoof_brand">වෙළඳ නාමය</string>
     <string name="device_spoof_manufacturer">නිෂ්පාදකයා</string>
     <string name="device_spoof_model">මාදිලිය</string>

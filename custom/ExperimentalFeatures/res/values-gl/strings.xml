@@ -11,8 +11,6 @@
     <string name="app_remove">Quitar</string>
     <string name="state_on">Opción activada</string>
     <string name="state_off">Opción desactivada</string>
-    <string name="installer_spoof_footer">Só as aplicacións desta lista ven Play Store como o seu propio instalador, polo que as aplicacións que requiren unha instalación de Play (por exemplo, Notein) seguen funcionando. As outras aplicacións e Play Store seguen vendo o instalador real. Aplícase de inmediato.</string>
-    <string name="installer_spoof_remove_message">Esta aplicación volverá ver o seu instalador real.</string>
     <string name="device_spoof_brand">Marca</string>
     <string name="device_spoof_manufacturer">Fabricante</string>
     <string name="device_spoof_model">Modelo</string>

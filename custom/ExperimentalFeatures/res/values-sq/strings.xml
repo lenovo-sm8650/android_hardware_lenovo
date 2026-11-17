@@ -11,8 +11,6 @@
     <string name="app_remove">Hiq</string>
     <string name="state_on">Aktivizuar</string>
     <string name="state_off">Joaktiv</string>
-    <string name="installer_spoof_footer">Vetëm aplikacionet në këtë listë e shohin Play Store si instaluesin e tyre, kështu që aplikacionet që kërkojnë instalim nga Play (për shembull Notein) vazhdojnë të funksionojnë. Aplikacionet e tjera dhe Play Store e shohin instaluesin e vërtetë. Zbatohet menjëherë.</string>
-    <string name="installer_spoof_remove_message">Ky aplikacion do ta shohë sërish instaluesin e tij të vërtetë.</string>
     <string name="device_spoof_brand">Marka</string>
     <string name="device_spoof_manufacturer">Prodhuesi</string>
     <string name="device_spoof_model">Modeli</string>

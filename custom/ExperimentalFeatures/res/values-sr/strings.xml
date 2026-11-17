@@ -11,8 +11,6 @@
     <string name="app_remove">Уклони</string>
     <string name="state_on">Укључено</string>
     <string name="state_off">Искључено</string>
-    <string name="installer_spoof_footer">Само апликације са ове листе виде Play продавницу као свог инсталатера, па апликације које захтевају инсталацију са Play-а (нпр. Notein) настављају да раде. Остале апликације и Play продавница виде стварног инсталатера. Примењује се одмах.</string>
-    <string name="installer_spoof_remove_message">Ова апликација ће поново видети свог стварног инсталатера.</string>
     <string name="device_spoof_brand">Марка</string>
     <string name="device_spoof_manufacturer">Произвођач</string>
     <string name="device_spoof_model">Модел</string>

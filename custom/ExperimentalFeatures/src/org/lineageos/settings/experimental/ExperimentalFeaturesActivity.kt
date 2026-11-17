@@ -66,7 +66,6 @@ class ExperimentalFeaturesActivity :
          * injection), so only these can be requested through the extra.
          */
         private val SUB_SCREENS = setOf(
-            InstallerSpoofFragment::class.java.name,
             DeviceSpoofFragment::class.java.name,
         )
 

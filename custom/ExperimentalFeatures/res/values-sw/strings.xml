@@ -11,8 +11,6 @@
     <string name="app_remove">Ondoa</string>
     <string name="state_on">Imewashwa</string>
     <string name="state_off">Imezimwa</string>
-    <string name="installer_spoof_footer">Programu zilizo katika orodha hii pekee ndizo huona Play Store kama kisakinishi chake, hivyo programu zinazohitaji usakinishaji wa Play (kwa mfano Notein) zinaendelea kufanya kazi. Programu nyingine na Play Store bado huona kisakinishi halisi. Hutumika mara moja.</string>
-    <string name="installer_spoof_remove_message">Programu hii itaona tena kisakinishi chake halisi.</string>
     <string name="device_spoof_brand">Chapa</string>
     <string name="device_spoof_manufacturer">Mtengenezaji</string>
     <string name="device_spoof_model">Muundo</string>

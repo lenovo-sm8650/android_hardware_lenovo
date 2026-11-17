@@ -11,8 +11,6 @@
     <string name="app_remove">ដកចេញ</string>
     <string name="state_on">បើក</string>
     <string name="state_off">បិទ</string>
-    <string name="installer_spoof_footer">មានតែកម្មវិធីក្នុងបញ្ជីនេះទេដែលឃើញ Play Store ជាកម្មវិធីដំឡើងរបស់ខ្លួន ដូច្នេះកម្មវិធីដែលតម្រូវឱ្យដំឡើងពី Play (ឧទាហរណ៍ Notein) នៅតែដំណើរការ។ កម្មវិធីផ្សេងទៀត និង Play Store ឃើញកម្មវិធីដំឡើងពិតប្រាកដ។ មានប្រសិទ្ធភាពភ្លាមៗ។</string>
-    <string name="installer_spoof_remove_message">កម្មវិធីនេះនឹងឃើញកម្មវិធីដំឡើងពិតប្រាកដរបស់វាម្ដងទៀត។</string>
     <string name="device_spoof_brand">ម៉ាក</string>
     <string name="device_spoof_manufacturer">ក្រុមហ៊ុនផលិត</string>
     <string name="device_spoof_model">ម៉ូដែល</string>

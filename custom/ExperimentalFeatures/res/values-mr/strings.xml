@@ -11,8 +11,6 @@
     <string name="app_remove">काढून टाका</string>
     <string name="state_on">सुरू</string>
     <string name="state_off">बंद</string>
-    <string name="installer_spoof_footer">फक्त या सूचीतील अ‍ॅप्स Play Store ला आपला इंस्टॉलर म्हणून पाहतात, त्यामुळे Play वरून इंस्टॉल आवश्यक असलेली अ‍ॅप्स (उदा. Notein) चालू राहतात. इतर अ‍ॅप्स आणि Play Store खरा इंस्टॉलर पाहतात. त्वरित लागू होते.</string>
-    <string name="installer_spoof_remove_message">हे अ‍ॅप पुन्हा आपला खरा इंस्टॉलर पाहील.</string>
     <string name="device_spoof_brand">ब्रँड</string>
     <string name="device_spoof_manufacturer">उत्पादक</string>
     <string name="device_spoof_model">मॉडेल</string>

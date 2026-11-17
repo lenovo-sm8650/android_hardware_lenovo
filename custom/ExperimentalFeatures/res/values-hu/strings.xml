@@ -11,8 +11,6 @@
     <string name="app_remove">Eltávolítás</string>
     <string name="state_on">Be</string>
     <string name="state_off">Ki</string>
-    <string name="installer_spoof_footer">Csak a listán szereplő alkalmazások látják a Play Áruházat saját telepítőjüknek, így a Playről történő telepítést igénylő alkalmazások (pl. Notein) továbbra is működnek. A többi alkalmazás és a Play Áruház a valódi telepítőt látja. Azonnal érvénybe lép.</string>
-    <string name="installer_spoof_remove_message">Ez az alkalmazás ismét a valódi telepítőjét fogja látni.</string>
     <string name="device_spoof_brand">Márka</string>
     <string name="device_spoof_manufacturer">Gyártó</string>
     <string name="device_spoof_model">Modell</string>

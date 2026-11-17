@@ -11,8 +11,6 @@
     <string name="app_remove">Kendu</string>
     <string name="state_on">Aktibatuta</string>
     <string name="state_off">Desaktibatuta</string>
-    <string name="installer_spoof_footer">Zerrenda honetako aplikazioek soilik ikusten dute Play Store beren instalatzaile gisa; beraz, Play-tik instalatzea eskatzen duten aplikazioek (adibidez, Notein) funtzionatzen jarraitzen dute. Beste aplikazioek eta Play Store-k benetako instalatzailea ikusten dute. Berehala aplikatzen da.</string>
-    <string name="installer_spoof_remove_message">Aplikazio honek berriro ikusiko du bere benetako instalatzailea.</string>
     <string name="device_spoof_brand">Marka</string>
     <string name="device_spoof_manufacturer">Fabrikatzailea</string>
     <string name="device_spoof_model">Modeloa</string>

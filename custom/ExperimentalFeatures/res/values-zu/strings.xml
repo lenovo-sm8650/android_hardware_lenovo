@@ -11,8 +11,6 @@
     <string name="app_remove">Susa</string>
     <string name="state_on">Vuliwe</string>
     <string name="state_off">Valiwe</string>
-    <string name="installer_spoof_footer">Izinhlelo zokusebenza ezise-lisini kuphela ezibona i-Play Store njengesifaki saso, ngakho izinhlelo zokusebenza ezidinga ukufakwa kwe-Play (isibonelo i-Notein) zihlala zisebenza. Ezinye izinhlelo zokusebenza ne-Play Store zisabona isifaki sangempela. Kusebenza ngokushesha.</string>
-    <string name="installer_spoof_remove_message">Lolu hlelo lokusebenza luzobona futhi isifaki saso sangempela.</string>
     <string name="device_spoof_brand">Uhlobo</string>
     <string name="device_spoof_manufacturer">Umkhiqizi</string>
     <string name="device_spoof_model">Imodeli</string>

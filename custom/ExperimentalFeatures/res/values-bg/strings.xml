@@ -11,8 +11,6 @@
     <string name="app_remove">Премахване</string>
     <string name="state_on">Вкл.</string>
     <string name="state_off">Изкл.</string>
-    <string name="installer_spoof_footer">Само приложенията от този списък виждат Play Store като свой инсталатор, затова приложенията, изискващи инсталиране от Play (например Notein), продължават да работят. Другите приложения и Play Store виждат истинския инсталатор. Прилага се веднага.</string>
-    <string name="installer_spoof_remove_message">Това приложение отново ще вижда истинския си инсталатор.</string>
     <string name="device_spoof_brand">Марка</string>
     <string name="device_spoof_manufacturer">Производител</string>
     <string name="device_spoof_model">Модел</string>

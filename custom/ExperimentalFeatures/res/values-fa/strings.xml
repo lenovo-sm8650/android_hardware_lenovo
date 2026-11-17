@@ -11,8 +11,6 @@
     <string name="app_remove">برداشتن</string>
     <string name="state_on">روشن</string>
     <string name="state_off">خاموش</string>
-    <string name="installer_spoof_footer">فقط برنامه‌های این فهرست Play Store را نصب‌کننده خود می‌بینند، بنابراین برنامه‌هایی که نصب از Play لازم دارند (مثلاً Notein) به کار خود ادامه می‌دهند. برنامه‌های دیگر و Play Store نصب‌کننده واقعی را می‌بینند. بلافاصله اعمال می‌شود.</string>
-    <string name="installer_spoof_remove_message">این برنامه دوباره نصب‌کننده واقعی خود را می‌بیند.</string>
     <string name="device_spoof_brand">برند</string>
     <string name="device_spoof_manufacturer">سازنده</string>
     <string name="device_spoof_model">مدل</string>

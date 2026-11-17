@@ -11,8 +11,6 @@
     <string name="app_remove">Pašalinti</string>
     <string name="state_on">Įjungta</string>
     <string name="state_off">Išjungta</string>
-    <string name="installer_spoof_footer">Tik šiame sąraše esančios programos mato „Play“ parduotuvę kaip savo diegimo šaltinį, todėl programos, kurioms reikia diegimo iš „Play“ (pvz., „Notein“), toliau veikia. Kitos programos ir „Play“ parduotuvė mato tikrąjį diegimo šaltinį. Taikoma iškart.</string>
-    <string name="installer_spoof_remove_message">Ši programa vėl matys tikrąjį diegimo šaltinį.</string>
     <string name="device_spoof_brand">Prekės ženklas</string>
     <string name="device_spoof_manufacturer">Gamintojas</string>
     <string name="device_spoof_model">Modelis</string>

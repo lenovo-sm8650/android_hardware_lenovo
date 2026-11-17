@@ -11,8 +11,6 @@
     <string name="app_remove">നീക്കം ചെയ്യൂ</string>
     <string name="state_on">ഓണാണ്</string>
     <string name="state_off">ഓഫാണ്</string>
-    <string name="installer_spoof_footer">ഈ ലിസ്റ്റിലെ ആപ്പുകൾ മാത്രമാണ് Play Store-നെ തങ്ങളുടെ ഇൻസ്റ്റാളറായി കാണുന്നത്, അതിനാൽ Play-യിൽ നിന്നുള്ള ഇൻസ്റ്റാൾ ആവശ്യമുള്ള ആപ്പുകൾ (ഉദാ. Notein) പ്രവർത്തിക്കുന്നു. മറ്റ് ആപ്പുകളും Play Store-ഉം യഥാർത്ഥ ഇൻസ്റ്റാളറിനെ കാണുന്നു. ഉടനടി ബാധകമാകും.</string>
-    <string name="installer_spoof_remove_message">ഈ ആപ്പ് വീണ്ടും അതിന്റെ യഥാർത്ഥ ഇൻസ്റ്റാളറിനെ കാണും.</string>
     <string name="device_spoof_brand">ബ്രാൻഡ്</string>
     <string name="device_spoof_manufacturer">നിർമ്മാതാവ്</string>
     <string name="device_spoof_model">മോഡല്‍</string>

@@ -11,8 +11,6 @@
     <string name="app_remove">ਹਟਾਓ</string>
     <string name="state_on">ਚਾਲੂ</string>
     <string name="state_off">ਬੰਦ</string>
-    <string name="installer_spoof_footer">ਸਿਰਫ਼ ਇਸ ਸੂਚੀ ਦੀਆਂ ਐਪਾਂ Play Store ਨੂੰ ਆਪਣੇ ਇੰਸਟੌਲਰ ਵਜੋਂ ਦੇਖਦੀਆਂ ਹਨ, ਇਸ ਲਈ Play ਤੋਂ ਇੰਸਟੌਲ ਦੀ ਲੋੜ ਵਾਲੀਆਂ ਐਪਾਂ (ਜਿਵੇਂ Notein) ਚੱਲਦੀਆਂ ਰਹਿੰਦੀਆਂ ਹਨ। ਹੋਰ ਐਪਾਂ ਅਤੇ Play Store ਅਸਲ ਇੰਸਟੌਲਰ ਦੇਖਦੇ ਹਨ। ਤੁਰੰਤ ਲਾਗੂ ਹੁੰਦਾ ਹੈ।</string>
-    <string name="installer_spoof_remove_message">ਇਹ ਐਪ ਮੁੜ ਆਪਣਾ ਅਸਲ ਇੰਸਟੌਲਰ ਦੇਖੇਗੀ।</string>
     <string name="device_spoof_brand">ਬ੍ਰਾਂਡ</string>
     <string name="device_spoof_manufacturer">ਨਿਰਮਾਤਾ</string>
     <string name="device_spoof_model">ਮਾਡਲ</string>

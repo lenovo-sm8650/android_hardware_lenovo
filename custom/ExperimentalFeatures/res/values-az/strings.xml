@@ -11,8 +11,6 @@
     <string name="app_remove">Silin</string>
     <string name="state_on">Aktiv</string>
     <string name="state_off">Deaktiv</string>
-    <string name="installer_spoof_footer">Yalnız bu siyahıdakı tətbiqlər Play Store-u öz quraşdırıcısı kimi görür, buna görə də Play-dən quraşdırma tələb edən tətbiqlər (məsələn, Notein) işləməyə davam edir. Digər tətbiqlər və Play Store həqiqi quraşdırıcını görür. Dərhal tətbiq olunur.</string>
-    <string name="installer_spoof_remove_message">Bu tətbiq həqiqi quraşdırıcısını yenidən görəcək.</string>
     <string name="device_spoof_brand">Brend</string>
     <string name="device_spoof_manufacturer">İstehsalçı</string>
     <string name="device_spoof_unchanged">Dəyişdirilməyib</string>

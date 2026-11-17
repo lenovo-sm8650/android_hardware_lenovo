@@ -11,8 +11,6 @@
     <string name="app_remove">Eemalda</string>
     <string name="state_on">Sees</string>
     <string name="state_off">Väljas</string>
-    <string name="installer_spoof_footer">Ainult selle loendi rakendused näevad Play poodi oma installijana, nii et Playst installi nõudvad rakendused (nt Notein) töötavad edasi. Teised rakendused ja Play pood näevad päris installijat. Kehtib kohe.</string>
-    <string name="installer_spoof_remove_message">See rakendus näeb taas oma päris installijat.</string>
     <string name="device_spoof_brand">Mark</string>
     <string name="device_spoof_manufacturer">Tootja</string>
     <string name="device_spoof_model">Mudel</string>

@@ -11,8 +11,6 @@
     <string name="app_remove">Noņemt</string>
     <string name="state_on">Ieslēgts</string>
     <string name="state_off">Izslēgta</string>
-    <string name="installer_spoof_footer">Tikai šī saraksta lietotnes redz Play veikalu kā savu instalētāju, tāpēc lietotnes, kurām nepieciešama instalēšana no Play (piemēram, Notein), turpina darboties. Citas lietotnes un Play veikals redz īsto instalētāju. Stājas spēkā uzreiz.</string>
-    <string name="installer_spoof_remove_message">Šī lietotne atkal redzēs savu īsto instalētāju.</string>
     <string name="device_spoof_brand">Zīmols</string>
     <string name="device_spoof_manufacturer">Ražotājs</string>
     <string name="device_spoof_model">Modelis</string>

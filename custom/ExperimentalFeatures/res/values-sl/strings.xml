@@ -11,8 +11,6 @@
     <string name="app_remove">Odstrani</string>
     <string name="state_on">Vklopljeno</string>
     <string name="state_off">Izklopljeno</string>
-    <string name="installer_spoof_footer">Samo aplikacije s tega seznama vidijo Trgovino Play kot svoj namestitveni program, zato aplikacije, ki zahtevajo namestitev iz Googla Play (npr. Notein), še naprej delujejo. Druge aplikacije in Trgovina Play vidijo pravi namestitveni program. Velja takoj.</string>
-    <string name="installer_spoof_remove_message">Ta aplikacija bo spet videla pravi namestitveni program.</string>
     <string name="device_spoof_brand">Znamka</string>
     <string name="device_spoof_manufacturer">Proizvajalec</string>
     <string name="device_spoof_unchanged">Ni spremenjeno</string>

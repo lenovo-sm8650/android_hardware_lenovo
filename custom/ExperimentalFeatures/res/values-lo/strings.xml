@@ -11,8 +11,6 @@
     <string name="app_remove">ລຶບອອກ</string>
     <string name="state_on">ເປີດ</string>
     <string name="state_off">ປິດ</string>
-    <string name="installer_spoof_footer">ສະເພາະແອັບໃນລາຍການນີ້ເທົ່ານັ້ນທີ່ເຫັນ Play Store ເປັນຕົວຕິດຕັ້ງຂອງຕົນ, ດັ່ງນັ້ນແອັບທີ່ຕ້ອງຕິດຕັ້ງຈາກ Play (ເຊັ່ນ Notein) ຍັງໃຊ້ງານໄດ້. ແອັບອື່ນ ແລະ Play Store ເຫັນຕົວຕິດຕັ້ງຕົວຈິງ. ມີຜົນທັນທີ.</string>
-    <string name="installer_spoof_remove_message">ແອັບນີ້ຈະເຫັນຕົວຕິດຕັ້ງຕົວຈິງຂອງມັນອີກຄັ້ງ.</string>
     <string name="device_spoof_brand">ຍີ່ຫໍ້</string>
     <string name="device_spoof_manufacturer">ຜູ້ຜະລິດ</string>
     <string name="device_spoof_model">ໂມເດວ</string>

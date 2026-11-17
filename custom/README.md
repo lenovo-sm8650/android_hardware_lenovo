@@ -9,12 +9,12 @@ Contents:
 
 | Path | What |
 |---|---|
-| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility (the device identity selected apps see, default: Netflix sees the OnePlus Pad Go 2, and the apps that see the Play Store as their installer, per app and only to the app itself) and an Integrity category (Specter, TEESimulator and Play Integrity Fix, each shown as on or off and on by default) whose rows open the pages of the separate PIF app (`io.github.wnduddld0513.pif`) and which is hidden while it is not installed |
+| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2). Play Integrity spoofing is the upstream PixelOS one (Developer options) |
 | `ExperimentalFeatures/overlay/FrameworksResExperimental/` | the device identity defaults of the app |
-| `custom.mk` | inherits the packages above (the device ships the stock ZUI fingerprint; Play Integrity Fix spoofs a Pixel profile per process, so no global build fingerprint is overridden) |
+| `custom.mk` | inherits the packages above (the device ships the stock ZUI fingerprint; the upstream spoofing sets a Pixel profile per process, so no global build fingerprint is overridden) |
 | `FeathersLiveWallpaper/` | Pixel "Feathers" Porcelain live wallpaper, the default wallpaper |
 | `overlay/FrameworksResCustom/` | the default wallpaper |
-| `overlay/UpdaterResTarget/` | the updater's SourceForge folder and hidden certified-props item |
+| `overlay/UpdaterResTarget/` | the updater's SourceForge folder |
 | `tools/custom_strings.py` | generates the Experimental features app's `res/values*/strings.xml` |
 | `tools/ota_json.py` | writes the updater description of a build |
 
@@ -23,7 +23,7 @@ Contents:
 - `device/lenovo/lapis/custom_lapis.mk` inherits `custom.mk` with
   `inherit-product-if-exists`.
 
-The source changes they need (installer report for picked apps, blocking Play
+The source changes they need (the device identity for picked apps, blocking Play
 Store installs/updates of `com.google.android.GoogleCamera`, the updater server)
 are commits in the `frameworks/base` and `packages/apps/Updater` forks. Google
 Camera can still be installed manually through adb or a file manager.

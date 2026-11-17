@@ -11,8 +11,6 @@
     <string name="app_remove">Olib tashlash</string>
     <string name="state_on">Yoniq</string>
     <string name="state_off">Oʻchiq</string>
-    <string name="installer_spoof_footer">Faqat shu ro‘yxatdagi ilovalar Play Do‘konini o‘z o‘rnatuvchisi sifatida ko‘radi, shuning uchun Play orqali o‘rnatishni talab qiladigan ilovalar (masalan, Notein) ishlashda davom etadi. Boshqa ilovalar va Play Do‘koni haqiqiy o‘rnatuvchini ko‘radi. Darhol qo‘llanadi.</string>
-    <string name="installer_spoof_remove_message">Bu ilova yana o‘zining haqiqiy o‘rnatuvchisini ko‘radi.</string>
     <string name="device_spoof_brand">Brend</string>
     <string name="device_spoof_manufacturer">Ishlab chiqaruvchi</string>
     <string name="device_spoof_unchanged">O‘zgartirilmagan</string>

@@ -10,9 +10,6 @@
     <string name="app_remove">Verwijderen</string>
     <string name="state_on">Aan</string>
     <string name="state_off">Uit</string>
-    <string name="installer_spoof_title">App-installatiespoofing</string>
-    <string name="installer_spoof_footer">Alleen de apps in deze lijst zien de Play Store als hun eigen installatiebron, zodat apps die een installatie via Play vereisen (bijvoorbeeld Notein) blijven werken. Andere apps en de Play Store zien de echte installatiebron. Geldt direct.</string>
-    <string name="installer_spoof_remove_message">Deze app ziet weer de echte installatiebron.</string>
     <string name="device_spoof_title">Apparaat-spoofing</string>
     <string name="device_spoof_brand">Merk</string>
     <string name="device_spoof_manufacturer">Fabrikant</string>
@@ -21,8 +18,6 @@
     <string name="device_spoof_reboot_message">Opnieuw opstarten is vereist om de apparaatidentiteit van de apps toe te passen.</string>
     <string name="device_spoof_reboot_now">Nu opnieuw opstarten</string>
     <string name="device_spoof_reboot_later">Later opnieuw opstarten</string>
-    <string name="integrity_category">Integriteit</string>
     <string name="spoofing_category">Spoofing</string>
     <string name="device_spoof_main_title">Apparaat-spoofing gebruiken</string>
-    <string name="installer_spoof_main_title">App-installatiespoofing gebruiken</string>
 </resources>

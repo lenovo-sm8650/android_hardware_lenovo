@@ -11,8 +11,6 @@
     <string name="app_remove">Fjarlægja</string>
     <string name="state_on">Kveikt</string>
     <string name="state_off">Slökkt</string>
-    <string name="installer_spoof_footer">Aðeins forritin á þessum lista sjá Play Store sem sitt eigið uppsetningarforrit, svo forrit sem krefjast uppsetningar úr Play (t.d. Notein) halda áfram að virka. Önnur forrit og Play Store sjá raunverulega uppsetningarforritið. Gildir strax.</string>
-    <string name="installer_spoof_remove_message">Þetta forrit sér aftur raunverulega uppsetningarforritið sitt.</string>
     <string name="device_spoof_brand">Vörumerki</string>
     <string name="device_spoof_manufacturer">Framleiðandi</string>
     <string name="device_spoof_model">Gerð</string>

@@ -11,8 +11,6 @@
     <string name="app_remove">Poista</string>
     <string name="state_on">Päällä</string>
     <string name="state_off">Ei päällä</string>
-    <string name="installer_spoof_footer">Vain tämän luettelon sovellukset näkevät Play Kaupan omana asentajanaan, joten Play-asennusta vaativat sovellukset (esim. Notein) toimivat edelleen. Muut sovellukset ja Play Kauppa näkevät todellisen asentajan. Tulee voimaan heti.</string>
-    <string name="installer_spoof_remove_message">Tämä sovellus näkee jälleen todellisen asentajansa.</string>
     <string name="device_spoof_brand">Merkki</string>
     <string name="device_spoof_manufacturer">Valmistaja</string>
     <string name="device_spoof_model">Malli</string>

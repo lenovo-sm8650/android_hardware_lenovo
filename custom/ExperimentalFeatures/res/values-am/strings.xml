@@ -11,8 +11,6 @@
     <string name="app_remove">አስወግድ</string>
     <string name="state_on">በርቷል</string>
     <string name="state_off">ጠፍቷል</string>
-    <string name="installer_spoof_footer">በዚህ ዝርዝር ውስጥ ያሉ መተግበሪያዎች ብቻ Play Storeን እንደ ጫኚያቸው ያያሉ፣ ስለዚህ ከPlay መጫን የሚፈልጉ መተግበሪያዎች (ለምሳሌ Notein) መስራታቸውን ይቀጥላሉ። ሌሎች መተግበሪያዎች እና Play Store እውነተኛውን ጫኚ ያያሉ። ወዲያውኑ ተግባራዊ ይሆናል።</string>
-    <string name="installer_spoof_remove_message">ይህ መተግበሪያ እንደገና እውነተኛ ጫኚውን ያያል።</string>
     <string name="device_spoof_brand">የምርት ስም</string>
     <string name="device_spoof_manufacturer">አምራች</string>
     <string name="device_spoof_model">ሞዴል</string>

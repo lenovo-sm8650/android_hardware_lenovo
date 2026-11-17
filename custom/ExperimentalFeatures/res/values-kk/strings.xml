@@ -11,8 +11,6 @@
     <string name="app_remove">Өшіру</string>
     <string name="state_on">Қосулы</string>
     <string name="state_off">Өшірулі</string>
-    <string name="installer_spoof_footer">Тек осы тізімдегі қолданбалар Play Маркетті өз орнатушысы ретінде көреді, сондықтан Play арқылы орнатуды қажет ететін қолданбалар (мысалы, Notein) жұмысын жалғастырады. Басқа қолданбалар мен Play Маркет нақты орнатушыны көреді. Бірден қолданылады.</string>
-    <string name="installer_spoof_remove_message">Бұл қолданба тағы да өзінің нақты орнатушысын көреді.</string>
     <string name="device_spoof_brand">Бренд</string>
     <string name="device_spoof_manufacturer">Өндіруші</string>
     <string name="device_spoof_model">Моделі</string>

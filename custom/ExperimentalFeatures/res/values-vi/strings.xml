@@ -11,9 +11,6 @@
     <string name="app_remove">Xoá</string>
     <string name="state_on">Đang bật</string>
     <string name="state_off">Đang tắt</string>
-    <string name="installer_spoof_title">Giả mạo trình cài đặt ứng dụng</string>
-    <string name="installer_spoof_footer">Chỉ các ứng dụng trong danh sách này thấy Cửa hàng Play là trình cài đặt của chính chúng, nhờ đó các ứng dụng yêu cầu cài đặt từ Play (ví dụ Notein) vẫn hoạt động. Các ứng dụng khác và Cửa hàng Play vẫn thấy trình cài đặt thực. Áp dụng ngay.</string>
-    <string name="installer_spoof_remove_message">Ứng dụng này sẽ thấy lại trình cài đặt thực của mình.</string>
     <string name="device_spoof_title">Giả mạo thiết bị</string>
     <string name="device_spoof_brand">Thương hiệu</string>
     <string name="device_spoof_manufacturer">Nhà sản xuất</string>
@@ -23,8 +20,6 @@
     <string name="device_spoof_reboot_message">Cần khởi động lại để áp dụng nhận dạng thiết bị của các ứng dụng.</string>
     <string name="device_spoof_reboot_now">Khởi động lại ngay</string>
     <string name="device_spoof_reboot_later">Khởi động lại sau</string>
-    <string name="integrity_category">Tính toàn vẹn</string>
     <string name="spoofing_category">Giả mạo</string>
     <string name="device_spoof_main_title">Dùng giả mạo thiết bị</string>
-    <string name="installer_spoof_main_title">Dùng giả mạo trình cài đặt ứng dụng</string>
 </resources>

@@ -11,8 +11,6 @@
     <string name="app_remove">ဖယ်ရှားရန်</string>
     <string name="state_on">ဖွင့်</string>
     <string name="state_off">ပိတ်</string>
-    <string name="installer_spoof_footer">ဤစာရင်းရှိ အက်ပ်များသာ Play Store ကို ၎င်းတို့၏ ထည့်သွင်းသူအဖြစ် မြင်ရသဖြင့် Play မှ ထည့်သွင်းရန် လိုအပ်သော အက်ပ်များ (ဥပမာ Notein) ဆက်လက်အလုပ်လုပ်ပါသည်။ အခြားအက်ပ်များနှင့် Play Store တို့သည် အစစ်အမှန် ထည့်သွင်းသူကို မြင်ရသည်။ ချက်ချင်း သက်ရောက်သည်။</string>
-    <string name="installer_spoof_remove_message">ဤအက်ပ်သည် ၎င်း၏ အစစ်အမှန် ထည့်သွင်းသူကို ပြန်မြင်ရပါမည်။</string>
     <string name="device_spoof_brand">ကုန်အမှတ်တံဆိပ်</string>
     <string name="device_spoof_manufacturer">ထုတ်လုပ်သူ</string>
     <string name="device_spoof_model">မိုဒယ်</string>

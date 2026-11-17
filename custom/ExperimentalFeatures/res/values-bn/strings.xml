@@ -11,8 +11,6 @@
     <string name="app_remove">সরিয়ে দিন</string>
     <string name="state_on">চালু আছে</string>
     <string name="state_off">বন্ধ আছে</string>
-    <string name="installer_spoof_footer">শুধু এই তালিকার অ্যাপগুলো Play Store-কে নিজেদের ইনস্টলার হিসেবে দেখে, তাই যেসব অ্যাপে Play থেকে ইনস্টল প্রয়োজন (যেমন Notein) সেগুলো কাজ করতে থাকে। অন্য অ্যাপ ও Play Store আসল ইনস্টলার দেখে। সঙ্গে সঙ্গে প্রযোজ্য হয়।</string>
-    <string name="installer_spoof_remove_message">এই অ্যাপ আবার তার আসল ইনস্টলার দেখবে।</string>
     <string name="device_spoof_brand">ব্র্যান্ড</string>
     <string name="device_spoof_manufacturer">প্রস্তুতকারক</string>
     <string name="device_spoof_model">মডেল</string>

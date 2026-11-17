@@ -11,8 +11,6 @@
     <string name="app_remove">કાઢી નાખો</string>
     <string name="state_on">ચાલુ</string>
     <string name="state_off">બંધ</string>
-    <string name="installer_spoof_footer">ફક્ત આ સૂચિની ઍપ Play Store ને પોતાના ઇન્સ્ટૉલર તરીકે જુએ છે, તેથી Play પરથી ઇન્સ્ટૉલ જરૂરી હોય તેવી ઍપ (દા.ત. Notein) ચાલુ રહે છે. અન્ય ઍપ અને Play Store સાચો ઇન્સ્ટૉલર જુએ છે. તરત લાગુ થાય છે.</string>
-    <string name="installer_spoof_remove_message">આ ઍપ ફરીથી તેનો સાચો ઇન્સ્ટૉલર જોશે.</string>
     <string name="device_spoof_brand">બ્રાન્ડ</string>
     <string name="device_spoof_manufacturer">ઉત્પાદક</string>
     <string name="device_spoof_model">મૉડલ</string>

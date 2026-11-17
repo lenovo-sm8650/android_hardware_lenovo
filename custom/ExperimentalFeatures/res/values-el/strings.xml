@@ -11,8 +11,6 @@
     <string name="app_remove">Κατάργηση</string>
     <string name="state_on">Ενεργό</string>
     <string name="state_off">Ανενεργό</string>
-    <string name="installer_spoof_footer">Μόνο οι εφαρμογές αυτής της λίστας βλέπουν το Play Store ως δικό τους εγκαταστάτη, ώστε οι εφαρμογές που απαιτούν εγκατάσταση από το Play (π.χ. Notein) να συνεχίσουν να λειτουργούν. Οι άλλες εφαρμογές και το Play Store βλέπουν τον πραγματικό εγκαταστάτη. Ισχύει άμεσα.</string>
-    <string name="installer_spoof_remove_message">Αυτή η εφαρμογή θα βλέπει ξανά τον πραγματικό εγκαταστάτη της.</string>
     <string name="device_spoof_brand">Μάρκα</string>
     <string name="device_spoof_manufacturer">Κατασκευαστής</string>
     <string name="device_spoof_model">Μοντέλο</string>

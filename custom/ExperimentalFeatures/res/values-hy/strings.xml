@@ -11,8 +11,6 @@
     <string name="app_remove">Հեռացնել</string>
     <string name="state_on">Միացված է</string>
     <string name="state_off">Անջատված է</string>
-    <string name="installer_spoof_footer">Միայն այս ցանկի հավելվածները տեսնում են Play Store-ը որպես իրենց տեղադրող, ուստի Play-ից տեղադրում պահանջող հավելվածները (օրինակ՝ Notein) շարունակում են աշխատել: Մյուս հավելվածները և Play Store-ը տեսնում են իրական տեղադրողին: Կիրառվում է անմիջապես:</string>
-    <string name="installer_spoof_remove_message">Այս հավելվածը կրկին կտեսնի իր իրական տեղադրողին:</string>
     <string name="device_spoof_brand">Ապրանքանիշ</string>
     <string name="device_spoof_manufacturer">Արտադրող</string>
     <string name="device_spoof_model">Մոդել</string>

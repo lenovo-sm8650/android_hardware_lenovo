@@ -11,8 +11,6 @@
     <string name="app_remove">Odstrániť</string>
     <string name="state_on">Zapnuté</string>
     <string name="state_off">Vypnuté</string>
-    <string name="installer_spoof_footer">Obchod Play ako svoj inštalátor vidia iba aplikácie v tomto zozname, takže aplikácie vyžadujúce inštaláciu z Play (napríklad Notein) naďalej fungujú. Ostatné aplikácie a Obchod Play vidia skutočný inštalátor. Použije sa okamžite.</string>
-    <string name="installer_spoof_remove_message">Táto aplikácia bude opäť vidieť svoj skutočný inštalátor.</string>
     <string name="device_spoof_brand">Značka</string>
     <string name="device_spoof_manufacturer">Výrobca</string>
     <string name="device_spoof_unchanged">Nezmenené</string>

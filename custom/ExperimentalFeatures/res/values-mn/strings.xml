@@ -11,8 +11,6 @@
     <string name="app_remove">Хасах</string>
     <string name="state_on">Идэвхтэй</string>
     <string name="state_off">Идэвхгүй</string>
-    <string name="installer_spoof_footer">Зөвхөн энэ жагсаалтын аппууд Play Store-г өөрийн суулгагч гэж харна, тиймээс Play-ээс суулгах шаардлагатай аппууд (жишээ нь Notein) үргэлжлүүлэн ажиллана. Бусад апп болон Play Store жинхэнэ суулгагчийг харна. Шууд үйлчилнэ.</string>
-    <string name="installer_spoof_remove_message">Энэ апп өөрийн жинхэнэ суулгагчийг дахин харна.</string>
     <string name="device_spoof_brand">Брэнд</string>
     <string name="device_spoof_manufacturer">Үйлдвэрлэгч</string>
     <string name="device_spoof_model">Загвар</string>

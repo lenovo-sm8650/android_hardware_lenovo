@@ -11,8 +11,6 @@
     <string name="app_remove">Elimină</string>
     <string name="state_on">Activat(ă)</string>
     <string name="state_off">Dezactivat(ă)</string>
-    <string name="installer_spoof_footer">Doar aplicațiile din această listă văd Magazin Play ca propriul instalator, astfel încât aplicațiile care necesită instalarea din Play (de exemplu Notein) continuă să funcționeze. Celelalte aplicații și Magazin Play văd instalatorul real. Se aplică imediat.</string>
-    <string name="installer_spoof_remove_message">Această aplicație va vedea din nou instalatorul real.</string>
     <string name="device_spoof_brand">Marcă</string>
     <string name="device_spoof_manufacturer">Producător</string>
     <string name="device_spoof_unchanged">Nemodificat</string>
