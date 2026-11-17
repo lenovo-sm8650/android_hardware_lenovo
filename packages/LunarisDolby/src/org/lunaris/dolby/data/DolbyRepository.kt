@@ -824,6 +824,9 @@ class DolbyRepository(private val context: Context) : AutoCloseable {
             context.resources.getStringArray(R.array.dolby_profile_values)
                 .map { it.toInt() }
                 .forEach { resetProfile(it) }
+            // The per-device snapshots would bring the old settings back on the next
+            // output device change.
+            DeviceStateManager(context).run { getAllDeviceKeys().forEach { clearSnapshot(it) } }
             setCurrentProfile(0)
         } catch (e: Exception) {
             DolbyConstants.dlog(TAG, "Error resetting all profiles: ${e.message}")
