@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Optional customizations for the Lenovo Yoga Tab Plus (TB520FU), pulled in by
-# device/lenovo/lapis/custom_lapis.mk with inherit-product-if-exists. The
+# device/lenovo/TB520FU/custom_TB520FU.mk with inherit-product-if-exists. The
 # device tree builds a plain PixelOS without this repository.
 #
 

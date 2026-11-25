@@ -39,7 +39,7 @@ import android.util.Log;
  * Until the battery level is known it charges.
  *
  * While one of them holds charging, PROP_CHARGE_HOLD is true: only then does the
- * health HAL (device lapis health/main.cpp) report a plugged-in NOT_CHARGING
+ * health HAL (device TB520FU health/main.cpp) report a plugged-in NOT_CHARGING
  * battery as LONG_LIFE, the "charging on hold" state of SystemUI and Settings.
  * "Charge to full" of that Settings tip sends ACTION_RESUME_CHARGING, which
  * lifts them all until the charger is unplugged, like a Pixel.

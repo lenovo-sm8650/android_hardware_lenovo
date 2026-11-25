@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Board configuration for the optional TB520FU customizations, included by
-# device/lenovo/lapis/BoardConfig.mk with -include (skipped when this
+# device/lenovo/TB520FU/BoardConfig.mk with -include (skipped when this
 # repository is not synced).
 #
 

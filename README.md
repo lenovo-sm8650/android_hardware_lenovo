@@ -1,7 +1,7 @@
 # hardware/lenovo
 
 Lenovo device support shared by the trees in this account, starting with the
-Lenovo Yoga Tab Plus (`device/lenovo/lapis`). One Soong namespace
+Lenovo Yoga Tab Plus (`device/lenovo/TB520FU`). One Soong namespace
 (`hardware/lenovo`); the device tree adds it to `PRODUCT_SOONG_NAMESPACES`.
 
 | Path | Contents |

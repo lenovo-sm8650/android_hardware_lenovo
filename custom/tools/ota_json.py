@@ -5,12 +5,12 @@
 #
 """Write the update descriptions of a build for the Updater.
 
-For every full ROM zip (PixelOS_lapis-<version>-<date>[-ROW].zip) this writes
+For every full ROM zip (PixelOS_TB520FU-<version>-<date>[-ROW].zip) this writes
 <zip name without .zip>.json, the Updater's update list with one entry:
 
   files        the full package
   incremental  the incremental package of the same variant, if given with
-               --incremental (PixelOS_lapis-<version>-<date>-incremental-
+               --incremental (PixelOS_TB520FU-<version>-<date>-incremental-
                <base date>[-ROW].zip)
 
 Upload the .json files and the incremental zips into the build's own folder in
@@ -30,7 +30,7 @@ usage: ota_json.py [--incremental INC.zip (--base-full BASE.zip | --base-build D
 
 --base-build takes the archived target files of the source build instead of
 its full package: <DIR>/target_files, where DIR is named like the build
-(PixelOS_lapis-<version>-<date>), for both variants.
+(PixelOS_TB520FU-<version>-<date>), for both variants.
 """
 import argparse
 import hashlib
@@ -120,7 +120,8 @@ def main():
     ap.add_argument('--out-dir', help='folder for the .json files (default: next to the full zip)')
     ap.add_argument('--alias-device', action='append', default=[], metavar='NAME',
                     help='also write the description as PixelOS_<NAME>-...json, so that '
-                         'builds with that older device name (TB520FU before lapis) '
+                         'builds with another device name (lapis from 2026-10-07 to '
+                         '2026-11-26) '
                          'find the update (repeatable)')
     ap.add_argument('zips', nargs='+', help='full packages')
     args = ap.parse_args()
