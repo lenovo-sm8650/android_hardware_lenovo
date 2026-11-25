@@ -10,4 +10,5 @@
     <string name="device_spoof_reboot_later">Reiniciar más adelante</string>
     <string name="spoofing_category">Suplantación</string>
     <string name="device_spoof_main_title">Usar suplantación de dispositivo</string>
+    <string name="integrity_category">Integridad</string>
 </resources>

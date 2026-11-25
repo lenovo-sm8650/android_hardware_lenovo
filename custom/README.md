@@ -9,7 +9,8 @@ Contents:
 
 | Path | What |
 |---|---|
-| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2). Play Integrity spoofing is the upstream PixelOS one (Developer options) |
+| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2), and an Integrity category: Specter (the page of the separate PIF app `io.github.wnduddld0513.pif`, hidden while it is not installed) and the PixelOS Play Integrity Fix and TrickyStore pages of Developer options, each shown as on or off |
+| `custom.mk` → `PlayIntegrityFixSettings` | Specter (`packages/apps/PlayIntegrityFix`): sets up the PixelOS spoofing on a fresh install and keeps the profile, the keybox and the security patch up to date |
 | `ExperimentalFeatures/overlay/FrameworksResExperimental/` | the device identity defaults of the app |
 | `custom.mk` | inherits the packages above (the device ships the stock ZUI fingerprint; the upstream spoofing sets a Pixel profile per process, so no global build fingerprint is overridden) |
 | `FeathersLiveWallpaper/` | Pixel "Feathers" Porcelain live wallpaper, the default wallpaper |

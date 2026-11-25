@@ -22,4 +22,5 @@
     <string name="device_spoof_reboot_later">Redémarrer plus tard</string>
     <string name="spoofing_category">Spoofing</string>
     <string name="device_spoof_main_title">Utiliser le spoofing de l’appareil</string>
+    <string name="integrity_category">Intégrité</string>
 </resources>

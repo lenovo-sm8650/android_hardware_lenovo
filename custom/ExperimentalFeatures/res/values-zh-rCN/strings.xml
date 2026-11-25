@@ -22,4 +22,5 @@
     <string name="device_spoof_reboot_later">稍后重新启动</string>
     <string name="spoofing_category">伪装</string>
     <string name="device_spoof_main_title">使用设备伪装</string>
+    <string name="integrity_category">完整性</string>
 </resources>

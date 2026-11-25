@@ -16,6 +16,12 @@ PRODUCT_PACKAGES += \
     FrameworksResExperimental \
     LenovoGamePerformance
 
+# Specter (packages/apps/PlayIntegrityFix, fork of KOWX712/PlayIntegrityFix): sets up
+# the PixelOS Play Integrity and TrickyStore spoofing on a fresh install and keeps the
+# profile, the keybox and the security patch up to date. Opened from Experimental features.
+PRODUCT_PACKAGES += \
+    PlayIntegrityFixSettings
+
 # Game performance enforcement inside system_server (input/ extension point).
 # lenovo-input loads /system_ext/framework/lenovo-input-custom.jar when it is
 # present and lets it register with InputExtension.

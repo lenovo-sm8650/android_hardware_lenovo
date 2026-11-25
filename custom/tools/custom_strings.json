@@ -17,7 +17,11 @@
    "device_spoof_reboot_now": "Reboot now",
    "device_spoof_reboot_later": "Reboot later",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Use Device Spoofing"
+   "device_spoof_main_title": "Use Device Spoofing",
+   "integrity_category": "Integrity",
+   "specter_title": "Specter",
+   "play_integrity_fix_title": "Play Integrity Fix",
+   "trickystore_title": "TrickyStore"
   },
   "af": {
    "app_name": "Eksperimentele kenmerke",
@@ -66,7 +70,8 @@
    "device_spoof_reboot_now": "إعادة التشغيل الآن",
    "device_spoof_reboot_later": "إعادة التشغيل لاحقًا",
    "spoofing_category": "الانتحال",
-   "device_spoof_main_title": "استخدام انتحال الجهاز"
+   "device_spoof_main_title": "استخدام انتحال الجهاز",
+   "integrity_category": "السلامة"
   },
   "as": {
    "app_name": "পৰীক্ষামূলক বৈশিষ্ট্য",
@@ -240,7 +245,8 @@
    "device_spoof_reboot_now": "Jetzt neu starten",
    "device_spoof_reboot_later": "Später neu starten",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Geräte-Spoofing verwenden"
+   "device_spoof_main_title": "Geräte-Spoofing verwenden",
+   "integrity_category": "Integrität"
   },
   "el": {
    "app_name": "Πειραματικές λειτουργίες",
@@ -275,14 +281,16 @@
    "device_spoof_reboot_now": "Reiniciar ahora",
    "device_spoof_reboot_later": "Reiniciar más tarde",
    "spoofing_category": "Suplantación",
-   "device_spoof_main_title": "Usar suplantación de dispositivo"
+   "device_spoof_main_title": "Usar suplantación de dispositivo",
+   "integrity_category": "Integridad"
   },
   "es-rUS": {
    "app_add": "Agregar apps",
    "device_spoof_reboot_later": "Reiniciar más adelante",
    "spoofing_category": "Suplantación",
    "device_spoof_title": "Suplantación de dispositivo",
-   "device_spoof_main_title": "Usar suplantación de dispositivo"
+   "device_spoof_main_title": "Usar suplantación de dispositivo",
+   "integrity_category": "Integridad"
   },
   "et": {
    "app_name": "Katsetavad funktsioonid",
@@ -365,14 +373,16 @@
    "device_spoof_reboot_now": "Redémarrer maintenant",
    "device_spoof_reboot_later": "Redémarrer plus tard",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Utiliser le spoofing de l’appareil"
+   "device_spoof_main_title": "Utiliser le spoofing de l’appareil",
+   "integrity_category": "Intégrité"
   },
   "fr-rCA": {
    "apps_category": "Applis",
    "app_add": "Ajouter des applis",
    "spoofing_category": "Spoofing",
    "device_spoof_title": "Spoofing de l’appareil",
-   "device_spoof_main_title": "Utiliser le spoofing de l’appareil"
+   "device_spoof_main_title": "Utiliser le spoofing de l’appareil",
+   "integrity_category": "Intégrité"
   },
   "gl": {
    "app_name": "Funcións experimentais",
@@ -423,7 +433,8 @@
    "device_spoof_reboot_now": "अभी रीबूट (फिर से चालू) करें",
    "device_spoof_reboot_later": "बाद में रीबूट (फिर से चालू) करें",
    "spoofing_category": "स्पूफ़िंग",
-   "device_spoof_main_title": "डिवाइस स्पूफ़िंग का उपयोग करें"
+   "device_spoof_main_title": "डिवाइस स्पूफ़िंग का उपयोग करें",
+   "integrity_category": "इंटीग्रिटी"
   },
   "hr": {
    "app_name": "Eksperimentalne značajke",
@@ -488,7 +499,8 @@
    "device_spoof_reboot_now": "Mulai ulang sekarang",
    "device_spoof_reboot_later": "Mulai ulang nanti",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Gunakan Spoofing Perangkat"
+   "device_spoof_main_title": "Gunakan Spoofing Perangkat",
+   "integrity_category": "Integritas"
   },
   "is": {
    "app_name": "Tilraunaeiginleikar",
@@ -523,7 +535,8 @@
    "device_spoof_reboot_now": "Riavvia ora",
    "device_spoof_reboot_later": "Riavvia più tardi",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Usa spoofing del dispositivo"
+   "device_spoof_main_title": "Usa spoofing del dispositivo",
+   "integrity_category": "Integrità"
   },
   "iw": {
    "app_name": "תכונות ניסיוניות",
@@ -542,7 +555,8 @@
    "device_spoof_reboot_now": "להפעיל מחדש עכשיו",
    "device_spoof_reboot_later": "להפעיל מחדש מאוחר יותר",
    "spoofing_category": "התחזות",
-   "device_spoof_main_title": "שימוש בהתחזות מכשיר"
+   "device_spoof_main_title": "שימוש בהתחזות מכשיר",
+   "integrity_category": "שלמות"
   },
   "ja": {
    "app_name": "試験運用機能",
@@ -561,7 +575,8 @@
    "device_spoof_reboot_now": "今すぐ再起動する",
    "device_spoof_reboot_later": "後で再起動する",
    "spoofing_category": "スプーフィング",
-   "device_spoof_main_title": "デバイススプーフィングを使用"
+   "device_spoof_main_title": "デバイススプーフィングを使用",
+   "integrity_category": "整合性"
   },
   "ka": {
    "app_name": "ექსპერიმენტული ფუნქციები",
@@ -644,7 +659,8 @@
    "device_spoof_reboot_now": "지금 재부팅",
    "device_spoof_reboot_later": "나중에 재부팅",
    "spoofing_category": "스푸핑",
-   "device_spoof_main_title": "디바이스 스푸핑 사용"
+   "device_spoof_main_title": "디바이스 스푸핑 사용",
+   "integrity_category": "무결성"
   },
   "ky": {
    "app_name": "Сынамык функциялар",
@@ -855,7 +871,8 @@
    "device_spoof_reboot_now": "Nu opnieuw opstarten",
    "device_spoof_reboot_later": "Later opnieuw opstarten",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Apparaat-spoofing gebruiken"
+   "device_spoof_main_title": "Apparaat-spoofing gebruiken",
+   "integrity_category": "Integriteit"
   },
   "or": {
    "app_name": "ପରୀକ୍ଷାମୂଳକ ବୈଶିଷ୍ଟ୍ୟ",
@@ -905,13 +922,15 @@
    "device_spoof_reboot_now": "Uruchom teraz",
    "device_spoof_reboot_later": "Uruchom później",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Używaj spoofingu urządzenia"
+   "device_spoof_main_title": "Używaj spoofingu urządzenia",
+   "integrity_category": "Integralność"
   },
   "pt": {
    "app_add": "Adicionar apps",
    "spoofing_category": "Spoofing",
    "device_spoof_title": "Spoofing de dispositivo",
-   "device_spoof_main_title": "Usar spoofing de dispositivo"
+   "device_spoof_main_title": "Usar spoofing de dispositivo",
+   "integrity_category": "Integridade"
   },
   "pt-rBR": {
    "app_name": "Recursos experimentais",
@@ -929,13 +948,15 @@
    "device_spoof_reboot_now": "Reiniciar agora",
    "device_spoof_reboot_later": "Reiniciar mais tarde",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Usar spoofing de dispositivo"
+   "device_spoof_main_title": "Usar spoofing de dispositivo",
+   "integrity_category": "Integridade"
   },
   "pt-rPT": {
    "app_add": "Adicionar apps",
    "spoofing_category": "Spoofing",
    "device_spoof_title": "Spoofing de dispositivo",
-   "device_spoof_main_title": "Utilizar spoofing de dispositivo"
+   "device_spoof_main_title": "Utilizar spoofing de dispositivo",
+   "integrity_category": "Integridade"
   },
   "ro": {
    "app_name": "Funcții experimentale",
@@ -969,7 +990,8 @@
    "device_spoof_reboot_now": "Перезагрузить сейчас",
    "device_spoof_reboot_later": "Перезагрузить позже",
    "spoofing_category": "Подмена",
-   "device_spoof_main_title": "Использовать подмену устройства"
+   "device_spoof_main_title": "Использовать подмену устройства",
+   "integrity_category": "Целостность"
   },
   "si": {
    "app_name": "පර්යේෂණාත්මක විශේෂාංග",
@@ -1133,7 +1155,8 @@
    "device_spoof_reboot_now": "รีบูตเลย",
    "device_spoof_reboot_later": "รีบูตภายหลัง",
    "spoofing_category": "การปลอมแปลง",
-   "device_spoof_main_title": "ใช้การปลอมแปลงอุปกรณ์"
+   "device_spoof_main_title": "ใช้การปลอมแปลงอุปกรณ์",
+   "integrity_category": "ความสมบูรณ์"
   },
   "tl": {
    "app_name": "Mga experimental na feature",
@@ -1165,7 +1188,8 @@
    "device_spoof_reboot_now": "Şimdi yeniden başlat",
    "device_spoof_reboot_later": "Sonra yeniden başlat",
    "spoofing_category": "Spoofing",
-   "device_spoof_main_title": "Cihaz spoofing’i kullan"
+   "device_spoof_main_title": "Cihaz spoofing’i kullan",
+   "integrity_category": "Bütünlük"
   },
   "uk": {
    "app_name": "Експериментальні функції",
@@ -1184,7 +1208,8 @@
    "device_spoof_reboot_now": "Перезапустити зараз",
    "device_spoof_reboot_later": "Перезапустити пізніше",
    "spoofing_category": "Підміна",
-   "device_spoof_main_title": "Використовувати підміну пристрою"
+   "device_spoof_main_title": "Використовувати підміну пристрою",
+   "integrity_category": "Цілісність"
   },
   "ur": {
    "app_name": "تجرباتی خصوصیات",
@@ -1234,7 +1259,8 @@
    "device_spoof_reboot_now": "Khởi động lại ngay",
    "device_spoof_reboot_later": "Khởi động lại sau",
    "spoofing_category": "Giả mạo",
-   "device_spoof_main_title": "Dùng giả mạo thiết bị"
+   "device_spoof_main_title": "Dùng giả mạo thiết bị",
+   "integrity_category": "Tính toàn vẹn"
   },
   "zh-rCN": {
    "app_name": "实验性功能",
@@ -1253,7 +1279,8 @@
    "device_spoof_reboot_now": "立即重新启动",
    "device_spoof_reboot_later": "稍后重新启动",
    "spoofing_category": "伪装",
-   "device_spoof_main_title": "使用设备伪装"
+   "device_spoof_main_title": "使用设备伪装",
+   "integrity_category": "完整性"
   },
   "zh-rHK": {
    "app_name": "實驗性功能",
@@ -1272,7 +1299,8 @@
    "device_spoof_reboot_now": "立即重新開機",
    "device_spoof_reboot_later": "稍後重新開機",
    "spoofing_category": "偽裝",
-   "device_spoof_main_title": "使用裝置偽裝"
+   "device_spoof_main_title": "使用裝置偽裝",
+   "integrity_category": "完整性"
   },
   "zh-rTW": {
    "app_name": "實驗性功能",
@@ -1291,7 +1319,8 @@
    "device_spoof_reboot_now": "立即重新啟動",
    "device_spoof_reboot_later": "稍後重新啟動",
    "spoofing_category": "偽裝",
-   "device_spoof_main_title": "使用裝置偽裝"
+   "device_spoof_main_title": "使用裝置偽裝",
+   "integrity_category": "完整性"
   },
   "zu": {
    "app_name": "Izici zokuhlola",

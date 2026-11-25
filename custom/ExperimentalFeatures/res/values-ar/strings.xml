@@ -22,4 +22,5 @@
     <string name="device_spoof_reboot_later">إعادة التشغيل لاحقًا</string>
     <string name="spoofing_category">الانتحال</string>
     <string name="device_spoof_main_title">استخدام انتحال الجهاز</string>
+    <string name="integrity_category">السلامة</string>
 </resources>

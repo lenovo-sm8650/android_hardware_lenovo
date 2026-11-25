@@ -22,4 +22,5 @@
     <string name="device_spoof_reboot_later">나중에 재부팅</string>
     <string name="spoofing_category">스푸핑</string>
     <string name="device_spoof_main_title">디바이스 스푸핑 사용</string>
+    <string name="integrity_category">무결성</string>
 </resources>

@@ -22,4 +22,5 @@
     <string name="device_spoof_reboot_later">Khởi động lại sau</string>
     <string name="spoofing_category">Giả mạo</string>
     <string name="device_spoof_main_title">Dùng giả mạo thiết bị</string>
+    <string name="integrity_category">Tính toàn vẹn</string>
 </resources>
