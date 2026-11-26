@@ -4,7 +4,7 @@
 //
 // "Experimental features", the separate app of the optional TB520FU
 // customizations: app compatibility (the device identity selected apps see) and the
-// integrity category (Specter and the PixelOS spoofing pages). It has no Settings tile;
+// integrity category (Specter). It has no Settings tile;
 // LenovoParts (Advanced features) opens it while it is installed.
 // This app exists only while hardware/lenovo/custom is included.
 //

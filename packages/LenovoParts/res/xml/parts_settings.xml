@@ -7,21 +7,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/app_name">
 
-    <!-- Stock ZUI places Landscape view under One Vision -->
     <PreferenceCategory
-        android:key="one_vision"
-        android:title="@string/one_vision_category">
+        android:key="lenovo_features"
+        android:title="@string/lenovo_features_category">
 
         <Preference
             android:key="landscape_view"
             android:title="@string/landscape_title"
             android:fragment="org.lineageos.settings.device.LandscapeViewFragment" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="accessories"
-        android:title="@string/accessories_category">
 
         <SwitchPreferenceCompat
             android:key="folio_case_mode"
@@ -54,15 +47,19 @@
 
     </PreferenceCategory>
 
-    <!-- Opens the separate Experimental features app; hidden while it is not installed -->
+    <!-- Opens Device Spoofing (ExperimentalFeatures) and Specter (PlayIntegrityFixSettings);
+         rows and category are hidden while those optional apps are not installed -->
     <PreferenceCategory
-        android:key="experimental_category"
-        android:title="@string/experiments_category">
+        android:key="experimental_features"
+        android:title="@string/experimental_features_category">
 
         <Preference
-            android:key="experimental"
-            android:title="@string/experimental_title"
-            android:summary="@string/experimental_summary" />
+            android:key="device_spoof"
+            android:title="@string/device_spoof_title" />
+
+        <Preference
+            android:key="specter"
+            android:title="@string/specter_title" />
 
     </PreferenceCategory>
 </PreferenceScreen>

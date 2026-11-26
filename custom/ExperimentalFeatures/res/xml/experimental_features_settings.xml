@@ -19,8 +19,7 @@
     </PreferenceCategory>
 
     <!-- Specter opens the page of the separate Play Integrity Fix app and is hidden while
-         that app is not installed; the other two open the PixelOS spoofing pages of
-         Developer options -->
+         that app is not installed -->
     <PreferenceCategory
         android:key="integrity"
         android:title="@string/integrity_category">
@@ -28,14 +27,6 @@
         <Preference
             android:key="specter"
             android:title="@string/specter_title" />
-
-        <Preference
-            android:key="play_integrity"
-            android:title="@string/play_integrity_fix_title" />
-
-        <Preference
-            android:key="trickystore"
-            android:title="@string/trickystore_title" />
 
     </PreferenceCategory>
 

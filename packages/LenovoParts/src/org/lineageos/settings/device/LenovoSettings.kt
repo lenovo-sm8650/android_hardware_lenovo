@@ -31,16 +31,22 @@ object LenovoSettings {
     const val PEN_SETTINGS_ACTIVITY = "com.lenovo.pen.bt.ui.BtSettingsActivity"
 
     /**
-     * The separate apps of the optional customizations (hardware/lenovo/custom): game
-     * performance management (LenovoGamePerformance) and Experimental features
-     * (ExperimentalFeatures). They are not part of this build unless that repository is
-     * synced; the Advanced features rows are hidden while their activity cannot be
-     * resolved.
+     * The separate apps of the optional customizations (hardware/lenovo/custom and
+     * packages/apps/PlayIntegrityFix): game performance management (LenovoGamePerformance),
+     * Device Spoofing (ExperimentalFeatures) and Specter (PlayIntegrityFixSettings). They
+     * are not part of a plain build unless synced; the Advanced features rows are hidden
+     * while their activity cannot be resolved.
      */
     const val GAME_PERF_PACKAGE = "org.lineageos.settings.gameperf"
     const val GAME_PERF_ACTIVITY = "org.lineageos.settings.gameperf.GamePerfActivity"
     const val EXPERIMENTAL_PACKAGE = "org.lineageos.settings.experimental"
     const val EXPERIMENTAL_ACTIVITY = "org.lineageos.settings.experimental.ExperimentalFeaturesActivity"
+    const val EXPERIMENTAL_EXTRA_FRAGMENT = "org.lineageos.settings.experimental.FRAGMENT"
+    const val DEVICE_SPOOF_FRAGMENT = "org.lineageos.settings.experimental.DeviceSpoofFragment"
+    const val DEVICE_SPOOF_ENABLED = "device_spoof"
+    const val SPECTER_PACKAGE = "io.github.wnduddld0513.pif"
+    const val SPECTER_ACTIVITY = "io.github.wnduddld0513.pif.SpecterActivity"
+    const val SPECTER_ENABLED = "specter"
 
     fun getInt(ctx: Context, key: String, def: Int) =
         Settings.Global.getInt(ctx.contentResolver, key, def)

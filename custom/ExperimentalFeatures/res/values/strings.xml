@@ -24,6 +24,4 @@
     <string name="device_spoof_main_title">Use Device Spoofing</string>
     <string name="integrity_category">Integrity</string>
     <string name="specter_title">Specter</string>
-    <string name="play_integrity_fix_title">Play Integrity Fix</string>
-    <string name="trickystore_title">TrickyStore</string>
 </resources>

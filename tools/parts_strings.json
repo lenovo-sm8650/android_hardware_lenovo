@@ -2,7 +2,7 @@
  "parts": {
   "en": {
    "app_name": "Advanced features",
-   "app_summary": "One Vision, Accessories, Performance, Experiments",
+   "app_summary": "Lenovo features, Performance, Experimental features",
    "state_on": "On",
    "state_off": "Off",
    "landscape_title": "Landscape view",
@@ -31,9 +31,6 @@
    "reboot_later": "Later",
    "game_perf_title": "Game performance",
    "game_perf_summary": "CPU and GPU profiles per app; settings apply only while the app is on screen",
-   "experimental_title": "Experimental features",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Performance",
    "app_key_entries": [
     "None",
@@ -45,12 +42,14 @@
     "Search",
     "Settings"
    ],
-   "accessories_category": "Accessories",
-   "experiments_category": "Experiments"
+   "lenovo_features_category": "Lenovo features",
+   "device_spoof_title": "Device Spoofing",
+   "specter_title": "Specter",
+   "experimental_features_category": "Experimental features"
   },
   "af": {
    "app_name": "Gevorderde kenmerke",
-   "app_summary": "One Vision, Bykomstighede, Werkverrigting, Eksperimenteel",
+   "app_summary": "Lenovo features, Werkverrigting, Eksperimentele kenmerke",
    "state_on": "Aan",
    "state_off": "Af",
    "landscape_title": "Landskapaansig",
@@ -76,8 +75,6 @@
    "reboot_now": "Herbegin",
    "game_perf_title": "Speletjieprestasie",
    "game_perf_summary": "SVE- en GVE-profiele per toepassing; instellings geld slegs terwyl die toepassing op die skerm is",
-   "experimental_title": "Eksperimentele kenmerke",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Werkverrigting",
    "app_key_entries": [
     "Geen",
@@ -89,12 +86,11 @@
     "Soek",
     "Instellings"
    ],
-   "accessories_category": "Bykomstighede",
-   "experiments_category": "Eksperimenteel"
+   "experimental_features_category": "Eksperimentele kenmerke"
   },
   "am": {
    "app_name": "የላቁ ባህሪያት",
-   "app_summary": "One Vision, ተቀጥላዎች, አፈጻጸም, የሙከራ",
+   "app_summary": "Lenovo features, አፈጻጸም, የሙከራ ባህሪያት",
    "state_on": "በርቷል",
    "state_off": "ጠፍቷል",
    "landscape_title": "አግድም እይታ",
@@ -122,8 +118,6 @@
    "reboot_later": "በኋላ",
    "game_perf_title": "የጨዋታ አፈጻጸም",
    "game_perf_summary": "ለእያንዳንዱ መተግበሪያ የCPU እና GPU መገለጫዎች፤ ቅንብሮች የሚተገበሩት መተግበሪያው በማያ ገጽ ላይ ሲሆን ብቻ ነው",
-   "experimental_title": "የሙከራ ባህሪያት",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "አፈጻጸም",
    "app_key_entries": [
     "ምንም",
@@ -135,12 +129,11 @@
     "ፈልግ",
     "ቅንብሮች"
    ],
-   "accessories_category": "ተቀጥላዎች",
-   "experiments_category": "የሙከራ"
+   "experimental_features_category": "የሙከራ ባህሪያት"
   },
   "ar": {
    "app_name": "الميزات المتقدمة",
-   "app_summary": "One Vision, الملحقات, الأداء, إعدادات تجريبية",
+   "app_summary": "ميزات Lenovo، الأداء، الميزات التجريبية",
    "state_on": "مفعّلة",
    "state_off": "غير مفعّل",
    "landscape_title": "العرض الأفقي",
@@ -168,9 +161,6 @@
    "reboot_later": "لاحقًا",
    "game_perf_title": "أداء الألعاب",
    "game_perf_summary": "ملفات تعريف وحدة المعالجة ووحدة الرسومات لكل تطبيق؛ تُطبَّق الإعدادات فقط أثناء ظهور التطبيق على الشاشة",
-   "experimental_title": "الميزات التجريبية",
-   "experimental_summary": "الانتحال, السلامة",
-   "one_vision_category": "الرؤية الواحدة",
    "performance_category": "الأداء",
    "app_key_entries": [
     "بدون",
@@ -182,12 +172,13 @@
     "البحث",
     "الإعدادات"
    ],
-   "accessories_category": "الملحقات",
-   "experiments_category": "إعدادات تجريبية"
+   "lenovo_features_category": "ميزات Lenovo",
+   "device_spoof_title": "انتحال الجهاز",
+   "experimental_features_category": "الميزات التجريبية"
   },
   "as": {
    "app_name": "উন্নত বৈশিষ্ট্য",
-   "app_summary": "One Vision, আনুষংগিক সামগ্ৰী, কাৰ্যক্ষমতা, পৰীক্ষামূলক",
+   "app_summary": "Lenovo features, কাৰ্যক্ষমতা, পৰীক্ষামূলক বৈশিষ্ট্য",
    "state_on": "অন কৰক",
    "state_off": "অফ আছে",
    "landscape_title": "লেণ্ডস্কেপ দৃশ্য",
@@ -215,8 +206,6 @@
    "reboot_later": "পাছত",
    "game_perf_title": "গেমৰ কাৰ্যক্ষমতা",
    "game_perf_summary": "প্ৰতিটো এপৰ বাবে CPU আৰু GPU প্ৰ’ফাইল; এপটো স্ক্ৰীনত থাকিলেহে ছেটিং প্ৰযোজ্য হয়",
-   "experimental_title": "পৰীক্ষামূলক বৈশিষ্ট্য",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "কাৰ্যক্ষমতা",
    "app_key_entries": [
     "নাই",
@@ -228,12 +217,11 @@
     "সন্ধান কৰক",
     "ছেটিং"
    ],
-   "accessories_category": "আনুষংগিক সামগ্ৰী",
-   "experiments_category": "পৰীক্ষামূলক"
+   "experimental_features_category": "পৰীক্ষামূলক বৈশিষ্ট্য"
   },
   "az": {
    "app_name": "Qabaqcıl funksiyalar",
-   "app_summary": "One Vision, Aksesuarlar, İş göstəricisi, Eksperimental",
+   "app_summary": "Lenovo features, İş göstəricisi, Eksperimental funksiyalar",
    "state_on": "Aktiv",
    "state_off": "Deaktiv",
    "landscape_title": "Üfüqi görünüş",
@@ -261,8 +249,6 @@
    "reboot_later": "Sonra",
    "game_perf_title": "Oyun performansı",
    "game_perf_summary": "Hər tətbiq üçün CPU və GPU profilləri; ayarlar yalnız tətbiq ekranda olduqda tətbiq edilir",
-   "experimental_title": "Eksperimental funksiyalar",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "İş göstəricisi",
    "app_key_entries": [
     "Heç biri",
@@ -274,12 +260,11 @@
     "Axtarın",
     "Ayarlar"
    ],
-   "accessories_category": "Aksesuarlar",
-   "experiments_category": "Eksperimental"
+   "experimental_features_category": "Eksperimental funksiyalar"
   },
   "b+sr+Latn": {
    "app_name": "Napredne funkcije",
-   "app_summary": "One Vision, Dodaci, Učinak, Eksperimentalno",
+   "app_summary": "Lenovo features, Učinak, Eksperimentalne funkcije",
    "state_on": "Uključeno",
    "state_off": "Isključeno",
    "landscape_title": "Položeni prikaz",
@@ -307,9 +292,6 @@
    "reboot_later": "Kasnije",
    "game_perf_title": "Performanse igara",
    "game_perf_summary": "CPU i GPU profili po aplikaciji; podešavanja važe samo dok je aplikacija na ekranu",
-   "experimental_title": "Eksperimentalne funkcije",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Učinak",
    "app_key_entries": [
     "Ništa",
@@ -321,12 +303,11 @@
     "Pretraži",
     "Podešavanja"
    ],
-   "accessories_category": "Dodaci",
-   "experiments_category": "Eksperimentalno"
+   "experimental_features_category": "Eksperimentalne funkcije"
   },
   "be": {
    "app_name": "Пашыраныя функцыі",
-   "app_summary": "One Vision, Аксесуары, Прадукцыйнасць, Эксперыментальныя",
+   "app_summary": "Lenovo features, Прадукцыйнасць, Эксперыментальныя функцыі",
    "state_on": "Уключана",
    "state_off": "Выключана",
    "landscape_title": "Гарызантальны выгляд",
@@ -354,8 +335,6 @@
    "reboot_later": "Пазней",
    "game_perf_title": "Прадукцыйнасць у гульнях",
    "game_perf_summary": "Профілі працэсара і графічнага працэсара для кожнай праграмы; налады дзейнічаюць, толькі пакуль праграма на экране",
-   "experimental_title": "Эксперыментальныя функцыі",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Прадукцыйнасць",
    "app_key_entries": [
     "Няма",
@@ -367,12 +346,11 @@
     "Шукаць",
     "Налады"
    ],
-   "accessories_category": "Аксесуары",
-   "experiments_category": "Эксперыментальныя"
+   "experimental_features_category": "Эксперыментальныя функцыі"
   },
   "bg": {
    "app_name": "Разширени функции",
-   "app_summary": "One Vision, Аксесоари, Ефективност, Експериментални",
+   "app_summary": "Lenovo features, Ефективност, Експериментални функции",
    "state_on": "Вкл.",
    "state_off": "Изкл.",
    "landscape_title": "Хоризонтален изглед",
@@ -400,9 +378,6 @@
    "reboot_later": "По-късно",
    "game_perf_title": "Производителност в игри",
    "game_perf_summary": "Профили на процесора и графичния процесор за всяко приложение; настройките се прилагат само докато приложението е на екрана",
-   "experimental_title": "Експериментални функции",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Ефективност",
    "app_key_entries": [
     "Няма",
@@ -414,12 +389,11 @@
     "Търсене",
     "Настройки"
    ],
-   "accessories_category": "Аксесоари",
-   "experiments_category": "Експериментални"
+   "experimental_features_category": "Експериментални функции"
   },
   "bn": {
    "app_name": "উন্নত বৈশিষ্ট্য",
-   "app_summary": "One Vision, অ্যাক্সেসরি, কার্য-সম্পাদনা, পরীক্ষামূলক",
+   "app_summary": "Lenovo features, কার্য-সম্পাদনা, পরীক্ষামূলক বৈশিষ্ট্য",
    "state_on": "চালু আছে",
    "state_off": "বন্ধ আছে",
    "landscape_title": "ল্যান্ডস্কেপ ভিউ",
@@ -447,8 +421,6 @@
    "reboot_later": "পরে",
    "game_perf_title": "গেমের পারফরম্যান্স",
    "game_perf_summary": "প্রতিটি অ্যাপের জন্য CPU ও GPU প্রোফাইল; অ্যাপ স্ক্রিনে থাকাকালীনই সেটিংস প্রযোজ্য হয়",
-   "experimental_title": "পরীক্ষামূলক বৈশিষ্ট্য",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "কার্য-সম্পাদনা",
    "app_key_entries": [
     "কোনও কিছুই নয়",
@@ -460,12 +432,11 @@
     "সার্চ",
     "সেটিংস"
    ],
-   "accessories_category": "অ্যাক্সেসরি",
-   "experiments_category": "পরীক্ষামূলক"
+   "experimental_features_category": "পরীক্ষামূলক বৈশিষ্ট্য"
   },
   "bs": {
    "app_name": "Napredne funkcije",
-   "app_summary": "One Vision, Periferni uređaji, Performanse, Eksperimentalno",
+   "app_summary": "Lenovo features, Performanse, Eksperimentalne funkcije",
    "state_on": "Uključeno",
    "state_off": "Isključeno",
    "landscape_title": "Vodoravni prikaz",
@@ -493,8 +464,6 @@
    "reboot_later": "Kasnije",
    "game_perf_title": "Performanse igara",
    "game_perf_summary": "CPU i GPU profili po aplikaciji; postavke važe samo dok je aplikacija na ekranu",
-   "experimental_title": "Eksperimentalne funkcije",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Performanse",
    "app_key_entries": [
     "Ništa",
@@ -506,12 +475,11 @@
     "Pretraga",
     "Postavke"
    ],
-   "accessories_category": "Periferni uređaji",
-   "experiments_category": "Eksperimentalno"
+   "experimental_features_category": "Eksperimentalne funkcije"
   },
   "ca": {
    "app_name": "Funcions avançades",
-   "app_summary": "One Vision, Accessoris, Rendiment, Experimental",
+   "app_summary": "Lenovo features, Rendiment, Funcions experimentals",
    "state_on": "Activat",
    "state_off": "Desactivat",
    "landscape_title": "Vista horitzontal",
@@ -539,8 +507,6 @@
    "reboot_later": "Més tard",
    "game_perf_title": "Rendiment en jocs",
    "game_perf_summary": "Perfils de CPU i GPU per aplicació; la configuració només s'aplica mentre l'aplicació és a la pantalla",
-   "experimental_title": "Funcions experimentals",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Rendiment",
    "app_key_entries": [
     "Cap",
@@ -552,12 +518,11 @@
     "Cerca",
     "Configuració"
    ],
-   "accessories_category": "Accessoris",
-   "experiments_category": "Experimental"
+   "experimental_features_category": "Funcions experimentals"
   },
   "cs": {
    "app_name": "Pokročilé funkce",
-   "app_summary": "One Vision, Příslušenství, Výkon, Experimentální",
+   "app_summary": "Lenovo features, Výkon, Experimentální funkce",
    "state_on": "Zapnuto",
    "state_off": "Vypnuto",
    "landscape_title": "Režim orientace na šířku",
@@ -585,9 +550,6 @@
    "reboot_later": "Později",
    "game_perf_title": "Výkon ve hrách",
    "game_perf_summary": "Profily CPU a GPU pro jednotlivé aplikace; nastavení se použije jen, když je aplikace na obrazovce",
-   "experimental_title": "Experimentální funkce",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Výkon",
    "app_key_entries": [
     "Bez textu",
@@ -599,12 +561,11 @@
     "Vyhledávání",
     "Nastavení"
    ],
-   "accessories_category": "Příslušenství",
-   "experiments_category": "Experimentální"
+   "experimental_features_category": "Experimentální funkce"
   },
   "da": {
    "app_name": "Avancerede funktioner",
-   "app_summary": "One Vision, Tilbehør, Ydelse, Eksperimentel",
+   "app_summary": "Lenovo-funktioner, Ydelse, Eksperimentelle funktioner",
    "state_on": "Til",
    "state_off": "Fra",
    "landscape_title": "Liggende visning",
@@ -631,9 +592,6 @@
    "reboot_later": "Senere",
    "game_perf_title": "Spilydelse",
    "game_perf_summary": "CPU- og GPU-profiler pr. app; indstillingerne gælder kun, mens appen er på skærmen",
-   "experimental_title": "Eksperimentelle funktioner",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Ydelse",
    "app_key_entries": [
     "Ingen",
@@ -645,12 +603,13 @@
     "Søg",
     "Indstillinger"
    ],
-   "accessories_category": "Tilbehør",
-   "experiments_category": "Eksperimentel"
+   "lenovo_features_category": "Lenovo-funktioner",
+   "device_spoof_title": "Enhedsspoofing",
+   "experimental_features_category": "Eksperimentelle funktioner"
   },
   "de": {
    "app_name": "Erweiterte Funktionen",
-   "app_summary": "One Vision, Zubehör, Leistung, Experimentell",
+   "app_summary": "Lenovo-Funktionen, Leistung, Experimentelle Funktionen",
    "state_on": "An",
    "state_off": "Aus",
    "landscape_title": "Querformatansicht",
@@ -678,8 +637,6 @@
    "reboot_later": "Später",
    "game_perf_title": "Spieleleistung",
    "game_perf_summary": "CPU- und GPU-Profile pro App; die Einstellungen gelten nur, solange die App sichtbar ist",
-   "experimental_title": "Experimentelle Funktionen",
-   "experimental_summary": "Spoofing, Integrität",
    "performance_category": "Leistung",
    "app_key_entries": [
     "Keine",
@@ -691,13 +648,13 @@
     "Suche",
     "Einstellungen"
    ],
-   "one_vision_category": "One Vision",
-   "accessories_category": "Zubehör",
-   "experiments_category": "Experimentell"
+   "lenovo_features_category": "Lenovo-Funktionen",
+   "device_spoof_title": "Geräte-Spoofing",
+   "experimental_features_category": "Experimentelle Funktionen"
   },
   "el": {
    "app_name": "Σύνθετες δυνατότητες",
-   "app_summary": "One Vision, Αξεσουάρ, Απόδοση, Σε πειραματικό στάδιο",
+   "app_summary": "Lenovo features, Απόδοση, Πειραματικές λειτουργίες",
    "state_on": "Ενεργό",
    "state_off": "Ανενεργό",
    "landscape_title": "Οριζόντια προβολή",
@@ -725,9 +682,6 @@
    "reboot_later": "Αργότερα",
    "game_perf_title": "Απόδοση παιχνιδιών",
    "game_perf_summary": "Προφίλ CPU και GPU ανά εφαρμογή· οι ρυθμίσεις ισχύουν μόνο όσο η εφαρμογή βρίσκεται στην οθόνη",
-   "experimental_title": "Πειραματικές λειτουργίες",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Απόδοση",
    "app_key_entries": [
     "Κανένα",
@@ -739,12 +693,11 @@
     "Αναζήτηση",
     "Ρυθμίσεις"
    ],
-   "accessories_category": "Αξεσουάρ",
-   "experiments_category": "Σε πειραματικό στάδιο"
+   "experimental_features_category": "Πειραματικές λειτουργίες"
   },
   "es": {
    "app_name": "Funciones avanzadas",
-   "app_summary": "One Vision, Accesorios, Rendimiento, Experimental",
+   "app_summary": "Funciones de Lenovo, Rendimiento, Funciones experimentales",
    "state_on": "Activado",
    "state_off": "Desactivado",
    "landscape_title": "Vista horizontal",
@@ -772,8 +725,6 @@
    "reboot_later": "Más tarde",
    "game_perf_title": "Rendimiento en juegos",
    "game_perf_summary": "Perfiles de CPU y GPU por aplicación; los ajustes solo se aplican mientras la aplicación está en pantalla",
-   "experimental_title": "Funciones experimentales",
-   "experimental_summary": "Suplantación, Integridad",
    "performance_category": "Rendimiento",
    "app_key_entries": [
     "Ninguna",
@@ -785,8 +736,9 @@
     "Buscar",
     "Ajustes"
    ],
-   "accessories_category": "Accesorios",
-   "experiments_category": "Experimental"
+   "lenovo_features_category": "Funciones de Lenovo",
+   "device_spoof_title": "Suplantación de dispositivo",
+   "experimental_features_category": "Funciones experimentales"
   },
   "es-rUS": {
    "landscape_main_title": "Vista horizontal",
@@ -806,15 +758,13 @@
     "Búsqueda",
     "Configuración"
    ],
-   "one_vision_category": "One Vision",
-   "accessories_category": "Accesorios",
-   "experiments_category": "Experimental",
-   "app_summary": "One Vision, Accesorios, Performance, Experimental",
-   "experimental_summary": "Suplantación, Integridad"
+   "app_summary": "Funciones de Lenovo, Performance, Experimental features",
+   "lenovo_features_category": "Funciones de Lenovo",
+   "device_spoof_title": "Suplantación de dispositivo"
   },
   "et": {
    "app_name": "Täpsemad funktsioonid",
-   "app_summary": "One Vision, Lisatarvikud, Jõudlus, Katseline",
+   "app_summary": "Lenovo features, Jõudlus, Katsetavad funktsioonid",
    "state_on": "Sees",
    "state_off": "Väljas",
    "landscape_title": "Horisontaalvaade",
@@ -842,9 +792,6 @@
    "reboot_later": "Hiljem",
    "game_perf_title": "Mängude jõudlus",
    "game_perf_summary": "Rakenduspõhised protsessori ja GPU profiilid; seaded kehtivad ainult siis, kui rakendus on ekraanil",
-   "experimental_title": "Katsetavad funktsioonid",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Jõudlus",
    "app_key_entries": [
     "Puudub",
@@ -856,12 +803,11 @@
     "Otsing",
     "Seaded"
    ],
-   "accessories_category": "Lisatarvikud",
-   "experiments_category": "Katseline"
+   "experimental_features_category": "Katsetavad funktsioonid"
   },
   "eu": {
    "app_name": "Eginbide aurreratuak",
-   "app_summary": "One Vision, Osagarriak, Errendimendua, Esperimentalak",
+   "app_summary": "Lenovo features, Errendimendua, Eginbide esperimentalak",
    "state_on": "Aktibatuta",
    "state_off": "Desaktibatuta",
    "landscape_title": "Ikuspegi horizontala",
@@ -889,8 +835,6 @@
    "reboot_later": "Geroago",
    "game_perf_title": "Jokoen errendimendua",
    "game_perf_summary": "Aplikazio bakoitzaren CPU eta GPU profilak; ezarpenak aplikazioa pantailan dagoenean soilik aplikatzen dira",
-   "experimental_title": "Eginbide esperimentalak",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Errendimendua",
    "app_key_entries": [
     "Bat ere ez",
@@ -902,12 +846,11 @@
     "Bilaketa",
     "Ezarpenak"
    ],
-   "accessories_category": "Osagarriak",
-   "experiments_category": "Esperimentalak"
+   "experimental_features_category": "Eginbide esperimentalak"
   },
   "fa": {
    "app_name": "ویژگی‌های پیشرفته",
-   "app_summary": "One Vision, لوازم جانبی, عملکرد, آزمایشی",
+   "app_summary": "Lenovo features, عملکرد, ویژگی‌های آزمایشی",
    "state_on": "روشن",
    "state_off": "خاموش",
    "landscape_title": "نمای افقی",
@@ -935,8 +878,6 @@
    "reboot_later": "بعداً",
    "game_perf_title": "عملکرد بازی",
    "game_perf_summary": "نمایه‌های پردازنده و پردازنده گرافیکی برای هر برنامه؛ تنظیمات فقط تا زمانی که برنامه روی صفحه است اعمال می‌شوند",
-   "experimental_title": "ویژگی‌های آزمایشی",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "عملکرد",
    "app_key_entries": [
     "خالی",
@@ -948,12 +889,11 @@
     "جستجو",
     "تنظیمات"
    ],
-   "accessories_category": "لوازم جانبی",
-   "experiments_category": "آزمایشی"
+   "experimental_features_category": "ویژگی‌های آزمایشی"
   },
   "fi": {
    "app_name": "Lisäominaisuudet",
-   "app_summary": "One Vision, Lisälaitteet, Kehitys, Kokeellinen",
+   "app_summary": "Lenovo features, Kehitys, Kokeelliset ominaisuudet",
    "state_on": "Päällä",
    "state_off": "Ei päällä",
    "landscape_title": "Vaakanäkymä",
@@ -981,9 +921,6 @@
    "reboot_later": "Myöhemmin",
    "game_perf_title": "Pelien suorituskyky",
    "game_perf_summary": "Sovelluskohtaiset suorittimen ja GPU:n profiilit; asetukset ovat voimassa vain, kun sovellus on näytöllä",
-   "experimental_title": "Kokeelliset ominaisuudet",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Kehitys",
    "app_key_entries": [
     "Ei mitään",
@@ -995,12 +932,11 @@
     "Haku",
     "Asetukset"
    ],
-   "accessories_category": "Lisälaitteet",
-   "experiments_category": "Kokeellinen"
+   "experimental_features_category": "Kokeelliset ominaisuudet"
   },
   "fr": {
    "app_name": "Fonctionnalités avancées",
-   "app_summary": "One Vision, Accessoires, Performance, Paramètres expérimentaux",
+   "app_summary": "Fonctionnalités Lenovo, Performance, Fonctions expérimentales",
    "state_on": "Activé",
    "state_off": "Désactivé",
    "landscape_title": "Affichage paysage",
@@ -1028,9 +964,6 @@
    "reboot_later": "Plus tard",
    "game_perf_title": "Performances en jeu",
    "game_perf_summary": "Profils CPU et GPU par application ; les réglages ne s'appliquent que lorsque l'application est à l'écran",
-   "experimental_title": "Fonctions expérimentales",
-   "experimental_summary": "Spoofing, Intégrité",
-   "one_vision_category": "One Vision",
    "app_key_entries": [
     "Aucune",
     "Capture d'écran",
@@ -1041,8 +974,9 @@
     "Recherche",
     "Paramètres"
    ],
-   "accessories_category": "Accessoires",
-   "experiments_category": "Paramètres expérimentaux"
+   "lenovo_features_category": "Fonctionnalités Lenovo",
+   "device_spoof_title": "Spoofing de l’appareil",
+   "experimental_features_category": "Fonctions expérimentales"
   },
   "fr-rCA": {
    "app_name": "Fonctions avancées",
@@ -1066,14 +1000,13 @@
     "Rechercher",
     "Paramètres"
    ],
-   "accessories_category": "Accessoires",
-   "experiments_category": "Fonctions expérimentales",
-   "app_summary": "One Vision, Accessoires, Performance, Fonctions expérimentales",
-   "experimental_summary": "Spoofing, Intégrité"
+   "app_summary": "Fonctionnalités Lenovo, Performance, Experimental features",
+   "lenovo_features_category": "Fonctionnalités Lenovo",
+   "device_spoof_title": "Spoofing de l’appareil"
   },
   "gl": {
    "app_name": "Funcións avanzadas",
-   "app_summary": "One Vision, Accesorios, Rendemento, Experimental",
+   "app_summary": "Lenovo features, Rendemento, Funcións experimentais",
    "state_on": "Opción activada",
    "state_off": "Opción desactivada",
    "landscape_title": "Vista horizontal",
@@ -1101,8 +1034,6 @@
    "reboot_later": "Máis tarde",
    "game_perf_title": "Rendemento en xogos",
    "game_perf_summary": "Perfís de CPU e GPU por aplicación; os axustes só se aplican mentres a aplicación está na pantalla",
-   "experimental_title": "Funcións experimentais",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Rendemento",
    "app_key_entries": [
     "Ningún",
@@ -1114,12 +1045,11 @@
     "Buscar",
     "Configuración"
    ],
-   "accessories_category": "Accesorios",
-   "experiments_category": "Experimental"
+   "experimental_features_category": "Funcións experimentais"
   },
   "gu": {
    "app_name": "અદ્યતન સુવિધાઓ",
-   "app_summary": "One Vision, ઍક્સેસરી, કાર્યપ્રદર્શન, પ્રાયોગિક",
+   "app_summary": "Lenovo features, કાર્યપ્રદર્શન, પ્રાયોગિક સુવિધાઓ",
    "state_on": "ચાલુ",
    "state_off": "બંધ",
    "landscape_title": "લેન્ડસ્કેપ વ્યૂ",
@@ -1147,8 +1077,6 @@
    "reboot_later": "પછી",
    "game_perf_title": "ગેમ પર્ફોર્મન્સ",
    "game_perf_summary": "દરેક ઍપ માટે CPU અને GPU પ્રોફાઇલ; ઍપ સ્ક્રીન પર હોય ત્યારે જ સેટિંગ લાગુ થાય છે",
-   "experimental_title": "પ્રાયોગિક સુવિધાઓ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "કાર્યપ્રદર્શન",
    "app_key_entries": [
     "કોઈ નહીં",
@@ -1160,12 +1088,11 @@
     "શોધ",
     "સેટિંગ"
    ],
-   "accessories_category": "ઍક્સેસરી",
-   "experiments_category": "પ્રાયોગિક"
+   "experimental_features_category": "પ્રાયોગિક સુવિધાઓ"
   },
   "hi": {
    "app_name": "उन्नत फ़ीचर",
-   "app_summary": "One Vision, कनेक्ट की गई ऐक्सेसरी, परफ़ॉर्मेंस, प्रयोग के लिए",
+   "app_summary": "Lenovo सुविधाएँ, परफ़ॉर्मेंस, प्रायोगिक सुविधाएं",
    "state_on": "चालू है",
    "state_off": "बंद",
    "landscape_title": "लैंडस्केप व्यू",
@@ -1193,9 +1120,6 @@
    "reboot_later": "बाद में",
    "game_perf_title": "गेम परफ़ॉर्मेंस",
    "game_perf_summary": "हर ऐप्लिकेशन के लिए CPU और GPU प्रोफ़ाइल; सेटिंग केवल तब लागू होती हैं जब ऐप्लिकेशन स्क्रीन पर हो",
-   "experimental_title": "प्रायोगिक सुविधाएं",
-   "experimental_summary": "स्पूफ़िंग, इंटीग्रिटी",
-   "one_vision_category": "One Vision",
    "performance_category": "परफ़ॉर्मेंस",
    "app_key_entries": [
     "कोई नहीं",
@@ -1207,12 +1131,13 @@
     "खोजें",
     "सेटिंग"
    ],
-   "accessories_category": "कनेक्ट की गई ऐक्सेसरी",
-   "experiments_category": "प्रयोग के लिए"
+   "lenovo_features_category": "Lenovo सुविधाएँ",
+   "device_spoof_title": "डिवाइस स्पूफ़िंग",
+   "experimental_features_category": "प्रायोगिक सुविधाएं"
   },
   "hr": {
    "app_name": "Napredne značajke",
-   "app_summary": "One Vision, Dodaci, Izvedba, Eksperimentalno",
+   "app_summary": "Lenovo features, Izvedba, Eksperimentalne značajke",
    "state_on": "Uključeno",
    "state_off": "Isključeno",
    "landscape_title": "Pejzažni prikaz",
@@ -1240,9 +1165,6 @@
    "reboot_later": "Kasnije",
    "game_perf_title": "Performanse igara",
    "game_perf_summary": "CPU i GPU profili po aplikaciji; postavke vrijede samo dok je aplikacija na zaslonu",
-   "experimental_title": "Eksperimentalne značajke",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Izvedba",
    "app_key_entries": [
     "Ništa",
@@ -1254,12 +1176,11 @@
     "Pretraži",
     "Postavke"
    ],
-   "accessories_category": "Dodaci",
-   "experiments_category": "Eksperimentalno"
+   "experimental_features_category": "Eksperimentalne značajke"
   },
   "hu": {
    "app_name": "Speciális funkciók",
-   "app_summary": "One Vision, Tartozékok, Teljesítmény, Kísérleti",
+   "app_summary": "Lenovo features, Teljesítmény, Kísérleti funkciók",
    "state_on": "Be",
    "state_off": "Ki",
    "landscape_title": "Fekvő nézet",
@@ -1287,9 +1208,6 @@
    "reboot_later": "Később",
    "game_perf_title": "Játékteljesítmény",
    "game_perf_summary": "Alkalmazásonkénti CPU- és GPU-profilok; a beállítások csak akkor érvényesek, ha az alkalmazás a képernyőn van",
-   "experimental_title": "Kísérleti funkciók",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Teljesítmény",
    "app_key_entries": [
     "Nincs",
@@ -1301,12 +1219,11 @@
     "Keresés",
     "Beállítások"
    ],
-   "accessories_category": "Tartozékok",
-   "experiments_category": "Kísérleti"
+   "experimental_features_category": "Kísérleti funkciók"
   },
   "hy": {
    "app_name": "Լրացուցիչ գործառույթներ",
-   "app_summary": "One Vision, Լրասարքեր, Արդյունավետություն, Փորձնական",
+   "app_summary": "Lenovo features, Արդյունավետություն, Փորձարարական գործառույթներ",
    "state_on": "Միացված է",
    "state_off": "Անջատված է",
    "landscape_title": "Հորիզոնական տեսք",
@@ -1334,8 +1251,6 @@
    "reboot_later": "Ավելի ուշ",
    "game_perf_title": "Խաղերի արդյունավետություն",
    "game_perf_summary": "CPU և GPU պրոֆիլներ յուրաքանչյուր հավելվածի համար. կարգավորումները գործում են միայն երբ հավելվածը էկրանին է",
-   "experimental_title": "Փորձարարական գործառույթներ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Արդյունավետություն",
    "app_key_entries": [
     "Չկա",
@@ -1347,12 +1262,11 @@
     "Որոնում",
     "Կարգավորումներ"
    ],
-   "accessories_category": "Լրասարքեր",
-   "experiments_category": "Փորձնական"
+   "experimental_features_category": "Փորձարարական գործառույթներ"
   },
   "in": {
    "app_name": "Fitur lanjutan",
-   "app_summary": "One Vision, Aksesori, Performa, Eksperimental",
+   "app_summary": "Fitur Lenovo, Performa, Fitur eksperimental",
    "state_on": "Aktif",
    "state_off": "Nonaktif",
    "landscape_title": "Tampilan lanskap",
@@ -1380,9 +1294,6 @@
    "reboot_later": "Nanti",
    "game_perf_title": "Performa game",
    "game_perf_summary": "Profil CPU dan GPU per aplikasi; setelan hanya berlaku saat aplikasi ada di layar",
-   "experimental_title": "Fitur eksperimental",
-   "experimental_summary": "Spoofing, Integritas",
-   "one_vision_category": "One Vision",
    "performance_category": "Performa",
    "app_key_entries": [
     "Tidak ada",
@@ -1394,12 +1305,13 @@
     "Telusuri",
     "Setelan"
    ],
-   "accessories_category": "Aksesori",
-   "experiments_category": "Eksperimental"
+   "lenovo_features_category": "Fitur Lenovo",
+   "device_spoof_title": "Spoofing Perangkat",
+   "experimental_features_category": "Fitur eksperimental"
   },
   "is": {
    "app_name": "Ítarlegir eiginleikar",
-   "app_summary": "One Vision, Fylgihlutir, Afköst, Tilraunastillingar",
+   "app_summary": "Lenovo features, Afköst, Tilraunaeiginleikar",
    "state_on": "Kveikt",
    "state_off": "Slökkt",
    "landscape_title": "Lárétt skjámynd",
@@ -1427,8 +1339,6 @@
    "reboot_later": "Síðar",
    "game_perf_title": "Afköst í leikjum",
    "game_perf_summary": "Örgjörva- og skjákortssnið fyrir hvert forrit; stillingarnar gilda aðeins meðan forritið er á skjánum",
-   "experimental_title": "Tilraunaeiginleikar",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Afköst",
    "app_key_entries": [
     "Ekkert",
@@ -1440,12 +1350,11 @@
     "Leita",
     "Stillingar"
    ],
-   "accessories_category": "Fylgihlutir",
-   "experiments_category": "Tilraunastillingar"
+   "experimental_features_category": "Tilraunaeiginleikar"
   },
   "it": {
    "app_name": "Funzionalità avanzate",
-   "app_summary": "One Vision, Accessori, Prestazioni, Sperimentali",
+   "app_summary": "Funzionalità Lenovo, Prestazioni, Funzioni sperimentali",
    "state_on": "Attivo",
    "state_off": "Disattivato",
    "landscape_title": "Vista orizzontale",
@@ -1473,8 +1382,6 @@
    "reboot_later": "Più tardi",
    "game_perf_title": "Prestazioni di gioco",
    "game_perf_summary": "Profili CPU e GPU per app; le impostazioni valgono solo mentre l'app è sullo schermo",
-   "experimental_title": "Funzioni sperimentali",
-   "experimental_summary": "Spoofing, Integrità",
    "performance_category": "Prestazioni",
    "app_key_entries": [
     "Nessuna",
@@ -1486,13 +1393,13 @@
     "Cerca",
     "Impostazioni"
    ],
-   "one_vision_category": "One Vision",
-   "accessories_category": "Accessori",
-   "experiments_category": "Sperimentali"
+   "lenovo_features_category": "Funzionalità Lenovo",
+   "device_spoof_title": "Spoofing del dispositivo",
+   "experimental_features_category": "Funzioni sperimentali"
   },
   "iw": {
    "app_name": "תכונות מתקדמות",
-   "app_summary": "One Vision, אביזרים, ביצועים, ניסיוני",
+   "app_summary": "תכונות Lenovo, ביצועים, תכונות ניסיוניות",
    "state_on": "פועל",
    "state_off": "מושבת",
    "landscape_title": "תצוגה לרוחב",
@@ -1520,9 +1427,6 @@
    "reboot_later": "מאוחר יותר",
    "game_perf_title": "ביצועי משחקים",
    "game_perf_summary": "פרופילי מעבד ומעבד גרפי לכל אפליקציה; ההגדרות חלות רק כשהאפליקציה מוצגת במסך",
-   "experimental_title": "תכונות ניסיוניות",
-   "experimental_summary": "התחזות, שלמות",
-   "one_vision_category": "מבט יחיד",
    "performance_category": "ביצועים",
    "app_key_entries": [
     "ללא",
@@ -1534,12 +1438,13 @@
     "חיפוש",
     "הגדרות"
    ],
-   "accessories_category": "אביזרים",
-   "experiments_category": "ניסיוני"
+   "lenovo_features_category": "תכונות Lenovo",
+   "device_spoof_title": "התחזות מכשיר",
+   "experimental_features_category": "תכונות ניסיוניות"
   },
   "ja": {
    "app_name": "高度な機能",
-   "app_summary": "One Vision, アクセサリー, パフォーマンス, 試験運用機能",
+   "app_summary": "Lenovo機能、パフォーマンス、試験運用機能",
    "state_on": "オン",
    "state_off": "オフ",
    "landscape_title": "横向き表示",
@@ -1567,9 +1472,6 @@
    "reboot_later": "後で",
    "game_perf_title": "ゲームパフォーマンス",
    "game_perf_summary": "アプリ別のCPU・GPU設定です。設定はアプリが画面に表示されている間だけ適用されます",
-   "experimental_title": "試験運用機能",
-   "experimental_summary": "スプーフィング, 整合性",
-   "one_vision_category": "One Vision",
    "performance_category": "パフォーマンス",
    "app_key_entries": [
     "なし",
@@ -1581,12 +1483,13 @@
     "検索",
     "設定"
    ],
-   "accessories_category": "アクセサリー",
-   "experiments_category": "試験運用機能"
+   "lenovo_features_category": "Lenovo機能",
+   "device_spoof_title": "デバイススプーフィング",
+   "experimental_features_category": "試験運用機能"
   },
   "ka": {
    "app_name": "გაფართოებული ფუნქციები",
-   "app_summary": "One Vision, აქსესუარები, ეფექტურობა, ექსპერიმენტული",
+   "app_summary": "Lenovo features, ეფექტურობა, ექსპერიმენტული ფუნქციები",
    "state_on": "ჩართული",
    "state_off": "გამორთული",
    "landscape_title": "ჰორიზონტალური ხედი",
@@ -1614,8 +1517,6 @@
    "reboot_later": "მოგვიანებით",
    "game_perf_title": "თამაშების წარმადობა",
    "game_perf_summary": "CPU და GPU პროფილები თითოეული აპისთვის; პარამეტრები მოქმედებს მხოლოდ მაშინ, როცა აპი ეკრანზეა",
-   "experimental_title": "ექსპერიმენტული ფუნქციები",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ეფექტურობა",
    "app_key_entries": [
     "არცერთი",
@@ -1627,12 +1528,11 @@
     "ძიება",
     "პარამეტრები"
    ],
-   "accessories_category": "აქსესუარები",
-   "experiments_category": "ექსპერიმენტული"
+   "experimental_features_category": "ექსპერიმენტული ფუნქციები"
   },
   "kk": {
    "app_name": "Қосымша функциялар",
-   "app_summary": "One Vision, Жабдықтар, Өнімділік, Эксперименттік",
+   "app_summary": "Lenovo features, Өнімділік, Эксперименттік функциялар",
    "state_on": "Қосулы",
    "state_off": "Өшірулі",
    "landscape_title": "Көлденең көрініс",
@@ -1660,8 +1560,6 @@
    "reboot_later": "Кейінірек",
    "game_perf_title": "Ойын өнімділігі",
    "game_perf_summary": "Әр қолданбаға арналған CPU және GPU профильдері; параметрлер қолданба экранда болғанда ғана қолданылады",
-   "experimental_title": "Эксперименттік функциялар",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Өнімділік",
    "app_key_entries": [
     "Жоқ",
@@ -1673,12 +1571,11 @@
     "Іздеу",
     "Параметрлер"
    ],
-   "accessories_category": "Жабдықтар",
-   "experiments_category": "Эксперименттік"
+   "experimental_features_category": "Эксперименттік функциялар"
   },
   "km": {
    "app_name": "លក្ខណៈពិសេសកម្រិតខ្ពស់",
-   "app_summary": "One Vision, គ្រឿងបន្ថែម, ប្រតិបត្តិការ, ពិសោធន៍",
+   "app_summary": "Lenovo features, ប្រតិបត្តិការ, លក្ខណៈពិសេសពិសោធន៍",
    "state_on": "បើក",
    "state_off": "បិទ",
    "landscape_title": "ទិដ្ឋភាពផ្ដេក",
@@ -1706,8 +1603,6 @@
    "reboot_later": "ពេលក្រោយ",
    "game_perf_title": "ប្រតិបត្តិការហ្គេម",
    "game_perf_summary": "ប្រូហ្វាល CPU និង GPU សម្រាប់កម្មវិធីនីមួយៗ; ការកំណត់អនុវត្តតែពេលកម្មវិធីនៅលើអេក្រង់ប៉ុណ្ណោះ",
-   "experimental_title": "លក្ខណៈពិសេសពិសោធន៍",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ប្រតិបត្តិការ",
    "app_key_entries": [
     "គ្មាន",
@@ -1719,12 +1614,11 @@
     "ស្វែងរក",
     "ការ​កំណត់"
    ],
-   "accessories_category": "គ្រឿងបន្ថែម",
-   "experiments_category": "ពិសោធន៍"
+   "experimental_features_category": "លក្ខណៈពិសេសពិសោធន៍"
   },
   "kn": {
    "app_name": "ಸುಧಾರಿತ ವೈಶಿಷ್ಟ್ಯಗಳು",
-   "app_summary": "One Vision, ಆ್ಯಕ್ಸೆಸರಿಗಳು, ಪರ್ಫಾರ್ಮೆನ್ಸ್, ಪ್ರಾಯೋಗಿಕ",
+   "app_summary": "Lenovo features, ಪರ್ಫಾರ್ಮೆನ್ಸ್, ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು",
    "state_on": "ಆನ್",
    "state_off": "ಆಫ್",
    "landscape_title": "ಲ್ಯಾಂಡ್‌ಸ್ಕೇಪ್ ವೀಕ್ಷಣೆ",
@@ -1752,8 +1646,6 @@
    "reboot_later": "ನಂತರ",
    "game_perf_title": "ಗೇಮ್ ಕಾರ್ಯಕ್ಷಮತೆ",
    "game_perf_summary": "ಪ್ರತಿ ಆ್ಯಪ್‌ಗೆ CPU ಮತ್ತು GPU ಪ್ರೊಫೈಲ್‌ಗಳು; ಆ್ಯಪ್ ಪರದೆಯಲ್ಲಿರುವಾಗ ಮಾತ್ರ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಅನ್ವಯವಾಗುತ್ತವೆ",
-   "experimental_title": "ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ಪರ್ಫಾರ್ಮೆನ್ಸ್",
    "app_key_entries": [
     "ಯಾವುದೂ ಇಲ್ಲ",
@@ -1765,12 +1657,11 @@
     "ಹುಡುಕಿ",
     "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
    ],
-   "accessories_category": "ಆ್ಯಕ್ಸೆಸರಿಗಳು",
-   "experiments_category": "ಪ್ರಾಯೋಗಿಕ"
+   "experimental_features_category": "ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು"
   },
   "ko": {
    "app_name": "고급 기능",
-   "app_summary": "One Vision, 액세서리, 성능, 실험",
+   "app_summary": "Lenovo 기능, 성능, 실험적 기능",
    "state_on": "사용 중",
    "state_off": "사용 안함",
    "landscape_title": "랜드스케이프 뷰",
@@ -1798,9 +1689,6 @@
    "reboot_later": "나중에",
    "game_perf_title": "게임 성능 관리",
    "game_perf_summary": "앱별 CPU·GPU 설정입니다. 설정은 해당 앱이 화면에 있을 때만 적용됩니다",
-   "experimental_title": "실험적 기능",
-   "experimental_summary": "스푸핑, 무결성",
-   "one_vision_category": "One Vision",
    "performance_category": "성능",
    "app_key_entries": [
     "없음",
@@ -1812,12 +1700,13 @@
     "검색",
     "설정"
    ],
-   "accessories_category": "액세서리",
-   "experiments_category": "실험"
+   "lenovo_features_category": "Lenovo 기능",
+   "device_spoof_title": "디바이스 스푸핑",
+   "experimental_features_category": "실험적 기능"
   },
   "ky": {
    "app_name": "Өркүндөтүлгөн функциялар",
-   "app_summary": "One Vision, Көмөкчү жабдыктар, Иштин майнаптуулугу, Сынамык",
+   "app_summary": "Lenovo features, Иштин майнаптуулугу, Сынамык функциялар",
    "state_on": "Күйүк",
    "state_off": "Өчүк",
    "landscape_title": "Горизонталдуу көрүнүш",
@@ -1845,8 +1734,6 @@
    "reboot_later": "Кийинчерээк",
    "game_perf_title": "Оюн майнаптуулугу",
    "game_perf_summary": "Ар бир колдонмо үчүн CPU жана GPU профилдери; параметрлер колдонмо экранда турганда гана колдонулат",
-   "experimental_title": "Сынамык функциялар",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Иштин майнаптуулугу",
    "app_key_entries": [
     "Жок",
@@ -1858,12 +1745,11 @@
     "Издөө",
     "Параметрлер"
    ],
-   "accessories_category": "Көмөкчү жабдыктар",
-   "experiments_category": "Сынамык"
+   "experimental_features_category": "Сынамык функциялар"
   },
   "lo": {
    "app_name": "ຄຸນສົມບັດຂັ້ນສູງ",
-   "app_summary": "One Vision, ອຸປະກອນເສີມ, ການສະ​ແດງ, ຍັງຢູ່ໃນການທົດລອງ",
+   "app_summary": "Lenovo features, ການສະ​ແດງ, ຄຸນສົມບັດທົດລອງ",
    "state_on": "ເປີດ",
    "state_off": "ປິດ",
    "landscape_title": "ມຸມມອງແນວນອນ",
@@ -1891,8 +1777,6 @@
    "reboot_later": "ພາຍຫຼັງ",
    "game_perf_title": "ປະສິດທິພາບເກມ",
    "game_perf_summary": "ໂປຣໄຟລ໌ CPU ແລະ GPU ສຳລັບແຕ່ລະແອັບ; ການຕັ້ງຄ່າມີຜົນສະເພາະເມື່ອແອັບຢູ່ໜ້າຈໍເທົ່ານັ້ນ",
-   "experimental_title": "ຄຸນສົມບັດທົດລອງ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ການສະ​ແດງ",
    "app_key_entries": [
     "ບໍ່ມີ",
@@ -1904,12 +1788,11 @@
     "ຄົ້ນຫາ",
     "ການຕັ້ງຄ່າ"
    ],
-   "accessories_category": "ອຸປະກອນເສີມ",
-   "experiments_category": "ຍັງຢູ່ໃນການທົດລອງ"
+   "experimental_features_category": "ຄຸນສົມບັດທົດລອງ"
   },
   "lt": {
    "app_name": "Išplėstinės funkcijos",
-   "app_summary": "One Vision, Priedai, Našumas, Eksperimentinė versija",
+   "app_summary": "Lenovo features, Našumas, Eksperimentinės funkcijos",
    "state_on": "Įjungta",
    "state_off": "Išjungta",
    "landscape_title": "Gulsčias vaizdas",
@@ -1937,9 +1820,6 @@
    "reboot_later": "Vėliau",
    "game_perf_title": "Žaidimų našumas",
    "game_perf_summary": "CPU ir GPU profiliai kiekvienai programai; nustatymai taikomi tik tada, kai programa rodoma ekrane",
-   "experimental_title": "Eksperimentinės funkcijos",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "„One Vision“",
    "performance_category": "Našumas",
    "app_key_entries": [
     "Nėra",
@@ -1951,12 +1831,11 @@
     "Paieška",
     "Nustatymai"
    ],
-   "accessories_category": "Priedai",
-   "experiments_category": "Eksperimentinė versija"
+   "experimental_features_category": "Eksperimentinės funkcijos"
   },
   "lv": {
    "app_name": "Uzlabotās funkcijas",
-   "app_summary": "One Vision, Piederumi, Veiktspēja, Eksperimentāla",
+   "app_summary": "Lenovo features, Veiktspēja, Eksperimentālas funkcijas",
    "state_on": "Ieslēgts",
    "state_off": "Izslēgta",
    "landscape_title": "Ainavas skats",
@@ -1984,9 +1863,6 @@
    "reboot_later": "Vēlāk",
    "game_perf_title": "Spēļu veiktspēja",
    "game_perf_summary": "CPU un GPU profili katrai lietotnei; iestatījumi darbojas tikai, kamēr lietotne ir ekrānā",
-   "experimental_title": "Eksperimentālas funkcijas",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Veiktspēja",
    "app_key_entries": [
     "Nav",
@@ -1998,12 +1874,11 @@
     "Meklēt",
     "Iestatījumi"
    ],
-   "accessories_category": "Piederumi",
-   "experiments_category": "Eksperimentāla"
+   "experimental_features_category": "Eksperimentālas funkcijas"
   },
   "mk": {
    "app_name": "Напредни функции",
-   "app_summary": "One Vision, Додатоци, Изведба, Експериментално",
+   "app_summary": "Lenovo features, Изведба, Експериментални функции",
    "state_on": "Вклучено",
    "state_off": "Исклучено",
    "landscape_title": "Хоризонтален приказ",
@@ -2031,8 +1906,6 @@
    "reboot_later": "Подоцна",
    "game_perf_title": "Перформанси во игри",
    "game_perf_summary": "Профили на процесорот и графичкиот процесор по апликација; поставките важат само додека апликацијата е на екранот",
-   "experimental_title": "Експериментални функции",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Изведба",
    "app_key_entries": [
     "Нема",
@@ -2044,12 +1917,11 @@
     "Пребарај",
     "Поставки"
    ],
-   "accessories_category": "Додатоци",
-   "experiments_category": "Експериментално"
+   "experimental_features_category": "Експериментални функции"
   },
   "ml": {
    "app_name": "വിപുലമായ ഫീച്ചറുകൾ",
-   "app_summary": "One Vision, ആക്‌സസറികൾ, പ്രകടനം, പരീക്ഷണാത്മകം!",
+   "app_summary": "Lenovo features, പ്രകടനം, പരീക്ഷണാത്മക ഫീച്ചറുകൾ",
    "state_on": "ഓണാണ്",
    "state_off": "ഓഫാണ്",
    "landscape_title": "ലാൻഡ്‌സ്‌കേപ്പ് കാഴ്‌ച",
@@ -2077,8 +1949,6 @@
    "reboot_later": "പിന്നീട്",
    "game_perf_title": "ഗെയിം പ്രകടനം",
    "game_perf_summary": "ഓരോ ആപ്പിനും CPU, GPU പ്രൊഫൈലുകൾ; ആപ്പ് സ്ക്രീനിൽ ഉള്ളപ്പോൾ മാത്രം ക്രമീകരണങ്ങൾ ബാധകമാകും",
-   "experimental_title": "പരീക്ഷണാത്മക ഫീച്ചറുകൾ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "പ്രകടനം",
    "app_key_entries": [
     "ഒന്നുമില്ല",
@@ -2090,12 +1960,11 @@
     "തിരയുക",
     "ക്രമീകരണം"
    ],
-   "accessories_category": "ആക്‌സസറികൾ",
-   "experiments_category": "പരീക്ഷണാത്മകം!"
+   "experimental_features_category": "പരീക്ഷണാത്മക ഫീച്ചറുകൾ"
   },
   "mn": {
    "app_name": "Нарийвчилсан онцлогууд",
-   "app_summary": "One Vision, Дагалдах хэрэгслүүд, Гүйцэтгэл, Туршилтын",
+   "app_summary": "Lenovo features, Гүйцэтгэл, Туршилтын онцлогууд",
    "state_on": "Идэвхтэй",
    "state_off": "Идэвхгүй",
    "landscape_title": "Хэвтээ харагдац",
@@ -2123,8 +1992,6 @@
    "reboot_later": "Дараа",
    "game_perf_title": "Тоглоомын гүйцэтгэл",
    "game_perf_summary": "Апп бүрийн CPU болон GPU профайл; тохиргоо нь апп дэлгэцэн дээр байх үед л үйлчилнэ",
-   "experimental_title": "Туршилтын онцлогууд",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Гүйцэтгэл",
    "app_key_entries": [
     "Байхгүй",
@@ -2136,12 +2003,11 @@
     "Хайх",
     "Тохиргоо"
    ],
-   "accessories_category": "Дагалдах хэрэгслүүд",
-   "experiments_category": "Туршилтын"
+   "experimental_features_category": "Туршилтын онцлогууд"
   },
   "mr": {
    "app_name": "प्रगत वैशिष्ट्ये",
-   "app_summary": "One Vision, अ‍ॅक्सेसरी, कार्यप्रदर्शन, प्रायोगिक",
+   "app_summary": "Lenovo features, कार्यप्रदर्शन, प्रायोगिक वैशिष्ट्ये",
    "state_on": "सुरू",
    "state_off": "बंद",
    "landscape_title": "लँडस्केप दृश्य",
@@ -2169,8 +2035,6 @@
    "reboot_later": "नंतर",
    "game_perf_title": "गेम परफॉर्मन्स",
    "game_perf_summary": "प्रत्येक अ‍ॅपसाठी CPU आणि GPU प्रोफाइल; अ‍ॅप स्क्रीनवर असतानाच सेटिंग्ज लागू होतात",
-   "experimental_title": "प्रायोगिक वैशिष्ट्ये",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "कार्यप्रदर्शन",
    "app_key_entries": [
     "काहीही नाही",
@@ -2182,12 +2046,11 @@
     "शोध",
     "सेटिंग्ज"
    ],
-   "accessories_category": "अ‍ॅक्सेसरी",
-   "experiments_category": "प्रायोगिक"
+   "experimental_features_category": "प्रायोगिक वैशिष्ट्ये"
   },
   "ms": {
    "app_name": "Ciri lanjutan",
-   "app_summary": "One Vision, Aksesori, Prestasi, Percubaan",
+   "app_summary": "Lenovo features, Prestasi, Ciri eksperimen",
    "state_on": "Hidup",
    "state_off": "Mati",
    "landscape_title": "Paparan landskap",
@@ -2214,9 +2077,6 @@
    "reboot_later": "Kemudian",
    "game_perf_title": "Prestasi permainan",
    "game_perf_summary": "Profil CPU dan GPU bagi setiap apl; tetapan hanya digunakan semasa apl berada pada skrin",
-   "experimental_title": "Ciri eksperimen",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Prestasi",
    "app_key_entries": [
     "Tiada",
@@ -2228,12 +2088,11 @@
     "Cari",
     "Tetapan"
    ],
-   "accessories_category": "Aksesori",
-   "experiments_category": "Percubaan"
+   "experimental_features_category": "Ciri eksperimen"
   },
   "my": {
    "app_name": "အဆင့်မြင့် လုပ်ဆောင်ချက်များ",
-   "app_summary": "One Vision, ဆက်စပ်ပစ္စည်းများ, ဖျော်ဖြေတင်ဆက်မှု, စမ်းသပ်ဆဲ",
+   "app_summary": "Lenovo features, ဖျော်ဖြေတင်ဆက်မှု, စမ်းသပ်ဆဲ လုပ်ဆောင်ချက်များ",
    "state_on": "ဖွင့်",
    "state_off": "ပိတ်",
    "landscape_title": "အလျားမြင်ကွင်း",
@@ -2261,8 +2120,6 @@
    "reboot_later": "နောက်မှ",
    "game_perf_title": "ဂိမ်း စွမ်းဆောင်ရည်",
    "game_perf_summary": "အက်ပ်တစ်ခုချင်းအတွက် CPU နှင့် GPU ပရိုဖိုင်များ၊ အက်ပ်သည် မျက်နှာပြင်ပေါ်တွင် ရှိနေမှသာ ဆက်တင်များ သက်ရောက်သည်",
-   "experimental_title": "စမ်းသပ်ဆဲ လုပ်ဆောင်ချက်များ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ဖျော်ဖြေတင်ဆက်မှု",
    "app_key_entries": [
     "မရှိ",
@@ -2274,12 +2131,11 @@
     "ရှာဖွေရန်",
     "ဆက်တင်များ"
    ],
-   "accessories_category": "ဆက်စပ်ပစ္စည်းများ",
-   "experiments_category": "စမ်းသပ်ဆဲ"
+   "experimental_features_category": "စမ်းသပ်ဆဲ လုပ်ဆောင်ချက်များ"
   },
   "nb": {
    "app_name": "Avanserte funksjoner",
-   "app_summary": "One Vision, Tilbehør, Ytelse, På forsøksstadiet",
+   "app_summary": "Lenovo-funksjoner, Ytelse, Eksperimentelle funksjoner",
    "state_on": "På",
    "state_off": "Av",
    "landscape_title": "Liggende visning",
@@ -2307,9 +2163,6 @@
    "reboot_later": "Senere",
    "game_perf_title": "Spillytelse",
    "game_perf_summary": "CPU- og GPU-profiler per app; innstillingene gjelder bare mens appen vises på skjermen",
-   "experimental_title": "Eksperimentelle funksjoner",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Ytelse",
    "app_key_entries": [
     "Ingen",
@@ -2321,12 +2174,13 @@
     "Søk",
     "Innstillinger"
    ],
-   "accessories_category": "Tilbehør",
-   "experiments_category": "På forsøksstadiet"
+   "lenovo_features_category": "Lenovo-funksjoner",
+   "device_spoof_title": "Enhetsspoofing",
+   "experimental_features_category": "Eksperimentelle funksjoner"
   },
   "ne": {
    "app_name": "उन्नत सुविधाहरू",
-   "app_summary": "One Vision, सहायक उपकरणहरू, कार्यसम्पादन, प्रयोगात्मक",
+   "app_summary": "Lenovo features, कार्यसम्पादन, प्रयोगात्मक सुविधाहरू",
    "state_on": "अन छ",
    "state_off": "अफ छ",
    "landscape_title": "ल्यान्डस्केप दृश्य",
@@ -2354,8 +2208,6 @@
    "reboot_later": "पछि",
    "game_perf_title": "गेम प्रदर्शन",
    "game_perf_summary": "प्रत्येक एपका लागि CPU र GPU प्रोफाइल; एप स्क्रिनमा हुँदा मात्र सेटिङ लागू हुन्छ",
-   "experimental_title": "प्रयोगात्मक सुविधाहरू",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "कार्यसम्पादन",
    "app_key_entries": [
     "कुनै पनि होइन",
@@ -2367,12 +2219,11 @@
     "खोज",
     "सेटिङहरू"
    ],
-   "accessories_category": "सहायक उपकरणहरू",
-   "experiments_category": "प्रयोगात्मक"
+   "experimental_features_category": "प्रयोगात्मक सुविधाहरू"
   },
   "nl": {
    "app_name": "Geavanceerde functies",
-   "app_summary": "One Vision, Accessoires, Prestaties, Experimenteel",
+   "app_summary": "Lenovo-functies, Prestaties, Experimentele functies",
    "state_on": "Aan",
    "state_off": "Uit",
    "landscape_title": "Liggende weergave",
@@ -2398,9 +2249,6 @@
    "reboot_now": "Opnieuw opstarten",
    "game_perf_title": "Gameprestaties",
    "game_perf_summary": "CPU- en GPU-profielen per app; instellingen gelden alleen terwijl de app op het scherm staat",
-   "experimental_title": "Experimentele functies",
-   "experimental_summary": "Spoofing, Integriteit",
-   "one_vision_category": "One Vision",
    "performance_category": "Prestaties",
    "app_key_entries": [
     "Geen",
@@ -2412,12 +2260,13 @@
     "Zoeken",
     "Instellingen"
    ],
-   "accessories_category": "Accessoires",
-   "experiments_category": "Experimenteel"
+   "lenovo_features_category": "Lenovo-functies",
+   "device_spoof_title": "Apparaat-spoofing",
+   "experimental_features_category": "Experimentele functies"
   },
   "or": {
    "app_name": "ଉନ୍ନତ ବୈଶିଷ୍ଟ୍ୟ",
-   "app_summary": "One Vision, ଆକସେସୋରୀଗୁଡ଼ିକ, ପରଫରମାନ୍ସ, ପରୀକ୍ଷାମୂଳକ",
+   "app_summary": "Lenovo features, ପରଫରମାନ୍ସ, ପରୀକ୍ଷାମୂଳକ ବୈଶିଷ୍ଟ୍ୟ",
    "state_on": "ଚାଲୁ",
    "state_off": "ବନ୍ଦ",
    "landscape_title": "ଲ୍ୟାଣ୍ଡସ୍କେପ୍ ଦୃଶ୍ୟ",
@@ -2445,8 +2294,6 @@
    "reboot_later": "ପରେ",
    "game_perf_title": "ଗେମ୍ ପରଫର୍ମାନ୍ସ",
    "game_perf_summary": "ପ୍ରତ୍ୟେକ ଆପ୍ ପାଇଁ CPU ଓ GPU ପ୍ରୋଫାଇଲ୍; ଆପ୍ ସ୍କ୍ରିନ୍‌ରେ ଥିଲେ କେବଳ ସେଟିଂସ୍ ଲାଗୁ ହୁଏ",
-   "experimental_title": "ପରୀକ୍ଷାମୂଳକ ବୈଶିଷ୍ଟ୍ୟ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ପରଫରମାନ୍ସ",
    "app_key_entries": [
     "କିଛି ନାହିଁ",
@@ -2458,12 +2305,11 @@
     "ସର୍ଚ୍ଚ କରନ୍ତୁ",
     "ସେଟିଂସ"
    ],
-   "accessories_category": "ଆକସେସୋରୀଗୁଡ଼ିକ",
-   "experiments_category": "ପରୀକ୍ଷାମୂଳକ"
+   "experimental_features_category": "ପରୀକ୍ଷାମୂଳକ ବୈଶିଷ୍ଟ୍ୟ"
   },
   "pa": {
    "app_name": "ਉੱਨਤ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
-   "app_summary": "One Vision, ਐਕਸੈਸਰੀਆਂ, ਪ੍ਰਦਰਸ਼ਨ, ਪ੍ਰਯੋਗਮਈ",
+   "app_summary": "Lenovo features, ਪ੍ਰਦਰਸ਼ਨ, ਪ੍ਰਯੋਗਾਤਮਕ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
    "state_on": "ਚਾਲੂ",
    "state_off": "ਬੰਦ",
    "landscape_title": "ਲੈਂਡਸਕੇਪ ਦ੍ਰਿਸ਼",
@@ -2491,8 +2337,6 @@
    "reboot_later": "ਬਾਅਦ ਵਿੱਚ",
    "game_perf_title": "ਗੇਮ ਪਰਫਾਰਮੈਂਸ",
    "game_perf_summary": "ਹਰੇਕ ਐਪ ਲਈ CPU ਅਤੇ GPU ਪ੍ਰੋਫਾਈਲ; ਸੈਟਿੰਗਾਂ ਸਿਰਫ਼ ਉਦੋਂ ਲਾਗੂ ਹੁੰਦੀਆਂ ਹਨ ਜਦੋਂ ਐਪ ਸਕ੍ਰੀਨ ਉੱਤੇ ਹੋਵੇ",
-   "experimental_title": "ਪ੍ਰਯੋਗਾਤਮਕ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "ਪ੍ਰਦਰਸ਼ਨ",
    "app_key_entries": [
     "ਕੋਈ ਨਹੀਂ",
@@ -2504,12 +2348,11 @@
     "ਖੋਜੋ",
     "ਸੈਟਿੰਗਾਂ"
    ],
-   "accessories_category": "ਐਕਸੈਸਰੀਆਂ",
-   "experiments_category": "ਪ੍ਰਯੋਗਮਈ"
+   "experimental_features_category": "ਪ੍ਰਯੋਗਾਤਮਕ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ"
   },
   "pl": {
    "app_name": "Funkcje zaawansowane",
-   "app_summary": "One Vision, Urządzenia współpracujące, Wydajność, Eksperymentalne",
+   "app_summary": "Funkcje Lenovo, Wydajność, Funkcje eksperymentalne",
    "state_on": "Wł.",
    "state_off": "Wył.",
    "landscape_title": "Widok poziomy",
@@ -2537,9 +2380,6 @@
    "reboot_later": "Później",
    "game_perf_title": "Wydajność w grach",
    "game_perf_summary": "Profile CPU i GPU dla poszczególnych aplikacji; ustawienia obowiązują tylko, gdy aplikacja jest na ekranie",
-   "experimental_title": "Funkcje eksperymentalne",
-   "experimental_summary": "Spoofing, Integralność",
-   "one_vision_category": "One Vision",
    "performance_category": "Wydajność",
    "app_key_entries": [
     "Brak",
@@ -2551,8 +2391,9 @@
     "Szukaj",
     "Ustawienia"
    ],
-   "accessories_category": "Urządzenia współpracujące",
-   "experiments_category": "Eksperymentalne"
+   "lenovo_features_category": "Funkcje Lenovo",
+   "device_spoof_title": "Spoofing urządzenia",
+   "experimental_features_category": "Funkcje eksperymentalne"
   },
   "pt": {
    "landscape_title": "Modo paisagem",
@@ -2573,14 +2414,13 @@
     "Pesquisa",
     "Configurações"
    ],
-   "accessories_category": "Acessórios",
-   "experiments_category": "Experimentais",
-   "app_summary": "One Vision, Acessórios, Performance, Experimentais",
-   "experimental_summary": "Spoofing, Integridade"
+   "app_summary": "Recursos Lenovo, Performance, Experimental features",
+   "lenovo_features_category": "Recursos Lenovo",
+   "device_spoof_title": "Spoofing de dispositivo"
   },
   "pt-rBR": {
    "app_name": "Recursos avançados",
-   "app_summary": "One Vision, Acessórios, Desempenho, Experimentais",
+   "app_summary": "Recursos Lenovo, Desempenho, Recursos experimentais",
    "state_on": "Ativado",
    "state_off": "Desativado",
    "landscape_title": "Visualização em paisagem",
@@ -2608,9 +2448,6 @@
    "reboot_later": "Mais tarde",
    "game_perf_title": "Desempenho em jogos",
    "game_perf_summary": "Perfis de CPU e GPU por app; as configurações valem só enquanto o app está na tela",
-   "experimental_title": "Recursos experimentais",
-   "experimental_summary": "Spoofing, Integridade",
-   "one_vision_category": "One Vision",
    "performance_category": "Desempenho",
    "app_key_entries": [
     "Nenhuma",
@@ -2622,8 +2459,9 @@
     "Pesquisar",
     "Configurações"
    ],
-   "accessories_category": "Acessórios",
-   "experiments_category": "Experimentais"
+   "lenovo_features_category": "Recursos Lenovo",
+   "device_spoof_title": "Spoofing de dispositivo",
+   "experimental_features_category": "Recursos experimentais"
   },
   "pt-rPT": {
    "app_name": "Funcionalidades avançadas",
@@ -2638,7 +2476,6 @@
    "vram_summary": "%1$s. Após a ativação, o sistema irá alocar RAM adicional para melhorar a capacidade de retenção em segundo plano para as aplicações. Esta funcionalidade consome uma pequena parte do espaço de armazenamento, pelo que se recomenda a utilização quando existe bastante armazenamento disponível.",
    "memory_status_title": "Utilização da memória",
    "reboot_message": "Reinicie o dispositivo para garantir que as alterações entram em vigor.",
-   "one_vision_category": "One Vision",
    "app_key_entries": [
     "Nenhum",
     "Capt. ecrã",
@@ -2649,14 +2486,13 @@
     "Pesquisa",
     "Definições"
    ],
-   "accessories_category": "Acessórios",
-   "experiments_category": "Experimental",
-   "app_summary": "One Vision, Acessórios, Performance, Experimental",
-   "experimental_summary": "Spoofing, Integridade"
+   "app_summary": "Funcionalidades Lenovo, Performance, Experimental features",
+   "lenovo_features_category": "Funcionalidades Lenovo",
+   "device_spoof_title": "Spoofing de dispositivo"
   },
   "ro": {
    "app_name": "Caracteristici avansate",
-   "app_summary": "One Vision, Accesorii, Performanță, Experimentale",
+   "app_summary": "Lenovo features, Performanță, Funcții experimentale",
    "state_on": "Activat(ă)",
    "state_off": "Dezactivat(ă)",
    "landscape_title": "Vizualizare peisaj",
@@ -2684,9 +2520,6 @@
    "reboot_later": "Ult.",
    "game_perf_title": "Performanță în jocuri",
    "game_perf_summary": "Profiluri CPU și GPU pentru fiecare aplicație; setările se aplică doar cât timp aplicația este pe ecran",
-   "experimental_title": "Funcții experimentale",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Performanță",
    "app_key_entries": [
     "Niciunul",
@@ -2698,12 +2531,11 @@
     "Caută",
     "Setări"
    ],
-   "accessories_category": "Accesorii",
-   "experiments_category": "Experimentale"
+   "experimental_features_category": "Funcții experimentale"
   },
   "ru": {
    "app_name": "Дополнительные функции",
-   "app_summary": "One Vision, Аксессуары, Оценка доступной памяти, Экспериментальные функции",
+   "app_summary": "Функции Lenovo, Оценка доступной памяти, Экспериментальные функции",
    "state_on": "Вкл.",
    "state_off": "Выкл.",
    "landscape_title": "Горизонтальный режим",
@@ -2731,9 +2563,6 @@
    "reboot_later": "Позже",
    "game_perf_title": "Производительность в играх",
    "game_perf_summary": "Профили ЦП и ГП для каждого приложения; настройки действуют, пока приложение на экране",
-   "experimental_title": "Экспериментальные функции",
-   "experimental_summary": "Подмена, Целостность",
-   "one_vision_category": "One Vision",
    "performance_category": "Оценка доступной памяти",
    "app_key_entries": [
     "Нет",
@@ -2745,12 +2574,13 @@
     "Поиск",
     "Настройки"
    ],
-   "accessories_category": "Аксессуары",
-   "experiments_category": "Экспериментальные функции"
+   "lenovo_features_category": "Функции Lenovo",
+   "device_spoof_title": "Подмена устройства",
+   "experimental_features_category": "Экспериментальные функции"
   },
   "si": {
    "app_name": "උසස් විශේෂාංග",
-   "app_summary": "One Vision, අමතර උපාංග, කාර්යසාධනය, පරීක්ෂණාත්මක",
+   "app_summary": "Lenovo features, කාර්යසාධනය, පර්යේෂණාත්මක විශේෂාංග",
    "state_on": "ක්‍රියාත්මකයි",
    "state_off": "අක්‍රියයි",
    "landscape_title": "තිරස් දසුන",
@@ -2778,8 +2608,6 @@
    "reboot_later": "පසුව",
    "game_perf_title": "ක්‍රීඩා කාර්ය සාධනය",
    "game_perf_summary": "එක් එක් යෙදුම සඳහා CPU සහ GPU පැතිකඩ; යෙදුම තිරයේ ඇති විට පමණක් සැකසුම් බලපායි",
-   "experimental_title": "පර්යේෂණාත්මක විශේෂාංග",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "කාර්යසාධනය",
    "app_key_entries": [
     "කිසිවක් නැත",
@@ -2791,12 +2619,11 @@
     "සෙවීම",
     "සැකසීම්"
    ],
-   "accessories_category": "අමතර උපාංග",
-   "experiments_category": "පරීක්ෂණාත්මක"
+   "experimental_features_category": "පර්යේෂණාත්මක විශේෂාංග"
   },
   "sk": {
    "app_name": "Pokročilé funkcie",
-   "app_summary": "One Vision, Príslušenstvo, Výkonnosť, Experimentálne",
+   "app_summary": "Lenovo features, Výkonnosť, Experimentálne funkcie",
    "state_on": "Zapnuté",
    "state_off": "Vypnuté",
    "landscape_title": "Zobrazenie na šírku",
@@ -2824,9 +2651,6 @@
    "reboot_later": "Neskôr",
    "game_perf_title": "Výkon v hrách",
    "game_perf_summary": "Profily CPU a GPU pre jednotlivé aplikácie; nastavenia platia, iba keď je aplikácia na obrazovke",
-   "experimental_title": "Experimentálne funkcie",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Výkonnosť",
    "app_key_entries": [
     "Žiadny",
@@ -2838,12 +2662,11 @@
     "Vyhľadávanie",
     "Nastavenia"
    ],
-   "accessories_category": "Príslušenstvo",
-   "experiments_category": "Experimentálne"
+   "experimental_features_category": "Experimentálne funkcie"
   },
   "sl": {
    "app_name": "Napredne funkcije",
-   "app_summary": "One Vision, Dodatki, Izvajanje, Poskusno",
+   "app_summary": "Lenovo features, Izvajanje, Poskusne funkcije",
    "state_on": "Vklopljeno",
    "state_off": "Izklopljeno",
    "landscape_title": "Ležeči pogled",
@@ -2871,9 +2694,6 @@
    "reboot_later": "Pozneje",
    "game_perf_title": "Zmogljivost v igrah",
    "game_perf_summary": "Profili CPU in GPE za posamezne aplikacije; nastavitve veljajo samo, ko je aplikacija na zaslonu",
-   "experimental_title": "Poskusne funkcije",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Izvajanje",
    "app_key_entries": [
     "Brez",
@@ -2885,12 +2705,11 @@
     "Išči",
     "Nastavitve"
    ],
-   "accessories_category": "Dodatki",
-   "experiments_category": "Poskusno"
+   "experimental_features_category": "Poskusne funkcije"
   },
   "sq": {
    "app_name": "Veçori të avancuara",
-   "app_summary": "One Vision, Aksesorët, Performanca, Eksperimentale",
+   "app_summary": "Lenovo features, Performanca, Veçori eksperimentale",
    "state_on": "Aktivizuar",
    "state_off": "Joaktiv",
    "landscape_title": "Pamje horizontale",
@@ -2918,8 +2737,6 @@
    "reboot_later": "Më vonë",
    "game_perf_title": "Performanca e lojërave",
    "game_perf_summary": "Profile CPU dhe GPU për çdo aplikacion; cilësimet zbatohen vetëm gjatë kohës që aplikacioni është në ekran",
-   "experimental_title": "Veçori eksperimentale",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Performanca",
    "app_key_entries": [
     "Asnjë",
@@ -2931,12 +2748,11 @@
     "Kërko",
     "Cilësimet"
    ],
-   "accessories_category": "Aksesorët",
-   "experiments_category": "Eksperimentale"
+   "experimental_features_category": "Veçori eksperimentale"
   },
   "sr": {
    "app_name": "Napredne funkcije",
-   "app_summary": "One Vision, Додаци, Учинак, Експериментално",
+   "app_summary": "Lenovo features, Учинак, Експерименталне функције",
    "state_on": "Укључено",
    "state_off": "Искључено",
    "landscape_title": "Položeni prikaz",
@@ -2964,9 +2780,6 @@
    "reboot_later": "Kasnije",
    "game_perf_title": "Перформансе игара",
    "game_perf_summary": "CPU и GPU профили по апликацији; подешавања важе само док је апликација на екрану",
-   "experimental_title": "Експерименталне функције",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Учинак",
    "app_key_entries": [
     "Ништа",
@@ -2978,12 +2791,11 @@
     "Претражи",
     "Подешавања"
    ],
-   "accessories_category": "Додаци",
-   "experiments_category": "Експериментално"
+   "experimental_features_category": "Експерименталне функције"
   },
   "sv": {
    "app_name": "Avancerade funktioner",
-   "app_summary": "One Vision, Tillbehör, Prestanda, Experimentella",
+   "app_summary": "Lenovo-funktioner, Prestanda, Experimentella funktioner",
    "state_on": "På",
    "state_off": "Av",
    "landscape_title": "Liggande visning",
@@ -3011,9 +2823,6 @@
    "reboot_later": "Senare",
    "game_perf_title": "Spelprestanda",
    "game_perf_summary": "CPU- och GPU-profiler per app; inställningarna gäller bara medan appen visas på skärmen",
-   "experimental_title": "Experimentella funktioner",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "One Vision",
    "performance_category": "Prestanda",
    "app_key_entries": [
     "Inget",
@@ -3025,12 +2834,13 @@
     "Sök",
     "Inställningar"
    ],
-   "accessories_category": "Tillbehör",
-   "experiments_category": "Experimentella"
+   "lenovo_features_category": "Lenovo-funktioner",
+   "device_spoof_title": "Enhetsspoofing",
+   "experimental_features_category": "Experimentella funktioner"
   },
   "sw": {
    "app_name": "Vipengele vya kina",
-   "app_summary": "One Vision, Vifaa vya ziada, Utendaji, Ya majaribio",
+   "app_summary": "Lenovo features, Utendaji, Vipengele vya majaribio",
    "state_on": "Imewashwa",
    "state_off": "Imezimwa",
    "landscape_title": "Mwonekano mlalo",
@@ -3058,8 +2868,6 @@
    "reboot_later": "Baadaye",
    "game_perf_title": "Utendaji wa michezo",
    "game_perf_summary": "Wasifu wa CPU na GPU kwa kila programu; mipangilio hutumika tu programu inapoonekana kwenye skrini",
-   "experimental_title": "Vipengele vya majaribio",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Utendaji",
    "app_key_entries": [
     "Hamna",
@@ -3071,12 +2879,11 @@
     "Tafuta",
     "Mipangilio"
    ],
-   "accessories_category": "Vifaa vya ziada",
-   "experiments_category": "Ya majaribio"
+   "experimental_features_category": "Vipengele vya majaribio"
   },
   "ta": {
    "app_name": "மேம்பட்ட அம்சங்கள்",
-   "app_summary": "One Vision, துணைக்கருவிகள், உயர் தரம், பரிசோதனை முயற்சி",
+   "app_summary": "Lenovo features, உயர் தரம், சோதனை அம்சங்கள்",
    "state_on": "ஆன்",
    "state_off": "ஆஃப்",
    "landscape_title": "கிடைமட்டக் காட்சி",
@@ -3104,8 +2911,6 @@
    "reboot_later": "பிறகு",
    "game_perf_title": "கேம் செயல்திறன்",
    "game_perf_summary": "ஒவ்வொரு ஆப்ஸுக்குமான CPU, GPU சுயவிவரங்கள்; ஆப்ஸ் திரையில் இருக்கும்போது மட்டுமே அமைப்புகள் பொருந்தும்",
-   "experimental_title": "சோதனை அம்சங்கள்",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "உயர் தரம்",
    "app_key_entries": [
     "ஏதுமில்லை",
@@ -3117,12 +2922,11 @@
     "தேடு",
     "அமைப்புகள்"
    ],
-   "accessories_category": "துணைக்கருவிகள்",
-   "experiments_category": "பரிசோதனை முயற்சி"
+   "experimental_features_category": "சோதனை அம்சங்கள்"
   },
   "te": {
    "app_name": "అధునాతన ఫీచర్‌లు",
-   "app_summary": "One Vision, యాక్సెసరీలు, పనితీరు, ప్రయోగాత్మకం",
+   "app_summary": "Lenovo features, పనితీరు, ప్రయోగాత్మక ఫీచర్‌లు",
    "state_on": "ఆన్‌లో ఉంది",
    "state_off": "ఆఫ్‌‌లో ఉంది",
    "landscape_title": "ల్యాండ్‌స్కేప్ వ్యూ",
@@ -3150,8 +2954,6 @@
    "reboot_later": "తర్వాత",
    "game_perf_title": "గేమ్ పనితీరు",
    "game_perf_summary": "ప్రతి యాప్‌కు CPU మరియు GPU ప్రొఫైల్‌లు; యాప్ స్క్రీన్‌పై ఉన్నప్పుడు మాత్రమే సెట్టింగ్‌లు వర్తిస్తాయి",
-   "experimental_title": "ప్రయోగాత్మక ఫీచర్‌లు",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "పనితీరు",
    "app_key_entries": [
     "ఏమీ లేదు",
@@ -3163,12 +2965,11 @@
     "సెర్చ్",
     "సెట్టింగ్‌లు"
    ],
-   "accessories_category": "యాక్సెసరీలు",
-   "experiments_category": "ప్రయోగాత్మకం"
+   "experimental_features_category": "ప్రయోగాత్మక ఫీచర్‌లు"
   },
   "th": {
    "app_name": "คุณสมบัติขั้นสูง",
-   "app_summary": "One Vision, อุปกรณ์เสริม, ประสิทธิภาพ, ทดสอบ",
+   "app_summary": "ฟีเจอร์ Lenovo, ประสิทธิภาพ, ฟีเจอร์ทดลอง",
    "state_on": "เปิด",
    "state_off": "ปิด",
    "landscape_title": "มุมมองแนวนอน",
@@ -3196,9 +2997,6 @@
    "reboot_later": "ในภายหลัง",
    "game_perf_title": "ประสิทธิภาพเกม",
    "game_perf_summary": "โปรไฟล์ CPU และ GPU สำหรับแต่ละแอป การตั้งค่าจะมีผลเฉพาะขณะที่แอปอยู่บนหน้าจอ",
-   "experimental_title": "ฟีเจอร์ทดลอง",
-   "experimental_summary": "การปลอมแปลง, ความสมบูรณ์",
-   "one_vision_category": "One Vision",
    "performance_category": "ประสิทธิภาพ",
    "app_key_entries": [
     "ไม่มี",
@@ -3210,12 +3008,12 @@
     "ค้นหา",
     "การตั้งค่า"
    ],
-   "accessories_category": "อุปกรณ์เสริม",
-   "experiments_category": "ทดสอบ"
+   "lenovo_features_category": "ฟีเจอร์ Lenovo",
+   "device_spoof_title": "การปลอมแปลงอุปกรณ์",
+   "experimental_features_category": "ฟีเจอร์ทดลอง"
   },
   "tl": {
    "app_name": "Mga advanced na feature",
-   "app_summary": "One Vision, Mga Accessory, Performance, Pang-eksperimento",
    "state_on": "Naka-on",
    "state_off": "Naka-off",
    "landscape_main_title": "Landscape view",
@@ -3240,8 +3038,6 @@
    "reboot_later": "Sa ibang pagkakataon",
    "game_perf_title": "Performance ng laro",
    "game_perf_summary": "Mga profile ng CPU at GPU kada app; nalalapat lang ang mga setting habang nasa screen ang app",
-   "experimental_title": "Mga experimental na feature",
-   "experimental_summary": "Spoofing, Integrity",
    "app_key_entries": [
     "Wala",
     "Screenshot",
@@ -3252,13 +3048,12 @@
     "Maghanap",
     "Mga Setting"
    ],
-   "one_vision_category": "One Vision",
-   "accessories_category": "Mga Accessory",
-   "experiments_category": "Pang-eksperimento"
+   "experimental_features_category": "Mga experimental na feature",
+   "app_summary": "Lenovo features, Performance, Mga experimental na feature"
   },
   "tr": {
    "app_name": "Gelişmiş özellikler",
-   "app_summary": "One Vision, Aksesuarlar, Performans, Deneysel",
+   "app_summary": "Lenovo özellikleri, Performans, Deneysel özellikler",
    "state_on": "Açık",
    "state_off": "Kapalı",
    "landscape_title": "Yatay görünüm",
@@ -3286,9 +3081,6 @@
    "reboot_later": "Daha sonra",
    "game_perf_title": "Oyun performansı",
    "game_perf_summary": "Uygulama başına CPU ve GPU profilleri; ayarlar yalnızca uygulama ekrandayken geçerlidir",
-   "experimental_title": "Deneysel özellikler",
-   "experimental_summary": "Spoofing, Bütünlük",
-   "one_vision_category": "One Vision",
    "performance_category": "Performans",
    "app_key_entries": [
     "Yok",
@@ -3300,12 +3092,13 @@
     "Ara",
     "Ayarlar"
    ],
-   "accessories_category": "Aksesuarlar",
-   "experiments_category": "Deneysel"
+   "lenovo_features_category": "Lenovo özellikleri",
+   "device_spoof_title": "Cihaz spoofing",
+   "experimental_features_category": "Deneysel özellikler"
   },
   "uk": {
    "app_name": "Розширені функції",
-   "app_summary": "One Vision, Аксесуари, Продуктивність, Експериментальні налаштування",
+   "app_summary": "Функції Lenovo, Продуктивність, Експериментальні функції",
    "state_on": "Увімкнено",
    "state_off": "Вимкнено",
    "landscape_title": "Альбомна орієнтація",
@@ -3333,9 +3126,6 @@
    "reboot_later": "Згодом",
    "game_perf_title": "Продуктивність в іграх",
    "game_perf_summary": "Профілі CPU та GPU для кожного додатка; налаштування діють, лише коли додаток на екрані",
-   "experimental_title": "Експериментальні функції",
-   "experimental_summary": "Підміна, Цілісність",
-   "one_vision_category": "One Vision",
    "performance_category": "Продуктивність",
    "app_key_entries": [
     "Немає",
@@ -3347,12 +3137,13 @@
     "Пошук",
     "Налаштування"
    ],
-   "accessories_category": "Аксесуари",
-   "experiments_category": "Експериментальні налаштування"
+   "lenovo_features_category": "Функції Lenovo",
+   "device_spoof_title": "Підміна пристрою",
+   "experimental_features_category": "Експериментальні функції"
   },
   "ur": {
    "app_name": "اعلی خصوصیات",
-   "app_summary": "One Vision, لوازمات, کارکردگی, تجرباتی",
+   "app_summary": "Lenovo features, کارکردگی, تجرباتی خصوصیات",
    "state_on": "آن",
    "state_off": "آف",
    "landscape_title": "لینڈ اسکیپ منظر",
@@ -3380,9 +3171,6 @@
    "reboot_later": "بعد میں",
    "game_perf_title": "گیم پرفارمنس",
    "game_perf_summary": "ہر ایپ کے لیے CPU اور GPU پروفائلز؛ ترتیبات صرف اس وقت لاگو ہوتی ہیں جب ایپ اسکرین پر ہو",
-   "experimental_title": "تجرباتی خصوصیات",
-   "experimental_summary": "Spoofing, Integrity",
-   "one_vision_category": "ایک ویژن",
    "performance_category": "کارکردگی",
    "app_key_entries": [
     "کوئی نہیں",
@@ -3394,12 +3182,11 @@
     "تلاش",
     "ترتیبات"
    ],
-   "accessories_category": "لوازمات",
-   "experiments_category": "تجرباتی"
+   "experimental_features_category": "تجرباتی خصوصیات"
   },
   "uz": {
    "app_name": "Qo‘shimcha funksiyalar",
-   "app_summary": "One Vision, Aksessuarlar, Unumdorlik, Tajribaviy",
+   "app_summary": "Lenovo features, Unumdorlik, Eksperimental funksiyalar",
    "state_on": "Yoniq",
    "state_off": "Oʻchiq",
    "landscape_title": "Gorizontal ko‘rinish",
@@ -3427,8 +3214,6 @@
    "reboot_later": "Keyinroq",
    "game_perf_title": "O‘yin unumdorligi",
    "game_perf_summary": "Har bir ilova uchun CPU va GPU profillari; sozlamalar faqat ilova ekranda bo‘lganda qo‘llanadi",
-   "experimental_title": "Eksperimental funksiyalar",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Unumdorlik",
    "app_key_entries": [
     "Hech narsa kiritilmagan",
@@ -3440,12 +3225,11 @@
     "Qidiruv",
     "Sozlamalar"
    ],
-   "accessories_category": "Aksessuarlar",
-   "experiments_category": "Tajribaviy"
+   "experimental_features_category": "Eksperimental funksiyalar"
   },
   "vi": {
    "app_name": "Các tính năng nâng cao",
-   "app_summary": "One Vision, Phụ kiện, Hiệu suất, Thử nghiệm",
+   "app_summary": "Tính năng Lenovo, Hiệu suất, Tính năng thử nghiệm",
    "state_on": "Đang bật",
    "state_off": "Đang tắt",
    "landscape_title": "Dạng xem ngang",
@@ -3473,9 +3257,6 @@
    "reboot_later": "Sau",
    "game_perf_title": "Hiệu suất trò chơi",
    "game_perf_summary": "Hồ sơ CPU và GPU cho từng ứng dụng; cài đặt chỉ áp dụng khi ứng dụng đang hiển thị trên màn hình",
-   "experimental_title": "Tính năng thử nghiệm",
-   "experimental_summary": "Giả mạo, Tính toàn vẹn",
-   "one_vision_category": "One Vision",
    "performance_category": "Hiệu suất",
    "app_key_entries": [
     "Không có",
@@ -3487,12 +3268,13 @@
     "Tìm kiếm",
     "Cài đặt"
    ],
-   "accessories_category": "Phụ kiện",
-   "experiments_category": "Thử nghiệm"
+   "lenovo_features_category": "Tính năng Lenovo",
+   "device_spoof_title": "Giả mạo thiết bị",
+   "experimental_features_category": "Tính năng thử nghiệm"
   },
   "zh-rCN": {
    "app_name": "高级功能",
-   "app_summary": "One Vision, 配件, 性能, 实验性功能",
+   "app_summary": "Lenovo 功能、性能、实验性功能",
    "state_on": "已开启",
    "state_off": "已关闭",
    "landscape_title": "横屏显示",
@@ -3520,9 +3302,6 @@
    "reboot_later": "稍后",
    "game_perf_title": "游戏性能",
    "game_perf_summary": "按应用设置CPU和GPU；设置仅在该应用显示时生效",
-   "experimental_title": "实验性功能",
-   "experimental_summary": "伪装, 完整性",
-   "one_vision_category": "一视界",
    "performance_category": "性能",
    "app_key_entries": [
     "无",
@@ -3534,12 +3313,13 @@
     "搜索",
     "设置"
    ],
-   "accessories_category": "配件",
-   "experiments_category": "实验性功能"
+   "lenovo_features_category": "Lenovo 功能",
+   "device_spoof_title": "设备伪装",
+   "experimental_features_category": "实验性功能"
   },
   "zh-rHK": {
    "app_name": "高級功能",
-   "app_summary": "One Vision, 配件, 效能, 實驗性",
+   "app_summary": "Lenovo 功能、效能、實驗性功能",
    "state_on": "開啟",
    "state_off": "關閉",
    "landscape_title": "橫向檢視",
@@ -3567,8 +3347,6 @@
    "reboot_later": "稍後",
    "game_perf_title": "遊戲效能",
    "game_perf_summary": "依應用設定CPU與GPU；設定僅在該應用顯示時生效",
-   "experimental_title": "實驗性功能",
-   "experimental_summary": "偽裝, 完整性",
    "performance_category": "效能",
    "app_key_entries": [
     "無",
@@ -3580,12 +3358,13 @@
     "搜尋",
     "設定"
    ],
-   "accessories_category": "配件",
-   "experiments_category": "實驗性"
+   "lenovo_features_category": "Lenovo 功能",
+   "device_spoof_title": "裝置偽裝",
+   "experimental_features_category": "實驗性功能"
   },
   "zh-rTW": {
    "app_name": "進階功能",
-   "app_summary": "One Vision, 配件, 效能, 實驗性",
+   "app_summary": "Lenovo 功能、效能、實驗性功能",
    "state_on": "已開啟",
    "state_off": "已關閉",
    "landscape_title": "橫向顯示",
@@ -3613,9 +3392,6 @@
    "reboot_later": "稍後",
    "game_perf_title": "遊戲效能",
    "game_perf_summary": "依應用設定CPU與GPU；設定僅在該應用顯示時生效",
-   "experimental_title": "實驗性功能",
-   "experimental_summary": "偽裝, 完整性",
-   "one_vision_category": "壹視界",
    "performance_category": "效能",
    "app_key_entries": [
     "無",
@@ -3627,12 +3403,13 @@
     "搜尋",
     "設定"
    ],
-   "accessories_category": "配件",
-   "experiments_category": "實驗性"
+   "lenovo_features_category": "Lenovo 功能",
+   "device_spoof_title": "裝置偽裝",
+   "experimental_features_category": "實驗性功能"
   },
   "zu": {
    "app_name": "Izici ezithuthukisiwe",
-   "app_summary": "One Vision, Izinsiza, Ukusebenza, Okokulinga",
+   "app_summary": "Lenovo features, Ukusebenza, Izici zokuhlola",
    "state_on": "Vuliwe",
    "state_off": "Valiwe",
    "landscape_title": "Ukubuka okuvundlile",
@@ -3660,8 +3437,6 @@
    "reboot_later": "Kamuva",
    "game_perf_title": "Ukusebenza kwemidlalo",
    "game_perf_summary": "Amaphrofayili e-CPU ne-GPU ohlelweni ngalunye lokusebenza; amasethingi asebenza kuphela uma uhlelo lokusebenza lusesikrinini",
-   "experimental_title": "Izici zokuhlola",
-   "experimental_summary": "Spoofing, Integrity",
    "performance_category": "Ukusebenza",
    "app_key_entries": [
     "Lutho",
@@ -3673,8 +3448,7 @@
     "Sesha",
     "Izilungiselelo"
    ],
-   "accessories_category": "Izinsiza",
-   "experiments_category": "Okokulinga"
+   "experimental_features_category": "Izici zokuhlola"
   }
  }
 }

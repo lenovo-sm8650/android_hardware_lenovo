@@ -12,21 +12,24 @@ import android.os.PowerManager
 import android.text.format.Formatter
 import androidx.preference.ListPreference
 import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreferenceCompat
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
 /**
- * Advanced features: landscape view and the folio case mode (Display), game performance
- * management, memory expansion and the current memory (Performance), and the Experimental
- * features row. The game performance and Experimental features rows start the separate
- * apps of the optional customizations and are hidden while those are not installed. The
- * order is the one of parts_settings.xml.
+ * Advanced features: landscape view and folio case mode (Lenovo features), game
+ * performance management, memory expansion and current memory (Performance), and
+ * Device Spoofing and Specter (Experimental features). The optional customization rows start their
+ * separate apps and are hidden while those are not installed. The order is the one of
+ * parts_settings.xml.
  */
 class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
 
     private lateinit var landscapePref: Preference
     private lateinit var vramPref: ListPreference
     private lateinit var statusPref: Preference
+    private lateinit var deviceSpoofPref: Preference
+    private lateinit var specterPref: Preference
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.parts_settings, rootKey)
@@ -52,24 +55,52 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
         vramPref.onPreferenceChangeListener = this
         statusPref = findPreference(KEY_STATUS)!!
 
-        showIfInstalled(KEY_GAME_PERF, LenovoSettings.GAME_PERF_PACKAGE,
-            LenovoSettings.GAME_PERF_ACTIVITY)
-        showIfInstalled(KEY_EXPERIMENTAL, LenovoSettings.EXPERIMENTAL_PACKAGE, LenovoSettings.EXPERIMENTAL_ACTIVITY)
+        showIfInstalled(
+            KEY_GAME_PERF,
+            Intent().setClassName(LenovoSettings.GAME_PERF_PACKAGE, LenovoSettings.GAME_PERF_ACTIVITY),
+        )
+        deviceSpoofPref = showIfInstalled(
+            KEY_DEVICE_SPOOF,
+            Intent()
+                .setClassName(LenovoSettings.EXPERIMENTAL_PACKAGE, LenovoSettings.EXPERIMENTAL_ACTIVITY)
+                .putExtra(LenovoSettings.EXPERIMENTAL_EXTRA_FRAGMENT, LenovoSettings.DEVICE_SPOOF_FRAGMENT),
+        )
+        specterPref = showIfInstalled(
+            KEY_SPECTER,
+            Intent().setClassName(LenovoSettings.SPECTER_PACKAGE, LenovoSettings.SPECTER_ACTIVITY),
+        )
+        findPreference<PreferenceCategory>(KEY_EXPERIMENTAL_CATEGORY)!!.isVisible =
+            deviceSpoofPref.isVisible || specterPref.isVisible
     }
 
-    /** Makes the row start the activity of another app, or hides it while that is missing. */
-    private fun showIfInstalled(key: String, pkg: String, cls: String) {
+    /** Makes the row start [intent], or hides it while the target activity is missing. */
+    private fun showIfInstalled(key: String, intent: Intent): Preference {
         val pref: Preference = findPreference(key)!!
-        val intent = Intent().setClassName(pkg, cls)
         pref.intent = intent
         pref.isVisible = requireContext().packageManager.resolveActivity(intent, 0) != null
+        return pref
     }
 
     override fun onResume() {
         super.onResume()
         activity?.setTitle(R.string.app_name)
+        val ctx = requireContext()
         landscapePref.setSummary(
-            if (LenovoSettings.getSystemInt(requireContext(), LenovoSettings.LANDSCAPE_VIEW, 1) != 0) {
+            if (LenovoSettings.getSystemInt(ctx, LenovoSettings.LANDSCAPE_VIEW, 1) != 0) {
+                R.string.state_on
+            } else {
+                R.string.state_off
+            }
+        )
+        deviceSpoofPref.setSummary(
+            if (LenovoSettings.getInt(ctx, LenovoSettings.DEVICE_SPOOF_ENABLED, 1) != 0) {
+                R.string.state_on
+            } else {
+                R.string.state_off
+            }
+        )
+        specterPref.setSummary(
+            if (LenovoSettings.getInt(ctx, LenovoSettings.SPECTER_ENABLED, 1) != 0) {
                 R.string.state_on
             } else {
                 R.string.state_off
@@ -135,6 +166,8 @@ class PartsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceC
         const val KEY_STATUS = "memory_status"
         const val KEY_FOLIO = "folio_case_mode"
         const val KEY_GAME_PERF = "game_perf"
-        const val KEY_EXPERIMENTAL = "experimental"
+        const val KEY_EXPERIMENTAL_CATEGORY = "experimental_features"
+        const val KEY_DEVICE_SPOOF = "device_spoof"
+        const val KEY_SPECTER = "specter"
     }
 }

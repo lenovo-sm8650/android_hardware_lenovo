@@ -9,7 +9,7 @@ Contents:
 
 | Path | What |
 |---|---|
-| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2), and an Integrity category: Specter (the page of the separate PIF app `io.github.wnduddld0513.pif`, hidden while it is not installed) and the PixelOS Play Integrity Fix and TrickyStore pages of Developer options, each shown as on or off |
+| `ExperimentalFeatures/` | "Experimental features" app (`org.lineageos.settings.experimental`), opened from the Advanced features page of LenovoParts (no Settings tile of its own): app compatibility, the device identity selected apps see (default: Netflix sees the OnePlus Pad Go 2), and an Integrity category: Specter (the page of the separate PIF app `io.github.wnduddld0513.pif`, hidden while it is not installed) shown as on or off |
 | `custom.mk` → `PlayIntegrityFixSettings` | Specter (`packages/apps/PlayIntegrityFix`): sets up the PixelOS spoofing on a fresh install and keeps the profile, the keybox and the security patch up to date |
 | `ExperimentalFeatures/overlay/FrameworksResExperimental/` | the device identity defaults of the app |
 | `custom.mk` | inherits the packages above (the device ships the stock ZUI fingerprint; the upstream spoofing sets a Pixel profile per process, so no global build fingerprint is overridden) |
@@ -29,10 +29,10 @@ Store installs/updates of `com.google.android.GoogleCamera`, the updater server)
 are commits in the `frameworks/base` and `packages/apps/Updater` forks. Google
 Camera can still be installed manually through adb or a file manager.
 
-The Experimental features app is reached only from the "Experimental features"
-row of LenovoParts (Advanced features), which starts
-`org.lineageos.settings.experimental/.ExperimentalFeaturesActivity` and hides itself while that app is
-not installed. Without this repository (for example a `lineage_TB520FU` build)
+The Device Spoofing and Specter rows under "Experimental features" in LenovoParts (Advanced
+features) open `DeviceSpoofFragment` in `ExperimentalFeaturesActivity` and
+`SpecterActivity` directly, and hide themselves while those apps are not
+installed. Without this repository (for example a `lineage_TB520FU` build)
 LenovoParts and `lenovo-input` build and work unchanged and nothing refers to
 the app. The game performance page and `GamePerfController` are part of
 LenovoParts and `lenovo-input`, not of the customizations.
